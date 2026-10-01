@@ -49,6 +49,28 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const Comp = asChild ? Slot : "button";
+    const leading = busy ? <Loader2 className="animate-spin" aria-hidden /> : icon;
+    let content: React.ReactNode = (
+      <>
+        {leading}
+        {children}
+      </>
+    );
+    if (asChild) {
+      const child = React.Children.only(children) as React.ReactElement<{
+        children?: React.ReactNode;
+      }>;
+      content = leading
+        ? React.cloneElement(
+            child,
+            {},
+            <>
+              {leading}
+              {child.props.children}
+            </>,
+          )
+        : child;
+    }
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
@@ -56,8 +78,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={props.disabled || busy}
         {...props}
       >
-        {busy ? <Loader2 className="animate-spin" aria-hidden /> : icon}
-        {children}
+        {content}
       </Comp>
     );
   },

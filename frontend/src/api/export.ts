@@ -4,6 +4,10 @@ import { http } from "./http";
 export const exportRunCoverageUrl = (runId: string) =>
   `/api/runs/${runId}/export/coverage`;
 
+/** One-page PDF analysis report — completed runs only. */
+export const exportRunAnalysisUrl = (runId: string) =>
+  `/api/runs/${runId}/export/analysis`;
+
 /** Reports that can be exported, each with their completed versions (for the
  * export dialog). */
 export const getExportOptions = () =>

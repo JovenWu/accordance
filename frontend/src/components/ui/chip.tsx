@@ -93,6 +93,16 @@ export function DisclosureStatusChip({
   );
 }
 
+/** Per-score pill color ramp: green (5) → red (1), gray for 0/error. */
+const SCORE_TONE: Record<number, string> = {
+  5: "bg-success-soft text-success",
+  4: "bg-lime-soft text-lime",
+  3: "bg-warning-soft text-warning",
+  2: "bg-orange-soft text-orange",
+  1: "bg-danger-soft text-danger",
+  0: "bg-soft text-muted-ink",
+};
+
 /** Solid rounded score pill used in findings/diff rows. */
 export function ScorePill({
   score,
@@ -101,10 +111,15 @@ export function ScorePill({
   score: number | null;
   className?: string;
 }) {
+  const tone =
+    score == null
+      ? "bg-soft text-muted-ink"
+      : (SCORE_TONE[score] ?? "bg-soft text-muted-ink");
   return (
     <span
       className={cn(
-        "inline-flex w-fit items-center rounded-full bg-success-soft px-2.5 py-1 text-[13px] font-semibold text-success tabular-nums",
+        "relative inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[13px] font-semibold tabular-nums",
+        tone,
         className,
       )}
     >

@@ -1,11 +1,30 @@
-import { useState } from "react";
-import { FileDown, OctagonX, RotateCcw, Terminal } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
+import {
+  ChevronDown,
+  FileDown,
+  FileSpreadsheet,
+  FileText,
+  ListPlus,
+  OctagonX,
+  RotateCcw,
+  Terminal,
+} from "lucide-react";
 
-import { retryRun, stopRun, exportRunCoverageUrl } from "@/api";
+import {
+  exportRunAnalysisUrl,
+  exportRunCoverageUrl,
+  getKb,
+  getPresets,
+  judgeMore,
+  retryRun,
+  stopRun,
+} from "@/api";
+import { ScopeModal } from "@/components/ScopeModal";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
+import { KebabMenu } from "@/components/ui/menu";
 import { useToast } from "@/components/ui/toast";
-import type { RunDetail } from "@/types";
+import type { KbStandard, Preset, RunDetail } from "@/types";
 
 const LIVE = ["queued", "extracting", "indexing", "judging"];
 
@@ -19,9 +38,28 @@ export function RunHeader({
   onOpenTraces?: () => void;
 }) {
   const { toast } = useToast();
-  const [busy, setBusy] = useState<"cancel" | "retry" | null>(null);
+  const [busy, setBusy] = useState<"cancel" | "retry" | "scope" | null>(null);
+  const [scope, setScope] = useState<{
+    groups: KbStandard[];
+    presets: Preset[];
+  } | null>(null);
+  const [scopeOpen, setScopeOpen] = useState(false);
+  // Stable identity — a fresh Set each render would reset ScopeModal's draft.
+  const emptySelection = useRef(new Set<string>()).current;
   const status = run.summary.status;
   const isLive = LIVE.includes(status);
+
+  // The backend skips disclosures that already have a non-error finding, so
+  // they show as locked here; errored findings stay selectable for re-judging.
+  const judged = useMemo(
+    () =>
+      new Set(
+        run.findings
+          .filter((f) => f.status !== "error")
+          .map((f) => f.disclosure_id),
+      ),
+    [run.findings],
+  );
 
   async function cancel() {
     setBusy("cancel");
@@ -52,6 +90,47 @@ export function RunHeader({
       });
     } finally {
       setBusy(null);
+    }
+  }
+
+  async function openScope() {
+    setBusy("scope");
+    try {
+      if (!scope) {
+        const [groups, presets] = await Promise.all([getKb(), getPresets()]);
+        setScope({ groups, presets });
+      }
+      setScopeOpen(true);
+    } catch (e) {
+      toast("Couldn't load the disclosure catalog", {
+        variant: "error",
+        message: e instanceof Error ? e.message : String(e),
+      });
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function judgeSelection(next: Set<string>) {
+    try {
+      const res = await judgeMore(run.summary.id, [...next]);
+      toast(
+        res.judged.length > 0
+          ? `Judging ${res.judged.length} more disclosure${res.judged.length === 1 ? "" : "s"}`
+          : "Nothing new to judge",
+        {
+          message:
+            res.judged.length > 0
+              ? "The run re-enters judging; findings appear as they land."
+              : "Every selected disclosure already has a finding.",
+        },
+      );
+      onChanged();
+    } catch (e) {
+      toast("Couldn't start judge-more", {
+        variant: "error",
+        message: e instanceof Error ? e.message : String(e),
+      });
     }
   }
 
@@ -95,6 +174,17 @@ export function RunHeader({
             Retry run
           </Button>
         )}
+        {!isLive && (
+          <Button
+            variant="outline"
+            size="sm"
+            icon={<ListPlus />}
+            busy={busy === "scope"}
+            onClick={() => void openScope()}
+          >
+            Add disclosures
+          </Button>
+        )}
         {(status === "completed" || status === "cancelled") && (
           <>
             <Button
@@ -114,14 +204,44 @@ export function RunHeader({
             >
               Traces
             </Button>
-            <Button size="sm" icon={<FileDown />} asChild>
-              <a href={exportRunCoverageUrl(run.summary.id)} download>
-                Export
-              </a>
-            </Button>
+            <KebabMenu
+              label="Export"
+              trigger={
+                <Button size="sm" icon={<FileDown />}>
+                  Export
+                  <ChevronDown aria-hidden />
+                </Button>
+              }
+              items={[
+                {
+                  label: "Excel — coverage matrix",
+                  icon: <FileSpreadsheet />,
+                  onSelect: () =>
+                    window.open(exportRunCoverageUrl(run.summary.id), "_self"),
+                },
+                {
+                  label: "PDF — analysis report",
+                  icon: <FileText />,
+                  disabled: status !== "completed",
+                  onSelect: () =>
+                    window.open(exportRunAnalysisUrl(run.summary.id), "_self"),
+                },
+              ]}
+            />
           </>
         )}
       </div>
+      {scopeOpen && scope && (
+        <ScopeModal
+          open={scopeOpen}
+          onClose={() => setScopeOpen(false)}
+          groups={scope.groups}
+          presets={scope.presets}
+          selected={emptySelection}
+          locked={judged}
+          onApply={(next) => void judgeSelection(next)}
+        />
+      )}
     </div>
   );
 }

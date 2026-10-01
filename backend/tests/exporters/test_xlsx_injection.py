@@ -6,6 +6,10 @@ from accordance.exporters.coverage_matrix import MatrixColumn, build_coverage_ma
 from accordance.exporters.xlsx_exporter import to_xlsx_bytes
 from accordance.kb.schema import Disclosure
 
+# Header row is 4 (rows 1-3 are title/generated/legend); data starts at 5.
+HEADER_ROW = 4
+FIRST_DATA = 5
+
 
 def _kb_with_malicious_labels():
     return {
@@ -35,17 +39,17 @@ def test_xlsx_neutralizes_formula_injection_in_user_strings():
     ).active
 
     # Header report-name label must not be a live formula, but keep its content.
-    assert not str(ws.cell(1, 4).value).startswith(("=", "+", "-", "@"))
-    assert "HYPERLINK" in str(ws.cell(1, 4).value)
+    assert not str(ws.cell(HEADER_ROW, 4).value).startswith(("=", "+", "-", "@"))
+    assert "HYPERLINK" in str(ws.cell(HEADER_ROW, 4).value)
 
     # Row standard (col A) and indicator (col C) must not be live formulas.
-    assert not str(ws.cell(2, 1).value).startswith(("=", "+", "-", "@"))
-    assert not str(ws.cell(2, 3).value).startswith(("=", "+", "-", "@"))
+    assert not str(ws.cell(FIRST_DATA, 1).value).startswith(("=", "+", "-", "@"))
+    assert not str(ws.cell(FIRST_DATA, 3).value).startswith(("=", "+", "-", "@"))
 
     # The legitimate score value is untouched.
-    assert ws.cell(2, 4).value == 5
+    assert ws.cell(FIRST_DATA, 4).value == 5
 
     # Server-authored footer formulas MUST stay live.
-    footer = {ws.cell(r, 3).value: r for r in range(2, ws.max_row + 1)}
+    footer = {ws.cell(r, 3).value: r for r in range(FIRST_DATA, ws.max_row + 1)}
     tot = footer["Total score"]
     assert str(ws.cell(tot, 4).value).startswith("=SUM")

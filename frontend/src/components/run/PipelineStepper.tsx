@@ -18,8 +18,8 @@ const STATUS_TO_INDEX: Record<RunStatus, number> = {
 };
 
 /**
- * The SSE stream carries no stage events — stage is derived from the run
- * summary status. `failed`/`cancelled` resolve to the furthest plausible
+ * Stage is derived from the run summary status (refetched on SSE `stage`
+ * events + poll). `failed`/`cancelled` resolve to the furthest plausible
  * stage from how much was judged.
  */
 export function PipelineStepper({
@@ -68,7 +68,7 @@ export function PipelineStepper({
               <div
                 aria-hidden
                 className={cn(
-                  "h-[2px] flex-1",
+                  "h-[2px] flex-1 transition-colors duration-500",
                   states[i - 1] === "done" ? "bg-success" : "bg-soft-2",
                 )}
               />
@@ -76,7 +76,7 @@ export function PipelineStepper({
             <div className="flex items-center gap-2.5">
               <span
                 className={cn(
-                  "grid size-7 shrink-0 place-items-center rounded-full [&_svg]:size-4",
+                  "grid size-7 shrink-0 place-items-center rounded-full transition-colors duration-300 [&_svg]:size-4",
                   st === "done" && "bg-success text-white",
                   st === "active" && "bg-accent text-white",
                   st === "failed" && "bg-danger text-white",
@@ -123,7 +123,8 @@ function stepMeta(
   }
   if (st === "done") return "done";
   if (st === "active") {
-    if (name === "Extract") return "parsing pages";
+    if (name === "Extract")
+      return ctx.status === "queued" ? "waiting for a worker" : "parsing pages";
     if (name === "Index") return "embedding chunks";
     return "judging disclosures";
   }

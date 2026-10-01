@@ -128,7 +128,7 @@ export function EvidenceScreen({
   const title = titles.get(finding.disclosure_id);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-4 px-4 pb-6 pt-4 sm:px-6 lg:px-8 lg:pb-8 lg:pt-5">
+    <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden px-4 pb-6 pt-4 sm:px-6 lg:px-8 lg:pb-8 lg:pt-5">
       <button
         ref={backRef}
         type="button"
@@ -152,9 +152,9 @@ export function EvidenceScreen({
         <ScorePill score={finding.score} />
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto lg:flex-row lg:items-stretch lg:overflow-visible">
+      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto lg:flex-row lg:items-stretch lg:overflow-hidden">
         {/* Left: judge context */}
-        <div className="flex w-full shrink-0 flex-col gap-3.5 lg:w-[400px] lg:overflow-y-auto">
+        <div className="flex w-full shrink-0 flex-col gap-3.5 lg:min-h-0 lg:w-[400px] lg:overflow-y-auto">
           <div className="flex flex-col gap-2 rounded-3xl bg-surface p-4">
             <span className="text-[11px] font-semibold text-muted-ink">
               Judge note
@@ -306,7 +306,7 @@ export function EvidenceScreen({
           </div>
           <div
             ref={bodyRef}
-            className="min-h-0 flex-1 overflow-auto rounded-3xl bg-soft-2 p-6"
+            className="min-h-0 flex-1 overflow-auto rounded-3xl bg-soft-2 px-6 py-2"
           >
             <Suspense
               fallback={

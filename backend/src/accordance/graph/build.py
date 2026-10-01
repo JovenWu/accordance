@@ -1,3 +1,4 @@
+import logging
 from pathlib import Path
 
 import psycopg
@@ -10,6 +11,35 @@ from accordance.indexer.embedder import Embedder
 from accordance.indexer.vector_store import VectorStore
 from accordance.kb.loader import applicable_disclosures
 from accordance.kb.schema import Disclosure
+
+logger = logging.getLogger(__name__)
+
+
+def _set_stage(conn: psycopg.Connection, run_id: str, status: str) -> None:
+    """Advance the run's visible pipeline stage as each node starts.
+
+    The status column is what the UI's stepper animates from — without these
+    writes a run sits at 'queued' until 'completed' and Extract/Index/Judge
+    never light up. Guarded to in-flight statuses: a run flipped to
+    'cancelled'/'failed' by stop_run or restart reconciliation mid-stage must
+    not be resurrected by the next node's write. Best-effort — a stage write
+    must never fail the run itself.
+    """
+    try:
+        cur = conn.execute(
+            "UPDATE runs SET status=%s WHERE id=%s "
+            "AND status IN ('queued','extracting','indexing','judging')",
+            (status, run_id),
+        )
+        if cur.rowcount > 0:
+            try:
+                from accordance.api.events import bus
+
+                bus.publish(run_id, {"type": "stage", "status": status})
+            except Exception:
+                pass
+    except Exception:
+        logger.warning("stage update to %r failed for run %s", status, run_id, exc_info=True)
 
 
 def build_graph(
@@ -41,9 +71,11 @@ def build_graph(
         disclosures = list(applicable_disclosures(kb).values())
 
     def _extract(state):
+        _set_stage(conn, state["run_id"], "extracting")
         return extract_node(state)
 
     def _index(state):
+        _set_stage(conn, state["run_id"], "indexing")
         return index_node(state, store, conn)
 
     # Single node that judges all disclosures CONCURRENTLY (thread pool). We do
@@ -53,6 +85,7 @@ def build_graph(
     # the per-disclosure calls; the global judge semaphore still caps LLM
     # concurrency across simultaneous runs.
     def _judge(state):
+        _set_stage(conn, state["run_id"], "judging")
         return judge_all_node(
             state, disclosures, store, llm, conn,
             reranker=reranker, rerank_top_n=rerank_top_n, cache_system=cache_system,

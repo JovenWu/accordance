@@ -61,8 +61,8 @@ export function RunPage() {
 
   const live = run ? LIVE_STATUSES.includes(run.summary.status) : false;
 
-  // Poll as the authoritative stage source — SSE only carries finding/terminal
-  // events, so the stepper and progress bar come from the polled run summary.
+  // Poll as a fallback stage source — SSE `stage` events trigger an immediate
+  // refetch, and the poll covers anything the stream misses.
   useEffect(() => {
     if (!id || !live) return;
     const t = setInterval(() => void load(id), 3000);
@@ -80,6 +80,10 @@ export function RunPage() {
           refetchTimer.current = null;
           void load(id);
         }, 400);
+      } else if (msg.type === "stage") {
+        // Stage transitions are rare — refetch immediately so the stepper
+        // animates the moment extract/index/judge flips, not on the 3s poll.
+        void load(id);
       } else if (
         msg.type === "completed" ||
         msg.type === "cancelled" ||
@@ -144,7 +148,7 @@ export function RunPage() {
       onCorrect={setCorrecting}
       onTrace={setTraceFor}
     >
-      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-4 pb-6 pt-4 sm:px-6 lg:px-8 lg:pb-8 lg:pt-5">
+      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-hidden px-4 pb-6 pt-4 sm:px-6 lg:px-8 lg:pb-8 lg:pt-5">
         <Link
           to={`/reports/${crumbs.reportId}`}
           className="flex w-fit items-center gap-1.5 text-[13px] text-muted-ink hover:text-ink"

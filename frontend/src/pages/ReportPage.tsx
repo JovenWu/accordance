@@ -473,7 +473,7 @@ export function ReportPage() {
         tabIndex={0}
         aria-label="Upload a new report version PDF"
         className={cn(
-          "flex h-24 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border bg-soft-2 text-center transition-colors",
+          "flex min-h-24 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border bg-soft-2 px-4 py-3 text-center transition-colors",
           dragging
             ? "border-accent bg-accent-soft/40"
             : "border-line-strong hover:border-muted-ink/40",

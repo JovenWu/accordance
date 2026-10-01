@@ -8,6 +8,11 @@ from accordance.api.ownership import assert_report_access, assert_run_access, vi
 from accordance.api.runs import _open_conn
 from accordance.auth.deps import require_user
 from accordance.config import Settings, get_settings
+from accordance.exporters.analysis_report import (
+    AnalysisReport,
+    StandardSummary,
+    analysis_report_bytes,
+)
 from accordance.exporters.coverage_matrix import MatrixColumn, build_coverage_matrix
 from accordance.exporters.xlsx_exporter import to_xlsx_bytes
 from accordance.judge.rollup import effective_score
@@ -18,6 +23,7 @@ router = APIRouter(prefix="/api/runs", tags=["export"])
 reports_router = APIRouter(prefix="/api/reports", tags=["export"])
 
 XLSX_MEDIA = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+PDF_MEDIA = "application/pdf"
 
 
 def _score_by_id(conn, run_id: str) -> dict[str, int | None]:
@@ -84,6 +90,96 @@ def export_run_coverage(
         )
         filename = f"coverage-{_safe_filename(run['report_name'])}-v{version}.xlsx"
         return _xlsx_response([column], filename)
+
+
+@router.get("/{run_id}/export/analysis")
+def export_run_analysis(
+    run_id: str,
+    settings: Annotated[Settings, Depends(get_settings)],
+    user: Annotated[dict, Depends(require_user)],
+):
+    """One-page PDF analysis summary for a completed run: headline metrics,
+    grade distribution, per-standard rollups and a verification block (run id
+    + document SHA-256) — so the PDF is traceable back to the source."""
+    with _open_conn(settings) as conn:
+        assert_run_access(conn, run_id, user)
+        run = conn.execute(
+            "SELECT r.version_number, r.status, r.pdf_filename, r.pdf_sha256, "
+            "r.completed_at, rep.name AS report_name "
+            "FROM runs r JOIN reports rep ON rep.id = r.report_id "
+            "WHERE r.id = %s",
+            (run_id,),
+        ).fetchone()
+        if run is None:
+            raise HTTPException(404, "Run not found")
+        if run["status"] != "completed":
+            raise HTTPException(
+                400, "Analysis report is only available for completed runs."
+            )
+        page_count = conn.execute(
+            "SELECT MAX(page) AS p FROM chunks WHERE run_id=%s", (run_id,)
+        ).fetchone()["p"] or 0
+        # Only disclosures this run actually judged — the score map is the same
+        # effective-score view the XLSX export uses (corrections included).
+        scores = _score_by_id(conn, run_id)
+
+    kb = load_kb(KB_DIR)
+    dist: dict[int, int] = {s: 0 for s in range(6)}
+    errors = 0
+    scored_sum = scored_n = 0
+    rollups: dict[str, dict] = {}
+    for did, v in scores.items():
+        disc = kb.get(did)
+        st = rollups.setdefault(
+            disc.standard if disc else "Other",
+            {"assessed": 0, "scored": 0, "sum": 0},
+        )
+        if v is None:
+            errors += 1  # judged but errored — not a real assessment
+            continue
+        dist[v] += 1
+        st["assessed"] += 1
+        if v > 0:
+            st["scored"] += 1
+            st["sum"] += v
+            scored_sum += v
+            scored_n += 1
+
+    def _cov(s: int, n: int) -> float | None:
+        return s / (n * 5) if n else None
+
+    standards = [
+        StandardSummary(
+            name=name,
+            assessed=r["assessed"],
+            scored=r["scored"],
+            avg=(r["sum"] / r["scored"]) if r["scored"] else None,
+            coverage=_cov(r["sum"], r["scored"]),
+        )
+        for name, r in sorted(rollups.items())
+    ]
+    data = AnalysisReport(
+        report_name=run["report_name"],
+        version=run["version_number"],
+        pdf_filename=run["pdf_filename"],
+        run_id=run_id,
+        pdf_sha256=run["pdf_sha256"],
+        completed_at=run["completed_at"],
+        page_count=page_count,
+        dist=dist,
+        errors=errors,
+        coverage=_cov(scored_sum, scored_n),
+        avg=(scored_sum / scored_n) if scored_n else None,
+        standards=standards,
+    )
+    filename = (
+        f"analysis-{_safe_filename(run['report_name'])}-v{run['version_number']}.pdf"
+    )
+    return Response(
+        content=analysis_report_bytes(data),
+        media_type=PDF_MEDIA,
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
 
 
 # These static paths are registered before the "/{report_id}/..." route. They

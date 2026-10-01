@@ -22,15 +22,18 @@ const itemEls = (menu: HTMLDivElement | null) =>
 
 /** 32px circular kebab button opening a small dropdown menu. The popover is
  * portaled to <body> and positioned with `fixed` so `overflow-hidden`/`auto`
- * ancestors (table cards, scrollers) can't clip it. */
+ * ancestors (table cards, scrollers) can't clip it. Pass `trigger` to use a
+ * custom element (e.g. a labelled <Button>) instead of the kebab icon. */
 export function KebabMenu({
   items,
   label = "Actions",
   align = "end",
+  trigger,
 }: {
   items: MenuItem[];
   label?: string;
   align?: "start" | "end";
+  trigger?: React.ReactElement;
 }) {
   const [open, setOpen] = React.useState(false);
   const triggerRef = React.useRef<HTMLButtonElement>(null);
@@ -130,21 +133,29 @@ export function KebabMenu({
     }
   };
 
+  const triggerProps = {
+    ref: triggerRef,
+    id: triggerId,
+    type: "button" as const,
+    "aria-label": label,
+    "aria-haspopup": "menu" as const,
+    "aria-expanded": open,
+    onClick: () => setOpen((v) => !v),
+    onKeyDown: onTriggerKeyDown,
+  };
+
   return (
     <div>
-      <button
-        ref={triggerRef}
-        id={triggerId}
-        type="button"
-        aria-label={label}
-        aria-haspopup="menu"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        onKeyDown={onTriggerKeyDown}
-        className="grid size-8 place-items-center rounded-full bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
-      >
-        <MoreHorizontal className="size-4" aria-hidden />
-      </button>
+      {trigger ? (
+        React.cloneElement(trigger, triggerProps)
+      ) : (
+        <button
+          {...triggerProps}
+          className="grid size-8 place-items-center rounded-full bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        >
+          <MoreHorizontal className="size-4" aria-hidden />
+        </button>
+      )}
       {open &&
         createPortal(
           <div

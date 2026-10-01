@@ -110,14 +110,14 @@ export default function PdfViewer({
       {/* w-max + mx-auto: centers the page when it fits, but lets the left
           edge stay reachable (scrollable) once zoom makes it wider than the
           dock — `flex justify-center` would clip the overflow out of reach. */}
-      <div ref={stageRef} className="mx-auto w-max p-3">
+      <div ref={stageRef} className="mx-auto w-max px-3 py-0">
         <Document
           key={retryKey}
           file={url}
           loading={
             <Skeleton
               role="status"
-              className="rounded-md"
+              className="relative rounded-md"
               style={{ width: renderWidth, height: Math.round(renderWidth * 1.3) }}
             >
               <span className="sr-only">Loading PDF page…</span>

@@ -14,11 +14,10 @@ services:
     container_name: accordance-db
     restart: unless-stopped
     environment:
-      # POSTGRES_USER/DB stay `gri`: the existing pgdata volume was initialized
-      # with those credentials — changing them would break the live database.
-      POSTGRES_USER: gri
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gri}
-      POSTGRES_DB: gri
+      # These credentials initialize an empty volume; existing volumes need migration first.
+      POSTGRES_USER: ${POSTGRES_USER:-accordance}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-accordance}
     ports:
       # Host-loopback only — lets host-run pytest/dev reach PG. Host port is
       # overridable via DB_HOST_PORT (set it in .env) when 5432 is taken on the
@@ -27,7 +26,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U gri -d gri"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-accordance} -d ${POSTGRES_DB:-accordance}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -49,7 +48,7 @@ services:
     # the default pymupdf path; raise it if you run EXTRACTOR_BACKEND=docling on
     # big reports.
     ports:
-      - "8151:8151"
+      - "127.0.0.1:8151:8151"
     depends_on:
       db:
         condition: service_healthy
@@ -59,7 +58,7 @@ services:
       # Force DATA_DIR inside the container regardless of what .env sets.
       # The host's `./data` is bind-mounted here.
       DATA_DIR: /app/data
-      DATABASE_URL: postgresql://gri:${POSTGRES_PASSWORD:-gri}@db:5432/gri
+      DATABASE_URL: postgresql://${POSTGRES_USER:-accordance}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-accordance}
     volumes:
       - ./data:/app/data
     healthcheck:
