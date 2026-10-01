@@ -1,0 +1,28 @@
+id: "306-4"
+standard: "GRI 306: Waste 2020"
+title: "Waste diverted from disposal"
+category: topic
+requirement_text: |
+    Report the total weight of waste diverted from disposal in metric tons, and a breakdown of this
+    total by composition of the waste. Break down the total weight of hazardous waste and of
+    non-hazardous waste diverted from disposal by the recovery operations used (preparation for reuse,
+    recycling, other recovery operations), distinguishing waste diverted onsite and offsite. Provide
+    the contextual information necessary to understand the data and how it has been compiled.
+required_elements:
+  - id: total_waste_diverted
+    desc: "Total weight of waste diverted from disposal in metric tons, broken down by composition"
+  - id: hazardous_recovery_operations
+    desc: "Hazardous waste diverted, by recovery operation (preparation for reuse, recycling, other recovery)"
+  - id: non_hazardous_recovery_operations
+    desc: "Non-hazardous waste diverted, by recovery operation, distinguishing onsite vs offsite"
+retrieval_queries:
+  - "waste diverted from disposal recycling reuse recovery metric tons"
+  - "waste recycled prepared for reuse recovery onsite offsite hazardous"
+  - "waste diversion rate recovery operations tonnes"
+good_evidence_hints:
+  - "Look for a waste table showing recycling/reuse/recovery tonnages split hazardous vs non-hazardous"
+  - "Strong evidence breaks diversion down by recovery operation and onsite/offsite"
+suggested_fix_template: |
+    Add a section reporting total waste diverted from disposal (metric tons) by composition, with
+    hazardous and non-hazardous breakdowns by recovery operation (reuse, recycling, other) and
+    onsite/offsite.

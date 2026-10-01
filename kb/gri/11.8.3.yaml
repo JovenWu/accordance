@@ -1,0 +1,27 @@
+id: "11.8.3"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Process safety events by business activity"
+category: sector
+requirement_text: |
+  Under Topic 11.8 Asset integrity and critical incident management, the organization must report
+  the total number of Tier 1 and Tier 2 process safety events, and a breakdown of this total by
+  business activity (e.g., exploration, development, production, closure and rehabilitation,
+  refining, processing, transportation, storage).
+required_elements:
+  - id: total_tier1_tier2_process_safety_events
+    desc: "total number of Tier 1 and Tier 2 process safety events"
+  - id: breakdown_by_business_activity
+    desc: "breakdown of that total by business activity (e.g., exploration, development, production, closure and rehabilitation, refining, processing, transportation, storage)"
+retrieval_queries:
+  - "Tier 1 Tier 2 process safety events oil gas total number"
+  - "process safety events breakdown exploration production refining transportation"
+  - "PSE process safety event count business activity oil gas sector"
+good_evidence_hints:
+  - "Look in the health, safety and environment (HSE) or operational integrity section for a table of process safety events categorised as Tier 1 and Tier 2 with a total count"
+  - "Strong evidence provides both the aggregate count and a per-activity breakdown covering the organization's main value-chain activities (e.g., production, refining, transport)"
+suggested_fix_template: |
+  Report the total number of Tier 1 and Tier 2 process safety events during the reporting period.
+  Provide a breakdown of this total by business activity, using the relevant categories for your
+  operations (e.g., exploration, development, production, refining, processing, transportation,
+  storage). Reference the applicable process safety event classification methodology (e.g., IOGP
+  Process Safety — Recommended Practice 456 or equivalent).

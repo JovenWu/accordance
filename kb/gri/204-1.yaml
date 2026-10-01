@@ -1,0 +1,27 @@
+id: "204-1"
+standard: "GRI 204: Procurement Practices 2016"
+title: "Proportion of spending on local suppliers"
+category: topic
+requirement_text: |
+    Report the percentage of the procurement budget used for significant locations of operation that is
+    spent on suppliers local to that operation (for example, the percentage of products and services
+    purchased locally). Provide the organization's geographical definition of 'local' and the definition
+    used for 'significant locations of operation'.
+required_elements:
+  - id: local_spend_percentage
+    desc: "Percentage of procurement budget spent on local suppliers at significant locations of operation"
+  - id: local_definition
+    desc: "Geographical definition of 'local' used by the organization"
+  - id: significant_locations_definition
+    desc: "Definition used for 'significant locations of operation'"
+retrieval_queries:
+  - "proportion spending local suppliers procurement budget percentage"
+  - "local procurement local sourcing supplier spend significant locations"
+  - "percentage procurement spent locally local supplier definition"
+good_evidence_hints:
+  - "Look in procurement, supply chain, or local sourcing sections for a local-spend percentage"
+  - "Strong evidence gives a percentage plus the definition of 'local' used"
+suggested_fix_template: |
+    Add a procurement section reporting the percentage of the procurement budget spent on local
+    suppliers at significant locations of operation, with the definitions of 'local' and 'significant
+    locations of operation' used.

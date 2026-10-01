@@ -1,0 +1,20 @@
+id: "13.11.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Animal welfare third-party certification coverage"
+requirement_text: |
+  Under Topic 13.11 Animal health and welfare, the organization must report the percentage of production volume from sites certified to third-party animal health and welfare standards, and list these standards.
+required_elements:
+  - id: pct_certified_production
+    desc: "Percentage of production volume from organization sites certified to third-party animal health and welfare standards"
+  - id: list_standards
+    desc: "List of the third-party animal health and welfare standards used"
+retrieval_queries:
+  - "animal welfare certification percentage production volume third-party standards"
+  - "certified sites animal health welfare standard coverage percentage production"
+  - "third-party animal welfare audit certification scheme percentage total production"
+good_evidence_hints:
+  - "Look for a percentage of production from sites holding valid third-party animal welfare certifications, with named standards listed"
+  - "Good evidence names specific schemes (e.g., RSPCA Assured, GlobalG.A.P., Aquaculture Stewardship Council) and the production share covered"
+suggested_fix_template: |
+  Report the percentage of production volume from sites certified to third-party animal health and welfare standards, and list all standards to which sites are certified.

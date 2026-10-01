@@ -1,0 +1,22 @@
+id: "14.8.5"
+standard: "GRI 14: Mining Sector 2024"
+title: "Closure and rehabilitation plan approval and review"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, the organization must report, for each mine site with a closure and rehabilitation plan, whether the plan has been approved by relevant regulatory authorities, the date of the most recent review, and the date of the next scheduled review.
+required_elements:
+  - id: regulatory_approval
+    desc: "Whether each closure and rehabilitation plan has been approved by relevant regulatory authorities"
+  - id: most_recent_review_date
+    desc: "Date of the most recent review of the closure and rehabilitation plan per mine site"
+  - id: next_review_date
+    desc: "Date of the next scheduled review of the closure and rehabilitation plan per mine site"
+retrieval_queries:
+  - "closure rehabilitation plan regulatory approval review date mine site"
+  - "mine closure plan approved regulator most recent review next review scheduled"
+  - "closure and rehabilitation plan approval review dates per site"
+good_evidence_hints:
+  - "Look in the closure and rehabilitation section for a per-site table stating whether each plan is regulatory-approved and the dates of the most recent and next scheduled reviews"
+  - "Good evidence distinguishes between plans that have received regulatory approval and those that have not, and provides specific review dates rather than general statements about review cycles"
+suggested_fix_template: |
+    For each mine site that has a closure and rehabilitation plan, disclose whether the plan has been approved by the relevant regulatory authority, the date of its most recent review, and the date of the next scheduled review. Ideally present this as a per-site table.

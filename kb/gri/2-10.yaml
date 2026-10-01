@@ -1,0 +1,26 @@
+id: "2-10"
+standard: "GRI 2: General Disclosures 2021"
+title: "Nomination and selection of the highest governance body"
+category: universal
+requirement_text: |
+    Describe nomination and selection processes and the criteria used, including
+    stakeholder views, diversity, independence, and impact-related competencies.
+required_elements:
+  - id: nomination_selection_process
+    desc: "Process for nominating and selecting governance body members"
+  - id: stakeholder_views
+    desc: "Whether and how stakeholder views are considered"
+  - id: diversity
+    desc: "Whether and how diversity is considered"
+  - id: independence
+    desc: "Whether and how independence is considered"
+  - id: impact_competencies
+    desc: "Whether and how impact-related competencies are considered"
+retrieval_queries:
+  - "board nomination selection criteria diversity independence"
+  - "governance body selection stakeholder views competencies"
+good_evidence_hints:
+  - "Usually in nomination committee or corporate governance report"
+suggested_fix_template: |
+    Add the board nomination and selection process, including criteria for stakeholder
+    input, diversity, independence, and sustainability/impact competence.

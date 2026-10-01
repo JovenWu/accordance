@@ -1,0 +1,18 @@
+id: "13.13.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Land and resource rights – at-risk locations"
+requirement_text: |
+  Under Topic 13.13 Land and resource rights, the organization must list the locations of operations where land and natural resource rights (including customary, collective, and informal tenure rights) may be affected by the organization's operations.
+required_elements:
+  - id: locations_rights_may_be_affected
+    desc: "List of locations of operations where land and natural resource rights (customary, collective, informal tenure) may be affected"
+retrieval_queries:
+  - "land resource rights locations operations customary collective informal tenure affected"
+  - "operations where land rights natural resource rights may be impacted agriculture"
+  - "land tenure rights risk locations farming operations smallholder community"
+good_evidence_hints:
+  - "Look for a list or map of operational sites identified as potentially affecting land or natural resource rights, including customary or collective tenure"
+  - "Good evidence names specific locations and notes the type of tenure rights that may be at risk"
+suggested_fix_template: |
+  List all locations of operations where land and natural resource rights — including customary, collective, and informal tenure rights — may be affected by the organization's activities.

@@ -1,0 +1,5 @@
+# Shell scripts and the Docker entrypoint MUST stay LF. A CRLF shebang breaks
+# `exec` inside the Linux container ("no such file or directory"), and Windows
+# clones with core.autocrlf=true would otherwise rewrite them on checkout.
+*.sh text eol=lf
+docker-entrypoint.sh text eol=lf

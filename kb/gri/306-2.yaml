@@ -1,0 +1,29 @@
+id: "306-2"
+standard: "GRI 306: Waste 2020"
+title: "Management of significant waste-related impacts"
+category: topic
+requirement_text: |
+    Describe the actions, including circularity measures, taken to prevent waste generation in the
+    organization's own activities and upstream and downstream in its value chain, and to manage
+    significant impacts from waste generated. Where waste generated in the organization's own activities
+    is managed by a third party, describe the processes used to determine whether the third party
+    manages the waste in line with contractual or legislative obligations. Describe the processes used
+    to collect and monitor waste-related data.
+required_elements:
+  - id: prevention_and_circularity_actions
+    desc: "Actions and circularity measures to prevent waste and manage significant waste-related impacts"
+  - id: third_party_management
+    desc: "Processes to verify third parties manage waste per contractual or legislative obligations"
+  - id: data_processes
+    desc: "Processes used to collect and monitor waste-related data"
+retrieval_queries:
+  - "management waste-related impacts circularity prevention measures"
+  - "waste prevention reduction circular economy third party waste contractor"
+  - "waste data collection monitoring processes management"
+good_evidence_hints:
+  - "Look in waste management, circular economy, or environmental management sections"
+  - "Strong evidence describes prevention/circularity actions and third-party oversight"
+suggested_fix_template: |
+    Add a section describing actions and circularity measures to prevent and manage waste, how
+    third-party waste handling is verified against obligations, and how waste data are collected and
+    monitored.

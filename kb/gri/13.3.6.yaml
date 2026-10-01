@@ -1,0 +1,22 @@
+id: "13.3.6"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Aquaculture biodiversity – species and inputs"
+requirement_text: |
+  Under Topic 13.3 Biodiversity, the organization must report, for each species of aquatic organisms produced: species scientific name, volume in metric tons, farming methods, and production site. For juvenile seed stocks captured in the wild and used as input to aquaculture production: species scientific name, volume in metric tons, fishing methods, locations of origin, and stock status. For fishing products used in feed: species scientific name, whether whole fish or fish waste is used, locations of origin, and stock status.
+required_elements:
+  - id: species_produced
+    desc: "For each species of aquatic organisms produced: species scientific name, volume in metric tons, farming methods, production site"
+  - id: wild_juvenile_seedstock_inputs
+    desc: "For wild-captured juvenile seed stocks used as aquaculture input: species scientific name, volume in metric tons, fishing methods, locations of origin, stock status"
+  - id: fishing_products_in_feed
+    desc: "For fishing products used in feed: species scientific name, whether whole fish or fish waste (trimmings, offcuts, offal) is used, locations of origin, stock status"
+retrieval_queries:
+  - "aquaculture species produced scientific name volume metric tons farming methods production site"
+  - "wild juvenile seed stocks captured fishing methods locations origin stock status aquaculture"
+  - "fishing products feed whole fish fish waste species origin stock status aquaculture"
+good_evidence_hints:
+  - "Look for a species-by-species breakdown of farmed aquatic organisms with scientific names, volumes, and farming methods per site"
+  - "Good evidence includes separate disclosure for wild-captured juvenile inputs and fishing feed ingredients with stock status assessments"
+suggested_fix_template: |
+  For each species of aquatic organisms produced, add the species scientific name, volume in metric tons, farming methods, and production site. For any wild-captured juvenile seed stocks, report species, volume, fishing methods, origin, and stock status. For fishing products used in feed, disclose species, whether whole fish or fish waste is used, origin, and stock status.

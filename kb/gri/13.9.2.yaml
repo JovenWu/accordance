@@ -1,0 +1,22 @@
+id: "13.9.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Food loss weight and percentage by product"
+requirement_text: |
+  Under Topic 13.9 Food security, the organization must report the total weight of food loss in metric tons and the food loss percentage, by the organization's main products or product category, and describe the methodology used for this calculation.
+required_elements:
+  - id: food_loss_weight
+    desc: "Total weight of food loss in metric tons, by main products or product category"
+  - id: food_loss_percentage
+    desc: "Food loss percentage, by main products or product category"
+  - id: calculation_methodology
+    desc: "Description of the methodology used for the calculation"
+retrieval_queries:
+  - "food loss weight metric tons percentage main products product category reporting period"
+  - "post-harvest food loss calculation methodology agricultural products"
+  - "food loss rate percentage production volume by product category"
+good_evidence_hints:
+  - "Look for a product-level food-loss table with both absolute tonnage lost and the loss percentage per product or product category"
+  - "Good evidence describes the calculation boundary (e.g., farm gate to processing) and the measurement or estimation methodology"
+suggested_fix_template: |
+  Report, by main product or product category, the total weight of food loss in metric tons and the corresponding food loss percentage, and describe the methodology used to calculate these figures.

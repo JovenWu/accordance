@@ -1,0 +1,22 @@
+id: "13.4.5"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Supplier natural ecosystem conversion"
+requirement_text: |
+  Under Topic 13.4 Natural ecosystem conversion, the organization must report the size in hectares, the location, and the type of natural ecosystems converted since the cut-off date by suppliers or in sourcing locations.
+required_elements:
+  - id: size_hectares
+    desc: "Size in hectares of natural ecosystems converted since the cut-off date by suppliers or in sourcing locations"
+  - id: location
+    desc: "Location of the converted natural ecosystems"
+  - id: ecosystem_type
+    desc: "Type of natural ecosystems converted"
+retrieval_queries:
+  - "supplier sourcing location natural ecosystem conversion hectares type cut-off date"
+  - "supply chain deforestation conversion area hectares ecosystem type supplier"
+  - "sourcing region ecosystem conversion size location type reporting period"
+good_evidence_hints:
+  - "Look for data on ecosystem conversion by suppliers with hectare figures, locations, and ecosystem types identified through supply chain mapping"
+  - "Good evidence distinguishes supplier conversion from own-land conversion and specifies the cut-off date"
+suggested_fix_template: |
+  Report ecosystem conversions by suppliers or in sourcing locations since the cut-off date, disclosing the size in hectares, geographic location, and type of natural ecosystem converted at each site.

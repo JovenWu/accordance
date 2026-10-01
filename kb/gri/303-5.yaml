@@ -1,0 +1,27 @@
+id: "303-5"
+standard: "GRI 303: Water and Effluents 2018"
+title: "Water consumption"
+category: topic
+requirement_text: |
+    Report total water consumption in megaliters for all areas and water-stressed areas,
+    change in water storage where significant, and methodology/context for the data.
+required_elements:
+  - id: total_consumption_all_areas
+    desc: "Total water consumption from all areas in megaliters"
+  - id: total_consumption_water_stress
+    desc: "Total water consumption from areas with water stress in megaliters"
+  - id: water_storage_change
+    desc: "Change in water storage if identified as a significant water-related impact"
+  - id: methodology_context
+    desc: "Standards, methodologies, assumptions, whether data is calculated, estimated, modeled, or directly measured"
+  - id: calculation_approach
+    desc: "Approach used, such as withdrawal minus discharge if direct measurement is unavailable"
+retrieval_queries:
+  - "water consumption all areas water stress megaliters"
+  - "water consumption withdrawal minus discharge water storage"
+good_evidence_hints:
+  - "Look for water balance, consumption, withdrawal minus discharge, or water accounting tables"
+  - "Strong evidence explains whether figures are measured, calculated, estimated, or modeled"
+suggested_fix_template: |
+    Add total water consumption for all areas and water-stressed areas, disclose storage change
+    if significant, and explain the calculation or measurement methodology.

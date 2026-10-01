@@ -1,0 +1,22 @@
+id: "404-3"
+standard: "GRI 404: Training and Education 2016"
+title: "Percentage of employees receiving regular performance and career development reviews"
+category: topic
+requirement_text: |
+    Report the percentage of total employees, by gender and by employee category, who received a regular
+    performance and career development review during the reporting period.
+required_elements:
+  - id: review_percentage
+    desc: "Percentage of employees who received a regular performance and career development review"
+  - id: breakdown_by_gender_and_category
+    desc: "Breakdown of the percentage by gender and by employee category"
+retrieval_queries:
+  - "percentage employees performance career development review gender category"
+  - "performance review appraisal employees percentage by category"
+  - "regular performance development review coverage employees"
+good_evidence_hints:
+  - "Look in performance management or talent development sections for review-coverage metrics"
+  - "Strong evidence gives the percentage reviewed, split by gender and employee category"
+suggested_fix_template: |
+    Add a metric reporting the percentage of employees who received a regular performance and career
+    development review, broken down by gender and by employee category.

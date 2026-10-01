@@ -1,0 +1,37 @@
+id: "11.8.4"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Oil sands tailings facilities management"
+category: sector
+requirement_text: |
+  Under Topic 11.8 Asset integrity and critical incident management, for organizations with oil
+  sands mining operations, the organization must list its tailings facilities; for each facility
+  describe it, report whether it is active, inactive, or closed, and report the date and main
+  findings of the most recent risk assessment; and describe actions taken to manage impacts
+  (including during closure and post-closure) and to prevent catastrophic failures.
+required_elements:
+  - id: list_tailings_facilities
+    desc: "list of the organization's tailings facilities"
+  - id: facility_description
+    desc: "for each tailings facility, a description of the facility"
+  - id: facility_status
+    desc: "for each facility, whether it is active, inactive, or closed"
+  - id: recent_risk_assessment
+    desc: "for each facility, the date and main findings of the most recent risk assessment"
+  - id: actions_to_manage_impacts
+    desc: "actions taken to manage impacts from tailings facilities, including during closure and post-closure"
+  - id: actions_to_prevent_catastrophic_failures
+    desc: "actions taken to prevent catastrophic failures of tailings facilities"
+retrieval_queries:
+  - "tailings facilities oil sands mining risk assessment active inactive closed"
+  - "tailings dam facility management catastrophic failure prevention oil sands"
+  - "oil sands tailings pond facility description status risk assessment findings"
+good_evidence_hints:
+  - "Look in the environmental or operational safety sections for a per-facility disclosure table covering description, status, and the date and key findings of the most recent independent risk assessment"
+  - "Strong evidence covers all owned or operated tailings facilities, describes the physical characteristics of each, and articulates specific measures to prevent dam failure and manage post-closure risks"
+suggested_fix_template: |
+  For each tailings facility associated with oil sands mining operations, disclose: (1) a
+  description of the facility (including location, capacity, and construction type); (2) its
+  current status — active, inactive, or closed; (3) the date and main findings of the most recent
+  risk assessment; (4) actions taken to manage environmental and safety impacts during operations,
+  closure, and post-closure; and (5) specific measures in place to prevent catastrophic failure.
+  If the organization has no oil sands mining operations, this should be stated explicitly.

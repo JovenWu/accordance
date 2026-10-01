@@ -1,0 +1,22 @@
+id: "2-18"
+standard: "GRI 2: General Disclosures 2021"
+title: "Evaluation of the performance of the highest governance body"
+category: universal
+requirement_text: |
+    Describe performance evaluation processes for the highest governance body's oversight
+    of impacts, whether evaluations are independent, their frequency, and actions taken.
+required_elements:
+  - id: evaluation_process
+    desc: "Processes for evaluating governance body performance on impact oversight"
+  - id: independence_and_frequency
+    desc: "Whether evaluations are independent and how often they occur"
+  - id: actions_taken
+    desc: "Actions taken in response to evaluations"
+retrieval_queries:
+  - "board performance evaluation sustainability oversight"
+  - "governance body evaluation independent frequency"
+good_evidence_hints:
+  - "Often in nomination committee or corporate governance section"
+suggested_fix_template: |
+    Add how the board is evaluated for sustainability/impact oversight, evaluation frequency,
+    independence, and resulting actions.

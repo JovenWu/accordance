@@ -1,0 +1,22 @@
+id: "205-1"
+standard: "GRI 205: Anti-corruption 2016"
+title: "Operations assessed for risks related to corruption"
+category: topic
+requirement_text: |
+    Report the total number and percentage of operations assessed for risks related to corruption, and
+    the significant risks related to corruption identified through the risk assessment.
+required_elements:
+  - id: operations_assessed
+    desc: "Total number and percentage of operations assessed for corruption-related risks"
+  - id: significant_risks_identified
+    desc: "Significant corruption-related risks identified through the risk assessment"
+retrieval_queries:
+  - "operations assessed risks related to corruption percentage"
+  - "corruption risk assessment operations significant risks identified"
+  - "anti-corruption risk assessment number percentage operations"
+good_evidence_hints:
+  - "Look in anti-corruption, ethics, or business integrity sections describing risk assessments"
+  - "Strong evidence gives the number/percentage of operations assessed and the risks found"
+suggested_fix_template: |
+    Add an anti-corruption section reporting the number and percentage of operations assessed for
+    corruption risks and the significant risks identified through those assessments.

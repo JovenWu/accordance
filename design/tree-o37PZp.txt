@@ -1,0 +1,1062 @@
+T: data-pencil-id="o37PZp"
+        data-pencil-name="HeroUI: Design System Components"
+        class="box-border w-[3116px] h-[3588px] absolute left-0 top-0 bg-[#F5F5F5]"
+      >
+lbl1 | text-[11px]/[normal] absolute left-[160px] top-[230px] text-[#71717A] font-medium text-left [z-index:0]
+  T: Accordion
+lbl2 | text-[11px]/[normal] absolute left-[160px] top-[510px] text-[#71717A] font-medium text-left [z-index:1]
+  T: Alerts
+lbl3 | text-[11px]/[normal] absolute left-[160px] top-[1611px] text-[#71717A] font-medium text-left [z-index:2]
+  T: Avatars
+lbl5 | text-[11px]/[normal] absolute left-[173px] top-[2071px] text-[#71717A] font-medium text-left [z-index:3]
+  T: Tabs
+lbl6 | text-[11px]/[normal] absolute left-[166px] top-[2317px] text-[#71717A] font-medium text-left [z-index:4]
+  T: Link
+lbl7 | text-[11px]/[normal] absolute left-[170px] top-[2479px] text-[#71717A] font-medium text-left [z-index:5]
+  T: Buttons
+lbl9 | text-[11px]/[normal] absolute left-[160px] top-[3282px] text-[#71717A] font-medium text-left [z-index:6]
+  T: Spinner
+lbl10 | text-[11px]/[normal] absolute left-[220px] top-[3282px] text-[#71717A] font-medium text-left [z-index:7]
+  T: Tooltip
+Accordion/Open | w-[480px] h-fit absolute left-[160px] top-[250px] flex flex-col gap-0 justify-start items-start [z-index:8]
+  Trigger | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px] justify-between items-center
+    Frame 5 | [flex:1_1_0] h-fit flex flex-row gap-[12px] justify-start items-start
+      T: ICON(shopping-bag)
+      Title | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: How do I place an order?
+    T: ICON(chevron-up)
+  Body | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[0px_16px_16px_16px] justify-start items-start
+    T: ICON(shopping-bag)
+    Content | text-[14px]/[normal] [flex:1_1_0] text-[#71717A] font-normal text-left
+      T: Browse our products, add items to your cart, and proceed to checkout. You'll need to
+              provide shipping and payment information to complete your purchase.
+  T: ICON(?)
+Avatar/Small | w-[32px] h-[32px] absolute left-[160px] top-[1631px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px] [z-index:9]
+  Initials | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: AS
+Avatar/Text | w-[40px] h-[40px] absolute left-[208px] top-[1627px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px] [z-index:10]
+  Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: AS
+Avatar/Large | w-[48px] h-[48px] absolute left-[264px] top-[1623px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px] [z-index:11]
+  Initials | text-[16px]/[normal] text-[#18181B] font-medium text-left
+    T: AS
+Avatar/Image | w-[40px] h-[40px] absolute left-[350px] top-[1627px] flex flex-row gap-0 justify-start items-start bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[9999px] [z-index:12]
+Link | w-fit h-fit absolute left-[166px] top-[2337px] flex flex-row gap-[4px] justify-start items-center [z-index:13]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Link text
+  T: ICON(external-link)
+Spinner | w-[24px] h-[24px] absolute left-[160px] top-[3302px] flex flex-row gap-0 justify-center items-center [z-index:14]
+  T: ICON(?)
+Tooltip | w-fit h-fit [box-shadow:0px_2px_8px_#0000000F] absolute left-[220px] top-[3302px] flex flex-row gap-0 p-[4px_8px] justify-start items-center bg-[#FFFFFF] rounded-[12px] [z-index:15]
+  Content | text-[12px]/[normal] text-[#18181B] font-normal text-left
+    T: Tooltip text
+Menu Item/Active | w-[240px] h-[36px] absolute left-[165px] top-[2972px] flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:16]
+  T: ICON(user)
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Profile
+Menu Item/Default | w-[240px] h-[36px] absolute left-[165px] top-[3022px] flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px] [z-index:17]
+  T: ICON(settings)
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Settings
+Accordion/Closed | w-[480px] h-fit absolute left-[160px] top-[380px] flex flex-col gap-0 justify-start items-start [z-index:18]
+  Trigger | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px] justify-between items-center
+    Frame 4 | [flex:1_1_0] h-fit flex flex-row gap-[12px] justify-start items-start
+      T: ICON(shopping-bag)
+      Title | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: How do I place an order?
+    T: ICON(chevron-down)
+  T: ICON(?)
+Alert/Default | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[530px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:19]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(info)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#18181B] font-medium text-left
+      T: New features available
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Check out our latest updates including dark mode support and improved accessibility
+              features.
+Alert/Accent | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[650px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:20]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(info)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#0485F7] font-medium text-left
+      T: Update available
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: A new version of the application is available. Please refresh to get the latest
+              features and bug fixes.
+  Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Refresh
+Alert/Success | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[780px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:21]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(circle-check)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#17C964] font-medium text-left
+      T: Payment successful
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Your payment of $49.99 has been processed. A confirmation email has been sent to your
+              inbox.
+  Button/Outline/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+      T: View receipt
+Alert/Warning | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[910px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:22]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(triangle-alert)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#F5A524] font-medium text-left
+      T: Storage almost full
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: You're using 90% of your storage quota. Consider upgrading your plan or removing
+              unused files to avoid service interruption.
+  Button/Outline/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+      T: Manage storage
+Alert/Danger | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[1060px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:23]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(circle-alert)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-[4px] justify-start items-start
+    Title | text-[14px]/[24px] text-[#FF383C] font-medium text-left
+      T: Unable to connect to server
+    Description | text-[14px]/[22px] w-full text-[#71717A] font-normal text-left
+      T: We're experiencing connection issues. Please try the following:
+      T: br />
+              •&nbsp;&nbsp;Check your internet connection
+      T: br />
+              •&nbsp;&nbsp;Refresh the page
+      T: br />
+              •&nbsp;&nbsp;Clear your browser cache
+  Button/Danger/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Retry
+Alert/Success Dismissible | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[1240px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-center bg-[#FFFFFF] rounded-[24px] [z-index:24]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(circle-check)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[normal] text-[#17C964] font-medium text-left
+      T: Profile updated successfully
+  Close | w-[24px] shrink-0 h-[24px] flex flex-row gap-0 justify-center items-center rounded-[6px]
+    T: ICON(x)
+Alert/Accent Loading | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[1310px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:25]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    Spinner | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center
+      T: ICON(?)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#0485F7] font-medium text-left
+      T: Processing your request
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Please wait while we sync your data. This may take a few moments.
+Alert/Warning Simple | w-[540px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[160px] top-[1410px] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:26]
+  Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+    T: ICON(triangle-alert)
+  Content | [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#F5A524] font-medium text-left
+      T: Scheduled maintenance
+    Description | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Our services will be unavailable on Sunday, March 15th from 2:00 AM to 6:00 AM UTC for
+              scheduled maintenance.
+Button/Primary/SM | w-fit h-[32px] absolute left-[170px] top-[2499px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:27]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Primary/MD | w-fit h-[36px] absolute left-[280px] top-[2499px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:28]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Primary/LG | w-fit h-[40px] absolute left-[400px] top-[2499px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:29]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Primary/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2499px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:30]
+  T: ICON(plus)
+Button/Primary/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2499px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:31]
+  T: ICON(plus)
+Button/Primary/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2499px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[24px] [z-index:32]
+  T: ICON(plus)
+Button/Secondary/SM | w-fit h-[32px] absolute left-[170px] top-[2549px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:33]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#0485F7] font-medium text-left
+    T: Button
+Button/Secondary/MD | w-fit h-[36px] absolute left-[280px] top-[2549px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:34]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#0485F7] font-medium text-left
+    T: Button
+Button/Secondary/LG | w-fit h-[40px] absolute left-[400px] top-[2549px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:35]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#0485F7] font-medium text-left
+    T: Button
+Button/Secondary/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2549px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:36]
+  T: ICON(plus)
+Button/Secondary/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2549px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:37]
+  T: ICON(plus)
+Button/Secondary/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2549px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:38]
+  T: ICON(plus)
+Button/Outline/SM | w-fit h-[32px] absolute left-[170px] top-[2649px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:39]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Outline/MD | w-fit h-[36px] absolute left-[280px] top-[2649px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:40]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Outline/LG | w-fit h-[40px] absolute left-[400px] top-[2649px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:41]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Outline/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2649px] flex flex-row gap-0 justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:42]
+  T: ICON(plus)
+Button/Outline/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2649px] flex flex-row gap-0 justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:43]
+  T: ICON(plus)
+Button/Outline/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2649px] flex flex-row gap-0 justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px] [z-index:44]
+  T: ICON(plus)
+Button/Ghost/SM | w-fit h-[32px] absolute left-[170px] top-[2699px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center rounded-[24px] [z-index:45]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Ghost/MD | w-fit h-[36px] absolute left-[280px] top-[2699px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center rounded-[24px] [z-index:46]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Ghost/LG | w-fit h-[40px] absolute left-[400px] top-[2699px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center rounded-[24px] [z-index:47]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Ghost/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2699px] flex flex-row gap-0 justify-center items-center rounded-[24px] [z-index:48]
+  T: ICON(plus)
+Button/Ghost/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2699px] flex flex-row gap-0 justify-center items-center rounded-[24px] [z-index:49]
+  T: ICON(plus)
+Button/Ghost/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2699px] flex flex-row gap-0 justify-center items-center rounded-[24px] [z-index:50]
+  T: ICON(plus)
+Button/Danger/SM | w-fit h-[32px] absolute left-[170px] top-[2749px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:51]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Danger/MD | w-fit h-[36px] absolute left-[280px] top-[2749px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:52]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Danger/LG | w-fit h-[40px] absolute left-[400px] top-[2749px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:53]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Button
+Button/Danger/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2749px] flex flex-row gap-0 justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:54]
+  T: ICON(plus)
+Button/Danger/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2749px] flex flex-row gap-0 justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:55]
+  T: ICON(plus)
+Button/Danger/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2749px] flex flex-row gap-0 justify-center items-center bg-[#FF383C] rounded-[24px] [z-index:56]
+  T: ICON(plus)
+Button/Danger Soft/SM | w-fit h-[32px] absolute left-[170px] top-[2799px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:57]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#FF383C] font-medium text-left
+    T: Button
+Button/Danger Soft/MD | w-fit h-[36px] absolute left-[280px] top-[2799px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:58]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#FF383C] font-medium text-left
+    T: Button
+Button/Danger Soft/LG | w-fit h-[40px] absolute left-[400px] top-[2799px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:59]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#FF383C] font-medium text-left
+    T: Button
+Button/Danger Soft/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2799px] flex flex-row gap-0 justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:60]
+  T: ICON(plus)
+Button/Danger Soft/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2799px] flex flex-row gap-0 justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:61]
+  T: ICON(plus)
+Button/Danger Soft/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2799px] flex flex-row gap-0 justify-center items-center bg-[#FF383C26] rounded-[24px] [z-index:62]
+  T: ICON(plus)
+div | text-[11px]/[normal] absolute left-[540px] top-[2479px] text-[#71717A] font-medium text-left [z-index:63]
+  T: Icon Only
+div | text-[11px]/[normal] absolute left-[740px] top-[2479px] text-[#71717A] font-medium text-left [z-index:64]
+  T: CloseButton
+Button/Tertiary/SM | w-fit h-[32px] absolute left-[170px] top-[2599px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:65]
+  T: ICON(plus)
+  Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Tertiary/MD | w-fit h-[36px] absolute left-[280px] top-[2599px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:66]
+  T: ICON(plus)
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Tertiary/LG | w-fit h-[40px] absolute left-[400px] top-[2599px] flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:67]
+  T: ICON(plus)
+  Label | text-[16px]/[normal] text-[#18181B] font-medium text-left
+    T: Button
+Button/Tertiary/Icon/SM | w-[32px] h-[32px] absolute left-[540px] top-[2599px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:68]
+  T: ICON(plus)
+Button/Tertiary/Icon/MD | w-[36px] h-[36px] absolute left-[590px] top-[2599px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:69]
+  T: ICON(plus)
+Button/Tertiary/Icon/LG | w-[40px] h-[40px] absolute left-[644px] top-[2599px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:70]
+  T: ICON(plus)
+Chip/Primary/Default/SM | w-fit h-fit absolute left-[166px] top-[1807px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:71]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Default/MD | w-fit h-fit absolute left-[204px] top-[1807px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:72]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Default/LG | w-fit h-fit absolute left-[252px] top-[1807px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:73]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Accent/SM | w-fit h-fit absolute left-[322px] top-[1807px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px] [z-index:74]
+  Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Primary/Accent/MD | w-fit h-fit absolute left-[360px] top-[1807px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#0485F7] rounded-[16px] [z-index:75]
+  Label | text-[12px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Primary/Accent/LG | w-fit h-fit absolute left-[408px] top-[1807px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#0485F7] rounded-[16px] [z-index:76]
+  Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Primary/Success/SM | w-fit h-fit absolute left-[478px] top-[1807px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#17C964] rounded-[16px] [z-index:77]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Success/MD | w-fit h-fit absolute left-[516px] top-[1807px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C964] rounded-[16px] [z-index:78]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Success/LG | w-fit h-fit absolute left-[564px] top-[1807px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#17C964] rounded-[16px] [z-index:79]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Warning/SM | w-fit h-fit absolute left-[634px] top-[1807px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#F5A524] rounded-[16px] [z-index:80]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Warning/MD | w-fit h-fit absolute left-[672px] top-[1807px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A524] rounded-[16px] [z-index:81]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Warning/LG | w-fit h-fit absolute left-[720px] top-[1807px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#F5A524] rounded-[16px] [z-index:82]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Primary/Danger/SM | w-fit h-fit absolute left-[790px] top-[1807px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#FF383C] rounded-[16px] [z-index:83]
+  Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Primary/Danger/MD | w-fit h-fit absolute left-[828px] top-[1807px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C] rounded-[16px] [z-index:84]
+  Label | text-[12px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Primary/Danger/LG | w-fit h-fit absolute left-[876px] top-[1807px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#FF383C] rounded-[16px] [z-index:85]
+  Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+    T: Chip
+Chip/Secondary/Default/SM | w-fit h-fit absolute left-[166px] top-[1842px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:86]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Secondary/Default/MD | w-fit h-fit absolute left-[204px] top-[1842px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:87]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Secondary/Default/LG | w-fit h-fit absolute left-[252px] top-[1842px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:88]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Secondary/Accent/SM | w-fit h-fit absolute left-[322px] top-[1842px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:89]
+  Label | text-[11px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Secondary/Accent/MD | w-fit h-fit absolute left-[360px] top-[1842px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:90]
+  Label | text-[12px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Secondary/Accent/LG | w-fit h-fit absolute left-[408px] top-[1842px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:91]
+  Label | text-[14px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Secondary/Success/SM | w-fit h-fit absolute left-[478px] top-[1842px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:92]
+  Label | text-[11px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Secondary/Success/MD | w-fit h-fit absolute left-[516px] top-[1842px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:93]
+  Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Secondary/Success/LG | w-fit h-fit absolute left-[564px] top-[1842px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:94]
+  Label | text-[14px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Secondary/Warning/SM | w-fit h-fit absolute left-[634px] top-[1842px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:95]
+  Label | text-[11px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Secondary/Warning/MD | w-fit h-fit absolute left-[672px] top-[1842px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:96]
+  Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Secondary/Warning/LG | w-fit h-fit absolute left-[720px] top-[1842px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:97]
+  Label | text-[14px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Secondary/Danger/SM | w-fit h-fit absolute left-[790px] top-[1842px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:98]
+  Label | text-[11px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Secondary/Danger/MD | w-fit h-fit absolute left-[828px] top-[1842px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:99]
+  Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Secondary/Danger/LG | w-fit h-fit absolute left-[876px] top-[1842px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:100]
+  Label | text-[14px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Soft/Default/SM | w-fit h-fit absolute left-[166px] top-[1877px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:101]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Soft/Default/MD | w-fit h-fit absolute left-[204px] top-[1877px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:102]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Soft/Default/LG | w-fit h-fit absolute left-[252px] top-[1877px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#EBEBEC] rounded-[16px] [z-index:103]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Soft/Accent/SM | w-fit h-fit absolute left-[322px] top-[1877px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F726] rounded-[16px] [z-index:104]
+  Label | text-[11px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Soft/Accent/MD | w-fit h-fit absolute left-[360px] top-[1877px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#0485F726] rounded-[16px] [z-index:105]
+  Label | text-[12px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Soft/Accent/LG | w-fit h-fit absolute left-[408px] top-[1877px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#0485F726] rounded-[16px] [z-index:106]
+  Label | text-[14px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Soft/Success/SM | w-fit h-fit absolute left-[478px] top-[1877px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#17C96426] rounded-[16px] [z-index:107]
+  Label | text-[11px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Soft/Success/MD | w-fit h-fit absolute left-[516px] top-[1877px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px] [z-index:108]
+  Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Soft/Warning/SM | w-fit h-fit absolute left-[634px] top-[1877px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#F5A52426] rounded-[16px] [z-index:109]
+  Label | text-[11px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Soft/Warning/MD | w-fit h-fit absolute left-[672px] top-[1877px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px] [z-index:110]
+  Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Soft/Warning/LG | w-fit h-fit absolute left-[720px] top-[1877px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#F5A52426] rounded-[16px] [z-index:111]
+  Label | text-[14px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Soft/Danger/MD | w-fit h-fit absolute left-[828px] top-[1877px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px] [z-index:112]
+  Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Soft/Danger/LG | w-fit h-fit absolute left-[876px] top-[1877px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center bg-[#FF383C26] rounded-[16px] [z-index:113]
+  Label | text-[14px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Tertiary/Default/SM | w-fit h-fit absolute left-[166px] top-[1912px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center rounded-[16px] [z-index:114]
+  Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Tertiary/Default/MD | w-fit h-fit absolute left-[204px] top-[1912px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center rounded-[16px] [z-index:115]
+  Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Tertiary/Default/LG | w-fit h-fit absolute left-[252px] top-[1912px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center rounded-[16px] [z-index:116]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Chip
+Chip/Tertiary/Accent/SM | w-fit h-fit absolute left-[322px] top-[1912px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center rounded-[16px] [z-index:117]
+  Label | text-[11px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Tertiary/Accent/MD | w-fit h-fit absolute left-[360px] top-[1912px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center rounded-[16px] [z-index:118]
+  Label | text-[12px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Tertiary/Accent/LG | w-fit h-fit absolute left-[408px] top-[1912px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center rounded-[16px] [z-index:119]
+  Label | text-[14px]/[normal] text-[#0485F7] font-medium text-left
+    T: Chip
+Chip/Tertiary/Success/SM | w-fit h-fit absolute left-[478px] top-[1912px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center rounded-[16px] [z-index:120]
+  Label | text-[11px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Tertiary/Success/MD | w-fit h-fit absolute left-[516px] top-[1912px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center rounded-[16px] [z-index:121]
+  Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Tertiary/Success/LG | w-fit h-fit absolute left-[564px] top-[1912px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center rounded-[16px] [z-index:122]
+  Label | text-[14px]/[normal] text-[#17C964] font-medium text-left
+    T: Chip
+Chip/Tertiary/Warning/SM | w-fit h-fit absolute left-[634px] top-[1912px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center rounded-[16px] [z-index:123]
+  Label | text-[11px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Tertiary/Warning/MD | w-fit h-fit absolute left-[672px] top-[1912px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center rounded-[16px] [z-index:124]
+  Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Tertiary/Warning/LG | w-fit h-fit absolute left-[720px] top-[1912px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center rounded-[16px] [z-index:125]
+  Label | text-[14px]/[normal] text-[#F5A524] font-medium text-left
+    T: Chip
+Chip/Tertiary/Danger/SM | w-fit h-fit absolute left-[790px] top-[1912px] flex flex-row gap-[2px] p-[2px_4px] justify-start items-center rounded-[16px] [z-index:126]
+  Label | text-[11px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Tertiary/Danger/MD | w-fit h-fit absolute left-[828px] top-[1912px] flex flex-row gap-[2px] p-[2px_8px] justify-start items-center rounded-[16px] [z-index:127]
+  Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+Chip/Tertiary/Danger/LG | w-fit h-fit absolute left-[876px] top-[1912px] flex flex-row gap-[2px] p-[4px_12px] justify-start items-center rounded-[16px] [z-index:128]
+  Label | text-[14px]/[normal] text-[#FF383C] font-medium text-left
+    T: Chip
+lbl3 | text-[11px]/[normal] absolute left-[163px] top-[1787px] text-[#71717A] font-medium text-left [z-index:129]
+  T: Chips
+Tab/Active | w-fit h-[32px] [box-shadow:0px_1px_3px_#0000000A] absolute left-[160px] top-[2100px] flex flex-row gap-0 p-[0px_16px] justify-center items-center bg-[#FFFFFF] rounded-[24px] [z-index:130]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Account
+Tab/Inactive | w-fit h-[32px] absolute left-[270px] top-[2100px] flex flex-row gap-0 p-[0px_16px] justify-center items-center rounded-[24px] [z-index:131]
+  Label | text-[14px]/[normal] text-[#71717A] font-medium text-left
+    T: Settings
+Tabs | w-[300px] h-[40px] absolute left-[380px] top-[2100px] flex flex-row gap-0 p-[4px] justify-start items-start bg-[#EBEBEC] rounded-[20px] [z-index:132]
+Menu Divider | w-[240px] h-fit absolute left-[442px] top-[3049px] flex flex-col gap-0 p-[4px_0px] justify-center items-center [z-index:133]
+  div | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+Menu Item/Danger | w-[240px] h-[36px] absolute left-[444px] top-[3002px] flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px] [z-index:134]
+  T: ICON(trash-2)
+  Label | text-[14px]/[normal] text-[#FF383C] font-normal text-left
+    T: Delete
+Menu Title | w-[240px] h-fit absolute left-[442px] top-[2967px] flex flex-row gap-0 p-[6px_8px] justify-start items-center [z-index:135]
+  Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+    T: Section
+Dropdown | w-[240px] h-[80px] [box-shadow:0px_4px_12px_#00000014] absolute left-[160px] top-[3104px] flex flex-col gap-[4px] p-[4px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:136]
+div | text-[11px]/[normal] absolute left-[165px] top-[2952px] text-[#71717A] font-medium text-left [z-index:137]
+  T: Dropdown Items
+div | text-[11px]/[normal] absolute left-[160px] top-[3084px] text-[#71717A] font-medium text-left [z-index:138]
+  T: Dropdown
+Tabs | w-fit h-[40px] absolute left-[160px] top-[2157px] flex flex-row gap-0 p-[4px] justify-start items-start bg-[#EBEBEC] rounded-[20px] [z-index:139]
+  Tab/Active | w-fit shrink-0 h-[32px] [box-shadow:0px_1px_3px_#0000000A] flex flex-row gap-0 p-[0px_16px] justify-center items-center bg-[#FFFFFF] rounded-[24px]
+    Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+      T: Account
+  Tab/Inactive | w-fit shrink-0 h-[32px] flex flex-row gap-0 p-[0px_16px] justify-center items-center rounded-[24px]
+    Label | text-[14px]/[normal] text-[#71717A] font-medium text-left
+      T: Settings
+  Tab/Inactive | w-fit shrink-0 h-[32px] flex flex-row gap-0 p-[0px_16px] justify-center items-center rounded-[24px]
+    Label | text-[14px]/[normal] text-[#71717A] font-medium text-left
+      T: Notifications
+  Tab/Inactive | w-fit shrink-0 h-[32px] flex flex-row gap-0 p-[0px_16px] justify-center items-center rounded-[24px]
+    Label | text-[14px]/[normal] text-[#71717A] font-medium text-left
+      T: Security
+div | text-[11px]/[normal] absolute left-[2372px] top-[2052px] text-[#71717A] font-medium text-left [z-index:140]
+  T: Alert Dialog
+AlertDialog/Danger | w-[400px] h-fit [box-shadow:0px_8px_24px_#00000018] absolute left-[2372px] top-[2072px] flex flex-col gap-0 p-[24px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:141]
+  Header | w-full h-fit shrink-0 flex flex-col gap-[12px] justify-start items-start relative [z-index:0]
+    Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#FF383C26] rounded-[9999px]
+      T: ICON(triangle-alert)
+    Heading | text-[16px]/[normal] text-[#18181B] font-medium text-left
+      T: Delete project permanently?
+  Body | w-full h-fit shrink-0 flex flex-col gap-0 p-[8px_0px_0px_0px] justify-start items-start relative [z-index:1]
+    Content | text-[14px]/[20px] w-full text-[#71717A] font-normal text-left
+      T: This will permanently delete My Awesome Project and all of its data. This action
+              cannot be undone.
+  Footer | w-full h-fit shrink-0 flex flex-row gap-[8px] p-[20px_0px_0px_0px] justify-end items-start relative [z-index:2]
+    cancelBtn | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+        T: Cancel
+    dangerBtn | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Delete Project
+  CloseButton | w-[24px] h-[24px] absolute left-[362px] top-[14px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px] [z-index:3]
+    T: ICON(x)
+AlertDialog/Accent | w-[400px] h-fit [box-shadow:0px_8px_24px_#00000018] absolute left-[2372px] top-[2322px] flex flex-col gap-0 p-[24px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:142]
+  Header | w-full h-fit shrink-0 flex flex-col gap-[12px] justify-start items-start relative [z-index:0]
+    Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#0485F726] rounded-[9999px]
+      T: ICON(info)
+    Heading | text-[16px]/[normal] text-[#18181B] font-medium text-left
+      T: Sign out of your account?
+  Body | w-full h-fit shrink-0 flex flex-col gap-0 p-[8px_0px_0px_0px] justify-start items-start relative [z-index:1]
+    Content | text-[14px]/[20px] w-full text-[#71717A] font-normal text-left
+      T: You'll need to sign in again to access your account. Any unsaved changes will be lost.
+  Footer | w-full h-fit shrink-0 flex flex-row gap-[8px] p-[20px_0px_0px_0px] justify-end items-start relative [z-index:2]
+    Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+        T: Stay Signed In
+    Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Sign Out
+  CloseButton | w-[24px] h-[24px] absolute left-[362px] top-[14px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px] [z-index:3]
+    T: ICON(x)
+CloseButton | w-[24px] h-[24px] absolute left-[741px] top-[2507px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px] [z-index:143]
+  T: ICON(x)
+div | text-[11px]/[normal] absolute left-[2367px] top-[2691px] text-[#71717A] font-medium text-left [z-index:144]
+  T: Modal
+Modal Header | w-[160px] h-fit absolute left-[2367px] top-[2725px] flex flex-col gap-[12px] justify-start items-start [z-index:145]
+  Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+    T: ICON(rocket)
+  Heading | text-[16px]/[normal] text-[#18181B] font-medium text-left
+    T: Modal Heading
+Modal Body | w-[320px] h-fit absolute left-[2367px] top-[2823px] flex flex-col gap-0 justify-start items-start [z-index:146]
+  Content | text-[14px]/[20px] w-full text-[#71717A] font-normal text-left
+    T: This is the modal body content. You can place any content here.
+Modal Footer | w-[160px] h-fit absolute left-[2367px] top-[2888px] flex flex-row gap-[8px] justify-end items-start [z-index:147]
+  Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+      T: Cancel
+  Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Confirm
+Modal | w-[400px] h-[200px] [box-shadow:0px_8px_24px_#00000018] absolute left-[2367px] top-[2982px] flex flex-col gap-0 p-[24px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:148]
+div | text-[11px]/[normal] absolute left-[2367px] top-[3212px] text-[#71717A] font-medium text-left [z-index:149]
+  T: Example modal
+Modal Example | w-[400px] h-fit [box-shadow:0px_8px_24px_#00000018] absolute left-[2367px] top-[3232px] flex flex-col gap-0 p-[24px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:150]
+  exHeader | w-full h-fit shrink-0 flex flex-col gap-[12px] justify-start items-start relative [z-index:0]
+    Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#0485F726] rounded-[9999px]
+      T: ICON(folder-plus)
+    Heading | text-[16px]/[normal] text-[#18181B] font-medium text-left
+      T: Create new project
+  exBody | w-full h-fit shrink-0 flex flex-col gap-0 p-[8px_0px_0px_0px] justify-start items-start relative [z-index:1]
+    Content | text-[14px]/[20px] w-full text-[#71717A] font-normal text-left
+      T: Enter a name for your new project. You can change this later in your project settings.
+  exFooter | w-full h-fit shrink-0 flex flex-row gap-[8px] p-[20px_0px_0px_0px] justify-end items-start relative [z-index:2]
+    Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+        T: Cancel
+    Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Confirm
+  exClose | w-[24px] h-[24px] absolute left-[348px] top-[24px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px] [z-index:3]
+    T: ICON(x)
+div | text-[20px]/[normal] absolute left-[1286px] top-[397px] text-[#18181B] font-semibold text-left [z-index:151]
+  T: Table
+div | text-[11px]/[normal] absolute left-[1286px] top-[437px] text-[#71717A] font-medium text-left [z-index:152]
+  T: Table Column
+Table Column | w-fit h-fit absolute left-[1286px] top-[457px] flex flex-row gap-0 p-[10px_16px] justify-start items-center bg-[#EFEFF0] [z-index:153]
+  Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+    T: Column
+div | text-[11px]/[normal] absolute left-[1466px] top-[437px] text-[#71717A] font-medium text-left [z-index:154]
+  T: Table Cell
+Table Cell | w-fit h-fit absolute left-[1466px] top-[457px] flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7] [z-index:155]
+  Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Cell value
+div | text-[11px]/[normal] absolute left-[1646px] top-[437px] text-[#71717A] font-medium text-left [z-index:156]
+  T: Table Row
+Table Row | w-[600px] h-[42px] absolute left-[1646px] top-[457px] flex flex-row gap-0 justify-start items-start [z-index:157]
+div | text-[11px]/[normal] absolute left-[1286px] top-[517px] text-[#71717A] font-medium text-left [z-index:158]
+  T: Table Header
+Table Header | w-[600px] h-[36px] absolute left-[1286px] top-[537px] flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7] [z-index:159]
+div | text-[11px]/[normal] absolute left-[1286px] top-[597px] text-[#71717A] font-medium text-left [z-index:160]
+  T: Table Body
+Table Body | w-[600px] h-[120px] absolute left-[1286px] top-[617px] flex flex-col gap-0 justify-start items-start rounded-[16px] overflow-hidden [z-index:161]
+div | text-[11px]/[normal] absolute left-[1286px] top-[769px] text-[#71717A] font-medium text-left [z-index:162]
+  T: Table Footer
+Table Footer | w-[600px] h-fit absolute left-[1286px] top-[789px] flex flex-row gap-0 p-[10px_16px] justify-between items-center [z-index:163]
+  Summary | text-[13px]/[normal] text-[#71717A] font-normal text-left
+    T: 1-5 of 24
+div | text-[11px]/[normal] absolute left-[1286px] top-[849px] text-[#71717A] font-medium text-left [z-index:164]
+  T: Pagination
+Pagination/Active | w-[36px] h-[36px] absolute left-[1286px] top-[869px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px] [z-index:165]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: 1
+Pagination/Default | w-[36px] h-[36px] absolute left-[1336px] top-[869px] flex flex-row gap-0 justify-center items-center rounded-[24px] [z-index:166]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: 2
+Pagination/Ellipsis | w-[36px] h-[36px] absolute left-[1386px] top-[869px] flex flex-row gap-0 justify-center items-center [z-index:167]
+  div | text-[14px]/[normal] text-[#71717A] font-normal text-left
+    T: ...
+Pagination/Next | w-fit h-[36px] absolute left-[1436px] top-[869px] flex flex-row gap-[6px] p-[0px_10px] justify-center items-center rounded-[24px] [z-index:168]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Next
+  T: ICON(chevron-right)
+Pagination/Prev | w-fit h-[36px] absolute left-[1523px] top-[869px] flex flex-row gap-[6px] p-[0px_10px] justify-center items-center rounded-[24px] [z-index:169]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Previous
+  T: ICON(chevron-left)
+div | text-[11px]/[normal] absolute left-[1286px] top-[929px] text-[#71717A] font-medium text-left [z-index:170]
+  T: Table Container (slot)
+Table | w-[700px] h-[300px] absolute left-[1286px] top-[949px] flex flex-col gap-0 p-[0px_4px_4px_4px] justify-start items-start bg-[#EFEFF0] rounded-[20px] overflow-hidden [z-index:171]
+div | text-[11px]/[normal] absolute left-[1286px] top-[1288px] text-[#71717A] font-medium text-left [z-index:172]
+  T: Example
+tableEx | w-[700px] h-fit absolute left-[1286px] top-[1314px] flex flex-col gap-0 p-[0px_4px_4px_4px] justify-start items-start bg-[#EFEFF0] rounded-[20px] overflow-hidden [z-index:173]
+  header | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+    hc1 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[10px_16px] justify-start items-center bg-[#EFEFF0]
+      Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+        T: Name
+    hc2 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[10px_16px] justify-start items-center bg-[#EFEFF0]
+      Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+        T: Status
+    hc3 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[10px_16px] justify-start items-center bg-[#EFEFF0]
+      Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+        T: Role
+    hc4 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[10px_16px] justify-start items-center bg-[#EFEFF0]
+      Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+        T: Email
+  body | w-full h-fit shrink-0 flex flex-col gap-0 justify-start items-start rounded-[16px] overflow-hidden
+    r1 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: John Doe
+      c2 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Developer
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: john@example.com
+    r2 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Jane Smith
+      c6 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Warning/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#F5A524] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#18181B] font-medium text-left
+            T: Inactive
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Designer
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: jane@example.com
+    r3 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Bob Wilson
+      c10 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Manager
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: bob@example.com
+    r3 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Bob Wilson
+      c10 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Manager
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: bob@example.com
+    r3 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Bob Wilson
+      c10 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Manager
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: bob@example.com
+    r3 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Bob Wilson
+      c10 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Manager
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: bob@example.com
+    r3 | w-full h-fit shrink-0 flex flex-row gap-0 justify-start items-start
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Bob Wilson
+      c10 | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Chip/Primary/Accent/SM | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[11px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Active
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Manager
+      Table Cell | [flex:1_1_0] h-fit flex flex-row gap-0 p-[12px_16px] justify-start items-center bg-[#FFFFFF] [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#E4E4E7]
+        Value | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: bob@example.com
+  Footer | w-full h-fit shrink-0 flex flex-row gap-0 p-[10px_16px] justify-between items-center
+    div | text-[13px]/[normal] text-[#71717A] font-normal text-left
+      T: 1-3 of 24 rows
+    Pagination | w-fit shrink-0 h-fit flex flex-row gap-[4px] justify-start items-center
+      Pagination/Prev | w-fit shrink-0 h-[36px] opacity-[0.5] flex flex-row gap-[6px] p-[0px_10px] justify-center items-center rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: Previous
+        T: ICON(chevron-left)
+      Pagination/Active | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: 1
+      p2 | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: 2
+      p3 | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: 3
+      Pagination/Ellipsis | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center
+        div | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: ...
+      p5 | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: 5
+      Pagination/Next | w-fit shrink-0 h-[36px] flex flex-row gap-[6px] p-[0px_10px] justify-center items-center rounded-[24px]
+        Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: Next
+        T: ICON(chevron-right)
+div | text-[20px]/[normal] absolute left-[1286px] top-[1870px] text-[#18181B] font-semibold text-left [z-index:174]
+  T: Card
+div | text-[11px]/[normal] absolute left-[1286px] top-[1910px] text-[#71717A] font-medium text-left [z-index:175]
+  T: Card Header
+Card Header | w-[320px] h-fit absolute left-[1286px] top-[1930px] flex flex-col gap-0 justify-start items-start [z-index:176]
+  Title | text-[14px]/[24px] text-[#18181B] font-medium text-left
+    T: Card Title
+  Description | text-[14px]/[20px] text-[#71717A] font-normal text-left
+    T: Card description text goes here.
+div | text-[11px]/[normal] absolute left-[1286px] top-[2000px] text-[#71717A] font-medium text-left [z-index:177]
+  T: Card Content
+Card Content | w-[320px] h-fit absolute left-[1286px] top-[2020px] flex flex-col gap-[4px] justify-start items-start [z-index:178]
+  Content | text-[14px]/[20px] text-[#71717A] font-normal text-left
+    T: Card body content area.
+div | text-[11px]/[normal] absolute left-[1286px] top-[2082px] text-[#71717A] font-medium text-left [z-index:179]
+  T: Card Footer
+Card Footer | w-[320px] h-fit absolute left-[1286px] top-[2102px] flex flex-row gap-[8px] justify-start items-center [z-index:180]
+  Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+      T: Cancel
+  Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+    Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Submit
+div | text-[11px]/[normal] absolute left-[1286px] top-[2181px] text-[#71717A] font-medium text-left [z-index:181]
+  T: Surface
+Card/Default | w-[320px] h-[120px] [box-shadow:0px_2px_4px_#0000000A] absolute left-[1286px] top-[2201px] flex flex-col gap-[12px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:182]
+Card/Secondary | w-[320px] h-[120px] [box-shadow:0px_2px_4px_#0000000A] absolute left-[1636px] top-[2201px] flex flex-col gap-[12px] p-[16px] justify-start items-start bg-[#EFEFF0] rounded-[24px] [z-index:183]
+Card/Tertiary | w-[320px] h-[120px] [box-shadow:0px_2px_4px_#0000000A] absolute left-[1286px] top-[2377px] flex flex-col gap-[12px] p-[16px] justify-start items-start bg-[#EAEAEB] rounded-[24px] [z-index:184]
+Card/Transparent | w-[320px] h-[120px] absolute left-[1636px] top-[2377px] flex flex-col gap-[12px] p-[16px] justify-start items-start rounded-[24px] [z-index:185]
+div | text-[10px]/[normal] absolute left-[1286px] top-[2331px] text-[#71717A] font-medium text-left [z-index:186]
+  T: default
+div | text-[10px]/[normal] absolute left-[1636px] top-[2331px] text-[#71717A] font-medium text-left [z-index:187]
+  T: secondary
+div | text-[10px]/[normal] absolute left-[1286px] top-[2507px] text-[#71717A] font-medium text-left [z-index:188]
+  T: tertiary
+div | text-[10px]/[normal] absolute left-[1636px] top-[2507px] text-[#71717A] font-medium text-left [z-index:189]
+  T: transparent
+div | text-[11px]/[normal] absolute left-[1286px] top-[2672px] text-[#71717A] font-medium text-left [z-index:190]
+  T: Examples
+ex1 | w-[320px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[1286px] top-[2692px] flex flex-col gap-[12px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:191]
+  ex1h | w-full h-fit shrink-0 flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#18181B] font-medium text-left
+      T: Notifications
+    Description | text-[14px]/[20px] text-[#71717A] font-normal text-left
+      T: Manage your notification preferences.
+  ex1c | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start
+    div | text-[14px]/[20px] w-full text-[#71717A] font-normal text-left
+      T: Choose which notifications you'd like to receive and how you'd like to be notified.
+  ex1f | w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+    Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+        T: Cancel
+    Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Submit
+ex2 | w-[320px] h-fit [box-shadow:0px_2px_4px_#0000000A] absolute left-[1636px] top-[2692px] flex flex-col gap-[12px] p-[16px] justify-start items-start bg-[#EFEFF0] rounded-[24px] [z-index:192]
+  ex2h | w-full h-fit shrink-0 flex flex-col gap-0 justify-start items-start
+    Title | text-[14px]/[24px] text-[#18181B] font-medium text-left
+      T: Team Members
+    Description | text-[14px]/[20px] text-[#71717A] font-normal text-left
+      T: Invite and manage your team.
+  ex2f | w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+    Button/Tertiary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+        T: Cancel
+    Button/Primary/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+      Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Submit
+div | text-[10px]/[normal] absolute left-[2367px] top-[281px] text-[#71717A] font-medium text-left [z-index:193]
+  T: TextField
+Input/Secondary | w-[280px] h-fit absolute left-[2689px] top-[301px] flex flex-col gap-[4px] justify-start items-start [z-index:194]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Email
+  Input | w-full h-[40px] shrink-0 flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#EBEBEC] rounded-[12px]
+    Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+      T: you@example.com
+  Description Wrap | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    Description | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: We'll never share your email.
+div | text-[11px]/[normal] absolute left-[2367px] top-[471px] text-[#71717A] font-medium text-left [z-index:195]
+  T: Textarea
+Textarea/Primary | w-[280px] h-fit absolute left-[2367px] top-[491px] flex flex-col gap-[4px] justify-start items-start [z-index:196]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Message
+  Textarea | w-full h-[80px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-col gap-0 p-[8px_12px] justify-start items-start bg-[#FFFFFF] rounded-[12px]
+    Placeholder | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Type your message...
+  taDescW | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    div | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: Max 500 characters.
+Textarea/Secondary | w-[280px] h-fit absolute left-[2689px] top-[491px] flex flex-col gap-[4px] justify-start items-start [z-index:197]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Message
+  Textarea | w-full h-[80px] shrink-0 flex flex-col gap-0 p-[8px_12px] justify-start items-start bg-[#EBEBEC] rounded-[12px]
+    Placeholder | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: Type your message...
+  taDescWS | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    div | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: Max 500 characters.
+div | text-[11px]/[normal] absolute left-[2367px] top-[681px] text-[#71717A] font-medium text-left [z-index:198]
+  T: NumberField
+NumberField/Primary | w-[280px] h-fit absolute left-[2367px] top-[701px] flex flex-col gap-[4px] justify-start items-start [z-index:199]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Quantity
+  Group | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-start items-center bg-[#FFFFFF] rounded-[12px] overflow-hidden
+    Decrement | w-[40px] shrink-0 h-full flex flex-row gap-0 justify-center items-center [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#00000008]
+      T: ICON(minus)
+    Input | [flex:1_1_0] h-full flex flex-row gap-0 p-[0px_12px] justify-start items-center
+      div | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: 1
+    Increment | w-[40px] shrink-0 h-full flex flex-row gap-0 justify-center items-center [border-width:0px_0px_0px_1px] [border-style:solid] [border-color:#00000008]
+      T: ICON(plus)
+NumberField/Secondary | w-[280px] h-fit absolute left-[2689px] top-[701px] flex flex-col gap-[4px] justify-start items-start [z-index:200]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Quantity
+  Group | w-full h-[36px] shrink-0 flex flex-row gap-0 justify-start items-center bg-[#EBEBEC] rounded-[12px] overflow-hidden
+    Decrement | w-[40px] shrink-0 h-full flex flex-row gap-0 justify-center items-center [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#00000008]
+      T: ICON(minus)
+    Input | [flex:1_1_0] h-full flex flex-row gap-0 p-[0px_12px] justify-start items-center
+      div | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: 1
+    Increment | w-[40px] shrink-0 h-full flex flex-row gap-0 justify-center items-center [border-width:0px_0px_0px_1px] [border-style:solid] [border-color:#00000008]
+      T: ICON(plus)
+div | text-[11px]/[normal] absolute left-[2367px] top-[841px] text-[#71717A] font-medium text-left [z-index:201]
+  T: SearchField
+SearchField/Primary | w-[280px] h-fit absolute left-[2367px] top-[861px] flex flex-col gap-[4px] justify-start items-start [z-index:202]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Search
+  Group | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[0px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+    Frame 2 | [flex:1_1_0] h-fit flex flex-row gap-[6px] justify-start items-start
+      T: ICON(search)
+      Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+        T: Search...
+    sfClear | w-[20px] shrink-0 h-[20px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+      T: ICON(x)
+SearchField/Secondary | w-[280px] h-fit absolute left-[2689px] top-[861px] flex flex-col gap-[4px] justify-start items-start [z-index:203]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Search
+  Group | w-full h-[36px] shrink-0 flex flex-row gap-0 p-[0px_12px] justify-start items-center bg-[#EBEBEC] rounded-[12px]
+    Frame 1 | [flex:1_1_0] h-fit flex flex-row gap-[6px] justify-start items-start
+      T: ICON(search)
+      Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+        T: Search...
+    sfClearS | w-[20px] shrink-0 h-[20px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+      T: ICON(x)
+div | text-[11px]/[normal] absolute left-[2367px] top-[1001px] text-[#71717A] font-medium text-left [z-index:204]
+  T: Select
+Select/Primary | w-[280px] h-fit absolute left-[2367px] top-[1021px] flex flex-col gap-[4px] justify-start items-start [z-index:205]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Country
+  Trigger | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px] relative
+    Value | text-[14px]/[normal] text-[#71717A] font-normal text-left relative [z-index:0]
+      T: Select option...
+    T: ICON(chevron-down)
+  selDescW | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    div | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: Choose your country.
+Select/Secondary | w-[280px] h-fit absolute left-[2689px] top-[1021px] flex flex-col gap-[4px] justify-start items-start [z-index:206]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Country
+  Trigger | w-full h-[36px] shrink-0 flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#EBEBEC] rounded-[12px] relative
+    Value | text-[14px]/[normal] text-[#71717A] font-normal text-left relative [z-index:0]
+      T: Select option...
+    T: ICON(chevron-down)
+  selDescWS | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    div | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: Choose your country.
+div | text-[11px]/[normal] absolute left-[2367px] top-[1171px] text-[#71717A] font-medium text-left [z-index:207]
+  T: InputOTP
+InputOTP/Primary | w-[280px] h-fit absolute left-[2367px] top-[1191px] flex flex-col gap-[4px] justify-start items-start [z-index:208]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Verification Code
+  Group | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+    Slot | w-[38px] shrink-0 h-[40px] [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[12px]
+      div | text-[18px]/[normal] text-[#18181B] font-semibold text-left
+        T: 4
+    Slot | w-[38px] shrink-0 h-[40px] [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[12px]
+      div | text-[18px]/[normal] text-[#18181B] font-semibold text-left
+        T: 2
+    Slot Empty | w-[38px] shrink-0 h-[40px] [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[12px]
+    Separator | w-[6px] shrink-0 h-[2px] flex flex-row gap-0 justify-start items-start bg-[#E4E4E7] rounded-[2px]
+    Slot Empty | w-[38px] shrink-0 h-[40px] [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[12px]
+    Slot Empty | w-[38px] shrink-0 h-[40px] [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[12px]
+InputOTP/Secondary | w-[280px] h-fit absolute left-[2689px] top-[1191px] flex flex-col gap-[4px] justify-start items-start [z-index:209]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Verification Code
+  Group | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+    Slot | w-[38px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+    Slot | w-[38px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+    Slot | w-[38px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+    Separator | w-[6px] shrink-0 h-[2px] flex flex-row gap-0 justify-start items-start bg-[#E4E4E7] rounded-[2px]
+    Slot | w-[38px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+    Slot | w-[38px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+div | text-[11px]/[normal] absolute left-[2367px] top-[1341px] text-[#71717A] font-medium text-left [z-index:210]
+  T: Slider
+Slider | w-[280px] h-fit absolute left-[2367px] top-[1361px] flex flex-col gap-[4px] justify-start items-start [z-index:211]
+  Header | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+    Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+      T: Volume
+    Output | text-[14px]/[normal] text-[#18181B] font-medium text-left
+      T: 65%
+  div | relative w-[280.027px] h-[20.384px] shrink-0
+    Track | w-[280px] h-[20px] [transform:rotate(0.079deg)] [transform-origin:top_left] absolute left-[0.027px] top-0 bg-[#EBEBEC] rounded-[9999px]
+      Fill | w-[170px] h-[20px] absolute left-0 top-0 flex flex-row gap-0 justify-start items-start bg-[#0485F7] rounded-[9999px] [z-index:0]
+      Thumb | w-[26px] h-[20px] absolute left-[143px] top-0 rounded-[9999px] [z-index:1]
+        Thumb Inner | w-[24px] h-[16px] [box-shadow:0px_2px_4px_#0000000F] absolute left-[1px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FCFCFC] rounded-[9999px] [z-index:0]
+div | text-[11px]/[normal] absolute left-[2367px] top-[1501px] text-[#71717A] font-medium text-left [z-index:212]
+  T: Radio
+Radio/Selected | w-fit h-fit absolute left-[2367px] top-[1521px] flex flex-row gap-[12px] justify-start items-center [z-index:213]
+  Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[9999px]
+    Dot | w-[6px] shrink-0 h-[6px] bg-[#FCFCFC] rounded-full
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Option A
+Radio/Unselected | w-fit h-fit absolute left-[2489px] top-[1521px] flex flex-row gap-[12px] justify-start items-center [z-index:214]
+  Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] [border:1px_solid_#DEDEE0] rounded-[9999px]
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Option B
+div | text-[11px]/[normal] absolute left-[2367px] top-[1621px] text-[#71717A] font-medium text-left [z-index:215]
+  T: Switch
+Switch/Off | w-fit h-fit absolute left-[2367px] top-[1641px] flex flex-row gap-[12px] justify-start items-center [z-index:216]
+  Track | w-[40px] shrink-0 h-[20px] bg-[#EBEBEC] rounded-[9999px] relative
+    Thumb | w-[18px] h-[16px] [box-shadow:0px_1px_3px_#0000001A] absolute left-[2px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FFFFFF] rounded-[9999px] [z-index:0]
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Notifications
+Switch/On | w-fit h-fit absolute left-[2589px] top-[1641px] flex flex-row gap-[12px] justify-start items-center [z-index:217]
+  Track | w-[40px] shrink-0 h-[20px] bg-[#0485F7] rounded-[9999px] relative
+    Thumb | w-[18px] h-[16px] [box-shadow:0px_1px_3px_#0000001A] absolute left-[20px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FCFCFC] rounded-[9999px] [z-index:0]
+  Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+    T: Notifications
+div | text-[10px]/[normal] absolute left-[2367px] top-[1716px] text-[#71717A] font-medium text-left [z-index:218]
+  T: sm
+Switch/SM | w-[32px] h-[16px] absolute left-[2389px] top-[1714px] bg-[#0485F7] rounded-[9999px] [z-index:219]
+  Thumb | w-[14px] h-[12px] [box-shadow:0px_1px_2px_#0000001A] absolute left-[16px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FCFCFC] rounded-[9999px] [z-index:0]
+div | text-[10px]/[normal] absolute left-[2439px] top-[1716px] text-[#71717A] font-medium text-left [z-index:220]
+  T: md
+Switch/MD | w-[40px] h-[20px] absolute left-[2461px] top-[1712px] bg-[#0485F7] rounded-[9999px] [z-index:221]
+  Thumb | w-[18px] h-[16px] [box-shadow:0px_1px_3px_#0000001A] absolute left-[20px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FCFCFC] rounded-[9999px] [z-index:0]
+div | text-[10px]/[normal] absolute left-[2519px] top-[1716px] text-[#71717A] font-medium text-left [z-index:222]
+  T: lg
+Switch/LG | w-[48px] h-[24px] absolute left-[2541px] top-[1710px] bg-[#0485F7] rounded-[9999px] [z-index:223]
+  Thumb | w-[22px] h-[20px] [box-shadow:0px_1px_3px_#0000001A] absolute left-[24px] top-[2px] flex flex-row gap-0 justify-start items-start bg-[#FCFCFC] rounded-[9999px] [z-index:0]
+Input/Primary | w-[280px] h-fit absolute left-[2367px] top-[301px] flex flex-col gap-[4px] justify-start items-start [z-index:224]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Email
+  Input | w-full h-[40px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+    Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+      T: you@example.com
+  Description Wrap | w-fit h-fit shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    Description | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: We'll never share your email.
+lbl12 | text-[11px]/[normal] absolute left-[2367px] top-[1836px] text-[#71717A] font-medium text-left [z-index:225]
+  T: Checkbox
+Checkbox/Checked | w-fit h-fit absolute left-[2367px] top-[1863px] flex flex-row gap-[8px] justify-start items-center [z-index:226]
+  Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[6px]
+    T: ICON(check)
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Remember me
+Checkbox/Unchecked | w-fit h-fit absolute left-[2367px] top-[1903px] flex flex-row gap-[8px] justify-start items-center [z-index:227]
+  Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] [border:1px_solid_#DEDEE0] rounded-[6px]
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Remember me
+div | text-[20px]/[normal] absolute left-[2367px] top-[229px] text-[#18181B] font-semibold text-left [z-index:228]
+  T: Form Controls
+Checkbox/Indeterminate | w-fit h-fit absolute left-[2367px] top-[1944px] flex flex-row gap-[8px] justify-start items-center [z-index:229]
+  Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[6px]
+    T: ICON(minus)
+  Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+    T: Select all
+div | text-[20px]/[normal] absolute left-[161px] top-[87px] text-[#18181B] font-semibold text-left [z-index:230]
+  T: HeroUI Design System
+div | text-[12px]/[normal] absolute left-[160px] top-[117px] text-[#71717A] font-normal text-left [z-index:231]
+  T: Learn more www.heroui.com
+Frame | w-[209px] h-[64px] absolute left-[1531px] top-[64px] [z-index:232]
+  T: ICON(?)
+Dropdown | w-fit h-fit [box-shadow:0px_4px_12px_#00000014] absolute left-[448px] top-[3071px] flex flex-col gap-[4px] p-[4px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:233]
+  Menu Title | w-[240px] h-fit shrink-0 flex flex-row gap-0 p-[6px_8px] justify-start items-center
+    Label | text-[12px]/[normal] text-[#71717A] font-medium text-left
+      T: Actions
+  Menu Item/Default | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+    T: ICON(copy)
+    Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+      T: Duplicate
+  Menu Item/Default | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+    T: ICON(download)
+    Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+      T: Download
+  Menu Item/Default | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+    T: ICON(share-2)
+    Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+      T: Share
+  Menu Divider | w-[240px] h-fit shrink-0 flex flex-col gap-0 p-[4px_0px] justify-center items-center
+    div | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+  Menu Item/Danger | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+    T: ICON(trash-2)
+    Label | text-[14px]/[normal] text-[#FF383C] font-normal text-left
+      T: Delete
+T: div

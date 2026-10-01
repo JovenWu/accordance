@@ -1,0 +1,19 @@
+id: "2-28"
+standard: "GRI 2: General Disclosures 2021"
+title: "Membership associations"
+category: universal
+requirement_text: |
+    Report industry associations, membership associations, and advocacy organizations
+    where the organization participates in a significant role.
+required_elements:
+  - id: significant_memberships
+    desc: "Associations and advocacy organizations with significant participation"
+  - id: role_description
+    desc: "Nature of significant role, such as governance position, committee participation, or funding"
+retrieval_queries:
+  - "membership associations industry associations advocacy organizations"
+  - "memberships partnerships trade association sustainability"
+good_evidence_hints:
+  - "Often in partnerships, memberships, or stakeholder engagement section"
+suggested_fix_template: |
+    Add significant memberships and describe the organization's role in each association or advocacy body.

@@ -1,0 +1,31 @@
+id: "403-2"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Hazard identification, risk assessment, and incident investigation"
+category: topic
+requirement_text: |
+    Describe the processes used to identify work-related hazards and assess risks on a routine and
+    non-routine basis, and how the organization ensures the quality of these processes, including the
+    competency of the persons who carry them out. Describe how workers report work-related hazards and
+    hazardous situations and how they are protected against reprisals; the policies and processes for
+    workers to remove themselves from work situations they believe could cause injury or ill health;
+    and the processes used to investigate work-related incidents, including identifying hazards,
+    assessing risks, determining corrective actions, and determining improvements to the OHS management
+    system.
+required_elements:
+  - id: hazard_identification_process
+    desc: "Processes to identify hazards and assess risks (routine and non-routine) and how their quality/competency is ensured"
+  - id: worker_reporting_and_protection
+    desc: "How workers report hazards and remove themselves from danger, and protection against reprisals"
+  - id: incident_investigation
+    desc: "Processes to investigate incidents and determine corrective actions and improvements"
+retrieval_queries:
+  - "hazard identification risk assessment incident investigation occupational safety"
+  - "report hazards near miss investigation corrective action reprisal"
+  - "work-related hazards risk assessment incident investigation process"
+good_evidence_hints:
+  - "Look in OHS/HSE sections describing hazard identification, risk assessment, and incident processes"
+  - "Strong evidence covers hazard reporting, right to refuse unsafe work, and incident investigation"
+suggested_fix_template: |
+    Add a section describing how work-related hazards are identified and risks assessed, how workers
+    report hazards and remove themselves from danger without reprisal, and how incidents are
+    investigated and corrective actions determined.

@@ -1,0 +1,235 @@
+T: data-pencil-id="M6GrR"
+        data-pencil-name="Screen — Admin User Detail"
+        class="box-border w-[1440px] h-[900px] absolute left-[8220px] top-[5868px] flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden"
+      >
+sidebar | w-[264px] shrink-0 h-[900px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+  Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+    LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+      T: ICON(scan-search)
+    BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+      Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+        T: Lens
+      Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: GRI disclosure analysis
+  Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+    Nav Analyses | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+      T: ICON(layout-grid)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Analyses
+    Nav Users | w-[240px] h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+      T: ICON(users)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Users
+  Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+  User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+    Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+      Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: MC
+    User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+      User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: maya.chen
+      User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: 23 analyses · $58.41
+    T: ICON(log-out)
+main | [flex:1_1_0] h-full flex flex-col gap-0 justify-start items-start bg-[#F5F5F5]
+  content | w-full [flex:1_1_0] flex flex-col gap-[20px] p-[20px_32px_32px_32px] justify-start items-start
+    back | w-fit h-fit shrink-0 flex flex-row gap-[6px] justify-start items-center
+      T: ICON(arrow-left)
+      bt | text-[13px]/[normal] text-[#71717A] font-medium text-left
+        T: Users
+      bs | text-[13px]/[normal] text-[#71717A] font-normal text-left
+        T: / maya.chen
+    head | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+      hl | w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center
+        av | w-[40px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+          Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+            T: MC
+        ht | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+          t | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: maya.chen
+          role | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#0485F726] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#0485F7] font-medium text-left
+              T: Admin
+          st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+              T: Active
+      ha | w-fit shrink-0 h-fit flex flex-row gap-[8px] justify-start items-start
+        rp | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+          T: ICON(key-round)
+          Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Reset password
+        to | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+          T: ICON(shield-off)
+          Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Revoke admin
+        dis | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C26] rounded-[24px]
+          T: ICON(user-x)
+          Label | text-[13px]/[normal] text-[#FF383C] font-medium text-left
+            T: Disable
+    stats | w-full h-fit shrink-0 flex flex-row gap-[16px] justify-start items-start
+      stat Analyses | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Runs
+        v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+          T: 23
+        s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: completed analyses
+      stat Total spend | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Total spend
+        v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+          T: $58.41
+        s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: all time
+      stat Corrections | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Last active
+        v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+          T: Now
+        s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: latest completed run
+      stat Member since | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Member since
+        v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+          T: Jul 2025
+        s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: account created
+    low | w-full [flex:1_1_0] flex flex-row gap-[20px] justify-start items-start
+      recentcol | [flex:1_1_0] h-full flex flex-col gap-[12px] justify-start items-start
+        rt | text-[15px]/[normal] text-[#18181B] font-semibold text-left
+          T: Recent runs
+        rtable | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] overflow-hidden
+          thr | w-full h-[38px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#EFEFF0]
+            h Report | text-[12px]/[normal] [flex:1_1_0] text-[#71717A] font-medium text-left
+              T: PDF
+            h Status | text-[12px]/[normal] w-[104px] shrink-0 text-[#71717A] font-medium text-left
+              T: Status
+            h Cost | text-[12px]/[normal] w-[80px] shrink-0 text-[#71717A] font-medium text-left
+              T: Cost
+            h Date | text-[12px]/[normal] w-[110px] shrink-0 text-[#71717A] font-medium text-left
+              T: Date
+          r v4PT Meridian Energi Tbk | w-full h-[46px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+            rp | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+              T: PTM_SR2024.pdf
+            sc | w-[104px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c | text-[13px]/[normal] w-[80px] shrink-0 text-[#18181B] font-normal text-left
+              T: $1.20
+            d | text-[13px]/[normal] w-[110px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 28
+          s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+          r v2Samudra Agri Foods | w-full h-[46px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+            rp | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+              T: SAF_SR2024.pdf
+            sc | w-[104px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+                  T: In progress
+            c | text-[13px]/[normal] w-[80px] shrink-0 text-[#18181B] font-normal text-left
+              T: $2.15
+            d | text-[13px]/[normal] w-[110px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 30
+          s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+          r v1Aruna Coal Holdings | w-full h-[46px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+            rp | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+              T: ACH_AR2023.pdf
+            sc | w-[104px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c | text-[13px]/[normal] w-[80px] shrink-0 text-[#18181B] font-normal text-left
+              T: $1.87
+            d | text-[13px]/[normal] w-[110px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 26
+          s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+          r v3Banyu Mining Corp | w-full h-[46px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+            rp | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+              T: BMC_ESG2024.pdf
+            sc | w-[104px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+                  T: Failed
+            c | text-[13px]/[normal] w-[80px] shrink-0 text-[#18181B] font-normal text-left
+              T: $0.31
+            d | text-[13px]/[normal] w-[110px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 24
+          s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+          r v3PT Meridian Energi Tbk | w-full h-[46px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+            rp | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+              T: PTM_SR2024.pdf
+            sc | w-[104px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c | text-[13px]/[normal] w-[80px] shrink-0 text-[#18181B] font-normal text-left
+              T: $0.98
+            d | text-[13px]/[normal] w-[110px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 15
+      rightcol | w-[360px] shrink-0 h-fit flex flex-col gap-[16px] justify-start items-start
+        costkind | w-full h-fit shrink-0 flex flex-col gap-[10px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-medium text-left
+            T: Spend by run kind
+          k initial | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+            k | text-[12px]/[normal] w-[52px] shrink-0 text-[#71717A] font-normal text-left
+              T: initial
+            tb | [flex:1_1_0] h-[8px] flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] rounded-[4px] overflow-hidden
+              f | w-[220px] shrink-0 h-[8px] bg-[#0485F7]
+            v | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: $24.10
+          k update | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+            k | text-[12px]/[normal] w-[52px] shrink-0 text-[#71717A] font-normal text-left
+              T: update
+            tb | [flex:1_1_0] h-[8px] flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] rounded-[4px] overflow-hidden
+              f | w-[167px] shrink-0 h-[8px] bg-[#0485F7]
+            v | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: $18.22
+          k retry | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+            k | text-[12px]/[normal] w-[52px] shrink-0 text-[#71717A] font-normal text-left
+              T: retry
+            tb | [flex:1_1_0] h-[8px] flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] rounded-[4px] overflow-hidden
+              f | w-[86px] shrink-0 h-[8px] bg-[#0485F7]
+            v | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: $9.44
+          k fork | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+            k | text-[12px]/[normal] w-[52px] shrink-0 text-[#71717A] font-normal text-left
+              T: fork
+            tb | [flex:1_1_0] h-[8px] flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] rounded-[4px] overflow-hidden
+              f | w-[62px] shrink-0 h-[8px] bg-[#0485F7]
+            v | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: $6.65
+        daily | w-full h-fit shrink-0 flex flex-col gap-[10px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-medium text-left
+            T: Daily usage — last 7 days
+          bars | w-full h-[96px] shrink-0 flex flex-row gap-[8px] justify-start items-end
+            c W | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[28px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: W
+            c T | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[49px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: T
+            c F | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[39px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: F
+            c S | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[11px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: S
+            c S | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[7px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: S
+            c M | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[60px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: M
+            c T | [flex:1_1_0] h-full flex flex-col gap-[6px] justify-end items-center
+              b | w-full h-[43px] shrink-0 bg-[#0485F7] rounded-[3px]
+              d | text-[10px]/[normal] text-[#71717A] font-normal text-left
+                T: T
+T: div

@@ -1,0 +1,26 @@
+id: "303-2"
+standard: "GRI 303: Water and Effluents 2018"
+title: "Management of water discharge-related impacts"
+category: topic
+requirement_text: |
+    Describe minimum standards for effluent discharge quality and how these standards are determined,
+    including locations without local requirements, internal standards, sector standards, and receiving waterbody context.
+required_elements:
+  - id: effluent_quality_minimum_standards
+    desc: "Minimum standards set for effluent discharge quality"
+  - id: no_local_requirement_approach
+    desc: "How standards are determined where no local discharge requirements exist"
+  - id: internal_quality_standards
+    desc: "Internally developed water quality standards or guidelines"
+  - id: sector_specific_standards
+    desc: "Sector-specific standards considered"
+  - id: receiving_waterbody_profile
+    desc: "Whether receiving waterbody profile was considered"
+retrieval_queries:
+  - "effluent discharge quality standards receiving waterbody"
+  - "water discharge limits internal standards sector standards"
+good_evidence_hints:
+  - "Look for wastewater, effluent, discharge permit, treatment, or water quality sections"
+suggested_fix_template: |
+    Add a disclosure describing effluent discharge quality standards, how they are determined,
+    how sites without local requirements are handled, and whether receiving waterbody sensitivity is considered.

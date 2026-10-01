@@ -1,0 +1,20 @@
+id: "14.11.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Operations affecting Indigenous Peoples"
+category: sector
+requirement_text: |
+    Under Topic 14.11 Indigenous Peoples, the organization must report the locations of operations where Indigenous Peoples are present and affected, and the locations of proven reserves where Indigenous Peoples are present and affected.
+required_elements:
+  - id: locations_with_indigenous_peoples
+    desc: "Operations (mine sites) where Indigenous Peoples are present and affected"
+  - id: reserves_with_indigenous_peoples
+    desc: "Proven reserves where Indigenous Peoples are present and affected"
+retrieval_queries:
+  - "Indigenous Peoples operations mine sites present affected locations"
+  - "proven reserves Indigenous Peoples affected operations locations"
+  - "indigenous communities near mine sites operations reserves affected presence"
+good_evidence_hints:
+  - "Look for a list or map of mine sites or reserve areas where Indigenous Peoples are identified as present and potentially affected by operations"
+  - "Good evidence names specific operations and/or reserve areas where Indigenous Peoples are present and affected, rather than providing only a generic policy statement on indigenous rights"
+suggested_fix_template: |
+    Identify and disclose the specific mine sites and proven reserve areas where Indigenous Peoples are present and affected by the organization's operations. This should include both active operations and reserve areas under development or exploration.

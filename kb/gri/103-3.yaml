@@ -1,0 +1,32 @@
+id: "103-3"
+standard: "GRI 103: Energy 2025"
+title: "Upstream and downstream energy consumption"
+category: topic
+requirement_text: |
+    Report total significant energy consumption in the upstream and downstream value chain outside the
+    organization, broken down into upstream and downstream activities (such as purchased goods and
+    services, transportation and distribution, and the use of sold products). State which value-chain
+    categories are included, and the standards, methodologies, conversion factors, and assumptions
+    used. If upstream or downstream energy is not relevant, state so.
+required_elements:
+  - id: upstream_energy_consumption
+    desc: "Significant energy consumed in upstream value-chain activities"
+  - id: downstream_energy_consumption
+    desc: "Significant energy consumed in downstream value-chain activities"
+  - id: categories_and_boundaries
+    desc: "Which value-chain categories are included and the boundaries applied"
+  - id: methodologies_and_assumptions
+    desc: "Standards, methodologies, conversion factors, and assumptions used"
+retrieval_queries:
+  - "upstream downstream energy consumption value chain GJ MWh"
+  - "energy consumption outside organization use of sold products transportation"
+  - "value chain energy purchased goods distribution downstream"
+good_evidence_hints:
+  - "Look in value-chain or Scope 3-related energy sections"
+  - "Strong evidence quantifies upstream and downstream energy and lists the categories included"
+suggested_fix_template: |
+    Add an upstream/downstream energy section quantifying value-chain energy consumption, the
+    categories included, and the methodology and conversion factors used — or state that it is not
+    relevant.
+status: upcoming
+effective_date: "2027-01-01"

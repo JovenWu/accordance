@@ -1,0 +1,30 @@
+id: "2-27"
+standard: "GRI 2: General Disclosures 2021"
+title: "Compliance with laws and regulations"
+category: universal
+requirement_text: |
+    Report significant instances of non-compliance, fines and non-monetary sanctions,
+    fine values by period, descriptions of cases, and how significance was determined.
+required_elements:
+  - id: significant_non_compliance_count
+    desc: "Total significant non-compliance instances"
+  - id: fines_count
+    desc: "Instances where fines were incurred"
+  - id: non_monetary_sanctions_count
+    desc: "Instances where non-monetary sanctions were incurred"
+  - id: fines_value_current_period
+    desc: "Fines paid for current-period non-compliance"
+  - id: fines_value_previous_periods
+    desc: "Fines paid for previous-period non-compliance"
+  - id: case_descriptions
+    desc: "Description of significant non-compliance cases"
+  - id: significance_criteria
+    desc: "How significant non-compliance is determined"
+retrieval_queries:
+  - "non-compliance laws regulations fines sanctions"
+  - "legal compliance penalties significant non-compliance"
+good_evidence_hints:
+  - "May appear in compliance, legal proceedings, or ESG data tables"
+suggested_fix_template: |
+    Add a compliance disclosure with counts, fine values, sanctions, case descriptions,
+    and criteria used to define significant non-compliance.

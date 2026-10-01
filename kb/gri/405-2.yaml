@@ -1,0 +1,24 @@
+id: "405-2"
+standard: "GRI 405: Diversity and Equal Opportunity 2016"
+title: "Ratio of basic salary and remuneration of women to men"
+category: topic
+requirement_text: |
+    Report the ratio of the basic salary and remuneration of women to men for each employee category,
+    by significant locations of operation, and provide the definition used for 'significant locations of
+    operation'.
+required_elements:
+  - id: pay_ratio
+    desc: "Ratio of basic salary and remuneration of women to men, for each employee category"
+  - id: by_significant_location
+    desc: "Reported by significant locations of operation, with the definition used for that term"
+retrieval_queries:
+  - "ratio basic salary remuneration women to men employee category"
+  - "gender pay ratio women men by category location"
+  - "pay equity gender salary ratio significant locations"
+good_evidence_hints:
+  - "Look in pay equity, gender pay, or remuneration sections for women-to-men ratios"
+  - "Strong evidence gives the ratio by employee category and significant location"
+suggested_fix_template: |
+    Add a pay-equity metric reporting the ratio of women's to men's basic salary and remuneration by
+    employee category and significant location, with the definition of 'significant locations of
+    operation' used.

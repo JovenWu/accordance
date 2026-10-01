@@ -1,0 +1,23 @@
+id: "11.17.3"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Locations with indigenous peoples present or affected"
+category: sector
+requirement_text: |
+  Under Topic 11.17 Rights of indigenous peoples, the organization must list the locations of
+  operations where indigenous peoples are present or affected by activities of the organization.
+required_elements:
+  - id: locations_indigenous_peoples_present_or_affected
+    desc: "locations of operations where indigenous peoples are present or affected by the organization's activities"
+retrieval_queries:
+  - "indigenous peoples present affected oil gas operations locations"
+  - "First Nations Aboriginal traditional land oil gas operations locations list"
+  - "indigenous communities proximity oil gas activities affected locations"
+good_evidence_hints:
+  - "Look in the human rights or community engagement section for a list or map of operation sites near indigenous peoples' territories or where indigenous communities are identified as affected stakeholders"
+  - "Strong evidence names or describes each location and the indigenous peoples present, specifying whether they are present in the area or materially affected by operational activities"
+suggested_fix_template: |
+  List all locations of operations where indigenous peoples are present or are affected by the
+  organization's activities. For each location, identify the indigenous peoples or communities
+  involved and describe the nature of their presence or the activities that affect them. Where
+  operations are in proximity to recognized indigenous territories or lands, this should be
+  explicitly stated.

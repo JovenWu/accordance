@@ -1,0 +1,29 @@
+id: "304-3"
+standard: "GRI 304: Biodiversity 2016"
+title: "Habitats protected or restored"
+category: topic
+requirement_text: |
+    Report the size and location of all habitat areas protected or restored, whether restoration success was approved by independent external professionals, whether third-party partnerships exist, the status of each area, and the standards and methodologies used.
+required_elements:
+  - id: size_location_protected_restored
+    desc: "Size and location of all habitat areas protected or restored"
+  - id: external_approval
+    desc: "Whether restoration success was or is approved by independent external professionals"
+  - id: third_party_partnerships
+    desc: "Whether partnerships exist with third parties to protect or restore habitat areas distinct from those the organization has overseen"
+  - id: area_status
+    desc: "Status of each area based on its condition at the close of the reporting period"
+  - id: standards_methodologies
+    desc: "Standards, methodologies, and assumptions used"
+retrieval_queries:
+  - "habitats protected or restored size location restoration"
+  - "habitat restoration success independent external professionals partnerships"
+  - "area protected restored hectares status reporting period"
+good_evidence_hints:
+  - "Look for restoration or conservation projects with the size (e.g., hectares) and location of protected/restored habitat and current status"
+  - "Good evidence mentions independent/external verification of restoration success or third-party conservation partnerships"
+suggested_fix_template: |
+    Report the size and location of habitats protected or restored, whether success was approved by independent external professionals, whether third-party partnerships exist, the status of each area at period end, and the standards, methodologies, and assumptions used.
+status: superseded
+effective_until: "2025-12-31"
+superseded_by: "GRI 101: Biodiversity 2024"

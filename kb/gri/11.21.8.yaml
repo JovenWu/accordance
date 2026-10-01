@@ -1,0 +1,30 @@
+id: "11.21.8"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Oil and gas purchased from the state"
+category: sector
+requirement_text: |
+  Under Topic 11.21 Payments to governments, for oil and gas purchased from the state, or from
+  third parties appointed by the state to sell on their behalf, the organization must report the
+  volumes and types of oil and gas purchased, the full names of the buying entity and the
+  recipient of the payment, and the payments made for the purchase.
+required_elements:
+  - id: volumes_and_types_purchased
+    desc: "volumes and types of oil and gas purchased from the state or its appointed third-party sellers"
+  - id: buyer_and_payment_recipient_names
+    desc: "full names of the buying entity and the recipient of the payment"
+  - id: payments_for_purchase
+    desc: "payments made for the purchase"
+retrieval_queries:
+  - "oil gas purchased from state government volumes payments national oil company"
+  - "state-owned oil gas purchase volumes types payments made buyer recipient"
+  - "production sharing agreement oil lifting payments government state oil gas"
+good_evidence_hints:
+  - "Look in the payments to governments or extractive industry transparency section for disclosure of oil or gas lifted or purchased from state entities, with volumes, commodity type, and corresponding payment amounts"
+  - "Strong evidence names the buying entity (the reporting company's subsidiary or affiliate making the purchase) and the state recipient (e.g., national oil company or ministry), and states the volumes purchased and total payments made"
+suggested_fix_template: |
+  For each purchase of oil or gas from the state (or from a third party appointed by the state
+  to sell on its behalf), disclose: (1) the volume and type of oil or gas purchased (e.g., crude
+  oil in barrels, natural gas in MMBtu); (2) the full legal name of the buying entity within the
+  organization; (3) the full legal name of the state entity or appointed third party receiving
+  the payment; and (4) the total payments made for the purchase during the reporting period,
+  including currency.

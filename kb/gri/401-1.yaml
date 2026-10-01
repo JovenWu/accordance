@@ -1,0 +1,23 @@
+id: "401-1"
+standard: "GRI 401: Employment 2016"
+title: "New employee hires and employee turnover"
+category: topic
+requirement_text: |
+    Report the total number and rate of new employee hires during the reporting period, broken down by
+    age group, gender, and region, and the total number and rate of employee turnover during the
+    reporting period, broken down by age group, gender, and region.
+required_elements:
+  - id: new_hires
+    desc: "Total number and rate of new employee hires, by age group, gender, and region"
+  - id: turnover
+    desc: "Total number and rate of employee turnover, by age group, gender, and region"
+retrieval_queries:
+  - "new employee hires turnover rate age gender region"
+  - "employee turnover rate new hires by gender region"
+  - "workforce hires attrition turnover breakdown demographics"
+good_evidence_hints:
+  - "Look in workforce, people, or HR data tables for hires and turnover figures"
+  - "Strong evidence gives both number and rate, broken down by age, gender, and region"
+suggested_fix_template: |
+    Add a workforce section reporting the number and rate of new hires and of employee turnover, each
+    broken down by age group, gender, and region.

@@ -1,0 +1,20 @@
+id: "13.23.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Certified sourced volume traceability standards"
+requirement_text: |
+  Under Topic 13.23 Supply chain traceability, the organization must report the percentage of sourced volume certified to internationally recognized standards that trace the path of products through the supply chain, by product, and list these standards.
+required_elements:
+  - id: pct_certified_sourced_volume
+    desc: "Percentage of sourced volume certified to internationally recognized chain-of-custody / traceability standards, by product"
+  - id: list_standards
+    desc: "List of the internationally recognized traceability standards used"
+retrieval_queries:
+  - "certified sourced volume percentage internationally recognized traceability standards by product"
+  - "chain of custody certification percentage sourced volume product standard"
+  - "supply chain traceability certification MSC ASC Rainforest Alliance percentage sourced"
+good_evidence_hints:
+  - "Look for a product-level table showing the percentage of sourced volume covered by chain-of-custody or traceability certification schemes"
+  - "Good evidence names the specific internationally recognized standards used (e.g., MSC, ASC, Rainforest Alliance, RSPO) and provides coverage percentages by product"
+suggested_fix_template: |
+  Report, by product, the percentage of sourced volume certified to internationally recognized supply chain traceability standards, and list all standards to which sourced volumes are certified.

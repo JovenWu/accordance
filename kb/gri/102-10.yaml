@@ -1,0 +1,42 @@
+id: "102-10"
+standard: "GRI 102: Climate Change 2025"
+title: "Carbon credits"
+category: topic
+requirement_text: |
+    Report the carbon credits the organization has cancelled during the reporting period and
+    any it has purchased but not yet cancelled, in metric tons of CO2 equivalent. For the credits,
+    describe the project information (including project type and location); the quality criteria the
+    credits adhere to and how adherence is ensured; the purpose of the cancellation (e.g., toward
+    net zero, GHG targets, or claims); and the positive and negative impacts of the credit projects
+    on people and the environment, including how those impacts are monitored. If the organization
+    does not use carbon credits, state so.
+required_elements:
+  - id: credits_cancelled_tco2e
+    desc: "Carbon credits cancelled during the reporting period in tCO2e"
+  - id: credits_purchased_not_cancelled
+    desc: "Carbon credits purchased but not yet cancelled in tCO2e"
+  - id: project_information
+    desc: "Project information including project type and location"
+  - id: quality_criteria_adherence
+    desc: "Quality criteria the credits adhere to and how adherence is ensured"
+  - id: purpose_of_cancellation
+    desc: "Purpose of the cancellation (e.g., toward net zero, GHG targets, or specific claims)"
+  - id: impacts_positive_and_negative_monitoring
+    desc: "Positive and negative impacts of credit projects on people and the environment, and how impacts are monitored"
+retrieval_queries:
+  - "carbon credits cancelled retired tCO2e quality criteria project information"
+  - "carbon offset credits purchased not cancelled purpose cancellation net zero"
+  - "carbon credit project type location impacts monitoring quality standards"
+good_evidence_hints:
+  - "Look in 'Carbon credits', 'Offsets', or 'Carbon neutrality' sections"
+  - "Strong evidence states the volume of credits cancelled and purchased-not-cancelled, project type and location, and quality criteria (e.g., crediting program or standard, third-party verification)"
+  - "Optional detail may include registry name (e.g., Verra, Gold Standard) and vintage year"
+  - "Look for disclosure of the purpose of cancellation and both positive and negative impacts on people/environment"
+suggested_fix_template: |
+    Add a carbon credits section stating the volume of credits cancelled (tCO2e) and credits
+    purchased but not yet cancelled, project information (type and location), the quality criteria
+    adhered to and how adherence is ensured, the purpose of cancellation, and the positive and
+    negative impacts on people and the environment with the monitoring arrangements — or state
+    that none are used.
+status: upcoming
+effective_date: "2027-01-01"

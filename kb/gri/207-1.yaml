@@ -1,0 +1,30 @@
+id: "207-1"
+standard: "GRI 207: Tax 2019"
+title: "Approach to tax"
+category: topic
+requirement_text: |
+    Describe the organization's approach to tax, including whether it has a tax strategy and, if so, a
+    link to that strategy if publicly available; the governance body or executive-level position that
+    formally reviews and approves the tax strategy and the frequency of this review; the approach to
+    regulatory compliance; and how the approach to tax is linked to the business and to the sustainable
+    development strategies of the organization.
+required_elements:
+  - id: tax_strategy
+    desc: "Whether the organization has a tax strategy and a link to it if publicly available"
+  - id: strategy_approval
+    desc: "Governance body or executive position that reviews/approves the tax strategy and the review frequency"
+  - id: regulatory_compliance
+    desc: "The approach to regulatory compliance on tax"
+  - id: link_to_strategy
+    desc: "How the approach to tax links to the business and sustainable development strategies"
+retrieval_queries:
+  - "approach to tax strategy governance regulatory compliance"
+  - "tax strategy publicly available approved board review frequency"
+  - "tax approach linked business sustainable development strategy"
+good_evidence_hints:
+  - "Look in tax transparency, tax strategy, or tax policy sections of the report"
+  - "Strong evidence describes the strategy, who approves it, and its link to business/sustainability strategy"
+suggested_fix_template: |
+    Add a tax approach section describing whether a tax strategy exists (with a link if public), who
+    reviews and approves it and how often, the approach to regulatory compliance, and how tax links to
+    the business and sustainable development strategies.

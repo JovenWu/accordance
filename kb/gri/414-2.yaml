@@ -1,0 +1,31 @@
+id: "414-2"
+standard: "GRI 414: Supplier Social Assessment 2016"
+title: "Negative social impacts in the supply chain and actions taken"
+category: topic
+requirement_text: |
+    Report the number of suppliers assessed for social impacts; the number of suppliers identified as
+    having significant actual and potential negative social impacts; the significant actual and
+    potential negative social impacts identified in the supply chain; the percentage of suppliers
+    identified as having significant actual and potential negative social impacts with which
+    improvements were agreed upon as a result of assessment; and the percentage of such suppliers with
+    which relationships were terminated as a result of assessment, and why.
+required_elements:
+  - id: suppliers_assessed
+    desc: "Number of suppliers assessed for social impacts"
+  - id: suppliers_with_significant_impacts
+    desc: "Number of suppliers with significant actual/potential negative social impacts, and what those impacts are"
+  - id: improvements_agreed
+    desc: "Percentage of impacted suppliers with which improvements were agreed as a result of assessment"
+  - id: relationships_terminated
+    desc: "Percentage of impacted suppliers with which relationships were terminated, and why"
+retrieval_queries:
+  - "negative social impacts supply chain suppliers actions taken"
+  - "suppliers assessed social impacts significant improvements agreed terminated"
+  - "supply chain social assessment suppliers identified impacts labor"
+good_evidence_hints:
+  - "Look in supply chain due-diligence or responsible sourcing sections"
+  - "Strong evidence gives counts of suppliers assessed/flagged and the resulting actions"
+suggested_fix_template: |
+    Add a section reporting the number of suppliers assessed for social impacts, those with significant
+    negative impacts and what they are, and the percentage with which improvements were agreed or
+    relationships terminated as a result.

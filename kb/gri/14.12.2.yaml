@@ -1,0 +1,24 @@
+id: "14.12.2"
+standard: "GRI 14: Mining Sector 2024"
+title: "Involuntary resettlement"
+category: sector
+requirement_text: |
+    List the mine sites where involuntary resettlement is planned, ongoing, or has taken place. For each site, report the number of persons displaced (with a gender breakdown) and describe how peoples' livelihoods and human rights are or could be affected and restored.
+required_elements:
+  - id: resettlement_sites_list
+    desc: "List of mine sites where involuntary resettlement is planned, ongoing, or has taken place"
+  - id: persons_displaced_count
+    desc: "Number of persons who have been or will be displaced, per listed site"
+  - id: displaced_gender_breakdown
+    desc: "Breakdown of displaced persons by gender, per listed site"
+  - id: livelihoods_rights_impact_restoration
+    desc: "Description of how peoples' livelihoods and human rights are or could be affected and restored, per site"
+retrieval_queries:
+  - "involuntary resettlement mine sites persons displaced"
+  - "physical economic displacement relocation compensation livelihood restoration"
+  - "number of people resettled gender breakdown affected communities"
+good_evidence_hints:
+  - "Look in land/resource rights, community relations, or human rights sections for site-by-site resettlement tables with displaced-persons counts split by gender"
+  - "Good evidence names specific mine sites and describes livelihood/human-rights impacts and restoration measures (often referencing IFC Performance Standard 5)"
+suggested_fix_template: |
+    Add a section listing each mine site with planned, ongoing, or completed involuntary resettlement; for each, report the number of persons displaced broken down by gender and describe how their livelihoods and human rights are or could be affected and restored.

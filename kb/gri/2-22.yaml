@@ -1,0 +1,22 @@
+id: "2-22"
+standard: "GRI 2: General Disclosures 2021"
+title: "Statement on sustainable development strategy"
+category: universal
+requirement_text: |
+    Provide a statement from the highest governance body or most senior executive about
+    sustainable development relevance and the organization's strategy for contribution.
+required_elements:
+  - id: leadership_statement
+    desc: "Statement from highest governance body or most senior executive"
+  - id: sustainability_relevance
+    desc: "Relevance of sustainable development to the organization"
+  - id: contribution_strategy
+    desc: "Strategy for contributing to sustainable development"
+retrieval_queries:
+  - "CEO statement sustainable development strategy"
+  - "chairman statement sustainability strategy"
+good_evidence_hints:
+  - "Usually appears at the beginning of the sustainability report"
+suggested_fix_template: |
+    Add a leadership statement explaining why sustainable development matters to the organization
+    and how the strategy contributes to it.

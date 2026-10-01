@@ -1,0 +1,18 @@
+id: "12.11.3"
+standard: "GRI 12: Coal Sector 2022"
+title: "Locations where indigenous peoples are present or affected"
+category: sector
+requirement_text: |
+    Under Topic 12.11 Rights of indigenous peoples, the organization must list the locations of operations where indigenous peoples are present or affected by activities of the organization.
+required_elements:
+  - id: locations_indigenous_present_affected
+    desc: "locations of operations where indigenous peoples are present or affected by the organization's activities"
+retrieval_queries:
+  - "indigenous peoples coal mine locations present affected operations"
+  - "operations affecting indigenous communities coal sector sites"
+  - "indigenous peoples presence operational sites coal mining"
+good_evidence_hints:
+  - "Look for a rights of indigenous peoples or stakeholder section that enumerates coal mine or operational sites in or near indigenous territories"
+  - "Good evidence identifies the specific operational locations (by name or region) where indigenous peoples live, operate, or are otherwise affected by coal activities"
+suggested_fix_template: |
+    List all operational locations where indigenous peoples are present or where activities of the organisation affect indigenous peoples. Identify each location by name or geographic reference and indicate the nature of the indigenous peoples' presence or the type of impact experienced.

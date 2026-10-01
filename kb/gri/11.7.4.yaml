@@ -1,0 +1,27 @@
+id: "11.7.4"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Operational sites closure plan status"
+category: sector
+requirement_text: |
+  Under Topic 11.7 Closure and rehabilitation, the organization must list the operational sites
+  that have closure and rehabilitation plans in place, that have been closed, and that are in the
+  process of being closed.
+required_elements:
+  - id: sites_with_closure_plans
+    desc: "operational sites that have closure and rehabilitation plans in place"
+  - id: sites_closed
+    desc: "operational sites that have been closed"
+  - id: sites_being_closed
+    desc: "operational sites that are in the process of being closed"
+retrieval_queries:
+  - "oil gas operational sites closure rehabilitation plans in place list"
+  - "sites closed decommissioned process of being closed oil gas"
+  - "closure and rehabilitation plan site list oil gas operations"
+good_evidence_hints:
+  - "Look in the closure and decommissioning or asset retirement section for a named list of sites categorised by plan status (planned, in-closure, closed)"
+  - "Strong evidence provides a table or enumerated list distinguishing sites with plans from those being closed and those fully closed"
+suggested_fix_template: |
+  Provide a list of all operational sites and their closure status, distinguishing between:
+  (1) sites that have closure and rehabilitation plans in place, (2) sites that have already
+  been closed, and (3) sites that are currently in the process of being closed. Include site
+  names or identifiers sufficient to identify each location.

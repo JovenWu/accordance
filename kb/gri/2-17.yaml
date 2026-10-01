@@ -1,0 +1,17 @@
+id: "2-17"
+standard: "GRI 2: General Disclosures 2021"
+title: "Collective knowledge of the highest governance body"
+category: universal
+requirement_text: |
+    Report measures taken to develop the highest governance body's collective knowledge,
+    skills, and experience on sustainable development.
+required_elements:
+  - id: knowledge_development_measures
+    desc: "Training, briefings, education, or other measures on sustainable development"
+retrieval_queries:
+  - "board sustainability training ESG training"
+  - "collective knowledge governance body sustainable development"
+good_evidence_hints:
+  - "Look for board training, director development, or ESG capacity building"
+suggested_fix_template: |
+    Add the training or development activities used to improve the board's sustainability knowledge.

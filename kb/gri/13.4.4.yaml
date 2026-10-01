@@ -1,0 +1,22 @@
+id: "13.4.4"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Own land natural ecosystem conversion"
+requirement_text: |
+  Under Topic 13.4 Natural ecosystem conversion, the organization must report the size in hectares, the location, and the type of natural ecosystems converted since the cut-off date on land owned, leased, or managed by the organization.
+required_elements:
+  - id: size_hectares
+    desc: "Size in hectares of natural ecosystems converted since the cut-off date on owned/leased/managed land"
+  - id: location
+    desc: "Location of the converted natural ecosystems"
+  - id: ecosystem_type
+    desc: "Type of natural ecosystems converted"
+retrieval_queries:
+  - "natural ecosystem conversion hectares location type own land leased managed cut-off date"
+  - "deforestation conversion area hectares ecosystem type organization land"
+  - "forest conversion size location owned managed agricultural land"
+good_evidence_hints:
+  - "Look for a table listing each conversion site with hectares, geographic location, and the ecosystem type that was converted (e.g., tropical forest, wetland, grassland)"
+  - "Good evidence specifies the cut-off date used and confirms zero or quantified conversion since that date"
+suggested_fix_template: |
+  Report each instance of natural ecosystem conversion on land owned, leased, or managed since the cut-off date, disclosing the size in hectares, the geographic location, and the type of ecosystem converted.

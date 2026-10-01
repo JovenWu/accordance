@@ -1,0 +1,23 @@
+id: "11.7.6"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Financial provisions for closure and rehabilitation"
+category: sector
+requirement_text: |
+  Under Topic 11.7 Closure and rehabilitation, the organization must report the total monetary
+  value of financial provisions for closure and rehabilitation made by the organization, including
+  post-closure monitoring and aftercare for operational sites.
+required_elements:
+  - id: total_financial_provisions_value
+    desc: "total monetary value of financial provisions for closure and rehabilitation made by the organization, including post-closure monitoring and aftercare for operational sites"
+retrieval_queries:
+  - "financial provisions closure rehabilitation total monetary value oil gas"
+  - "asset retirement obligation decommissioning provision balance sheet oil gas"
+  - "closure rehabilitation fund post-closure monitoring aftercare financial provision"
+good_evidence_hints:
+  - "Look in the financial statements or notes for asset retirement obligations (AROs) or decommissioning provisions; the total should cover both closure and post-closure monitoring costs"
+  - "Strong evidence states the total in a specific currency, distinguishes current from non-current provisions where relevant, and notes that post-closure monitoring and aftercare costs are included"
+suggested_fix_template: |
+  Report the total monetary value (with currency) of financial provisions held for closure and
+  rehabilitation of operational sites. Confirm that the figure encompasses both closure costs and
+  post-closure monitoring and aftercare obligations. Reference the relevant line item in the
+  financial statements (e.g., asset retirement obligation, decommissioning provision) if applicable.

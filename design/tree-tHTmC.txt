@@ -1,0 +1,338 @@
+T: data-pencil-id="tHTmC"
+        data-pencil-name="Modal — Correction"
+        class="box-border w-[1440px] h-[900px] absolute left-[9860px] top-[3748px] flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden"
+      >
+dim | w-[1440px] h-[900px] absolute left-0 top-0 flex flex-row gap-0 justify-start items-start bg-[#0B122199] [z-index:0]
+bg | w-[1440px] h-[900px] absolute left-0 top-0 flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden [z-index:1]
+  Sidebar | w-[264px] shrink-0 h-full flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+    Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+      LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+        T: ICON(scan-search)
+      BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+        Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+          T: Lens
+        Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+          T: GRI disclosure analysis
+    Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+      Nav Analyses | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+        T: ICON(layout-list)
+        Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Analyses
+      Nav Users | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+        T: ICON(users)
+        Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Users
+    Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+    User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+      Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+        Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: MC
+      User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+        User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: maya.chen
+        User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+          T: 23 analyses · $58.41
+      T: ICON(log-out)
+  Main | [flex:1_1_0] h-full flex flex-col gap-0 justify-start items-start
+    Topbar | w-full h-fit shrink-0 flex flex-row gap-0 p-[20px_32px_12px_32px] justify-between items-center
+      Title | w-fit shrink-0 h-fit flex flex-col gap-[2px] justify-start items-start
+        H1 | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+          T: Analyses
+        Sub | text-[13px]/[normal] text-[#71717A] font-normal text-left
+          T: Sustainability reports graded against the GRI Standards
+      Actions | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+        Search | w-[240px] shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start
+          Group | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[0px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+            Frame 2 | [flex:1_1_0] h-fit flex flex-row gap-[6px] justify-start items-start
+              T: ICON(search)
+              Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+                T: Search reports…
+        Export | w-fit shrink-0 h-[36px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+          T: ICON(download)
+          Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+            T: Export
+        New | w-fit shrink-0 h-[36px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#0485F7] rounded-[24px]
+          T: ICON(plus)
+          Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: New analysis
+    Content | w-full [flex:1_1_0] flex flex-col gap-[20px] p-[12px_32px_32px_32px] justify-start items-start
+      New Analysis Card | w-full h-fit shrink-0 [box-shadow:0px_2px_4px_#0000000A] flex flex-col gap-[16px] p-[20px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        Card Head | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+          CT | text-[15px]/[normal] text-[#18181B] font-semibold text-left
+            T: New analysis
+          CHint | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: PDF up to 100 MB · results stay on this machine
+        Dropzone | w-full h-[132px] shrink-0 flex flex-col gap-[8px] justify-center items-center bg-[#EFEFF0] [border:1px_solid_#DEDEE0] rounded-[16px]
+          DZ Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#0485F726] rounded-[9999px]
+            T: ICON(file-up)
+          DZ1 | text-[14px]/[normal] text-[#18181B] font-medium text-left
+            T: Drop a sustainability report PDF here, or browse files
+          DZ2 | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: We extract the text, index it, then judge every selected disclosure
+        Scope Row | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+          ScopeLbl | text-[13px]/[normal] text-[#71717A] font-medium text-left
+            T: Scope
+          ScopeChip | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_4px] justify-start items-center bg-[#0485F726] rounded-[16px]
+            Label | text-[11px]/[normal] text-[#0485F7] font-medium text-left
+              T: All GRI disclosures · 473
+          ScopeChange | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+            T: ICON(list-checks)
+            Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+              T: Choose scope
+          sp | [flex:1_1_0] h-[1px] flex flex-row gap-0 justify-start items-start
+          Start | w-fit shrink-0 h-[36px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#0485F7] rounded-[24px]
+            T: ICON(play)
+            Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+              T: Start analysis
+      Reports Table | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] rounded-[24px] overflow-hidden
+        thr | w-full h-[40px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#EFEFF0]
+          h Report | text-[12px]/[normal] [flex:1_1_0] text-[#71717A] font-medium text-left
+            T: Report
+          h Latest | text-[12px]/[normal] w-[90px] shrink-0 text-[#71717A] font-medium text-left
+            T: Latest
+          h Status | text-[12px]/[normal] w-[112px] shrink-0 text-[#71717A] font-medium text-left
+            T: Status
+          h Findings | text-[12px]/[normal] w-[230px] shrink-0 text-[#71717A] font-medium text-left
+            T: Findings
+          h Vers. | text-[12px]/[normal] w-[64px] shrink-0 text-[#71717A] font-medium text-left
+            T: Vers.
+          h Updated | text-[12px]/[normal] w-[132px] shrink-0 text-[#71717A] font-medium text-left
+            T: Updated
+          h  | text-[12px]/[normal] w-[48px] shrink-0 text-[#71717A] font-medium text-left
+        tb | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start
+          Row Meridian | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#FFFFFF]
+            c0 | [flex:1_1_0] h-fit flex flex-col gap-[2px] justify-start items-start
+              t1 | text-[13px]/[normal] text-[#18181B] font-medium text-left
+                T: PT Meridian Energi Tbk
+              t2 | text-[11px]/[normal] text-[#71717A] font-normal text-left
+                T: PTM_SR2024.pdf · v4
+            c1 | text-[13px]/[normal] w-[90px] shrink-0 text-[#71717A] font-normal text-left
+              T: v4 · update
+            c2 | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c3 | text-[13px]/[normal] w-[230px] shrink-0 text-[#71717A] font-normal text-left
+              T: 184 cov · 38 part · 12 miss
+            c4 | text-[13px]/[normal] w-[64px] shrink-0 text-[#18181B] font-normal text-left
+              T: 4
+            c6 | text-[13px]/[normal] w-[132px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 28 · 14:02
+            c7 | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+              kb | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+                T: ICON(more-horizontal)
+          Row Aruna | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#FFFFFF]
+            c0 | [flex:1_1_0] h-fit flex flex-col gap-[2px] justify-start items-start
+              t1 | text-[13px]/[normal] text-[#18181B] font-medium text-left
+                T: Aruna Coal Holdings — Annual Report 2023
+              t2 | text-[11px]/[normal] text-[#71717A] font-normal text-left
+                T: ACH_AR2023.pdf · v1
+            c1 | text-[13px]/[normal] w-[90px] shrink-0 text-[#71717A] font-normal text-left
+              T: v1 · initial
+            c2 | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c3 | text-[13px]/[normal] w-[230px] shrink-0 text-[#71717A] font-normal text-left
+              T: 176 cov · 31 part · 8 miss
+            c4 | text-[13px]/[normal] w-[64px] shrink-0 text-[#18181B] font-normal text-left
+              T: 1
+            c6 | text-[13px]/[normal] w-[132px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 26 · 09:41
+            c7 | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+              kb | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+                T: ICON(more-horizontal)
+          Row Samudra | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#FFFFFF]
+            c0 | [flex:1_1_0] h-fit flex flex-col gap-[2px] justify-start items-start
+              t1 | text-[13px]/[normal] text-[#18181B] font-medium text-left
+                T: Samudra Agri Foods — Sustainability Report 2024
+              t2 | text-[11px]/[normal] text-[#71717A] font-normal text-left
+                T: SAF_SR2024.pdf · v2
+            c1 | text-[13px]/[normal] w-[90px] shrink-0 text-[#71717A] font-normal text-left
+              T: v2 · retry
+            c2 | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-0 p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px]
+                l | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+                  T: In progress
+            c3 | text-[13px]/[normal] w-[230px] shrink-0 text-[#71717A] font-normal text-left
+              T: —
+            c4 | text-[13px]/[normal] w-[64px] shrink-0 text-[#18181B] font-normal text-left
+              T: 2
+            c6 | text-[13px]/[normal] w-[132px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 30 · 11:08
+            c7 | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+              kb | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+                T: ICON(more-horizontal)
+          Row Banyu | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#FFFFFF]
+            c0 | [flex:1_1_0] h-fit flex flex-col gap-[2px] justify-start items-start
+              t1 | text-[13px]/[normal] text-[#18181B] font-medium text-left
+                T: Banyu Mining Corp — ESG Data Book 2024
+              t2 | text-[11px]/[normal] text-[#71717A] font-normal text-left
+                T: BMC_ESG2024.pdf · v3
+            c1 | text-[13px]/[normal] w-[90px] shrink-0 text-[#71717A] font-normal text-left
+              T: v3 · fork
+            c2 | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-0 p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+                l | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+                  T: Failed
+            c3 | text-[13px]/[normal] w-[230px] shrink-0 text-[#71717A] font-normal text-left
+              T: —
+            c4 | text-[13px]/[normal] w-[64px] shrink-0 text-[#18181B] font-normal text-left
+              T: 3
+            c6 | text-[13px]/[normal] w-[132px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 24 · 16:55
+            c7 | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+              kb | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+                T: ICON(more-horizontal)
+          Row Kertas | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#FFFFFF]
+            c0 | [flex:1_1_0] h-fit flex flex-col gap-[2px] justify-start items-start
+              t1 | text-[13px]/[normal] text-[#18181B] font-medium text-left
+                T: Kertas Nusantara — Sustainability Report 2022
+              t2 | text-[11px]/[normal] text-[#71717A] font-normal text-left
+                T: KN_SR2022.pdf · v2
+            c1 | text-[13px]/[normal] w-[90px] shrink-0 text-[#71717A] font-normal text-left
+              T: v2 · update
+            c2 | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+              st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+                Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                  T: Completed
+            c3 | text-[13px]/[normal] w-[230px] shrink-0 text-[#71717A] font-normal text-left
+              T: 168 cov · 29 part · 21 miss
+            c4 | text-[13px]/[normal] w-[64px] shrink-0 text-[#18181B] font-normal text-left
+              T: 2
+            c6 | text-[13px]/[normal] w-[132px] shrink-0 text-[#71717A] font-normal text-left
+              T: Sep 12 · 10:20
+            c7 | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+              kb | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+                T: ICON(more-horizontal)
+        tft | w-full h-[52px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-between items-center bg-[#EFEFF0]
+          sum | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: 1–5 of 23 reports
+          pg | w-fit shrink-0 h-fit flex flex-row gap-[16px] justify-start items-center
+            pv | text-[13px]/[normal] text-[#71717A] font-normal text-left
+              T: ‹ Previous
+            p1 | text-[13px]/[normal] text-[#18181B] font-semibold text-left
+              T: 1
+            p2 | text-[13px]/[normal] text-[#71717A] font-normal text-left
+              T: 2
+            p3 | text-[13px]/[normal] text-[#71717A] font-normal text-left
+              T: 3
+            pe | text-[13px]/[normal] text-[#71717A] font-normal text-left
+              T: …
+            pn | text-[13px]/[normal] text-[#71717A] font-normal text-left
+              T: Next ›
+Corr Modal | w-[560px] h-fit [box-shadow:0px_8px_24px_#00000026] absolute left-[440px] top-[170px] flex flex-col gap-[16px] p-[24px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:2]
+  mHead | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start relative [z-index:0]
+    t | text-[16px]/[normal] text-[#18181B] font-medium text-left
+      T: Correct finding
+    s | text-[12px]/[normal] w-full text-[#71717A] font-normal text-left
+      T: GRI 305-1 — Direct (Scope 1) GHG emissions · agent score 4 (Partial)
+  x | w-[24px] h-[24px] absolute left-[512px] top-[22px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px] [z-index:1]
+    T: ICON(x)
+  score | w-full h-fit shrink-0 flex flex-col gap-[8px] justify-start items-start relative [z-index:2]
+    l | text-[12px]/[normal] text-[#71717A] font-medium text-left
+      T: Corrected score
+    pills | w-full h-fit shrink-0 flex flex-row gap-[6px] justify-start items-start
+      p0 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+        t | text-[12px]/[normal] text-[#18181B] font-medium text-left
+          T: 0 · N/A
+      p1 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+        t | text-[12px]/[normal] text-[#18181B] font-medium text-left
+          T: 1 · Missing
+      p2 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+        t | text-[12px]/[normal] text-[#18181B] font-medium text-left
+          T: 2
+      p3 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+        t | text-[12px]/[normal] text-[#18181B] font-medium text-left
+          T: 3
+      p4 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#0485F7]
+        t | text-[12px]/[normal] text-[#FCFCFC] font-medium text-left
+          T: 4
+      p5 | [flex:1_1_0] h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+        t | text-[12px]/[normal] text-[#18181B] font-medium text-left
+          T: 5 · Complete
+    hint | text-[11px]/[normal] text-[#71717A] font-normal text-left
+      T: Selected: 4 · Substantial — matches agent judgment
+  els | w-full h-fit shrink-0 flex flex-col gap-[8px] justify-start items-start relative [z-index:3]
+    l | text-[12px]/[normal] text-[#71717A] font-medium text-left
+      T: Per-element overrides — optional
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: a) Total Scope 1 GHG emissions
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(x)
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: b) Biogenic CO₂ reported separately
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(x)
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: c) Base year and rationale
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#F5A524] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(x)
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: d) Emission factor sources
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#FF383C] rounded-[6px]
+          T: ICON(x)
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: e) Gases included
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(x)
+    er | w-full h-fit shrink-0 flex flex-row gap-[10px] justify-start items-center
+      t | text-[12px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+        T: f) Consolidation approach
+      sg | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px] justify-start items-start bg-[#EBEBEC]
+        bfound | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[6px]
+          T: ICON(check)
+        bpartial | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(minus)
+        bmissing | w-[24px] shrink-0 h-[22px] flex flex-row gap-0 justify-center items-center bg-[#00000000] rounded-[6px]
+          T: ICON(x)
+  rationale | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start relative [z-index:4]
+    Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+      T: Rationale
+    Textarea | w-full h-[80px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-col gap-0 p-[8px_12px] justify-start items-start bg-[#FFFFFF] rounded-[12px]
+      Placeholder | text-[14px]/[normal] w-full text-[#71717A] font-normal text-left
+        T: Why is the agent score wrong? e.g. “Methodology note exists on p.90 — factor sources
+                are named in the appendix table.”
+    taDescW | w-[126px] h-[15px] shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+  mFoot | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center relative [z-index:5]
+    note | text-[11px]/[normal] text-[#71717A] font-normal text-left
+      T: Applies to run v4 · recorded as maya.chen
+    fr | w-fit shrink-0 h-fit flex flex-row gap-[8px] justify-start items-start
+      cancel | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+        Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+          T: Cancel
+      save | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+        T: ICON(check)
+        Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+          T: Save correction
+T: div

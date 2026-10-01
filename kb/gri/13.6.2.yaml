@@ -1,0 +1,20 @@
+id: "13.6.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Pesticide use by toxicity hazard level"
+requirement_text: |
+  Under Topic 13.6 Pesticides use, the organization must report the volume and intensity of pesticides used, broken down by the following WHO toxicity hazard levels: Extremely hazardous; Highly hazardous; Moderately hazardous; Slightly hazardous; Unlikely to present an acute hazard.
+required_elements:
+  - id: volume_by_hazard_level
+    desc: "Volume of pesticides used, broken down by the five WHO toxicity hazard levels"
+  - id: intensity_by_hazard_level
+    desc: "Intensity of pesticides used, broken down by the five WHO toxicity hazard levels"
+retrieval_queries:
+  - "pesticide volume intensity WHO hazard class extremely highly moderately slightly hazardous"
+  - "pesticide use toxicity hazard level volume intensity agriculture"
+  - "pesticide application rate hazard classification WHO by product or area"
+good_evidence_hints:
+  - "Look for a pesticide table broken down by WHO hazard class (Ia, Ib, II, III, U) with volume figures for each class"
+  - "Good evidence includes both total volume and use intensity (e.g., kg per hectare or per tonne of production) for each hazard level"
+suggested_fix_template: |
+  Report pesticide use volume and intensity disaggregated by WHO toxicity hazard level, covering all five categories: Extremely hazardous, Highly hazardous, Moderately hazardous, Slightly hazardous, and Unlikely to present an acute hazard.

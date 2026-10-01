@@ -1,0 +1,26 @@
+id: "205-2"
+standard: "GRI 205: Anti-corruption 2016"
+title: "Communication and training about anti-corruption policies and procedures"
+category: topic
+requirement_text: |
+    Report the total number and percentage of governance body members, employees, and business partners
+    that the organization's anti-corruption policies and procedures have been communicated to, broken
+    down by region (and, for employees, by employee category; for business partners, by type). Report
+    the total number and percentage of governance body members and employees that have received training
+    on anti-corruption, broken down by region and employee category.
+required_elements:
+  - id: policy_communication
+    desc: "Number and percentage of governance body members, employees, and business partners the anti-corruption policies were communicated to, by region/category/type"
+  - id: anti_corruption_training
+    desc: "Number and percentage of governance body members and employees who received anti-corruption training, by region and category"
+retrieval_queries:
+  - "communication training anti-corruption policies procedures employees percentage"
+  - "anti-corruption training employees governance body region category"
+  - "anti-corruption policy communicated business partners training"
+good_evidence_hints:
+  - "Look in ethics/compliance training tables breaking out coverage by region and employee category"
+  - "Strong evidence gives both communication and training percentages, segmented"
+suggested_fix_template: |
+    Add a section reporting the number and percentage of governance body members, employees, and
+    business partners that anti-corruption policies were communicated to, and the number and percentage
+    that received anti-corruption training, broken down by region and category.

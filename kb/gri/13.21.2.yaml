@@ -1,0 +1,18 @@
+id: "13.21.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Collective bargaining coverage for wage terms"
+requirement_text: |
+  Under Topic 13.21 Living income and living wage, the organization must report the percentage of employees and workers who are not employees and whose work is controlled, covered by collective bargaining agreements that have terms related to wage levels and frequency of wage payments, at significant locations of operation.
+required_elements:
+  - id: pct_covered_by_cba_wage_terms
+    desc: "Percentage of employees and (controlled) non-employee workers covered by collective bargaining agreements with terms on wage levels and frequency of wage payments, at significant locations of operation"
+retrieval_queries:
+  - "collective bargaining agreement coverage percentage employees wage levels frequency payments significant locations"
+  - "workers covered CBA wage terms percentage significant location operation agriculture"
+  - "collective bargaining wage level payment frequency coverage rate significant operation sites"
+good_evidence_hints:
+  - "Look for a percentage of the workforce (employees and controlled workers) covered by CBAs that specifically include wage and payment frequency provisions, broken down by significant location"
+  - "Good evidence distinguishes between CBA coverage generally and coverage specifically for wage-related provisions"
+suggested_fix_template: |
+  Report the percentage of employees and controlled non-employee workers covered by collective bargaining agreements containing terms on wage levels and frequency of wage payments, at each significant location of operation.

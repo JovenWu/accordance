@@ -1,0 +1,29 @@
+id: "305-3"
+standard: "GRI 305: Emissions 2016"
+title: "Other indirect (Scope 3) GHG emissions"
+category: topic
+requirement_text: |
+    Report gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent, the gases included if available, biogenic CO2 emissions separately, the Scope 3 categories and activities included, the base year, and the methodology, emission factors, and GWP source used.
+required_elements:
+  - id: scope_3_emissions_tonnes
+    desc: "Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent"
+  - id: gases_included
+    desc: "Gases included in the calculation, if available"
+  - id: biogenic_co2_emissions
+    desc: "Biogenic CO2 emissions in metric tons of CO2 equivalent, reported separately"
+  - id: scope_3_categories_included
+    desc: "Other indirect (Scope 3) emissions categories and activities included in the calculation"
+  - id: base_year
+    desc: "Base year, rationale for choosing it, baseline emissions, and context for recalculations"
+  - id: methodology_and_factors
+    desc: "Source of emission factors and GWP rates, and standards/methodologies/assumptions/tools used"
+retrieval_queries:
+  - "Scope 3 other indirect value chain GHG emissions tCO2e categories"
+  - "Scope 3 categories purchased goods business travel use of sold products"
+  - "biogenic CO2 base year emission factors methodology Scope 3"
+good_evidence_hints:
+  - "Look for a Scope 3 table breaking emissions down by the GHG Protocol value-chain categories in tCO2e"
+  - "Good evidence states which categories/activities are included and the emission factors and methodology used"
+suggested_fix_template: |
+    Add gross Scope 3 emissions in tCO2e, list the value-chain categories and activities included, report biogenic CO2 separately, state the base year, and disclose gases, emission factors, GWP source, and methodology.
+superseded_by: "GRI 102: Climate Change 2025"

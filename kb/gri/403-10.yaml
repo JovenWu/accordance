@@ -1,0 +1,28 @@
+id: "403-10"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Work-related ill health"
+category: topic
+requirement_text: |
+    For all employees and for all workers who are not employees but whose work or workplace is
+    controlled by the organization, report: the number of fatalities as a result of work-related ill
+    health; the number of cases of recordable work-related ill health; and the main types of
+    work-related ill health. Report the work-related hazards that pose a risk of ill health, how they
+    have been determined, which posed actual risk, and the actions taken or underway to eliminate them.
+    Include the methodologies used and any workers excluded from the disclosure.
+required_elements:
+  - id: ill_health_fatalities_and_cases
+    desc: "Number of fatalities and recordable cases of work-related ill health (employees and non-employee workers)"
+  - id: main_types
+    desc: "Main types of work-related ill health"
+  - id: hazards_and_actions
+    desc: "Work-related hazards posing a risk of ill health and actions taken to eliminate them"
+retrieval_queries:
+  - "work-related ill health occupational disease cases fatalities"
+  - "occupational illness ill health recordable cases hazards"
+  - "work-related ill health main types actions hazards"
+good_evidence_hints:
+  - "Look in OHS/HSE sections reporting occupational illness or ill-health cases"
+  - "Strong evidence gives ill-health cases/fatalities, main types, and the hazards addressed"
+suggested_fix_template: |
+    Add a section reporting work-related ill-health fatalities and recordable cases, the main types of
+    ill health, the hazards posing a risk of ill health, and the actions taken to eliminate them.

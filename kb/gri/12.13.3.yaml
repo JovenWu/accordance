@@ -1,0 +1,20 @@
+id: "12.13.3"
+standard: "GRI 12: Coal Sector 2022"
+title: "Critical incidents: number and impacts during reporting period"
+category: sector
+requirement_text: |
+    Under Topic 12.13 Asset integrity and critical incident management, the organization must report the number of critical incidents in the reporting period and describe their impacts.
+required_elements:
+  - id: number_of_critical_incidents
+    desc: "number of critical incidents in the reporting period"
+  - id: incident_impacts
+    desc: "description of the impacts of those critical incidents"
+retrieval_queries:
+  - "critical incidents coal sector number reporting period asset integrity"
+  - "critical incident management impacts coal mine operational failures"
+  - "number of critical incidents coal operations impacts description"
+good_evidence_hints:
+  - "Look in the asset integrity or safety section for a count of critical incidents (e.g., structural failures, explosions, or major spills) that occurred during the reporting period"
+  - "Good evidence not only counts incidents but describes the environmental, human, and operational impacts of each, rather than providing only a total number"
+suggested_fix_template: |
+    Report the number of critical incidents that occurred during the reporting period and describe the impacts of each incident, including environmental consequences, human harm, operational disruptions, and any community effects. Where zero incidents occurred, state this explicitly.

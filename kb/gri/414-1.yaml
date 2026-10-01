@@ -1,0 +1,19 @@
+id: "414-1"
+standard: "GRI 414: Supplier Social Assessment 2016"
+title: "New suppliers that were screened using social criteria"
+category: topic
+requirement_text: |
+    Report the percentage of new suppliers that were screened using social criteria.
+required_elements:
+  - id: new_suppliers_screened_percentage
+    desc: "Percentage of new suppliers screened using social criteria"
+retrieval_queries:
+  - "new suppliers screened social criteria percentage"
+  - "supplier social screening assessment new suppliers labor human rights"
+  - "percentage suppliers assessed social criteria onboarding"
+good_evidence_hints:
+  - "Look in supply chain, responsible sourcing, or supplier assessment sections"
+  - "Strong evidence gives a clear percentage of new suppliers screened on social criteria"
+suggested_fix_template: |
+    Add a figure reporting the percentage of new suppliers that were screened using social criteria
+    during the reporting period.

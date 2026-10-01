@@ -1,0 +1,33 @@
+id: "304-1"
+standard: "GRI 304: Biodiversity 2016"
+title: "Operational sites owned, leased, managed in, or adjacent to, protected areas and areas of high biodiversity value outside protected areas"
+category: topic
+requirement_text: |
+    Report a list of each operational site owned, leased, or managed in or adjacent to protected areas and areas of high biodiversity value outside protected areas, with the location, position, operation type, size, and biodiversity value of each site.
+required_elements:
+  - id: geographic_location
+    desc: "Geographic location of each relevant operational site"
+  - id: subsurface_land
+    desc: "Subsurface and underground land owned, leased, or managed"
+  - id: position_to_area
+    desc: "Position relative to the protected area (in, adjacent to, or containing portions of it)"
+  - id: operation_type
+    desc: "Type of operation: office, manufacturing/production, or extractive"
+  - id: site_size_km2
+    desc: "Size of each operational site in km2 (or another unit if appropriate)"
+  - id: biodiversity_value_ecosystem
+    desc: "Biodiversity value characterized by ecosystem type (terrestrial, freshwater, or maritime)"
+  - id: biodiversity_value_protected_status
+    desc: "Biodiversity value characterized by protected status (IUCN categories, Ramsar Convention, national legislation)"
+retrieval_queries:
+  - "operational sites protected areas high biodiversity value adjacent"
+  - "site location IUCN category Ramsar national legislation ecosystem type"
+  - "operations in or near protected areas biodiversity-rich habitats"
+good_evidence_hints:
+  - "Look for a site-by-site list or table naming locations near protected/biodiversity-rich areas with their size and operation type"
+  - "Good evidence references IUCN Protected Area categories, Ramsar wetlands, or national protected-area designations"
+suggested_fix_template: |
+    Add a table listing each operational site in or adjacent to protected areas and areas of high biodiversity value, reporting geographic location, subsurface land, position relative to the area, operation type, site size in km2, and biodiversity value by ecosystem type and protected status.
+status: superseded
+effective_until: "2025-12-31"
+superseded_by: "GRI 101: Biodiversity 2024"

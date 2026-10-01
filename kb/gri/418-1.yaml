@@ -1,0 +1,26 @@
+id: "418-1"
+standard: "GRI 418: Customer Privacy 2016"
+title: "Substantiated complaints concerning breaches of customer privacy and losses of customer data"
+category: topic
+requirement_text: |
+    Report the total number of substantiated complaints received concerning breaches of customer
+    privacy, categorized by complaints received from outside parties and substantiated by the
+    organization and complaints from regulatory bodies; and the total number of identified leaks,
+    thefts, or losses of customer data. If the organization has not identified any substantiated
+    complaints, a brief statement of this fact is sufficient.
+required_elements:
+  - id: substantiated_complaints
+    desc: "Number of substantiated privacy complaints, split by those from outside parties and those from regulatory bodies"
+  - id: data_leaks_thefts_losses
+    desc: "Total number of identified leaks, thefts, or losses of customer data"
+retrieval_queries:
+  - "substantiated complaints breaches customer privacy losses customer data"
+  - "data breaches privacy complaints leaks thefts losses customer data"
+  - "customer privacy complaints data loss incidents number"
+good_evidence_hints:
+  - "Look in data privacy, cybersecurity, or customer trust sections"
+  - "Strong evidence gives the number of substantiated complaints and data losses (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting substantiated customer-privacy complaints (from outside parties and from
+    regulators) and the number of identified leaks, thefts, or losses of customer data (stating zero
+    explicitly where applicable).

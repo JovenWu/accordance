@@ -1,0 +1,18 @@
+id: "13.3.7"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Fishing sector biodiversity – species caught"
+requirement_text: |
+  Under Topic 13.3 Biodiversity, the organization must report, for each species of aquatic organisms caught or harvested, including non-target species: species scientific name, volume in metric tons, fishing methods, locations of origin, and stock status.
+required_elements:
+  - id: species_caught_harvested
+    desc: "For each species caught or harvested (incl. non-target): species scientific name, volume in metric tons, fishing methods, locations of origin, stock status"
+retrieval_queries:
+  - "fishing sector species caught harvested scientific name volume metric tons fishing methods locations stock status"
+  - "non-target species bycatch volume stock status fishing operations"
+  - "catch-by-species disclosure fishing locations origin stock assessment"
+good_evidence_hints:
+  - "Look for a species-level catch table covering both target and non-target species with scientific names and volumes by fishing area"
+  - "Good evidence includes stock status references (e.g., FAO or national assessments) for all listed species"
+suggested_fix_template: |
+  For each species of aquatic organisms caught or harvested — including non-target species — report the species scientific name, volume in metric tons, fishing methods used, locations of origin, and current stock status.

@@ -1,0 +1,49 @@
+id: "101-2"
+standard: "GRI 101: Biodiversity 2024"
+title: "Management of biodiversity impacts"
+category: topic
+requirement_text: |
+    Report how the organization applies the mitigation hierarchy (avoidance, minimization,
+    restoration and rehabilitation, offsets, and transformative and additional conservation
+    actions); report restoration/rehabilitation areas and offset details for sites with the
+    most significant impacts; list which of those sites have a biodiversity management plan;
+    describe how it manages synergies and trade-offs with climate change actions; and describe
+    how it avoids and minimizes negative impacts and maximizes positive impacts for stakeholders.
+required_elements:
+  - id: mitigation_hierarchy_avoid
+    desc: "Actions taken to avoid negative impacts on biodiversity (101-2-a-i)"
+  - id: mitigation_hierarchy_minimize
+    desc: "Actions taken to minimize negative impacts that were not avoided (101-2-a-ii)"
+  - id: mitigation_hierarchy_restore_rehabilitate
+    desc: "Actions taken to restore and rehabilitate affected ecosystems, including restoration/rehabilitation goals and how stakeholders are engaged (101-2-a-iii)"
+  - id: mitigation_hierarchy_offset
+    desc: "Actions taken to offset residual negative impacts (101-2-a-iv)"
+  - id: transformative_and_additional_conservation_actions
+    desc: "Transformative actions and additional conservation actions taken (101-2-a-v)"
+  - id: restoration_area_sizes
+    desc: "For each site with the most significant impacts: size in hectares under restoration/rehabilitation and size restored/rehabilitated (101-2-b)"
+  - id: offset_details
+    desc: "For each offset: goals, geographic location, whether/how good offset practices are met, and whether/how it is certified or verified by a third party (101-2-c)"
+  - id: biodiversity_management_plans
+    desc: "Which sites with the most significant impacts have a biodiversity management plan, and why other sites do not (101-2-d)"
+  - id: biodiversity_climate_synergies_tradeoffs
+    desc: "How the organization enhances synergies and reduces trade-offs between biodiversity and climate change actions (101-2-e)"
+  - id: stakeholder_impact_management
+    desc: "How the organization ensures actions avoid/minimize negative impacts and maximize positive impacts for stakeholders (101-2-f)"
+retrieval_queries:
+  - "mitigation hierarchy avoid minimize restore offset biodiversity"
+  - "ecosystem restoration rehabilitation hectares"
+  - "biodiversity offset certification good practice"
+  - "biodiversity management plan site"
+  - "biodiversity climate synergies trade-offs"
+good_evidence_hints:
+  - "Look in 'Managing biodiversity impacts', 'Mitigation hierarchy', or 'Restoration' sections"
+  - "Offset details may appear in tables; restoration areas often reported per site"
+  - "Stakeholder engagement and FPIC references may indicate 101-2-a-iii and 101-2-f coverage"
+suggested_fix_template: |
+    Add a biodiversity management section structured around the mitigation hierarchy, covering
+    avoidance, minimization, restoration/rehabilitation (with areas and stakeholder engagement),
+    offsets (with goals, location, good-practice and third-party verification), transformative and
+    additional conservation actions, biodiversity management plans by site, biodiversity-climate
+    synergies and trade-offs, and stakeholder impact management.
+effective_date: "2026-01-01"

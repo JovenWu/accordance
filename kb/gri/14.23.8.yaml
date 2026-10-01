@@ -1,0 +1,22 @@
+id: "14.23.8"
+standard: "GRI 14: Mining Sector 2024"
+title: "State mineral purchases"
+category: sector
+requirement_text: |
+    For minerals purchased from the state, or from third parties appointed by the state to sell on its behalf, report the volumes and types of minerals purchased, the full names of the selling entity and the recipient of the payment, and the payments made for the purchase.
+required_elements:
+  - id: volumes_and_types_purchased
+    desc: "Volumes and types of minerals purchased from the state or its appointed third parties"
+  - id: selling_entity_and_payment_recipient
+    desc: "Full names of the selling entity and the recipient of the payment"
+  - id: payments_made
+    desc: "Payments made for the purchase of the minerals"
+retrieval_queries:
+  - "minerals purchased from the state volumes types payments"
+  - "sale of state share of production buying entity recipient payment"
+  - "purchases from state-owned enterprise commodity trading EITI extractive"
+good_evidence_hints:
+  - "Look in payments-to-governments, commodity trading, or transparency sections for purchases of the state's share of production with volumes, counterparties, and amounts paid"
+  - "Good evidence names both the selling (state or appointed) entity and the payment recipient and quantifies the minerals and payments, per EITI Standard Requirement 4.2"
+suggested_fix_template: |
+    Add a disclosure reporting, for minerals purchased from the state or its appointed third-party sellers, the volumes and types of minerals, the full names of the selling entity and the payment recipient, and the payments made.

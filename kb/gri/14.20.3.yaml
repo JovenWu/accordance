@@ -1,0 +1,20 @@
+id: "14.20.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Strikes and lockouts"
+category: sector
+requirement_text: |
+    Report the number of strikes and lockouts involving 1,000 or more workers lasting one full shift or longer, and their total duration measured in worker days idle (days idle multiplied by the number of workers involved).
+required_elements:
+  - id: strikes_lockouts_count
+    desc: "Number of strikes and lockouts involving 1,000 or more workers lasting one full shift or longer"
+  - id: total_duration_worker_days_idle
+    desc: "Total duration of those strikes and lockouts in worker days idle (days idle x workers involved)"
+retrieval_queries:
+  - "number of strikes and lockouts 1,000 workers"
+  - "worker days idle work stoppage labor relations mining"
+  - "industrial action strike lockout duration collective bargaining dispute"
+good_evidence_hints:
+  - "Look in labor relations, freedom of association, or workforce sections for counts of strikes/lockouts above the 1,000-worker threshold and a worker-days-idle figure"
+  - "Good evidence states both the number of qualifying strikes and lockouts and the total duration in worker days idle, or explicitly states none occurred"
+suggested_fix_template: |
+    Add a disclosure reporting the number of strikes and lockouts involving 1,000 or more workers that lasted one full shift or longer, plus their total duration in worker days idle (days idle multiplied by workers involved).

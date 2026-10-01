@@ -1,0 +1,22 @@
+id: "2-13"
+standard: "GRI 2: General Disclosures 2021"
+title: "Delegation of responsibility for managing impacts"
+category: universal
+requirement_text: |
+    Describe how the highest governance body delegates responsibility for managing impacts
+    and how responsible executives or employees report back.
+required_elements:
+  - id: senior_executive_responsibility
+    desc: "Senior executives appointed for impact management"
+  - id: employee_responsibility
+    desc: "Other employees or functions delegated impact responsibility"
+  - id: reporting_process_frequency
+    desc: "Process and frequency for reporting back to governance body"
+retrieval_queries:
+  - "sustainability responsibility delegated executive reporting to board"
+  - "ESG governance responsibility reporting frequency"
+good_evidence_hints:
+  - "Often shown as ESG governance structure or responsibility matrix"
+suggested_fix_template: |
+    Add a responsibility map showing who manages sustainability impacts and how often
+    they report to the highest governance body.

@@ -1,0 +1,23 @@
+id: "412-3"
+standard: "GRI 412: Human Rights Assessment 2016"
+title: "Significant investment agreements and contracts that include human rights clauses or that underwent human rights screening"
+category: topic
+requirement_text: |
+    Report the total number and percentage of significant investment agreements and contracts that
+    include human rights clauses or that underwent human rights screening, and provide the definition
+    used for 'significant investment agreements'.
+required_elements:
+  - id: agreements_with_human_rights_clauses
+    desc: "Number and percentage of significant investment agreements/contracts with human rights clauses or that underwent human rights screening"
+  - id: definition
+    desc: "Definition used for 'significant investment agreements'"
+retrieval_queries:
+  - "investment agreements contracts human rights clauses screening percentage"
+  - "human rights clauses contracts investment agreements screened"
+  - "significant investment agreements human rights screening"
+good_evidence_hints:
+  - "Look in human rights, procurement, or investment due-diligence sections"
+  - "Strong evidence gives a number/percentage of agreements with human rights clauses or screening"
+suggested_fix_template: |
+    Add a metric reporting the number and percentage of significant investment agreements and contracts
+    that include human rights clauses or underwent human rights screening, with the definition used.

@@ -1,0 +1,31 @@
+id: "103-1"
+standard: "GRI 103: Energy 2025"
+title: "Energy policies and commitments"
+category: topic
+requirement_text: |
+    Report the organization's policies and commitments related to energy, including energy
+    efficiency, the adoption of renewable energy, decarbonization of energy use, and any associated
+    targets and base years. Describe the scope of application of these policies (own operations and,
+    where relevant, the value chain) and how they are governed.
+required_elements:
+  - id: energy_policies_and_commitments
+    desc: "Policies and commitments on energy efficiency, renewable energy, and decarbonization"
+  - id: targets_and_base_year
+    desc: "Energy-related targets (e.g., renewable share, efficiency) and their base years"
+  - id: scope_of_application
+    desc: "Scope of application of the policies across operations and the value chain, and governance"
+  - id: impacts_on_economy_environment_people
+    desc: "Impacts on the economy, environment, and people that may result from energy consumption and the transition to renewable energy sources — official 103-1-b"
+retrieval_queries:
+  - "energy policy renewable energy efficiency commitment target"
+  - "renewable energy commitment 100% RE100 energy efficiency goal"
+  - "energy management policy decarbonization governance scope"
+good_evidence_hints:
+  - "Look in 'Energy', 'Energy management', or 'Renewable energy' policy sections"
+  - "Strong evidence states a quantified renewable/efficiency target with a base year"
+suggested_fix_template: |
+    Add an energy policy section describing commitments on energy efficiency, renewable energy, and
+    decarbonization, the related targets and base years, and the scope and governance of these
+    policies.
+status: upcoming
+effective_date: "2027-01-01"

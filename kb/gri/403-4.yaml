@@ -1,0 +1,27 @@
+id: "403-4"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Worker participation, consultation, and communication on occupational health and safety"
+category: topic
+requirement_text: |
+    Describe the processes for worker participation and consultation in the development, implementation,
+    and evaluation of the occupational health and safety management system, and the processes for
+    providing access to and communicating relevant OHS information to workers. Where formal
+    joint management-worker health and safety committees exist, describe their responsibilities,
+    meeting frequency, decision-making authority, and whether and, if so, why any workers are not
+    represented by these committees.
+required_elements:
+  - id: participation_and_consultation
+    desc: "Processes for worker participation and consultation in the OHS management system and for communicating OHS information"
+  - id: joint_committees
+    desc: "Formal joint management-worker H&S committees: responsibilities, frequency, decision authority, and worker representation"
+retrieval_queries:
+  - "worker participation consultation health safety committee communication"
+  - "joint health safety committee worker representation OHS consultation"
+  - "worker consultation OHS management system communication committees"
+good_evidence_hints:
+  - "Look in OHS/HSE sections referencing safety committees and worker consultation"
+  - "Strong evidence describes joint H&S committees and the share of workers represented"
+suggested_fix_template: |
+    Add a section describing how workers participate in and are consulted on the OHS management system,
+    how OHS information is communicated, and the role and worker representation of any joint
+    management-worker health and safety committees.

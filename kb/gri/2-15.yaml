@@ -1,0 +1,28 @@
+id: "2-15"
+standard: "GRI 2: General Disclosures 2021"
+title: "Conflicts of interest"
+category: universal
+requirement_text: |
+    Describe processes to prevent and mitigate conflicts of interest and whether conflicts are
+    disclosed to stakeholders, including specified conflict categories.
+required_elements:
+  - id: conflict_prevention_process
+    desc: "Processes to prevent and mitigate conflicts"
+  - id: stakeholder_disclosure
+    desc: "Whether conflicts are disclosed to stakeholders"
+  - id: cross_board_membership
+    desc: "Disclosure of cross-board memberships"
+  - id: cross_shareholding
+    desc: "Disclosure of cross-shareholdings with suppliers or stakeholders"
+  - id: controlling_shareholders
+    desc: "Disclosure of controlling shareholders"
+  - id: related_parties
+    desc: "Disclosure of related parties, relationships, transactions, and balances"
+retrieval_queries:
+  - "conflict of interest board related party transactions"
+  - "cross board membership controlling shareholders"
+good_evidence_hints:
+  - "Often in corporate governance or related-party transaction notes"
+suggested_fix_template: |
+    Add a conflicts-of-interest disclosure explaining prevention processes and stakeholder
+    disclosure of cross-board roles, cross-shareholdings, controlling shareholders, and related parties.

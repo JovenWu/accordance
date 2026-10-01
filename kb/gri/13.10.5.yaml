@@ -1,0 +1,20 @@
+id: "13.10.5"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Food safety recalls – number and volume"
+requirement_text: |
+  Under Topic 13.10 Food safety, the organization must report the number of recalls issued for food safety reasons and the total volume of products recalled.
+required_elements:
+  - id: number_of_recalls
+    desc: "Number of recalls issued for food safety reasons"
+  - id: volume_recalled
+    desc: "Total volume of products recalled"
+retrieval_queries:
+  - "food safety product recalls number volume recalled reporting period"
+  - "recall issued food safety reasons total volume products recalled"
+  - "product withdrawal recall food safety incidents volume units"
+good_evidence_hints:
+  - "Look in the food safety or product quality section for a count of recalls issued during the reporting period and the volume of product withdrawn"
+  - "Good evidence separately states the number of recall events and the quantity (weight or units) of products recalled for food safety reasons"
+suggested_fix_template: |
+  Report the number of product recalls issued for food safety reasons during the reporting period, and the total volume (in weight or units) of products recalled.

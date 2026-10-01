@@ -1,0 +1,22 @@
+id: "412-1"
+standard: "GRI 412: Human Rights Assessment 2016"
+title: "Operations that have been subject to human rights reviews or impact assessments"
+category: topic
+requirement_text: |
+    Report the total number and percentage of operations that have been subject to human rights reviews
+    or human rights impact assessments, by country.
+required_elements:
+  - id: operations_assessed
+    desc: "Total number and percentage of operations subject to human rights reviews or impact assessments"
+  - id: by_country
+    desc: "Breakdown by country"
+retrieval_queries:
+  - "operations human rights reviews impact assessments percentage country"
+  - "human rights impact assessment operations percentage"
+  - "human rights due diligence reviews operations by country"
+good_evidence_hints:
+  - "Look in human rights or due-diligence sections referencing assessments/reviews"
+  - "Strong evidence gives the number/percentage of operations assessed, by country"
+suggested_fix_template: |
+    Add a metric reporting the number and percentage of operations subject to human rights reviews or
+    impact assessments, broken down by country.

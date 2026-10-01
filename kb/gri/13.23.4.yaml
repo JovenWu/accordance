@@ -1,0 +1,18 @@
+id: "13.23.4"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Supplier certification improvement projects"
+requirement_text: |
+  Under Topic 13.23 Supply chain traceability, the organization must describe improvement projects to get suppliers certified to internationally recognized standards that trace the path of products through the supply chain, to ensure that all sourced volume is certified.
+required_elements:
+  - id: improvement_projects_for_certification
+    desc: "Description of improvement projects to get suppliers certified to internationally recognized traceability standards so all sourced volume becomes certified"
+retrieval_queries:
+  - "supplier certification improvement projects traceability supply chain internationally recognized standards"
+  - "programs to support supplier certification traceability standards agriculture aquaculture"
+  - "improvement initiatives supplier traceability chain of custody certification programme"
+good_evidence_hints:
+  - "Look for descriptions of active programs or projects to support uncertified suppliers in obtaining chain-of-custody or traceability certification"
+  - "Good evidence names specific improvement initiatives, target suppliers or regions, and the traceability standards being pursued"
+suggested_fix_template: |
+  Describe improvement projects or programs aimed at helping suppliers achieve certification to internationally recognized supply chain traceability standards, with the goal of ensuring all sourced volume is certified.

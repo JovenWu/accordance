@@ -1,0 +1,24 @@
+id: "203-2"
+standard: "GRI 203: Indirect Economic Impacts 2016"
+title: "Significant indirect economic impacts"
+category: topic
+requirement_text: |
+    Report examples of the significant identified indirect economic impacts of the organization,
+    including positive and negative impacts, and the significance of those indirect economic impacts in
+    the context of external benchmarks and stakeholder priorities (such as national and international
+    standards, protocols, and policy agendas).
+required_elements:
+  - id: indirect_impact_examples
+    desc: "Examples of significant indirect economic impacts, both positive and negative"
+  - id: impact_significance
+    desc: "Significance of the impacts against external benchmarks and stakeholder priorities"
+retrieval_queries:
+  - "significant indirect economic impacts positive negative communities"
+  - "indirect economic impact supply chain local economic development"
+  - "economic impact stakeholder priorities external benchmarks"
+good_evidence_hints:
+  - "Look in socio-economic impact, shared value, or community development sections"
+  - "Strong evidence gives concrete examples and ties them to external benchmarks or stakeholder priorities"
+suggested_fix_template: |
+    Add a section giving examples of significant indirect economic impacts (positive and negative) and
+    explaining their significance relative to external benchmarks and stakeholder priorities.

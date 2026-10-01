@@ -1,0 +1,20 @@
+id: "12.2.4"
+standard: "GRI 12: Coal Sector 2022"
+title: "Climate change public policy positions and lobbying"
+category: sector
+requirement_text: |
+    Under Topic 12.2 Climate adaptation, resilience, and transition, the organization must report its approach to public policy development and lobbying on climate change, including its stance on significant climate-change issues and any membership of representative associations that participate in such activities.
+required_elements:
+  - id: stance_on_significant_issues
+    desc: "the organization's stance on significant climate-change issues that are the focus of its participation in public policy development and lobbying, and any differences between these positions and its stated policies, goals, or other public positions"
+  - id: representative_associations
+    desc: "whether it is a member of, or contributes to, any representative associations or committees that participate in public policy development and lobbying on climate change, including the nature of this contribution and any differences between the organization's stated positions on significant climate issues and the positions of those associations or committees"
+retrieval_queries:
+  - "coal sector public policy lobbying climate change positions associations"
+  - "climate change lobbying stance significant issues industry associations coal"
+  - "approach to public policy development climate lobbying coal organization"
+good_evidence_hints:
+  - "Look for a section on public policy, government engagement, or lobbying that describes the organization's stance on climate-change legislation and any industry associations it supports"
+  - "Good evidence names specific climate-change policy topics the organization engages on and discloses any divergence between its own positions and those of affiliated associations"
+suggested_fix_template: |
+    Describe the organization's approach to public policy development and lobbying on climate change, including its stance on significant climate issues, any differences from stated company positions, and whether it participates in or contributes to representative associations or committees that lobby on climate change, noting any alignment or divergence with those bodies' positions.

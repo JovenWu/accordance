@@ -1,0 +1,27 @@
+id: "413-1"
+standard: "GRI 413: Local Communities 2016"
+title: "Operations with local community engagement, impact assessments, and development programs"
+category: topic
+requirement_text: |
+    Report the percentage of operations with implemented local community engagement, impact assessments,
+    and/or development programs, including the use of social impact assessments; environmental impact
+    assessments and ongoing monitoring; public disclosure of results; local community development
+    programs based on local communities' needs; stakeholder engagement plans based on stakeholder
+    mapping; broad-based local community consultation committees and processes; works councils,
+    occupational health and safety committees, and other worker representation bodies; and formal local
+    community grievance processes.
+required_elements:
+  - id: percentage_with_engagement
+    desc: "Percentage of operations with implemented local community engagement, impact assessments, and/or development programs"
+  - id: program_elements
+    desc: "The types of engagement used (impact assessments, development programs, consultation committees, grievance processes, etc.)"
+retrieval_queries:
+  - "operations local community engagement impact assessment development programs percentage"
+  - "community engagement programs impact assessment grievance local"
+  - "local community development programs stakeholder engagement operations"
+good_evidence_hints:
+  - "Look in community engagement, social impact, or stakeholder sections"
+  - "Strong evidence gives a percentage of operations with engagement and the program types used"
+suggested_fix_template: |
+    Add a section reporting the percentage of operations with local community engagement, impact
+    assessments, and/or development programs, and describing the engagement mechanisms used.

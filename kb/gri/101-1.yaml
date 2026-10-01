@@ -1,0 +1,33 @@
+id: "101-1"
+standard: "GRI 101: Biodiversity 2024"
+title: "Policies to halt and reverse biodiversity loss"
+category: topic
+requirement_text: |
+    Describe the organization's policies or commitments to halt and reverse biodiversity
+    loss and how they are informed by the 2050 Goals and 2030 Targets in the
+    Kunming-Montreal Global Biodiversity Framework; report the extent to which these
+    policies or commitments apply to the organization's activities and business
+    relationships; and report the goals and targets to halt and reverse biodiversity loss,
+    whether they are informed by scientific consensus, the base year, and the indicators
+    used to evaluate progress.
+required_elements:
+  - id: policies_commitments_and_gbf_alignment
+    desc: "Policies or commitments to halt and reverse biodiversity loss, and how they are informed by the 2050 Goals and 2030 Targets of the Kunming-Montreal Global Biodiversity Framework (101-1-a)"
+  - id: scope_of_application
+    desc: "Extent to which the policies or commitments apply to the organization's activities and to its business relationships (101-1-b)"
+  - id: goals_targets_and_indicators
+    desc: "Goals and targets to halt and reverse biodiversity loss, whether informed by scientific consensus, the base year, and the indicators used to evaluate progress (101-1-c)"
+retrieval_queries:
+  - "biodiversity policy commitment halt reverse loss"
+  - "Kunming-Montreal Global Biodiversity Framework 2030 targets"
+  - "biodiversity goals targets base year indicators"
+good_evidence_hints:
+  - "Look in 'Biodiversity policy', 'Nature strategy', 'Environmental policy', or commitments sections"
+  - "May reference net positive impact, no net loss, net gain, or nature positive goals"
+  - "May cross-reference Disclosure 2-23 (policy commitments) or 3-3-c"
+suggested_fix_template: |
+    Add a biodiversity policy section describing commitments to halt and reverse biodiversity
+    loss, their alignment with the Global Biodiversity Framework 2050 Goals and 2030 Targets,
+    the activities and business relationships they apply to, and the goals, targets, base year,
+    and progress indicators used.
+effective_date: "2026-01-01"

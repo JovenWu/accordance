@@ -1,0 +1,24 @@
+id: "13.13.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Land and resource rights violations"
+requirement_text: |
+  Under Topic 13.13 Land and resource rights, the organization must report the number, size in hectares, and location of operations where violations of land and natural resource rights (including customary, collective, and informal tenure rights) occurred, and the groups of rightsholders affected.
+required_elements:
+  - id: number_of_operations_with_violations
+    desc: "Number of operations where land/natural resource rights violations occurred"
+  - id: size_hectares
+    desc: "Size in hectares of operations where violations occurred"
+  - id: location
+    desc: "Location of operations where violations occurred"
+  - id: rightsholders_affected
+    desc: "Groups of rightsholders affected"
+retrieval_queries:
+  - "land resource rights violations number operations hectares location rightsholders affected"
+  - "tenure rights violations number hectares location groups affected agriculture"
+  - "land rights dispute violation community rightsholders number operations"
+good_evidence_hints:
+  - "Look for a count of operations where land or resource right violations occurred, with the area in hectares and the location of each incident"
+  - "Good evidence identifies the specific rightsholder groups affected (e.g., smallholder farmers, indigenous communities, pastoralists)"
+suggested_fix_template: |
+  Report the number of operations where violations of land and natural resource rights occurred, the size in hectares and location of those operations, and the groups of rightsholders affected.

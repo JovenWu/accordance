@@ -1,0 +1,20 @@
+id: "14.8.7"
+standard: "GRI 14: Mining Sector 2024"
+title: "Estimated life of mine"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, the organization must report the estimated life of mine for each mine site, using a definition consistent with that applied in the organization's consolidated financial statements.
+required_elements:
+  - id: estimated_life_of_mine
+    desc: "Estimated life of mine (in years or end date) for each mine site"
+  - id: definition_basis
+    desc: "Definition of life of mine used, consistent with the consolidated financial statements"
+retrieval_queries:
+  - "estimated life of mine per site years remaining operations"
+  - "mine life expectancy closure date consistent financial statements"
+  - "life of mine definition consistent consolidated financial statements per site"
+good_evidence_hints:
+  - "Look for a table or section reporting the estimated years of remaining mine life or expected closure year for each mine site, with a note on how 'life of mine' is defined"
+  - "Good evidence confirms the definition is consistent with the financial statements (e.g., based on proven and probable reserves) and provides a specific life-of-mine figure per named mine site"
+suggested_fix_template: |
+    Disclose the estimated life of mine for each mine site, specifying whether it is expressed as years remaining or an expected closure date. State the definition of 'life of mine' used and confirm it is consistent with the definition applied in the consolidated financial statements.

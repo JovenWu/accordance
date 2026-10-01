@@ -1,0 +1,24 @@
+id: "12.13.4"
+standard: "GRI 12: Coal Sector 2022"
+title: "Tailings facilities: GISTM compliance, inventory, and failure prevention"
+category: sector
+requirement_text: |
+    Under Topic 12.13 Asset integrity and critical incident management, the organization must report whether it complies with the Global Industry Standard on Tailings Management (GISTM) and, if so, provide a link to the most recent GISTM Principle 15 disclosure; list its tailings facilities with details for each; and describe actions taken to manage impacts from and prevent catastrophic failures of tailings facilities.
+required_elements:
+  - id: gistm_compliance
+    desc: "whether the organization complies with the Global Industry Standard on Tailings Management (GISTM) and, if so, a link to the most recent information disclosed in line with GISTM Principle 15"
+  - id: list_tailings_facilities
+    desc: "list of the organization's tailings facilities with name, location, and ownership status"
+  - id: facility_details
+    desc: "for each tailings facility: description; whether active, inactive, or closed; Consequence Classification; date and main findings of the most recent risk assessment; dates of the most recent and next independent technical reviews"
+  - id: actions_manage_and_prevent
+    desc: "actions taken to manage impacts from tailings facilities (including during closure and post-closure) and to prevent catastrophic failures of tailings facilities"
+retrieval_queries:
+  - "tailings facilities GISTM compliance coal sector list active inactive closed"
+  - "Global Industry Standard Tailings Management GISTM Principle 15 coal"
+  - "tailings dam risk assessment independent review catastrophic failure prevention coal"
+good_evidence_hints:
+  - "Look for a tailings management section that names each tailings facility, gives its status (active/inactive/closed), and references the GISTM and any Principle 15 disclosure link"
+  - "Good evidence includes per-facility details such as Consequence Classification, the date and findings of the most recent risk assessment, and scheduled independent technical reviews"
+suggested_fix_template: |
+    State whether the organisation complies with the Global Industry Standard on Tailings Management (GISTM) and, if so, provide a link to the most recent GISTM Principle 15 disclosure. List all tailings facilities by name, location, and ownership status, and for each facility provide a description, its active/inactive/closed status, Consequence Classification, date and findings of the most recent risk assessment, and the dates of the most recent and next independent technical reviews. Describe actions taken to manage impacts—including during and after closure—and to prevent catastrophic failures.

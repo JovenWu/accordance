@@ -1,0 +1,22 @@
+id: "14.10.4"
+standard: "GRI 14: Mining Sector 2024"
+title: "Local community grievances"
+category: sector
+requirement_text: |
+    Under Topic 14.10 Local communities, the organization must report, for each mine site, the number and types of grievances received from local communities during the reporting period, and the percentages of those grievances that were addressed and resolved and that were resolved through remediation.
+required_elements:
+  - id: grievance_number_and_types
+    desc: "For each mine site, the number and types of grievances from local communities during the reporting period"
+  - id: percent_addressed_resolved
+    desc: "Percentage of grievances that were addressed and resolved during the reporting period"
+  - id: percent_resolved_through_remediation
+    desc: "Percentage of grievances resolved through remediation during the reporting period"
+retrieval_queries:
+  - "local community grievances number types addressed resolved mine site"
+  - "community grievance mechanism complaints resolved remediation reporting period"
+  - "grievances from local communities percentage resolved through remediation"
+good_evidence_hints:
+  - "Look in the local communities or grievance-mechanism section for a per-site count and categorization of community grievances plus resolution rates"
+  - "Good evidence reports both the percentage addressed/resolved and the percentage resolved through remediation, broken down by mine site for the reporting period"
+suggested_fix_template: |
+    Add, for each mine site, the number and types of local community grievances received during the reporting period, the percentage addressed and resolved, and the percentage resolved through remediation.

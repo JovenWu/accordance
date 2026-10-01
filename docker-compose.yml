@@ -1,0 +1,76 @@
+# Single-service deployment: FastAPI serves both the API (/api/*) and the
+# frontend SPA (/) from the same container. The container persists state
+# under /app/data; the bind-mount below keeps that data on the host across
+# `docker compose down`.
+#
+# Configuration lives in .env at the repo root. Copy .env.example and fill
+# in the secrets before `docker compose up`.
+
+name: accordance
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: accordance-db
+    restart: unless-stopped
+    environment:
+      # POSTGRES_USER/DB stay `gri`: the existing pgdata volume was initialized
+      # with those credentials — changing them would break the live database.
+      POSTGRES_USER: gri
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gri}
+      POSTGRES_DB: gri
+    ports:
+      # Host-loopback only — lets host-run pytest/dev reach PG. Host port is
+      # overridable via DB_HOST_PORT (set it in .env) when 5432 is taken on the
+      # dev machine; the container always listens on 5432.
+      - "127.0.0.1:${DB_HOST_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gri -d gri"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: accordance:latest
+    container_name: accordance
+    restart: unless-stopped
+    # Give the app time to drain in-progress runs on SIGTERM (docker stop /
+    # deploy) before Docker SIGKILLs it. Must exceed SHUTDOWN_DRAIN_SECONDS
+    # (default 25s) so the lifespan's graceful drain can finish.
+    stop_grace_period: 30s
+    # Cap container memory so a large docling extraction (std::bad_alloc on
+    # 200+ page PDFs is a known hazard) can't OOM a shared host. Generous for
+    # the default pymupdf path; raise it if you run EXTRACTOR_BACKEND=docling on
+    # big reports.
+    ports:
+      - "8151:8151"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      # Force DATA_DIR inside the container regardless of what .env sets.
+      # The host's `./data` is bind-mounted here.
+      DATA_DIR: /app/data
+      DATABASE_URL: postgresql://gri:${POSTGRES_PASSWORD:-gri}@db:5432/gri
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8151/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  # Pinned to the pre-rename volume name so the `accordance` stack reuses the
+  # existing `gri-lens_pgdata` data instead of initializing a fresh database.
+  pgdata:
+    name: gri-lens_pgdata

@@ -1,0 +1,20 @@
+id: "13.15.5"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Employment terms by nationality or migrant status"
+requirement_text: |
+  Under Topic 13.15 Non-discrimination and equal opportunity, the organization must describe any differences in employment terms and approach to compensation based on workers' nationality or migrant status, by location of operations.
+required_elements:
+  - id: employment_term_differences
+    desc: "Differences in employment terms based on workers' nationality or migrant status, by location of operations"
+  - id: compensation_approach_differences
+    desc: "Differences in approach to compensation based on workers' nationality or migrant status, by location of operations"
+retrieval_queries:
+  - "employment terms differences nationality migrant status location operations agriculture"
+  - "migrant worker compensation differences employment terms location agriculture"
+  - "seasonal migrant worker terms conditions pay differences by location"
+good_evidence_hints:
+  - "Look in the employment or human rights section for any disclosure of differences in contracts, benefits, or pay between workers of different nationalities or migrant status"
+  - "Good evidence addresses both employment terms and compensation differences by operational location, or confirms there are none"
+suggested_fix_template: |
+  Describe any differences in employment terms (e.g., contract type, benefits, working hours) and approach to compensation based on workers' nationality or migrant status, reported by location of operations.

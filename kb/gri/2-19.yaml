@@ -1,0 +1,28 @@
+id: "2-19"
+standard: "GRI 2: General Disclosures 2021"
+title: "Remuneration policies"
+category: universal
+requirement_text: |
+    Describe remuneration policies for governance body members and senior executives,
+    including pay types and how remuneration relates to impact management objectives.
+required_elements:
+  - id: fixed_variable_pay
+    desc: "Fixed and variable pay"
+  - id: sign_on_bonus
+    desc: "Sign-on bonuses or recruitment incentives"
+  - id: termination_payments
+    desc: "Termination payments"
+  - id: clawbacks
+    desc: "Clawback arrangements"
+  - id: retirement_benefits
+    desc: "Retirement benefits"
+  - id: impact_objectives_link
+    desc: "How remuneration relates to impact management objectives and performance"
+retrieval_queries:
+  - "remuneration policy senior executives ESG performance"
+  - "executive compensation fixed variable clawback retirement benefits"
+good_evidence_hints:
+  - "Often in remuneration report or compensation committee section"
+suggested_fix_template: |
+    Add remuneration policy details for board members and executives, including pay components
+    and any link to sustainability or impact-management objectives.

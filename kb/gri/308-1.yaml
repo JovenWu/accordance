@@ -1,0 +1,19 @@
+id: "308-1"
+standard: "GRI 308: Supplier Environmental Assessment 2016"
+title: "New suppliers that were screened using environmental criteria"
+category: topic
+requirement_text: |
+    Report the percentage of new suppliers that were screened using environmental criteria.
+required_elements:
+  - id: new_suppliers_screened_percentage
+    desc: "Percentage of new suppliers screened using environmental criteria"
+retrieval_queries:
+  - "new suppliers screened environmental criteria percentage"
+  - "supplier environmental screening assessment new suppliers"
+  - "percentage suppliers assessed environmental criteria onboarding"
+good_evidence_hints:
+  - "Look in supply chain, responsible sourcing, or supplier assessment sections"
+  - "Strong evidence gives a clear percentage of new suppliers screened on environmental criteria"
+suggested_fix_template: |
+    Add a figure reporting the percentage of new suppliers that were screened using environmental
+    criteria during the reporting period.

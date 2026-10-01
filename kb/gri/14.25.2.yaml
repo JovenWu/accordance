@@ -1,0 +1,20 @@
+id: "14.25.2"
+standard: "GRI 14: Mining Sector 2024"
+title: "Operations in conflict-affected and high-risk areas"
+category: sector
+requirement_text: |
+    Under Topic 14.25 Conflict-affected and high-risk areas, the organization must report the locations of operations situated in conflict-affected and high-risk areas (CAHRA), and describe how those areas were identified, in accordance with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas.
+required_elements:
+  - id: locations_in_cahra
+    desc: "Locations of operations situated in conflict-affected and high-risk areas (CAHRA)"
+  - id: identification_method
+    desc: "Method used to identify conflict-affected and high-risk areas, consistent with the OECD Due Diligence Guidance"
+retrieval_queries:
+  - "operations conflict-affected high-risk areas CAHRA locations identification OECD"
+  - "mine sites in conflict zones high-risk areas identified OECD due diligence"
+  - "conflict-affected high-risk areas mining operations OECD Due Diligence Guidance minerals"
+good_evidence_hints:
+  - "Look for a section on responsible sourcing or conflict minerals disclosing which operations are in CAHRA and how those designations were determined (e.g. OECD Guidance, conflict risk assessments)"
+  - "Good evidence names specific operations in CAHRA and cites the identification methodology, such as reference to the OECD Guidance, conflict risk mapping, or third-party assessments"
+suggested_fix_template: |
+    Identify the specific operations located in conflict-affected and high-risk areas (CAHRA) and describe the methodology used to identify those areas, referencing alignment with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas.

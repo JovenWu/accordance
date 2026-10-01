@@ -1,0 +1,27 @@
+id: "305-1"
+standard: "GRI 305: Emissions 2016"
+title: "Direct (Scope 1) GHG emissions"
+category: topic
+requirement_text: |
+    Report gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent, the gases included, biogenic CO2 emissions reported separately, the base year, and the methodology, emission factors, GWP source, and consolidation approach used.
+required_elements:
+  - id: scope_1_emissions_tonnes
+    desc: "Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent"
+  - id: gases_included
+    desc: "Gases included in the calculation (CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all)"
+  - id: biogenic_co2_emissions
+    desc: "Biogenic CO2 emissions in metric tons of CO2 equivalent, reported separately"
+  - id: base_year
+    desc: "Base year, rationale for choosing it, baseline emissions, and context for recalculations"
+  - id: methodology_and_consolidation
+    desc: "Source of emission factors and GWP rates, consolidation approach (equity share, financial control, or operational control), and standards/methodologies/tools used"
+retrieval_queries:
+  - "Scope 1 direct GHG emissions tCO2e metric tons CO2 equivalent"
+  - "gases CO2 CH4 N2O HFCs PFCs SF6 NF3 global warming potential GWP"
+  - "biogenic CO2 base year consolidation operational control emission factors"
+good_evidence_hints:
+  - "Look for a GHG inventory table with Scope 1 / direct emissions in tCO2e, gases covered, and base-year figures"
+  - "Good evidence names the GWP source, emission factors, and consolidation approach (operational/financial control or equity share)"
+suggested_fix_template: |
+    Add the gross Scope 1 GHG emissions in tCO2e, list the gases included, report biogenic CO2 separately, state the base year with rationale, and disclose the emission factors, GWP source, consolidation approach, and calculation methodology.
+superseded_by: "GRI 102: Climate Change 2025"

@@ -1,0 +1,25 @@
+id: "302-2"
+standard: "GRI 302: Energy 2016"
+title: "Energy consumption outside of the organization"
+category: topic
+requirement_text: |
+    Report energy consumed in upstream and downstream value-chain activities (excluding energy already reported under 302-1) in joules or multiples, together with the standards, methodologies and conversion factors used.
+required_elements:
+  - id: energy_consumption_outside
+    desc: "Energy consumption outside the organization (joules or multiples)"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions and/or calculation tools used"
+  - id: conversion_factors_source
+    desc: "Source of the conversion factors used"
+retrieval_queries:
+  - "energy consumption outside organization upstream downstream value chain"
+  - "Scope 3 energy purchased goods business travel use of sold products joules"
+  - "value chain energy consumption methodology conversion factors"
+good_evidence_hints:
+  - "Look for value-chain or Scope 3 energy figures (e.g. purchased goods, transportation, use of sold products) in GJ/TJ"
+  - "Good evidence states it excludes energy reported in 302-1 and lists upstream/downstream categories"
+suggested_fix_template: |
+    Add value-chain (upstream/downstream) energy consumption in joules or multiples, excluding energy reported under 302-1, and state the standards, methodologies and conversion-factor sources used.
+status: current
+effective_until: "2026-12-31"
+superseded_by: "GRI 103: Energy 2025"

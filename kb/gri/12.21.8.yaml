@@ -1,0 +1,22 @@
+id: "12.21.8"
+standard: "GRI 12: Coal Sector 2022"
+title: "State coal purchases: volumes, parties, and payments"
+category: sector
+requirement_text: |
+    Under Topic 12.21 Payments to governments, the organization must report, for coal purchased from the state or from third parties appointed by the state to sell on their behalf, the volumes and types of coal purchased, the full names of the buying entity and the recipient of the payment, and the payments made for the purchase.
+required_elements:
+  - id: volumes_and_types
+    desc: "volumes and types of coal purchased"
+  - id: buyer_and_recipient_names
+    desc: "full names of the buying entity and the recipient of the payment"
+  - id: payments_made
+    desc: "payments made for the purchase"
+retrieval_queries:
+  - "coal purchased from state government volumes types payments EITI coal sector"
+  - "state coal sales third party appointed volumes buyer recipient payments"
+  - "payments for state coal purchases buying entity recipient coal sector"
+good_evidence_hints:
+  - "Look in the payments to governments or EITI reconciliation section for a table showing coal volumes purchased from state entities, the parties involved, and the amounts paid"
+  - "Good evidence names both the buying entity and the specific state or third-party recipient of the payment and disaggregates the data by coal type and volume"
+suggested_fix_template: |
+    For any coal purchased from the state or from third parties appointed by the state to sell on the state's behalf, report the volumes and types of coal purchased, the full legal names of the buying entity and the recipient of payment, and the total payments made for the purchase. Present this information per transaction or per reporting period, consistent with EITI Standard Requirement 4.2.

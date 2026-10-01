@@ -1,0 +1,22 @@
+id: "12.3.4"
+standard: "GRI 12: Coal Sector 2022"
+title: "Closure and rehabilitation status of operational sites"
+category: sector
+requirement_text: |
+    Under Topic 12.3 Closure and rehabilitation, the organization must list the operational sites that have closure and rehabilitation plans in place, that have been closed, and that are undergoing closure activities.
+required_elements:
+  - id: sites_with_closure_plans
+    desc: "operational sites that have closure and rehabilitation plans in place"
+  - id: sites_closed
+    desc: "operational sites that have been closed"
+  - id: sites_undergoing_closure
+    desc: "operational sites that are undergoing closure activities"
+retrieval_queries:
+  - "coal mine sites closure rehabilitation plans in place undergoing activities"
+  - "list of operational sites closed undergoing closure rehabilitation coal"
+  - "mine site closure status rehabilitation plan coal sector"
+good_evidence_hints:
+  - "Look for a table or list that categorises each operational site by closure status: sites with plans, sites closed, and sites actively undergoing closure"
+  - "Good evidence names each site and indicates which closure phase it is in, rather than providing only aggregate counts"
+suggested_fix_template: |
+    Provide a list of all operational sites categorised by closure status: those with closure and rehabilitation plans in place, those that have been fully closed, and those currently undergoing closure activities. Name each site and indicate the relevant category.

@@ -1,0 +1,24 @@
+id: "14.8.8"
+standard: "GRI 14: Mining Sector 2024"
+title: "Financial provisions for closure and rehabilitation"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, the organization must report, for each mine site, the total estimated closure and rehabilitation cost (not discounted, including post-closure monitoring and aftercare), whether the financial provision covers the full current estimated cost and is in line with regulatory requirements, the methodology used to calculate the cost, and the financial instruments guaranteeing the provisions.
+required_elements:
+  - id: total_estimated_closure_cost
+    desc: "Total estimated closure and rehabilitation cost per site, not discounted, including post-closure monitoring and aftercare"
+  - id: provision_adequacy
+    desc: "Whether the financial provision covers the full current estimated cost and is in line with regulatory requirements"
+  - id: methodology
+    desc: "Methodology used to calculate the closure and rehabilitation cost"
+  - id: financial_instruments
+    desc: "Financial instruments (e.g. bonds, trust funds, insurance) guaranteeing the provisions"
+retrieval_queries:
+  - "closure rehabilitation cost financial provision adequacy mine site bond trust fund"
+  - "total estimated closure cost undiscounted post-closure monitoring aftercare per site"
+  - "financial assurance closure rehabilitation methodology instruments guaranteeing provisions"
+good_evidence_hints:
+  - "Look for a per-site table of undiscounted closure cost estimates alongside descriptions of the financial instruments (bonds, trust funds, insurance) used to guarantee the provisions"
+  - "Good evidence states whether each site's provision covers the full estimated cost, confirms regulatory compliance, and describes the costing methodology (e.g. independent engineer estimates, regulatory cost models)"
+suggested_fix_template: |
+    For each mine site, disclose the total estimated closure and rehabilitation cost (undiscounted, including post-closure monitoring and aftercare), whether the financial provision covers the full estimated cost and meets regulatory requirements, the methodology used to calculate the cost, and the financial instruments (bonds, trust funds, insurance, or other mechanisms) guaranteeing the provisions.

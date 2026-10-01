@@ -1,0 +1,66 @@
+# Ground-truth template for the evaluation harness.
+# Copy this file, rename it to match your report (e.g. acme-2024.yaml),
+# and fill in disclosure-by-disclosure. You only need to label the ones
+# you're confident about — unlabeled disclosures are ignored.
+#
+# Run with:  python -m accordance.eval eval/ground_truth/<your-file>.yaml
+
+report_id: example-2024                  # any unique slug
+pdf_filename: example-report-2024.pdf    # used to match an existing run
+pdf_sha256:                              # optional but preferred — exact match
+pdf_path:                                # optional — path to PDF (relative to this YAML)
+                                         # only needed if no matching run exists yet
+labeler: you@example.com
+labeled_at: 2026-05-18
+
+disclosures:
+  # --- GRI 2: General Disclosures ---
+
+  - id: "2-1"
+    expected_status: covered             # covered | partial | missing
+    expected_evidence_page: 4            # optional, for page-match metric
+    notes: "Org details on the inside cover."
+    elements:                            # optional, omit if you only label disclosure-level
+      - id: legal_name
+        expected_status: found           # found | partial | missing
+        expected_page: 4
+      - id: ownership_and_legal_form
+        expected_status: found
+      - id: headquarters_location
+        expected_status: found
+      - id: countries_of_operation
+        expected_status: partial         # mentioned but no full list
+
+  - id: "2-6"
+    expected_status: partial
+    elements:
+      - id: activities_value_chain
+        expected_status: found
+      - id: products_services
+        expected_status: found
+      - id: significant_changes
+        expected_status: missing
+
+  - id: "2-7"
+    expected_status: missing
+    notes: "No employee breakdown table found in this report."
+
+  # --- GRI 305: Emissions ---
+
+  - id: "305-1"
+    expected_status: covered
+    expected_evidence_page: 47
+    elements:
+      - id: scope_1_emissions_tonnes
+        expected_status: found
+        expected_page: 47
+      - id: gases_included
+        expected_status: found
+      - id: biogenic_co2_emissions
+        expected_status: missing
+      - id: base_year
+        expected_status: found
+
+  # Add as many disclosures as you can be confident about.
+  # You can find the full list of disclosure IDs and required_elements in
+  # kb/gri/*.yaml — each YAML there describes what the judge looks for.

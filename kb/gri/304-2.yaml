@@ -1,0 +1,29 @@
+id: "304-2"
+standard: "GRI 304: Biodiversity 2016"
+title: "Significant impacts of activities, products, and services on biodiversity"
+category: topic
+requirement_text: |
+    Report the nature of significant direct and indirect impacts on biodiversity from the organization's activities, products, and services, and characterize those positive and negative impacts by the species, area, duration, and reversibility involved.
+required_elements:
+  - id: nature_of_impacts
+    desc: "Nature of significant direct and indirect biodiversity impacts (e.g., construction/use of plants, mines, transport infrastructure; pollution; invasive species/pests/pathogens; species reduction; habitat conversion; changes to ecological processes)"
+  - id: species_affected
+    desc: "Species affected by the significant impacts"
+  - id: extent_of_areas
+    desc: "Extent of areas impacted"
+  - id: duration_of_impacts
+    desc: "Duration of the impacts"
+  - id: reversibility_of_impacts
+    desc: "Reversibility or irreversibility of the impacts"
+retrieval_queries:
+  - "significant impacts on biodiversity activities products services habitat conversion"
+  - "biodiversity impact species affected area duration reversibility pollution invasive species"
+  - "direct indirect negative positive impacts ecosystems operations"
+good_evidence_hints:
+  - "Look for a narrative describing how operations, products, or services affect biodiversity (habitat loss, pollution, invasive species) with affected species and area extent"
+  - "Good evidence distinguishes direct vs indirect and positive vs negative impacts and notes their duration and reversibility"
+suggested_fix_template: |
+    Describe the significant direct and indirect impacts of activities, products, and services on biodiversity, including the species affected, extent of areas impacted, duration of impacts, and whether they are reversible or irreversible.
+status: superseded
+effective_until: "2025-12-31"
+superseded_by: "GRI 101: Biodiversity 2024"

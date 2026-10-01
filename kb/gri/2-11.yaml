@@ -1,0 +1,23 @@
+id: "2-11"
+standard: "GRI 2: General Disclosures 2021"
+title: "Chair of the highest governance body"
+category: universal
+requirement_text: |
+    Report whether the chair of the highest governance body is also a senior executive.
+    If yes, explain the role, reason, and conflict-of-interest safeguards.
+required_elements:
+  - id: chair_is_senior_executive
+    desc: "Whether chair is also a senior executive"
+  - id: executive_function
+    desc: "Function within management, if applicable"
+  - id: reason_for_arrangement
+    desc: "Reason for combined role, if applicable"
+  - id: conflict_prevention_mitigation
+    desc: "How conflicts of interest are prevented and mitigated"
+retrieval_queries:
+  - "chair highest governance body senior executive"
+  - "chairman CEO separation conflict of interest"
+good_evidence_hints:
+  - "Look for board leadership structure or chair/CEO section"
+suggested_fix_template: |
+    State whether the chair also holds an executive role and explain safeguards if the role is combined.

@@ -1,0 +1,22 @@
+id: "301-3"
+standard: "GRI 301: Materials 2016"
+title: "Reclaimed products and their packaging materials"
+category: topic
+requirement_text: |
+    Report the percentage of reclaimed products and their packaging materials for each product category,
+    and explain how the data for this disclosure have been collected.
+required_elements:
+  - id: reclaimed_percentage_by_category
+    desc: "Percentage of reclaimed products and their packaging materials, for each product category"
+  - id: data_collection_method
+    desc: "How the data for this disclosure were collected"
+retrieval_queries:
+  - "reclaimed products packaging materials percentage product category"
+  - "take-back reclaimed packaging recycled product category percentage"
+  - "product packaging reclaimed end of life collected percentage"
+good_evidence_hints:
+  - "Look in product stewardship, take-back, or packaging sections of the report"
+  - "Strong evidence gives reclaimed percentages by product category and the data basis"
+suggested_fix_template: |
+    Add a section reporting the percentage of reclaimed products and their packaging materials by
+    product category, and describe how the data were collected.

@@ -1,0 +1,18 @@
+id: "13.14.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Indigenous peoples – locations of presence or impact"
+requirement_text: |
+  Under Topic 13.14 Rights of indigenous peoples, the organization must list the locations of operations where indigenous peoples are present or affected by activities of the organization.
+required_elements:
+  - id: locations_indigenous_present_or_affected
+    desc: "List of locations of operations where indigenous peoples are present or affected by the organization's activities"
+retrieval_queries:
+  - "indigenous peoples present affected locations operations agriculture aquaculture"
+  - "operations locations where indigenous communities present or impacted"
+  - "indigenous people land territory operations presence impact listing"
+good_evidence_hints:
+  - "Look for a list or map of operational sites where indigenous peoples are present, adjacent, or otherwise affected by the organization's agricultural or fishing activities"
+  - "Good evidence names specific countries, regions, or sites and notes the nature of indigenous presence or potential impact"
+suggested_fix_template: |
+  List all locations of operations where indigenous peoples are present or affected by the organization's activities in the agriculture, aquaculture, or fishing sectors.

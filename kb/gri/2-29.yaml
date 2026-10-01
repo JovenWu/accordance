@@ -1,0 +1,24 @@
+id: "2-29"
+standard: "GRI 2: General Disclosures 2021"
+title: "Approach to stakeholder engagement"
+category: universal
+requirement_text: |
+    Describe the approach to stakeholder engagement, including stakeholder categories,
+    identification, engagement purpose, and how meaningful engagement is supported.
+required_elements:
+  - id: stakeholder_categories
+    desc: "Categories of stakeholders engaged"
+  - id: stakeholder_identification
+    desc: "How stakeholders are identified"
+  - id: engagement_purpose
+    desc: "Purpose of stakeholder engagement"
+  - id: meaningful_engagement
+    desc: "How the organization seeks meaningful engagement"
+retrieval_queries:
+  - "stakeholder engagement approach categories purpose"
+  - "stakeholders identified meaningful engagement sustainability"
+good_evidence_hints:
+  - "Often presented as a stakeholder engagement table"
+suggested_fix_template: |
+    Add a stakeholder engagement section listing stakeholder groups, how they are identified,
+    why engagement occurs, and how meaningful engagement is ensured.

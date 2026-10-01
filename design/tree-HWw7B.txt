@@ -1,0 +1,265 @@
+T: data-pencil-id="HWw7B"
+        data-pencil-name="Screen — Compare Versions"
+        class="box-border w-[1440px] h-[900px] absolute left-[5100px] top-[4768px] flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden"
+      >
+sidebar | w-[264px] shrink-0 h-[900px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+  Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+    LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+      T: ICON(scan-search)
+    BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+      Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+        T: Lens
+      Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: GRI disclosure analysis
+  Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+    Nav Analyses | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+      T: ICON(layout-list)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Analyses
+    Nav Users | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+      T: ICON(users)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Users
+  Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+  User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+    Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+      Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: MC
+    User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+      User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: maya.chen
+      User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: 23 analyses · $58.41
+    T: ICON(log-out)
+main | [flex:1_1_0] h-full flex flex-col gap-0 justify-start items-start bg-[#F5F5F5]
+  content | w-full [flex:1_1_0] flex flex-col gap-[20px] p-[20px_32px_32px_32px] justify-start items-start
+    back | w-fit h-fit shrink-0 flex flex-row gap-[6px] justify-start items-center
+      T: ICON(arrow-left)
+      bt | text-[13px]/[normal] text-[#71717A] font-medium text-left
+        T: PT Meridian Energi Tbk
+      bs | text-[13px]/[normal] text-[#71717A] font-normal text-left
+        T: / Compare versions
+    head | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+      t | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+        T: Compare versions
+      pick | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-end
+        va | w-[200px] shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Version A
+          Trigger | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px] relative
+            Value | text-[14px]/[normal] text-[#71717A] font-normal text-left relative [z-index:0]
+              T: v3 — Sep 15
+            T: ICON(chevron-down)
+          selDescW | w-[131px] h-[15px] shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+        sw | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC]
+          T: ICON(arrow-left-right)
+        vb | w-[200px] shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Version B
+          Trigger | w-full h-[36px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px] relative
+            Value | text-[14px]/[normal] text-[#71717A] font-normal text-left relative [z-index:0]
+              T: v4 — Sep 28
+            T: ICON(chevron-down)
+          selDescW | w-[131px] h-[15px] shrink-0 flex flex-row gap-0 p-[0px_4px] justify-start items-start
+    sumrow | w-full h-fit shrink-0 flex flex-row gap-[16px] justify-start items-start
+      d Avg score | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Covered
+        rr | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+          v | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: 184 → 198
+          d | text-[12px]/[normal] text-[#17C964] font-semibold text-left
+            T: +14
+      d Coverage | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Partial
+        rr | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+          v | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: 92 → 85
+          d | text-[12px]/[normal] text-[#17C964] font-semibold text-left
+            T: −7
+      d Missing | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Missing
+        rr | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+          v | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: 96 → 88
+          d | text-[12px]/[normal] text-[#17C964] font-semibold text-left
+            T: −8
+      d Changed findings | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+        l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Changed findings
+        rr | w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center
+          v | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: — → 61
+          d | text-[12px]/[normal] text-[#17C964] font-semibold text-left
+            T: of 463
+    dfilters | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+      fc | w-fit shrink-0 h-fit flex flex-row gap-[8px] justify-start items-start
+        f0 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#0485F7] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Changed · 61
+        f Improved · 34 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Improved · 34
+        f Regressed · 7 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Regressed · 7
+        f Added · 12 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Added · 12
+        f Removed · 8 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Removed · 8
+        f Unchanged · 402 | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+            T: Unchanged · 402
+    dtable | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] overflow-hidden
+      thr | w-full h-[38px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#EFEFF0]
+        h Disclosure | text-[12px]/[normal] w-[110px] shrink-0 text-[#71717A] font-medium text-left
+          T: Disclosure
+        h Title | text-[12px]/[normal] [flex:1_1_0] text-[#71717A] font-medium text-left
+          T: Title
+        h v3 | text-[12px]/[normal] w-[64px] shrink-0 text-[#71717A] font-medium text-left
+          T: v3
+        h v4 | text-[12px]/[normal] w-[64px] shrink-0 text-[#71717A] font-medium text-left
+          T: v4
+        h Change | text-[12px]/[normal] w-[120px] shrink-0 text-[#71717A] font-medium text-left
+          T: Change
+        h Note | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-medium text-left
+          T: Note
+      d GRI 305-1 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 305-1
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Direct (Scope 1) GHG emissions
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 3
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 4
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+              T: Improved
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: 2 more elements found
+      d GRI 2-7 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 2-7
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Employees
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 4
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 5
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+              T: Improved
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: breakdown by region added
+      d GRI 401-2 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 401-2
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Worker–management relationships
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 2
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 1
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+              T: Regressed
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: evidence page removed in v4
+      d GRI 305-7 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 305-7
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Other air emissions
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: —
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 0
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#0485F726] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#0485F7] font-medium text-left
+              T: Added
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: newly judged in v4
+      d GRI 206-1 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 206-1
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Legal actions — anti-competitive
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 4
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: —
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: Removed
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: disclosure dropped from scope
+      d GRI 3-3 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 3-3
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Management of material topics
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 3
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 4
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+              T: Improved
+          T: ICON(pen-line)
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: correction applied by maya.chen
+      d GRI 403-9 | w-full h-[48px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+        cd | text-[13px]/[normal] w-[110px] shrink-0 text-[#18181B] font-semibold text-left
+          T: GRI 403-9
+        ti | text-[13px]/[normal] [flex:1_1_0] text-[#18181B] font-normal text-left
+          T: Work-related injuries
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 1
+        sc | w-[64px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+          sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+            Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+              T: 1
+        cc | w-[120px] shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center
+          ch | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+            Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+              T: Unchanged
+        nt | text-[12px]/[normal] w-[200px] shrink-0 text-[#71717A] font-normal text-left
+          T: missing in both versions
+T: div

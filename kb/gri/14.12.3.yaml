@@ -1,0 +1,22 @@
+id: "14.12.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Land and resource rights conflicts"
+category: sector
+requirement_text: |
+    Under Topic 14.12 Land and resource rights, the organization must report the locations of operations where conflicts or violations related to land and resource rights — including customary, collective, or informal tenure rights — occurred during the reporting period, descriptions of the incidents, and the stakeholders affected.
+required_elements:
+  - id: locations_with_conflicts
+    desc: "Operations where conflicts or violations of land and resource rights (customary, collective, or informal tenure) occurred during the reporting period"
+  - id: incident_description
+    desc: "Description of each land and resource rights conflict or violation incident"
+  - id: affected_stakeholders
+    desc: "Stakeholders affected by land and resource rights conflicts or violations"
+retrieval_queries:
+  - "land resource rights conflicts violations operations customary collective tenure mining"
+  - "land rights conflicts incidents affected stakeholders mining operations"
+  - "conflicts violations customary land tenure resource rights mine sites incidents"
+good_evidence_hints:
+  - "Look for incident logs or case narratives in the land rights, community, or human rights sections describing specific conflicts over land or resource access at named mine sites"
+  - "Good evidence identifies the operations involved, describes the nature of each incident (e.g. dispute over customary land ownership, displacement), and names or characterises the affected stakeholder groups"
+suggested_fix_template: |
+    Disclose the operations where land and resource rights conflicts or violations occurred during the reporting period, including conflicts related to customary, collective, or informal tenure rights. For each incident, provide a description of what occurred and identify the affected stakeholders. Where resolutions or remediation actions were taken, describe these as well.

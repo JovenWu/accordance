@@ -1,0 +1,20 @@
+id: "2-26"
+standard: "GRI 2: General Disclosures 2021"
+title: "Mechanisms for seeking advice and raising concerns"
+category: universal
+requirement_text: |
+    Describe mechanisms for individuals to seek advice on responsible business conduct
+    and raise concerns about business conduct.
+required_elements:
+  - id: advice_mechanisms
+    desc: "Mechanisms to seek advice on policies and practices"
+  - id: concern_mechanisms
+    desc: "Mechanisms to raise concerns about business conduct"
+retrieval_queries:
+  - "whistleblowing hotline ethics helpline raise concerns"
+  - "mechanism seek advice responsible business conduct"
+good_evidence_hints:
+  - "Look for ethics hotline, whistleblowing channel, compliance helpline"
+suggested_fix_template: |
+    Add mechanisms for seeking advice and raising concerns, including hotline, escalation,
+    confidentiality, anonymity, and non-retaliation features if applicable.

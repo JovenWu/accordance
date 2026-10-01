@@ -1,0 +1,24 @@
+id: "405-1"
+standard: "GRI 405: Diversity and Equal Opportunity 2016"
+title: "Diversity of governance bodies and employees"
+category: topic
+requirement_text: |
+    Report the percentage of individuals within the organization's governance bodies in each of the
+    following diversity categories: gender; age group (under 30, 30-50, over 50 years old); and other
+    indicators of diversity where relevant (such as minority or vulnerable groups). Report the
+    percentage of employees per employee category in each of these same diversity categories.
+required_elements:
+  - id: governance_diversity
+    desc: "Percentage of governance body members by gender, age group, and other diversity indicators"
+  - id: employee_diversity
+    desc: "Percentage of employees per employee category by gender, age group, and other diversity indicators"
+retrieval_queries:
+  - "diversity governance body employees gender age group percentage"
+  - "board diversity gender age employee category representation"
+  - "workforce diversity gender age minority percentage by category"
+good_evidence_hints:
+  - "Look in diversity & inclusion or governance sections for representation breakdowns"
+  - "Strong evidence gives percentages for both governance bodies and employees by gender and age"
+suggested_fix_template: |
+    Add a diversity section reporting the percentage of governance body members and of employees (by
+    category) across gender, age group, and other relevant diversity indicators.

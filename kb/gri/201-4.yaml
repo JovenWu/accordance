@@ -1,0 +1,29 @@
+id: "201-4"
+standard: "GRI 201: Economic Performance 2016"
+title: "Financial assistance received from government"
+category: topic
+requirement_text: |
+    Report the total monetary value of financial assistance received by the organization from any
+    government during the reporting period, including tax relief and tax credits; subsidies; investment,
+    research and development, and other relevant grants; awards; royalty holidays; financial assistance
+    from export credit agencies; financial incentives; and other financial benefits received or
+    receivable. Provide this information by country, and state whether, and the extent to which, any
+    government is present in the shareholding structure.
+required_elements:
+  - id: total_financial_assistance
+    desc: "Total monetary value of government financial assistance (tax relief/credits, subsidies, grants, awards, incentives, etc.)"
+  - id: assistance_by_country
+    desc: "Breakdown of the financial assistance by country"
+  - id: government_shareholding
+    desc: "Whether and to what extent any government is present in the shareholding structure"
+retrieval_queries:
+  - "financial assistance received from government tax relief subsidies grants"
+  - "government grants subsidies tax credits incentives received by country"
+  - "government shareholding subsidies export credit financial benefit"
+good_evidence_hints:
+  - "Look for government grants/subsidies disclosures in financial notes or an economic performance section"
+  - "Strong evidence gives a monetary total by country and notes any government ownership"
+suggested_fix_template: |
+    Add a section reporting the total value of financial assistance received from governments (tax
+    relief, subsidies, grants, incentives, etc.), broken down by country, and disclose any government
+    presence in the shareholding structure.

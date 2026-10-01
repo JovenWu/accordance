@@ -1,0 +1,32 @@
+id: "101-7"
+standard: "GRI 101: Biodiversity 2024"
+title: "Changes to the state of biodiversity"
+category: topic
+requirement_text: |
+    For each significant-impact site, report on affected or potentially affected ecosystems:
+    the ecosystem type for the base year, the ecosystem size in hectares for the base year, and
+    the ecosystem condition for both the base year and the current reporting period. Report
+    contextual information on how the data was compiled, including standards, methodologies, and
+    assumptions used.
+required_elements:
+  - id: ecosystem_type_base_year
+    desc: "Ecosystem type for the base year for affected or potentially affected ecosystems (101-7-a-i)"
+  - id: ecosystem_size_base_year
+    desc: "Ecosystem size in hectares for the base year (101-7-a-ii)"
+  - id: ecosystem_condition
+    desc: "Ecosystem condition for the base year and the current reporting period (101-7-a-iii)"
+  - id: contextual_information
+    desc: "Contextual information on how the data was compiled, including standards, methodologies, and assumptions used (101-7-b)"
+retrieval_queries:
+  - "ecosystem condition base year reporting period state of biodiversity"
+  - "ecosystem type size hectares affected"
+  - "biodiversity accounts condition-adjusted area"
+good_evidence_hints:
+  - "Look for base-year vs reporting-period ecosystem condition comparisons (see Table 3)"
+  - "Condition may be reported via methods in Table 2 (e.g., Mean Species Abundance, Ecosystem Integrity Index)"
+  - "Organization may additionally report affected/potentially affected species and extinction risk"
+suggested_fix_template: |
+    Add a state-of-biodiversity section reporting, per significant-impact site, the base-year
+    ecosystem type and size, the ecosystem condition for the base year and current reporting
+    period, and the standards, methodologies, and assumptions used.
+effective_date: "2026-01-01"

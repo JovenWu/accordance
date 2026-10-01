@@ -1,0 +1,24 @@
+id: "305-6"
+standard: "GRI 305: Emissions 2016"
+title: "Emissions of ozone-depleting substances (ODS)"
+category: topic
+requirement_text: |
+    Report production, imports, and exports of ozone-depleting substances in metric tons of CFC-11 equivalent, the substances included, the source of emission factors, and the methodology used.
+required_elements:
+  - id: ods_cfc11_equivalent
+    desc: "Production, imports, and exports of ODS in metric tons of CFC-11 (trichlorofluoromethane) equivalent"
+  - id: substances_included
+    desc: "Substances included in the calculation"
+  - id: emission_factor_source
+    desc: "Source of the emission factors used"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions, and/or calculation tools used"
+retrieval_queries:
+  - "ozone-depleting substances ODS CFC-11 equivalent metric tons"
+  - "ODS production imports exports Montreal Protocol CFCs HCFCs halons"
+  - "ozone depleting substances emission factors calculation methodology"
+good_evidence_hints:
+  - "Look for ODS quantities expressed in CFC-11 equivalent covering production, imports, and exports"
+  - "Good evidence lists the specific substances (e.g., CFCs, HCFCs, halons) and the emission factor source"
+suggested_fix_template: |
+    Add production, imports, and exports of ODS in metric tons of CFC-11 equivalent, list the substances included, and disclose the emission factor source and calculation methodology.

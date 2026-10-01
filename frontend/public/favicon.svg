@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- accordance: a magnifying glass over a disclosure -->
+  <g stroke="#0485F7" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- near-full circle whose lower-right terminal turns inward -->
+    <path d="M19.226 8.641 A7.6 7.6 0 1 0 20.526 14.058 L14.6 14.058" />
+    <!-- magnifying-glass handle -->
+    <path d="M17.68 18.99 L25.5 26.81" />
+  </g>
+</svg>

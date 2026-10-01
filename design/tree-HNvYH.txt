@@ -1,0 +1,38 @@
+T: data-pencil-id="HNvYH"
+        data-pencil-name="Screen / Login"
+        class="box-border w-[1440px] h-[900px] absolute left-[420px] top-[3748px] bg-[#F5F5F5] overflow-hidden"
+      >
+Login Card | w-[424px] h-fit [box-shadow:0px_8px_24px_#00000014] absolute left-[508px] top-[200px] flex flex-col gap-[20px] p-[32px] justify-start items-start bg-[#FFFFFF] rounded-[24px] [z-index:0]
+  Login Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] justify-start items-center
+    LogoMark | w-[40px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[12px]
+      T: ICON(scan-search)
+    Login Brand Text | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+      Wordmark | text-[18px]/[normal] text-[#18181B] font-semibold text-left
+        T: Lens
+      Tagline | text-[12px]/[normal] text-[#71717A] font-normal text-left
+        T: GRI disclosure analysis
+  Login Heading | w-full h-fit shrink-0 flex flex-col gap-[6px] justify-start items-start
+    Title | text-[24px]/[normal] text-[#18181B] font-semibold text-left
+      T: Sign in
+    Sub | text-[14px]/[21px] w-full text-[#71717A] font-normal text-left
+      T: Grade a sustainability report against the GRI Standards.
+  Fields | w-full h-fit shrink-0 flex flex-col gap-[14px] justify-start items-start
+    Username | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start
+      Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: Username
+      Input | w-full h-[40px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+        Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: maya.chen
+    Password | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start
+      Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: Password
+      Input | w-full h-[40px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+        Placeholder | text-[14px]/[normal] text-[#71717A] font-normal text-left
+          T: ••••••••••
+  Sign In | w-full h-[40px] shrink-0 flex flex-row gap-[8px] p-[8px_20px] justify-center items-center bg-[#0485F7] rounded-[24px]
+    T: ICON(log-in)
+    Label | text-[16px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Sign in
+  Footnote | text-[12px]/[normal] w-full text-[#71717A] font-normal text-center
+    T: Private deployment · ask an admin for an account
+T: div

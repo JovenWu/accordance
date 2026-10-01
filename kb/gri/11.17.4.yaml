@@ -1,0 +1,30 @@
+id: "11.17.4"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Free prior and informed consent FPIC processes"
+category: sector
+requirement_text: |
+  Under Topic 11.17 Rights of indigenous peoples, the organization must report whether it has
+  been involved in a process of seeking free, prior and informed consent (FPIC) from indigenous
+  peoples for any of its activities, including in each case whether the process was mutually
+  accepted and whether an agreement was reached and is publicly available.
+required_elements:
+  - id: fpic_process_involvement
+    desc: "whether the organization has been involved in a process of seeking free, prior and informed consent (FPIC) from indigenous peoples for any of its activities"
+  - id: process_mutually_accepted
+    desc: "in each case, whether the FPIC process has been mutually accepted by the organization and the affected indigenous peoples"
+  - id: agreement_reached_and_public
+    desc: "in each case, whether an agreement has been reached, and if so, whether the agreement is publicly available"
+retrieval_queries:
+  - "free prior informed consent FPIC indigenous peoples oil gas activities"
+  - "FPIC process mutually accepted agreement reached oil gas indigenous"
+  - "indigenous consent process agreement publicly available oil gas operations"
+good_evidence_hints:
+  - "Look in the human rights or indigenous peoples section for a description of FPIC processes undertaken, specifying which activities triggered the process and whether it was conducted jointly with affected communities"
+  - "Strong evidence states for each FPIC process: whether the process was mutually accepted, the outcome (agreement reached or not), and whether any concluded agreement is published or accessible"
+suggested_fix_template: |
+  For each activity or project where FPIC from indigenous peoples was sought, disclose: (1) a
+  description of the activity and the indigenous peoples involved; (2) whether the FPIC process
+  was mutually accepted by the organization and the affected communities; (3) whether a formal
+  agreement was reached; and (4) if an agreement was reached, whether it is publicly available
+  and how it can be accessed. If no FPIC processes were required during the reporting period,
+  state this explicitly and explain the basis for that determination.

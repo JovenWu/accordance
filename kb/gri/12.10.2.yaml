@@ -1,0 +1,20 @@
+id: "12.10.2"
+standard: "GRI 12: Coal Sector 2022"
+title: "Involuntary resettlement locations and livelihood restoration"
+category: sector
+requirement_text: |
+    Under Topic 12.10 Land and resource rights, the organization must list the locations of operations that caused or contributed to involuntary resettlement or where such resettlement is ongoing, and for each location describe how peoples' livelihoods and human rights were affected and restored.
+required_elements:
+  - id: locations_of_resettlement
+    desc: "locations of operations that caused or contributed to involuntary resettlement or where such resettlement is ongoing"
+  - id: livelihoods_rights_affected_restored
+    desc: "for each location, how peoples' livelihoods and human rights were affected and restored"
+retrieval_queries:
+  - "involuntary resettlement coal mine locations livelihoods human rights affected restored"
+  - "resettlement operations coal sector communities livelihoods restoration"
+  - "land rights resettlement coal mining sites human rights impacts"
+good_evidence_hints:
+  - "Look for a resettlement or land acquisition section that names each affected site and describes the impact on displaced people's livelihoods and rights"
+  - "Good evidence covers both the impact (how livelihoods and rights were affected) and the restoration (how they were or are being restored) for each location"
+suggested_fix_template: |
+    List each operational location that caused, contributed to, or is continuing to experience involuntary resettlement. For each location, describe how the affected communities' livelihoods and human rights were impacted and the steps taken—or underway—to restore them, including livelihood-restoration programs, compensation mechanisms, and access to remedy.

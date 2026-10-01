@@ -1,0 +1,48 @@
+id: "102-2"
+standard: "GRI 102: Climate Change 2025"
+title: "Climate change adaptation plan"
+category: topic
+requirement_text: |
+    Report whether the organization has a climate change adaptation plan; the climate-related
+    physical risks and opportunities and the climate scenarios used to identify them; the policies,
+    governance, and goals guiding adaptation; the actions taken to adapt to physical climate risks
+    and to capture climate-related opportunities; the targets and expenditure committed for
+    implementing the plan; how stakeholder engagement, including with workers, communities, and
+    Indigenous Peoples, has informed the plan; alignment with just transition principles; and the
+    impacts of those adaptation actions on the environment, workers, local communities, and
+    biodiversity. If no adaptation plan exists, state so.
+required_elements:
+  - id: adaptation_plan_existence
+    desc: "Whether a climate change adaptation plan exists and its scope"
+  - id: physical_risks_opportunities_and_scenarios
+    desc: "Climate-related physical risks and opportunities identified and the climate scenarios used"
+  - id: governance_policies_and_goals
+    desc: "Policies, governance, and goals guiding the adaptation response"
+  - id: adaptation_actions
+    desc: "Actions taken to adapt to physical climate risks and capture climate-related opportunities"
+  - id: expenditure_on_implementation
+    desc: "Financial resources and expenditure committed to implementing the adaptation plan"
+  - id: adaptation_targets
+    desc: "Targets set for the adaptation plan and progress against them"
+  - id: stakeholder_engagement
+    desc: "How engagement with workers, communities, and Indigenous Peoples has informed the adaptation plan"
+  - id: just_transition_alignment
+    desc: "How the adaptation plan aligns with just transition principles"
+  - id: impacts_of_adaptation
+    desc: "Impacts of adaptation actions on the environment, workers, communities, and biodiversity"
+retrieval_queries:
+  - "climate adaptation plan physical risk resilience scenario analysis opportunities"
+  - "climate scenario RCP SSP flooding drought heat resilience measures adaptation targets"
+  - "adaptation actions stakeholder engagement just transition biodiversity communities expenditure"
+good_evidence_hints:
+  - "Look in 'Climate adaptation', 'Physical risk', 'Resilience', or 'Scenario analysis' sections"
+  - "Strong evidence names the scenarios (e.g., RCP/SSP, IEA) and covers both risks and opportunities with concrete adaptation measures"
+  - "Look for disclosure of adaptation expenditure, targets, and stakeholder engagement informing the plan"
+suggested_fix_template: |
+    Add an adaptation section stating whether a plan exists, the physical risks and opportunities
+    and climate scenarios assessed, the governance and goals, the concrete adaptation actions taken
+    (addressing both risks and opportunities), expenditure on implementation, adaptation targets,
+    stakeholder engagement informing the plan, alignment with just transition principles, and the
+    impacts of adaptation actions on the environment, workers, communities, and biodiversity.
+status: upcoming
+effective_date: "2027-01-01"

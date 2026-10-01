@@ -1,0 +1,20 @@
+id: "12.20.6"
+standard: "GRI 12: Coal Sector 2022"
+title: "Beneficial ownership disclosure and partner identification"
+category: sector
+requirement_text: |
+    Under Topic 12.20 Anti-corruption, the organization must list its beneficial owners and explain how it identifies the beneficial owners of business partners, including joint ventures and suppliers.
+required_elements:
+  - id: list_beneficial_owners
+    desc: "list of the organization's beneficial owners"
+  - id: identify_partner_beneficial_owners
+    desc: "how the organization identifies the beneficial owners of business partners, including joint ventures and suppliers"
+retrieval_queries:
+  - "beneficial ownership coal sector list owners EITI anti-corruption"
+  - "beneficial owners identification joint ventures suppliers coal mining"
+  - "beneficial ownership register coal organization transparency supply chain"
+good_evidence_hints:
+  - "Look for a beneficial ownership section or governance disclosure that lists individuals or entities who ultimately own or control the organisation"
+  - "Good evidence explains the process used to identify and verify beneficial owners of business partners such as joint venture partners and key suppliers"
+suggested_fix_template: |
+    List the organisation's beneficial owners—identifying the natural persons who ultimately own or control the organisation—and describe the process used to identify the beneficial owners of business partners, including joint ventures and suppliers. Reference any applicable EITI or national beneficial ownership registry requirements that guide this process.

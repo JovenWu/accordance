@@ -1,0 +1,20 @@
+id: "403-5"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Worker training on occupational health and safety"
+category: topic
+requirement_text: |
+    Describe any occupational health and safety training provided to workers, including generic training
+    as well as training on specific work-related hazards, hazardous activities, or hazardous situations.
+required_elements:
+  - id: ohs_training
+    desc: "Description of OHS training provided to workers (generic and hazard-specific)"
+retrieval_queries:
+  - "worker training occupational health safety hazards"
+  - "OHS safety training employees contractors hazard-specific"
+  - "health and safety training programs workers"
+good_evidence_hints:
+  - "Look in OHS/HSE or training sections describing safety training programs"
+  - "Strong evidence covers both general and hazard-specific safety training"
+suggested_fix_template: |
+    Add a section describing the OHS training provided to workers, including both generic safety
+    training and training on specific work-related hazards and hazardous situations.

@@ -1,0 +1,36 @@
+id: "2-9"
+standard: "GRI 2: General Disclosures 2021"
+title: "Governance structure and composition"
+category: universal
+requirement_text: |
+    Describe the governance structure, committees responsible for impact oversight,
+    and the composition of the highest governance body and committees.
+required_elements:
+  - id: governance_structure
+    desc: "Governance structure and committees"
+  - id: impact_oversight_committees
+    desc: "Committees responsible for impact-related decisions and oversight"
+  - id: executive_non_executive
+    desc: "Executive and non-executive composition"
+  - id: independence
+    desc: "Independence of members"
+  - id: tenure
+    desc: "Tenure of governance body members"
+  - id: other_positions_commitments
+    desc: "Other significant positions and commitments"
+  - id: gender
+    desc: "Gender composition"
+  - id: under_represented_groups
+    desc: "Representation of under-represented social groups"
+  - id: impact_competencies
+    desc: "Competencies relevant to the organization's impacts"
+  - id: stakeholder_representation
+    desc: "Stakeholder representation"
+retrieval_queries:
+  - "governance structure board composition committees"
+  - "board independence tenure gender diversity sustainability committee"
+good_evidence_hints:
+  - "Often found in governance section or annual report board profile"
+suggested_fix_template: |
+    Add a governance structure and board composition section covering committees,
+    independence, tenure, diversity, impact competencies, and stakeholder representation.

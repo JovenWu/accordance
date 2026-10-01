@@ -1,0 +1,29 @@
+id: "102-8"
+standard: "GRI 102: Climate Change 2025"
+title: "GHG emissions intensity"
+category: topic
+requirement_text: |
+    Report the GHG emissions intensity ratio for the organization. Provide the intensity for Scope 1,
+    Scope 2, and Scope 3 emissions (separately or combined), using total GHG emissions in metric tons
+    of CO2 equivalent as the numerator and an organization-specific metric (the denominator, e.g., per
+    unit of production, revenue, or floor area). State the metric chosen, and which gases and scopes
+    are included in the ratio.
+required_elements:
+  - id: intensity_ratio_value
+    desc: "The GHG emissions intensity ratio(s) for Scope 1, 2, and/or 3"
+  - id: denominator_metric
+    desc: "The organization-specific denominator used (e.g., per unit of product, revenue, or area)"
+  - id: scopes_and_gases_included
+    desc: "Which scopes and greenhouse gases are included in the intensity ratio"
+retrieval_queries:
+  - "GHG emissions intensity ratio per revenue per unit production tCO2e"
+  - "carbon intensity emissions per million revenue per tonne product"
+  - "emissions intensity scope 1 2 denominator metric"
+good_evidence_hints:
+  - "Look for intensity metrics such as tCO2e per unit revenue, per tonne produced, or per m2"
+  - "Strong evidence states the numerator scopes and the specific denominator"
+suggested_fix_template: |
+    Add a GHG intensity metric expressed as total emissions (tCO2e) over an organization-specific
+    denominator, stating the metric used and which scopes and gases the ratio covers.
+status: upcoming
+effective_date: "2027-01-01"

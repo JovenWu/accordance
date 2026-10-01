@@ -1,0 +1,20 @@
+id: "14.8.9"
+standard: "GRI 14: Mining Sector 2024"
+title: "Non-financial provisions for socioeconomic transition"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, the organization must report the non-financial provisions it has made for the local community's transition to a post-mining economy, including collaborative efforts, projects, and programs undertaken to support socioeconomic transition.
+required_elements:
+  - id: socioeconomic_transition_provisions
+    desc: "Non-financial provisions made for the local community's transition to a post-mining economy"
+  - id: collaboration_and_programs
+    desc: "Collaborative efforts, projects, and programs supporting the socioeconomic transition of affected communities"
+retrieval_queries:
+  - "socioeconomic transition post-mining community provisions collaborative programs"
+  - "non-financial closure provisions community economic diversification post-mining"
+  - "local community transition post-mining economy programs partnerships projects"
+good_evidence_hints:
+  - "Look in the closure or community sections for descriptions of programs, partnerships, or initiatives that prepare local communities for economic life after mine closure"
+  - "Good evidence details specific collaborative efforts (e.g. livelihood diversification programs, business incubation, skills training, economic diversification partnerships) per mine site or community"
+suggested_fix_template: |
+    Describe the non-financial provisions made to support local communities in transitioning to a post-mining economy, including specific projects, programs, and collaborative efforts with community stakeholders, local government, or development partners. Where possible, link these to individual mine sites and closure timelines.

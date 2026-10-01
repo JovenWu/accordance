@@ -1,0 +1,26 @@
+id: "2-20"
+standard: "GRI 2: General Disclosures 2021"
+title: "Process to determine remuneration"
+category: universal
+requirement_text: |
+    Describe the process for designing remuneration policies and determining remuneration,
+    including independent oversight, stakeholder views, consultants, and voting results.
+required_elements:
+  - id: remuneration_process
+    desc: "Process for designing policies and determining remuneration"
+  - id: independent_oversight
+    desc: "Independent board members or remuneration committee oversight"
+  - id: stakeholder_views
+    desc: "How stakeholder or shareholder views are considered"
+  - id: consultants_independence
+    desc: "Use and independence of remuneration consultants"
+  - id: voting_results
+    desc: "Results of votes on remuneration policies or proposals, if applicable"
+retrieval_queries:
+  - "process to determine remuneration committee consultant shareholder vote"
+  - "executive compensation determination stakeholder views"
+good_evidence_hints:
+  - "Look for remuneration governance, say-on-pay, or compensation committee report"
+suggested_fix_template: |
+    Add how remuneration is determined, who oversees the process, whether consultants are used,
+    how stakeholder views are considered, and vote results where applicable.

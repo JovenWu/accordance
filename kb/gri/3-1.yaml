@@ -1,0 +1,39 @@
+id: "3-1"
+standard: "GRI 3: Material Topics 2021"
+title: "Process to determine material topics"
+category: universal
+
+requirement_text: |
+  Describe the process the organization has followed to determine its material
+  topics, including: how it has identified actual and potential, negative and
+  positive impacts on the economy, environment, and people, including impacts
+  on their human rights, across its activities and business relationships; how
+  it has prioritized the impacts for reporting based on their significance;
+  how stakeholders and experts have been consulted in the process. Specify the
+  stakeholders and experts whose views have informed the process. Describe how
+  the organization has applied applicable GRI Sector Standards in determining
+  material topics, or explain why a sector standard was not used.
+
+required_elements:
+  - id: impact_identification_process
+    desc: "How actual and potential impacts (positive/negative) were identified across activities and relationships"
+  - id: prioritization_process
+    desc: "How impacts were prioritized by significance to determine materiality"
+  - id: stakeholder_and_expert_consultation
+    desc: "Stakeholders and experts consulted; views that informed the process"
+  - id: use_of_sector_standards
+    desc: "Use of applicable GRI Sector Standards in determining material topics"
+
+retrieval_queries:
+  - "materiality assessment process"
+  - "impact identification prioritization"
+  - "double materiality stakeholder consultation"
+
+good_evidence_hints:
+  - "Look for a materiality matrix, methodology section, or stakeholder list"
+
+suggested_fix_template: |
+  Describe the materiality assessment process: how positive/negative,
+  actual/potential impacts were identified (including value-chain impacts
+  and human rights), how they were prioritized by significance, and which
+  stakeholders/experts were consulted.

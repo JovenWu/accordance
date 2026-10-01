@@ -1,0 +1,24 @@
+id: "13.14.4"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Free, prior, and informed consent (FPIC) processes"
+requirement_text: |
+  Under Topic 13.14 Rights of indigenous peoples, the organization must report whether it has been involved in a process of seeking free, prior, and informed consent (FPIC) from indigenous peoples for any of the organization's activities, including: whether the process has been mutually accepted by the organization and the affected indigenous peoples; how the organization ensured that the constituent elements of FPIC have been implemented; and whether an agreement has been reached and, if so, whether the agreement is publicly available.
+required_elements:
+  - id: fpic_process_involvement
+    desc: "Whether the organization has been involved in an FPIC process for any of its activities"
+  - id: mutually_accepted
+    desc: "Whether the process has been mutually accepted by the organization and the affected indigenous peoples"
+  - id: constituent_elements_implemented
+    desc: "How the organization ensured the constituent elements of FPIC were implemented"
+  - id: agreement_reached_and_public
+    desc: "Whether an agreement has been reached and, if so, whether it is publicly available"
+retrieval_queries:
+  - "free prior informed consent FPIC indigenous peoples process organization activities"
+  - "FPIC agreement mutually accepted constituent elements implemented indigenous"
+  - "indigenous consent process agreement publicly available agriculture land"
+good_evidence_hints:
+  - "Look for explicit disclosure of FPIC processes engaged for specific projects or land uses, with description of how the process was conducted and whether consent was obtained"
+  - "Good evidence states whether any resulting agreements are publicly accessible and confirms mutual acceptance by both the organization and indigenous communities"
+suggested_fix_template: |
+  Report whether the organization has been involved in FPIC processes with indigenous peoples, whether those processes were mutually accepted, how the constituent elements of FPIC were implemented, and whether any resulting agreements have been reached and made publicly available.

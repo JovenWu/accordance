@@ -1,0 +1,25 @@
+id: "301-1"
+standard: "GRI 301: Materials 2016"
+title: "Materials used by weight or volume"
+category: topic
+requirement_text: |
+    Report the total weight or volume of materials that are used to produce and package the
+    organization's primary products and services during the reporting period, broken down by
+    non-renewable materials used and renewable materials used.
+required_elements:
+  - id: total_materials
+    desc: "Total weight or volume of materials used to produce and package primary products and services"
+  - id: non_renewable_materials
+    desc: "Weight or volume of non-renewable materials used"
+  - id: renewable_materials
+    desc: "Weight or volume of renewable materials used"
+retrieval_queries:
+  - "materials used by weight volume renewable non-renewable inputs"
+  - "raw materials consumed production packaging tonnes"
+  - "material inputs renewable non-renewable weight volume"
+good_evidence_hints:
+  - "Look in materials, resource use, or circular economy sections for a materials table"
+  - "Strong evidence splits totals into renewable vs non-renewable with units (tonnes/volume)"
+suggested_fix_template: |
+    Add a materials section reporting the total weight or volume of materials used for products and
+    packaging, split into renewable and non-renewable materials, with units.

@@ -1,0 +1,20 @@
+id: "301-2"
+standard: "GRI 301: Materials 2016"
+title: "Recycled input materials used"
+category: topic
+requirement_text: |
+    Report the percentage of recycled input materials used to manufacture the organization's primary
+    products and services.
+required_elements:
+  - id: recycled_input_percentage
+    desc: "Percentage of recycled input materials used to manufacture primary products and services"
+retrieval_queries:
+  - "recycled input materials percentage used manufacturing"
+  - "recycled content percentage materials products"
+  - "share of recycled materials inputs production"
+good_evidence_hints:
+  - "Look in materials or circular economy sections for a recycled-content percentage"
+  - "Strong evidence gives a clear percentage of recycled input materials"
+suggested_fix_template: |
+    Add a figure reporting the percentage of recycled input materials used to manufacture the
+    organization's primary products and services.

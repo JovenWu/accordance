@@ -1,0 +1,37 @@
+id: "103-5"
+standard: "GRI 103: Energy 2025"
+title: "Reduction in energy consumption"
+category: topic
+requirement_text: |
+    Report reductions in energy consumption achieved as a direct result of conservation and efficiency
+    initiatives, in joules or watt-hours. Include the types of energy in the reductions (fuel,
+    electricity, heating, cooling, steam, or all); the base year or baseline against which reductions
+    are measured and why it was chosen; the initiatives driving the reductions; and the standards,
+    methodologies, and assumptions used.
+required_elements:
+  - id: reductions_achieved
+    desc: "Amount of reduction in energy consumption achieved, in joules or watt-hours"
+  - id: energy_types
+    desc: "The types of energy included in the reductions"
+  - id: baseline_and_rationale
+    desc: "The base year or baseline used for the reductions and the rationale for it"
+  - id: initiatives_and_methodology
+    desc: "Initiatives driving the reductions and the standards, methodologies, and assumptions used"
+  - id: efficiency_vs_other_factors
+    desc: "Distinguish reductions from conservation/efficiency initiatives vs other factors"
+  - id: estimation_basis
+    desc: "Whether figures are estimated, modeled, or directly measured"
+  - id: within_org_vs_value_chain
+    desc: "Whether the reduction occurred within the organization, in the value chain, or both"
+retrieval_queries:
+  - "reduction in energy consumption efficiency initiatives savings GJ MWh"
+  - "energy savings conservation projects reduction baseline year"
+  - "energy efficiency program reduced consumption achieved"
+good_evidence_hints:
+  - "Look in 'Energy efficiency', 'Energy savings', or 'Conservation initiatives' sections"
+  - "Strong evidence quantifies savings against a baseline and names the initiatives"
+suggested_fix_template: |
+    Add an energy-reduction section quantifying savings (in GJ or Wh) from conservation/efficiency
+    initiatives, the energy types, the baseline used, the initiatives involved, and the methodology.
+status: upcoming
+effective_date: "2027-01-01"

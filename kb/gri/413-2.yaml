@@ -1,0 +1,22 @@
+id: "413-2"
+standard: "GRI 413: Local Communities 2016"
+title: "Operations with significant actual and potential negative impacts on local communities"
+category: topic
+requirement_text: |
+    Report the operations with significant actual and potential negative impacts on local communities,
+    including the location of the operations and the significant actual and potential negative impacts.
+required_elements:
+  - id: operations_with_impacts
+    desc: "Operations with significant actual and potential negative impacts on local communities, and their locations"
+  - id: nature_of_impacts
+    desc: "The significant actual and potential negative impacts on local communities"
+retrieval_queries:
+  - "operations significant negative impacts local communities location"
+  - "negative community impacts operations affected communities"
+  - "local communities negative impacts operations significant"
+good_evidence_hints:
+  - "Look in community, social impact, or human rights sections describing community impacts"
+  - "Strong evidence identifies which operations have negative community impacts and what they are"
+suggested_fix_template: |
+    Add a section identifying operations with significant actual and potential negative impacts on local
+    communities, their locations, and the nature of those impacts.

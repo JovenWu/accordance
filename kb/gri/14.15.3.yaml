@@ -1,0 +1,22 @@
+id: "14.15.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Critical incidents"
+category: sector
+requirement_text: |
+    Report the number of critical incidents in the reporting period, describe their impacts, and describe the actions taken to remediate them.
+required_elements:
+  - id: critical_incidents_count
+    desc: "Number of critical incidents in the reporting period"
+  - id: incident_impacts
+    desc: "Description of the impacts of the critical incidents"
+  - id: remediation_actions
+    desc: "Description of actions taken to remediate the critical incidents"
+retrieval_queries:
+  - "number of critical incidents reporting period mining"
+  - "tailings failure spill explosion fire flood incident impacts remediation"
+  - "catastrophic incident workers communities environment corrective actions"
+good_evidence_hints:
+  - "Look in critical incident management, health and safety, or emergency response sections for a count of critical incidents plus narrative on impacts and remediation"
+  - "Good evidence quantifies incidents and links each to its impacts (environmental, community, worker) and the remediation taken, not just spills (306-3)"
+suggested_fix_template: |
+    Add a disclosure reporting the number of critical incidents during the reporting period, with a description of their impacts and the remediation actions taken for each.

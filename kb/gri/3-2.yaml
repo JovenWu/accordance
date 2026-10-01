@@ -1,0 +1,27 @@
+id: "3-2"
+standard: "GRI 3: Material Topics 2021"
+title: "List of material topics"
+category: universal
+
+requirement_text: |
+  List its material topics. Report changes to the list of material topics
+  compared to the previous reporting period.
+
+required_elements:
+  - id: list_of_material_topics
+    desc: "Explicit list of the organization's material topics"
+  - id: changes_from_previous_period
+    desc: "Any changes (added/removed/renamed) compared to the previous period"
+
+retrieval_queries:
+  - "list of material topics"
+  - "material issues priorities"
+  - "materiality matrix outcomes"
+
+good_evidence_hints:
+  - "Usually a bulleted list or a matrix labeled 'Material Topics'"
+
+suggested_fix_template: |
+  Provide an explicit, named list of material topics (one bullet per topic),
+  and a note describing any additions, removals, or renaming versus the
+  prior period.

@@ -1,0 +1,24 @@
+id: "14.22.6"
+standard: "GRI 14: Mining Sector 2024"
+title: "Beneficial ownership"
+category: sector
+requirement_text: |
+    Report information about the organization's beneficial owners, including those of joint ventures: their name, nationality, and country of residence; whether they are politically exposed persons; the level of ownership; and how ownership or control is exerted.
+required_elements:
+  - id: owner_identity
+    desc: "Name, nationality, and country of residence of each beneficial owner"
+  - id: politically_exposed_person_status
+    desc: "Whether each beneficial owner is a politically exposed person"
+  - id: level_of_ownership
+    desc: "Level of ownership held by each beneficial owner"
+  - id: ownership_or_control_exerted
+    desc: "How ownership or control is exerted by each beneficial owner"
+retrieval_queries:
+  - "beneficial ownership name nationality level of ownership mining"
+  - "politically exposed person joint venture ownership control disclosure"
+  - "beneficial owners transparency EITI extractive company shareholders"
+good_evidence_hints:
+  - "Look in anti-corruption, ownership, or governance sections for a beneficial-owners table listing names, nationality, country of residence, PEP status, ownership level, and how control is exerted"
+  - "Good evidence covers joint-venture beneficial owners too; note publicly listed organizations (and their wholly-owned subsidiaries) are exempt for their joint ventures' beneficial owners"
+suggested_fix_template: |
+    Add a disclosure of the organization's beneficial owners (including those of joint ventures) reporting each owner's name, nationality, and country of residence, whether they are a politically exposed person, their level of ownership, and how ownership or control is exerted.

@@ -1,0 +1,25 @@
+id: "406-1"
+standard: "GRI 406: Non-discrimination 2016"
+title: "Incidents of discrimination and corrective actions taken"
+category: topic
+requirement_text: |
+    Report the total number of incidents of discrimination during the reporting period and the status of
+    each incident and the actions taken, with reference to whether the incident has been reviewed by the
+    organization; whether remediation plans are being implemented; whether remediation plans have been
+    implemented with results reviewed through routine internal management review processes; and whether
+    the incident is no longer subject to action.
+required_elements:
+  - id: incident_count
+    desc: "Total number of incidents of discrimination during the reporting period"
+  - id: status_and_actions
+    desc: "Status of each incident and corrective actions taken (reviewed, remediation in progress/completed, closed)"
+retrieval_queries:
+  - "incidents of discrimination corrective actions taken status"
+  - "discrimination complaints incidents remediation actions"
+  - "discrimination cases number corrective action status"
+good_evidence_hints:
+  - "Look in human rights, ethics, or grievance sections for discrimination incident data"
+  - "Strong evidence gives the number of incidents and their remediation status (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting the number of discrimination incidents during the period and the status and
+    corrective actions for each (stating zero explicitly where applicable).

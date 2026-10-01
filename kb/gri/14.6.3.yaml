@@ -1,0 +1,30 @@
+id: "14.6.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Tailings facilities inventory and risk profile"
+category: sector
+requirement_text: |
+    Under Topic 14.6 Tailings, the organization must list its tailings facilities with name, location and ownership/operator status, and for each facility not confirmed to be in a state of safe closure must report its construction method and characteristics, operational status, permitted and actual storage, GISTM Consequence Classification, risk-assessment frequency and findings, and the most recent independent technical review.
+required_elements:
+  - id: facility_inventory
+    desc: "List of tailings facilities with name, location, ownership status and whether the organization is the operator"
+  - id: facility_description_construction
+    desc: "Description of each facility (not in safe closure), including construction method (upstream, downstream, or centerline)"
+  - id: facility_status
+    desc: "Whether each facility is active, inactive, or closed"
+  - id: capacity_and_volume_stored
+    desc: "Maximum permitted storage capacity and total weight of tailings stored, in metric tons"
+  - id: consequence_classification
+    desc: "Consequence Classification in line with GISTM Requirement 4.1"
+  - id: risk_assessment_frequency_findings
+    desc: "Frequency of risk assessments and summary of the most recent risk assessment findings"
+  - id: independent_technical_review
+    desc: "Date and material findings of the most recent independent technical review, including mitigation measures implemented and the date of the next review"
+retrieval_queries:
+  - "tailings storage facility inventory name location consequence classification GISTM"
+  - "tailings facility construction method upstream downstream centerline storage capacity metric tons"
+  - "tailings independent technical review risk assessment active inactive closed"
+good_evidence_hints:
+  - "Look for a tailings facility register or table (often aligned to the Global Industry Standard on Tailings Management / GISTM) listing each facility with location, operator, construction type, consequence/hazard rating and capacity"
+  - "Good evidence covers every facility not in safe closure and includes both capacity (max permitted) and current tonnage stored, plus dates of risk assessments and independent reviews"
+suggested_fix_template: |
+    Add a tailings facility inventory listing each facility's name, location, ownership and operator status, and for every facility not in safe closure report its construction method, active/inactive/closed status, maximum permitted capacity and tonnage stored, GISTM Consequence Classification, risk-assessment frequency and findings, and the date and findings of the most recent independent technical review with the next review date.

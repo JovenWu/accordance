@@ -1,0 +1,27 @@
+id: "417-1"
+standard: "GRI 417: Marketing and Labeling 2016"
+title: "Requirements for product and service information and labeling"
+category: topic
+requirement_text: |
+    Report whether each of the following types of information is required by the organization's
+    procedures for product and service information and labeling: the sourcing of components of the
+    product or service; content, particularly with regard to substances that might produce an
+    environmental or social impact; safe use of the product or service; and disposal of the product and
+    environmental or social impacts. Report the percentage of significant product or service categories
+    covered by and assessed for compliance with such procedures.
+required_elements:
+  - id: information_types_required
+    desc: "Which information types are required by labeling procedures (sourcing, content, safe use, disposal/impacts)"
+  - id: categories_covered_percentage
+    desc: "Percentage of significant product/service categories covered by and assessed for compliance with the procedures"
+retrieval_queries:
+  - "product service information labeling requirements sourcing content safe use disposal"
+  - "labeling requirements product information procedures categories assessed"
+  - "product labeling content disposal safe use information requirements"
+good_evidence_hints:
+  - "Look in product labeling, packaging, or product information sections"
+  - "Strong evidence lists the required information types and the percentage of categories covered"
+suggested_fix_template: |
+    Add a section stating which information types labeling procedures require (sourcing, content, safe
+    use, disposal/impacts) and the percentage of significant product/service categories covered and
+    assessed for compliance.

@@ -1,0 +1,29 @@
+id: "304-4"
+standard: "GRI 304: Biodiversity 2016"
+title: "IUCN Red List species and national conservation list species with habitats in areas affected by operations"
+category: topic
+requirement_text: |
+    Report the total number of IUCN Red List species and national conservation list species with habitats in areas affected by the organization's operations, broken down by level of extinction risk.
+required_elements:
+  - id: critically_endangered
+    desc: "Number of affected species classified as critically endangered"
+  - id: endangered
+    desc: "Number of affected species classified as endangered"
+  - id: vulnerable
+    desc: "Number of affected species classified as vulnerable"
+  - id: near_threatened
+    desc: "Number of affected species classified as near threatened"
+  - id: least_concern
+    desc: "Number of affected species classified as least concern"
+retrieval_queries:
+  - "IUCN Red List species national conservation list affected by operations"
+  - "species extinction risk critically endangered vulnerable near threatened"
+  - "threatened species habitats areas of operation count by risk level"
+good_evidence_hints:
+  - "Look for counts of threatened/protected species in or near operational areas categorized by IUCN risk level"
+  - "Good evidence references the IUCN Red List or a national conservation list and reports species numbers per risk category"
+suggested_fix_template: |
+    Report the total number of IUCN Red List and national conservation list species with habitats in areas affected by operations, broken down by extinction-risk level (critically endangered, endangered, vulnerable, near threatened, least concern).
+status: superseded
+effective_until: "2025-12-31"
+superseded_by: "GRI 101: Biodiversity 2024"

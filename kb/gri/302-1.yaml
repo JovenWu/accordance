@@ -1,0 +1,33 @@
+id: "302-1"
+standard: "GRI 302: Energy 2016"
+title: "Energy consumption within the organization"
+category: topic
+requirement_text: |
+    Report total energy consumption within the organization in joules or multiples, broken down by non-renewable and renewable fuel, plus purchased electricity, heating, cooling and steam (and any sold), together with the standards, methodologies and conversion factors used.
+required_elements:
+  - id: fuel_non_renewable
+    desc: "Total fuel consumption from non-renewable sources (joules), including fuel types"
+  - id: fuel_renewable
+    desc: "Total fuel consumption from renewable sources (joules), including fuel types"
+  - id: energy_consumed
+    desc: "Total electricity, heating, cooling and steam consumption (joules/watt-hours)"
+  - id: energy_sold
+    desc: "Total electricity, heating, cooling and steam sold (joules/watt-hours)"
+  - id: total_energy_consumption
+    desc: "Total energy consumption within the organization (joules or multiples)"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions and/or calculation tools used"
+  - id: conversion_factors_source
+    desc: "Source of the conversion factors used"
+retrieval_queries:
+  - "energy consumption within organization fuel non-renewable renewable joules GJ MWh"
+  - "electricity heating cooling steam consumption purchased sold"
+  - "total energy consumption conversion factors methodology"
+good_evidence_hints:
+  - "Look for an energy consumption table breaking out fuel by source and purchased electricity/heat/steam in GJ, MWh or TJ"
+  - "Good evidence separates renewable vs non-renewable and states standards/conversion-factor sources"
+suggested_fix_template: |
+    Add a quantified energy table reporting non-renewable and renewable fuel, electricity/heating/cooling/steam consumed and sold, total energy consumption in joules or multiples, plus the methodologies and conversion-factor sources used.
+status: current
+effective_until: "2026-12-31"
+superseded_by: "GRI 103: Energy 2025"

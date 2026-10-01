@@ -1,0 +1,26 @@
+id: "207-3"
+standard: "GRI 207: Tax 2019"
+title: "Stakeholder engagement and management of concerns related to tax"
+category: topic
+requirement_text: |
+    Describe the approach to stakeholder engagement and management of stakeholder concerns related to
+    tax, including the approach to engagement with tax authorities; the approach to public policy
+    advocacy on tax; and the processes for collecting and considering the views and concerns of
+    stakeholders, including external stakeholders.
+required_elements:
+  - id: tax_authority_engagement
+    desc: "Approach to engagement with tax authorities"
+  - id: public_policy_advocacy
+    desc: "Approach to public policy advocacy on tax"
+  - id: stakeholder_concern_processes
+    desc: "Processes for collecting and considering the views and concerns of stakeholders, including external ones"
+retrieval_queries:
+  - "stakeholder engagement tax authorities public policy advocacy"
+  - "tax stakeholder concerns engagement lobbying tax policy"
+  - "engagement tax authorities stakeholder views concerns tax"
+good_evidence_hints:
+  - "Look in tax transparency sections covering engagement with authorities and stakeholders"
+  - "Strong evidence describes engagement with tax authorities, advocacy, and stakeholder processes"
+suggested_fix_template: |
+    Add a section describing engagement with tax authorities, the approach to public policy advocacy on
+    tax, and the processes for collecting and addressing stakeholder concerns related to tax.

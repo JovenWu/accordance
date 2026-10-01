@@ -1,0 +1,23 @@
+id: "404-2"
+standard: "GRI 404: Training and Education 2016"
+title: "Programs for upgrading employee skills and transition assistance programs"
+category: topic
+requirement_text: |
+    Report the type and scope of programs implemented and assistance provided to upgrade employee
+    skills, and the transition assistance programs provided to facilitate continued employability and
+    the management of career endings resulting from retirement or termination of employment.
+required_elements:
+  - id: skills_upgrade_programs
+    desc: "Type and scope of programs and assistance to upgrade employee skills"
+  - id: transition_assistance
+    desc: "Transition assistance programs supporting continued employability and managing career endings (retirement/termination)"
+retrieval_queries:
+  - "programs upgrading employee skills transition assistance employability"
+  - "reskilling upskilling training programs retirement transition support"
+  - "career development transition assistance continued employability"
+good_evidence_hints:
+  - "Look in learning & development, reskilling, or workforce transition sections"
+  - "Strong evidence describes both skill-upgrade and transition/outplacement programs"
+suggested_fix_template: |
+    Add a section describing programs to upgrade employee skills and the transition assistance programs
+    that support continued employability and manage retirement or termination.

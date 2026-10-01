@@ -1,0 +1,25 @@
+id: "409-1"
+standard: "GRI 409: Forced or Compulsory Labor 2016"
+title: "Operations and suppliers at significant risk for incidents of forced or compulsory labor"
+category: topic
+requirement_text: |
+    Report the operations and suppliers considered to have significant risk for incidents of forced or
+    compulsory labor, identified in terms of type of operation (such as manufacturing plant) and
+    supplier, and countries or geographic areas with operations and suppliers considered at risk. Report
+    the measures taken by the organization in the reporting period intended to contribute to the
+    elimination of all forms of forced or compulsory labor.
+required_elements:
+  - id: operations_suppliers_at_risk
+    desc: "Operations and suppliers at significant risk for forced or compulsory labor, by type and geography"
+  - id: measures_taken
+    desc: "Measures taken to contribute to the elimination of all forms of forced or compulsory labor"
+retrieval_queries:
+  - "forced compulsory labor significant risk operations suppliers measures"
+  - "modern slavery forced labour risk suppliers geographic areas"
+  - "forced labor elimination measures operations suppliers risk"
+good_evidence_hints:
+  - "Look in human rights, modern slavery, or supply chain sections referencing forced labor"
+  - "Strong evidence identifies at-risk operations/suppliers and elimination measures taken"
+suggested_fix_template: |
+    Add a section identifying operations and suppliers at significant risk for forced or compulsory
+    labor, by type and geography, and the measures taken to eliminate it.

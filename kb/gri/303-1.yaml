@@ -1,0 +1,34 @@
+id: "303-1"
+standard: "GRI 303: Water and Effluents 2018"
+title: "Interactions with water as a shared resource"
+category: topic
+requirement_text: |
+    Describe how the organization interacts with water, how water-related impacts are identified
+    and addressed, stakeholder engagement on water stewardship, and water-related goals or targets.
+required_elements:
+  - id: water_interactions
+    desc: "How and where water is withdrawn, consumed, and discharged"
+  - id: water_related_impacts
+    desc: "Water-related impacts caused, contributed to, or linked through business relationships"
+  - id: impact_identification_approach
+    desc: "Scope, timeframe, tools, and methodologies used to identify impacts"
+  - id: impact_management_approach
+    desc: "How water-related impacts are addressed"
+  - id: stakeholder_water_stewardship
+    desc: "How the organization works with stakeholders to steward water as a shared resource"
+  - id: supplier_customer_engagement
+    desc: "Engagement with suppliers or customers with significant water-related impacts"
+  - id: goals_targets_process
+    desc: "Process for setting water-related goals and targets"
+  - id: water_stress_local_context
+    desc: "How goals and targets relate to public policy and local context in water-stressed areas"
+retrieval_queries:
+  - "water withdrawal consumption discharge shared resource impacts"
+  - "water stewardship stakeholders suppliers customers water stress targets"
+good_evidence_hints:
+  - "Look for water management, water stewardship, catchment, basin, or water risk sections"
+  - "Good evidence explains both operational water use and value-chain impacts"
+suggested_fix_template: |
+    Add a water stewardship section explaining where water is withdrawn, consumed, and discharged,
+    what impacts are identified, how they are managed, which stakeholders are engaged, and how
+    water goals are set in relation to local water-stress context.

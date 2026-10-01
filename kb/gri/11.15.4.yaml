@@ -1,0 +1,28 @@
+id: "11.15.4"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Local community grievances and resolution rates"
+category: sector
+requirement_text: |
+  Under Topic 11.15 Local communities, the organization must report the number and type of
+  grievances from local communities identified, including the percentage that were addressed
+  and resolved and the percentage that were resolved through remediation.
+required_elements:
+  - id: number_and_type_of_grievances
+    desc: "number and type of grievances from local communities identified"
+  - id: percent_addressed_and_resolved
+    desc: "percentage of the grievances that were addressed and resolved"
+  - id: percent_resolved_through_remediation
+    desc: "percentage of the grievances that were resolved through remediation"
+retrieval_queries:
+  - "local community grievances number type oil gas addressed resolved percentage"
+  - "community grievance mechanism complaints oil gas remediation resolution rate"
+  - "grievances from communities percentage resolved remediation oil gas operations"
+good_evidence_hints:
+  - "Look in the community relations or stakeholder engagement section for a count of grievances categorised by type (e.g., noise, land, livelihoods) with resolution percentages"
+  - "Strong evidence separately reports the overall resolution rate and the subset resolved through remediation, and covers all operating locations for the reporting period"
+suggested_fix_template: |
+  Report the total number of grievances received from local communities during the reporting
+  period, broken down by type (e.g., noise, dust, land use, livelihoods). Disclose the
+  percentage of those grievances that were addressed and resolved, and separately the percentage
+  that were resolved through remediation. Describe the community grievance mechanism used to
+  receive and process these grievances.

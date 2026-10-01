@@ -1,0 +1,26 @@
+id: "2-3"
+standard: "GRI 2: General Disclosures 2021"
+title: "Reporting period, frequency and contact point"
+category: universal
+requirement_text: |
+    State the sustainability reporting period and frequency, the financial reporting
+    period if different, the publication date, and a contact point for report questions.
+required_elements:
+  - id: sustainability_reporting_period
+    desc: "Start and end date of sustainability reporting period"
+  - id: reporting_frequency
+    desc: "Frequency of sustainability reporting"
+  - id: financial_reporting_period
+    desc: "Financial reporting period and explanation if different"
+  - id: publication_date
+    desc: "Publication date of the report or reported information"
+  - id: contact_point
+    desc: "Contact point for report questions"
+retrieval_queries:
+  - "reporting period frequency publication date contact"
+  - "about this report contact sustainability report"
+good_evidence_hints:
+  - "Usually appears in 'About this report'"
+suggested_fix_template: |
+    Add the reporting period, reporting frequency, publication date, and a named
+    contact point or email for questions about the report.

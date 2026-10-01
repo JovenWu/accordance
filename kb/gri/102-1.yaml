@@ -1,0 +1,53 @@
+id: "102-1"
+standard: "GRI 102: Climate Change 2025"
+title: "Transition plan for climate change mitigation"
+category: topic
+requirement_text: |
+    Report whether the organization has a transition plan for climate change mitigation and,
+    if so, how it is aligned with the latest scientific evidence and relevant goals and targets
+    for limiting global warming; how the plan is embedded in the organization's strategy,
+    governance, and decision-making; the GHG emission reduction levers and actions across its
+    own operations and value chain, including fossil fuel phase-out targets; the key assumptions,
+    targets, indicators, and financial resources (expenditure on implementation) for implementing
+    the plan; the plan's impacts on people and the environment, including workers, local
+    communities, Indigenous Peoples, biodiversity, and the wider environment; and the
+    organization's public policy positions and lobbying activities relevant to climate change
+    mitigation. If no transition plan exists, state so.
+required_elements:
+  - id: transition_plan_existence_and_scope
+    desc: "Whether a climate change mitigation transition plan exists and the activities and value-chain scope it covers"
+  - id: alignment_with_latest_science
+    desc: "How the plan is aligned with the latest scientific evidence and relevant goals/targets for limiting global warming"
+  - id: governance_and_strategy_integration
+    desc: "How the plan is integrated into the organization's strategy, governance, and decision-making"
+  - id: mitigation_actions_and_levers
+    desc: "GHG reduction levers and actions across own operations and the value chain"
+  - id: fossil_fuel_phaseout_targets
+    desc: "Fossil fuel phase-out targets included in the transition plan"
+  - id: public_policy_and_lobbying
+    desc: "Public policy positions and lobbying activities relevant to climate change mitigation"
+  - id: targets_indicators_and_assumptions
+    desc: "Key assumptions, targets, and indicators used to implement the transition plan and track progress"
+  - id: expenditure_on_implementation
+    desc: "Financial resources and expenditure committed to implementing the transition plan"
+  - id: impacts_on_people_and_environment
+    desc: "Impacts of the transition plan on workers, local communities, Indigenous Peoples, biodiversity, and the wider environment"
+retrieval_queries:
+  - "climate transition plan net zero decarbonization strategy scientific evidence"
+  - "transition plan governance investment fossil fuel phase-out aligned climate goals"
+  - "climate mitigation levers value chain emission reduction roadmap"
+  - "transition plan public policy lobbying expenditure implementation"
+good_evidence_hints:
+  - "Look in 'Climate strategy', 'Net zero', 'Transition plan', or 'Decarbonization roadmap' sections"
+  - "Strong evidence states alignment with the latest science/climate goals, interim milestones, and the capital allocated"
+  - "Look for disclosure of fossil fuel phase-out targets and any public policy positions or lobbying activities"
+  - "May cross-reference GHG reduction targets (102-4) and just transition (102-3)"
+suggested_fix_template: |
+    Add a transition plan section stating whether a plan exists and how it aligns with the latest
+    scientific evidence and relevant goals/targets for limiting global warming, how it is governed
+    and embedded in strategy, the mitigation levers (including fossil fuel phase-out targets) across
+    operations and value chain, the expenditure on implementation, the public policy and lobbying
+    positions relevant to climate mitigation, and the plan's impacts on workers, communities,
+    Indigenous Peoples, biodiversity, and the wider environment.
+status: upcoming
+effective_date: "2027-01-01"

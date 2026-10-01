@@ -1,0 +1,202 @@
+T: data-pencil-id="ZPQRU"
+        data-pencil-name="Screen — Run Failed"
+        class="box-border w-[1440px] h-[900px] absolute left-[9780px] top-[5868px] flex flex-row gap-0 justify-start items-start overflow-hidden"
+      >
+sidebar | w-[264px] shrink-0 h-[900px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+  Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+    LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+      T: ICON(scan-search)
+    BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+      Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+        T: Lens
+      Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: GRI disclosure analysis
+  Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+    Nav Analyses | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+      T: ICON(layout-list)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Analyses
+    Nav Users | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+      T: ICON(users)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Users
+  Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+  User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+    Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+      Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: MC
+    User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+      User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: maya.chen
+      User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: 23 analyses · $58.41
+    T: ICON(log-out)
+main | [flex:1_1_0] h-full flex flex-col gap-0 justify-start items-start bg-[#F5F5F5]
+  content | w-full [flex:1_1_0] flex flex-col gap-[20px] p-[20px_32px_32px_32px] justify-start items-start
+    back | w-fit h-fit shrink-0 flex flex-row gap-[6px] justify-start items-center
+      T: ICON(arrow-left)
+      bt | text-[13px]/[normal] text-[#71717A] font-medium text-left
+        T: PT Meridian Energi Tbk
+      bs | text-[13px]/[normal] text-[#71717A] font-normal text-left
+        T: / Run v4 · update
+    head | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+      hl | w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center
+        t | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+          T: Run v4 — update
+        Failed chip | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+            T: Failed
+      ha | w-fit shrink-0 h-fit flex flex-row gap-[8px] justify-start items-start
+        retry | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+          T: ICON(rotate-ccw)
+          Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+            T: Retry run
+    stepper | w-full h-fit shrink-0 flex flex-row gap-0 p-[20px_24px] justify-start items-center bg-[#FFFFFF] rounded-[24px]
+      st Extract | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+        dot | w-[28px] shrink-0 h-[28px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[9999px]
+          T: ICON(check)
+        tx | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Extract
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 212 pages · 4.1s
+      cn | [flex:1_1_0] h-[2px] flex flex-row gap-0 justify-start items-start bg-[#17C964]
+      st Index | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+        dot | w-[28px] shrink-0 h-[28px] flex flex-row gap-0 justify-center items-center bg-[#17C964] rounded-[9999px]
+          T: ICON(check)
+        tx | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Index
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 1,208 chunks · embedded
+      cn | [flex:1_1_0] h-[2px] flex flex-row gap-0 justify-start items-start bg-[#17C964]
+      st Judge | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+        dot | w-[28px] shrink-0 h-[28px] flex flex-row gap-0 justify-center items-center bg-[#FF383C] rounded-[9999px]
+          T: ICON(x)
+        tx | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Judge
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 287 of 463 · 62%
+      cn | [flex:1_1_0] h-[2px] flex flex-row gap-0 justify-start items-start bg-[#E4E4E7]
+      st Finalize | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+        dot | w-[28px] shrink-0 h-[28px] flex flex-row gap-0 justify-center items-center bg-[#EFEFF0] rounded-[9999px]
+          nn | text-[12px]/[normal] text-[#71717A] font-semibold text-left
+            T: 4
+        tx | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#71717A] font-medium text-left
+            T: Finalize
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: pending
+    prog | w-full h-fit shrink-0 flex flex-col gap-[8px] justify-start items-start
+      prow | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-start
+        pl | text-[13px]/[normal] text-[#18181B] font-medium text-left
+          T: Failed during Judge — 187 of 300 disclosures judged
+        pr2 | text-[13px]/[normal] text-[#71717A] font-normal text-left
+          T: aborted · $0.31 spent
+      track | w-full h-[6px] shrink-0 flex flex-row gap-0 justify-start items-start bg-[#EFEFF0] rounded-[3px] overflow-hidden
+        fill | w-[700px] shrink-0 h-[6px] bg-[#FF383C]
+    err | w-full h-fit shrink-0 [box-shadow:0px_2px_4px_#0000000A] flex flex-row gap-[16px] p-[12px_16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+      Icon | w-fit shrink-0 h-fit flex flex-row gap-0 p-[4px] justify-center items-center
+        T: ICON(circle-alert)
+      Content | [flex:1_1_0] h-fit flex flex-col gap-[4px] justify-start items-start
+        Title | text-[14px]/[24px] text-[#FF383C] font-medium text-left
+          T: Run failed during Judge
+        Description | text-[14px]/[22px] w-full text-[#71717A] font-normal text-left
+          T: The judge step timed out while scoring disclosures. Partial findings were
+                  preserved — retry to continue from where it stopped.
+      Button/Danger/SM | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C] rounded-[24px]
+        Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+          T: Retry run
+    feedhead | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+      ft | text-[15px]/[normal] text-[#18181B] font-semibold text-left
+        T: Findings before failure
+      fs | text-[12px]/[normal] text-[#71717A] font-normal text-left
+        T: Run aborted · partial results preserved
+    feed | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] overflow-hidden
+      f GRI 305-1 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 4
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 305-1 — Direct (Scope 1) GHG emissions
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 3 of 6 elements · evidence p.88
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+            T: Partial
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f GRI 2-7 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 5
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 2-7 — Employees
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 6 of 6 elements · evidence p.41
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+            T: Covered
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f GRI 302-1 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 3
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 302-1 — Energy consumption within the organization
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 4 of 7 elements · evidence p.92
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+            T: Partial
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f GRI 403-9 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 1
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 403-9 — Work-related injuries
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 0 of 8 elements · vision fallback used
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+            T: Missing
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f GRI 2-30 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 4
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 2-30 — Collective bargaining agreements
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 2 of 3 elements · evidence p.55
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#F5A52426] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#F5A524] font-medium text-left
+            T: Partial
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f GRI 306-3 | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        sb | w-fit shrink-0 h-fit flex flex-row gap-[5px] p-[4px_10px] justify-start items-center bg-[#17C96426] rounded-[24px]
+          Score | text-[13px]/[normal] text-[#17C964] font-semibold text-left
+            T: 5
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: GRI 306-3 — Waste generated
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: 5 of 5 elements · evidence p.104
+        st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+          Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+            T: Covered
+      s | w-full h-[1px] shrink-0 bg-[#E4E4E7]
+      f ip | w-full h-[52px] shrink-0 flex flex-row gap-[14px] p-[0px_16px] justify-start items-center
+        T: ICON(x)
+        tx | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+          n | text-[13px]/[normal] text-[#71717A] font-medium text-left
+            T: GRI 401-1 — aborted
+          m | text-[11px]/[normal] text-[#71717A] font-normal text-left
+            T: · judge timed out after 120s
+T: div

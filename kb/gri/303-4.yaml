@@ -1,0 +1,41 @@
+id: "303-4"
+standard: "GRI 303: Water and Effluents 2018"
+title: "Water discharge"
+category: topic
+requirement_text: |
+    Report total water discharge in megaliters by destination and water quality category,
+    including water-stressed areas, priority substances of concern, discharge limits, non-compliance,
+    methodology, and water-stress assessment tools.
+required_elements:
+  - id: total_discharge_all_areas
+    desc: "Total water discharge to all areas in megaliters"
+  - id: discharge_by_destination
+    desc: "Breakdown by surface water, groundwater, seawater, and third-party water"
+  - id: third_party_water_for_use
+    desc: "Volume of third-party water sent for use to other organizations, if applicable"
+  - id: freshwater_discharge
+    desc: "Discharge breakdown by freshwater category"
+  - id: other_water_discharge
+    desc: "Discharge breakdown by other water category"
+  - id: discharge_water_stress
+    desc: "Total discharge to water-stressed areas by freshwater and other water"
+  - id: priority_substances_definition
+    desc: "How priority substances of concern are defined and standards/criteria used"
+  - id: discharge_limits_approach
+    desc: "Approach for setting discharge limits for priority substances"
+  - id: non_compliance_incidents
+    desc: "Number of incidents of non-compliance with discharge limits"
+  - id: methodology_context
+    desc: "Standards, methodologies, assumptions, and compilation context"
+  - id: water_stress_assessment_tools
+    desc: "Publicly available and credible tools/methodologies used to assess water stress"
+retrieval_queries:
+  - "water discharge surface groundwater seawater third-party water"
+  - "effluent priority substances discharge limits non-compliance"
+  - "water discharge water stress freshwater other water"
+good_evidence_hints:
+  - "Look for effluent, wastewater, discharge, treatment, and water quality data"
+  - "Good evidence includes both quantity and quality-related discharge information"
+suggested_fix_template: |
+    Add a water discharge table reporting discharge volume by destination, water quality category,
+    water-stress area, priority substances, discharge limits, non-compliance incidents, and methodology.

@@ -1,0 +1,24 @@
+id: "101-4"
+standard: "GRI 101: Biodiversity 2024"
+title: "Identification of biodiversity impacts"
+category: topic
+requirement_text: |
+    Explain how the organization has determined which of its sites and which products and
+    services in its supply chain have the most significant actual and potential impacts on
+    biodiversity.
+required_elements:
+  - id: identification_methodology
+    desc: "How the organization determined which sites and which products and services in its supply chain have the most significant actual and potential impacts on biodiversity, including methods, assumptions, thresholds, limitations/exclusions, data sources/evidence, and stakeholder engagement (101-4-a)"
+retrieval_queries:
+  - "identification most significant biodiversity impacts sites supply chain"
+  - "biodiversity impact assessment methodology threshold"
+  - "ENCORE SBTN materiality screening high-impact commodity"
+good_evidence_hints:
+  - "Look in 'Biodiversity impact assessment', 'Materiality', or 'Methodology' sections"
+  - "May reference tools such as ENCORE, SBTN Materiality Screening, WWF Biodiversity Risk Filter, IUCN Red List, CITES, or TNFD LEAP"
+  - "Should describe whether information draws on primary, secondary, or modeled data"
+suggested_fix_template: |
+    Add a methodology section explaining how sites and supply-chain products/services with the
+    most significant biodiversity impacts were identified, including thresholds, data sources and
+    tools, assumptions, limitations or exclusions, and stakeholder engagement.
+effective_date: "2026-01-01"

@@ -1,0 +1,43 @@
+id: "102-4"
+standard: "GRI 102: Climate Change 2025"
+title: "GHG emissions reduction targets and progress"
+category: topic
+requirement_text: |
+    Report the organization's GHG emissions reduction targets and progress against them. Include
+    short-, medium-, and long-term targets covering Scope 1, Scope 2, and Scope 3; the base year
+    and target year; whether targets are absolute or intensity-based; the policy for target revision
+    and any base year recalculations made during the reporting period; progress achieved against each
+    target as measured through the GHG inventory method; and how progress was achieved, distinguishing
+    between own initiatives, secondary effects, and external factors. Report the methodologies and
+    assumptions used.
+required_elements:
+  - id: targets_by_scope_and_horizon
+    desc: "Short-, medium-, and long-term reduction targets covering Scope 1, 2, and 3"
+  - id: base_year_and_target_year
+    desc: "Base year, target year, and whether targets are absolute or intensity-based"
+  - id: target_revision_policy_and_base_year
+    desc: "Policy for revising targets and any base year recalculations made during the reporting period"
+  - id: base_year_recalculations
+    desc: "Any recalculations of base-year emissions and the rationale for those recalculations"
+  - id: progress_via_inventory_method
+    desc: "Progress against each target as measured through the GHG inventory method"
+  - id: how_progress_achieved
+    desc: "How progress was achieved, distinguishing own initiatives from secondary effects and external factors"
+  - id: methodologies_and_assumptions
+    desc: "Methodologies, standards, and assumptions used to set and track targets"
+retrieval_queries:
+  - "GHG emission reduction target scope 1 2 3 base year progress inventory method"
+  - "net zero target 2030 2050 absolute intensity progress against target base year recalculation"
+  - "emission reduction target revision policy own initiatives secondary effects external factors"
+good_evidence_hints:
+  - "Look in 'Targets', 'Net zero commitments', or 'Climate goals' sections and progress tables"
+  - "Strong evidence gives base year, target year, % reduction, scope coverage, and current progress measured via GHG inventory"
+  - "Look for disclosure of how progress was achieved, broken down by own initiatives, secondary effects, and external factors"
+suggested_fix_template: |
+    Add a targets section listing short/medium/long-term GHG reduction targets for Scope 1, 2, and 3
+    with base and target years, whether they are absolute or intensity-based, the target revision
+    policy, any base year recalculations, progress against each target as measured through the GHG
+    inventory method, how progress was achieved (own initiatives vs secondary effects vs external
+    factors), and the methodologies used.
+status: upcoming
+effective_date: "2027-01-01"

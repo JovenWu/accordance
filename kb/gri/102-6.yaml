@@ -1,0 +1,35 @@
+id: "102-6"
+standard: "GRI 102: Climate Change 2025"
+title: "Scope 2 GHG emissions"
+category: topic
+requirement_text: |
+    Report gross indirect (Scope 2) GHG emissions from purchased or acquired electricity, heating,
+    cooling, and steam, in metric tons of CO2 equivalent, including emissions reported under
+    Disclosure 103-2-b in GRI 103: Energy 2025. Report location-based Scope 2 emissions and,
+    where the organization has contractual instruments, market-based Scope 2 emissions. Include
+    the base year, rationale, and any recalculations; the gases covered; the source of emission
+    factors; and the standards, methodologies, and assumptions used.
+required_elements:
+  - id: location_based_scope2_tco2e
+    desc: "Location-based Scope 2 GHG emissions in metric tons of CO2 equivalent"
+  - id: market_based_scope2_tco2e
+    desc: "Market-based Scope 2 GHG emissions in tCO2e, where contractual instruments apply"
+  - id: base_year_and_recalculation
+    desc: "Base year, rationale, and any recalculations of base-year emissions"
+  - id: emission_factors_and_methodology
+    desc: "Gases covered, emission-factor source, standards, methodologies, and assumptions"
+retrieval_queries:
+  - "scope 2 indirect emissions purchased electricity location-based market-based tCO2e GRI 103"
+  - "scope 2 electricity heating cooling steam emission factor base year energy consumption"
+  - "market based location based scope 2 renewable energy certificates"
+good_evidence_hints:
+  - "Look for a Scope 2 line in the GHG inventory, ideally with both location- and market-based figures"
+  - "Strong evidence distinguishes location-based vs market-based and names the emission factors"
+  - "Cross-check against energy consumption data reported under GRI 103 Disclosure 103-2-b"
+suggested_fix_template: |
+    Add a Scope 2 emissions figure in tCO2e, including emissions from energy consumption reported
+    under Disclosure 103-2-b in GRI 103: Energy 2025, reporting location-based emissions (and
+    market-based where applicable), the base year and any recalculation, and the emission factors
+    and methodology used.
+status: upcoming
+effective_date: "2027-01-01"

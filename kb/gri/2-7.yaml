@@ -1,0 +1,34 @@
+id: "2-7"
+standard: "GRI 2: General Disclosures 2021"
+title: "Employees"
+category: universal
+requirement_text: |
+    Report employee totals and breakdowns by gender and region, employment type,
+    methodology, contextual information, and significant fluctuations.
+required_elements:
+  - id: total_employees_by_gender_region
+    desc: "Total employees by gender and region"
+  - id: permanent_employees
+    desc: "Permanent employees by gender and region"
+  - id: temporary_employees
+    desc: "Temporary employees by gender and region"
+  - id: non_guaranteed_hours_employees
+    desc: "Non-guaranteed hours employees by gender and region"
+  - id: full_time_employees
+    desc: "Full-time employees by gender and region"
+  - id: part_time_employees
+    desc: "Part-time employees by gender and region"
+  - id: methodology_assumptions
+    desc: "Headcount/FTE and reporting date or average methodology"
+  - id: contextual_information
+    desc: "Context needed to understand employee data"
+  - id: significant_fluctuations
+    desc: "Significant employee number fluctuations"
+retrieval_queries:
+  - "employees by gender region permanent temporary full-time part-time"
+  - "employee headcount FTE workforce breakdown"
+good_evidence_hints:
+  - "Look for workforce or people data tables"
+suggested_fix_template: |
+    Add an employee data table showing employee totals and required breakdowns
+    by gender, region, employment type, methodology, and significant changes.

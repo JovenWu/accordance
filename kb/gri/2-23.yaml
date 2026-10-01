@@ -1,0 +1,37 @@
+id: "2-23"
+standard: "GRI 2: General Disclosures 2021"
+title: "Policy commitments"
+category: universal
+requirement_text: |
+    Describe responsible business conduct policy commitments, including references to
+    authoritative instruments, due diligence, precautionary principle, human rights, approval,
+    scope, links, and communication.
+required_elements:
+  - id: responsible_business_commitments
+    desc: "Policy commitments for responsible business conduct"
+  - id: authoritative_instruments
+    desc: "Authoritative instruments referenced"
+  - id: due_diligence_commitment
+    desc: "Whether commitments stipulate due diligence"
+  - id: precautionary_principle
+    desc: "Whether commitments stipulate the precautionary principle"
+  - id: human_rights_commitment
+    desc: "Specific commitment to respect human rights"
+  - id: stakeholder_groups_attention
+    desc: "Stakeholder categories or vulnerable groups given particular attention"
+  - id: policy_links_or_reason
+    desc: "Links to policies or reason not publicly available"
+  - id: approval_level
+    desc: "Approval level for each commitment"
+  - id: scope_of_application
+    desc: "Application to activities and business relationships"
+  - id: communication
+    desc: "How commitments are communicated"
+retrieval_queries:
+  - "policy commitments responsible business conduct human rights due diligence"
+  - "code of conduct human rights policy precautionary principle"
+good_evidence_hints:
+  - "Look for code of conduct, human rights policy, supplier code, ethics policy"
+suggested_fix_template: |
+    Add policy commitments covering responsible business conduct, human rights, approval level,
+    scope, public links, and communication to workers and business partners.

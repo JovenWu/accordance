@@ -1,0 +1,22 @@
+id: "305-7"
+standard: "GRI 305: Emissions 2016"
+title: "Nitrogen oxides (NOx), sulfur oxides (SOx), and other significant air emissions"
+category: topic
+requirement_text: |
+    Report significant air emissions in kilograms or multiples for NOx, SOx, and other categories (persistent organic pollutants, volatile organic compounds, hazardous air pollutants, particulate matter, and other standard categories), along with the source of emission factors and the methodology used.
+required_elements:
+  - id: significant_air_emissions
+    desc: "Significant air emissions in kilograms or multiples for NOx, SOx, POPs, VOCs, HAPs, PM, and other standard categories"
+  - id: emission_factor_source
+    desc: "Source of the emission factors used"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions, and/or calculation tools used"
+retrieval_queries:
+  - "NOx SOx air emissions kilograms tonnes particulate matter VOC"
+  - "nitrogen oxides sulfur oxides hazardous air pollutants POPs emissions"
+  - "significant air emissions emission factors measurement methodology"
+good_evidence_hints:
+  - "Look for an air-emissions table listing NOx, SOx, VOCs, particulate matter, etc. in kg or tonnes"
+  - "Good evidence names the emission factor source and whether figures come from direct measurement or published factors"
+suggested_fix_template: |
+    Add an air-emissions table reporting NOx, SOx, and other significant pollutants (POPs, VOCs, HAPs, PM) by weight, and disclose the emission factor source and calculation methodology.

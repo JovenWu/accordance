@@ -1,0 +1,33 @@
+id: "303-3"
+standard: "GRI 303: Water and Effluents 2018"
+title: "Water withdrawal"
+category: topic
+requirement_text: |
+    Report total water withdrawal in megaliters from all areas and water-stressed areas,
+    broken down by source and water quality category, with methodology and water-stress assessment tools.
+required_elements:
+  - id: total_withdrawal_all_areas
+    desc: "Total water withdrawal from all areas in megaliters"
+  - id: withdrawal_by_source_all_areas
+    desc: "Breakdown by surface water, groundwater, seawater, produced water, and third-party water"
+  - id: total_withdrawal_water_stress
+    desc: "Total water withdrawal from areas with water stress in megaliters"
+  - id: withdrawal_by_source_water_stress
+    desc: "Water-stress area breakdown by source, including third-party water by original source where applicable"
+  - id: freshwater_withdrawal
+    desc: "Breakdown of withdrawals by freshwater category"
+  - id: other_water_withdrawal
+    desc: "Breakdown of withdrawals by other water category"
+  - id: methodology_context
+    desc: "Standards, methodologies, assumptions, and compilation context"
+  - id: water_stress_assessment_tools
+    desc: "Publicly available and credible tools/methodologies used to assess water stress"
+retrieval_queries:
+  - "water withdrawal surface groundwater seawater produced third-party water"
+  - "water withdrawal water stress freshwater other water megaliters"
+good_evidence_hints:
+  - "Look for water withdrawal tables with units in ML or m3"
+  - "Strong evidence separates water-stressed areas and water source categories"
+suggested_fix_template: |
+    Add a water withdrawal table reporting total withdrawal in megaliters, broken down by
+    source, water-stress area, freshwater/other water category, and methodology used.

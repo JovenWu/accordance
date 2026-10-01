@@ -1,0 +1,36 @@
+id: "102-9"
+standard: "GRI 102: Climate Change 2025"
+title: "GHG removals in the value chain"
+category: topic
+requirement_text: |
+    Report GHG removals occurring within the organization's value chain, in metric tons of CO2
+    equivalent. Include the total removals in the value chain; the quality criteria and monitoring
+    arrangements used to verify removals; the intended use of the removals (e.g., toward net zero
+    or GHG targets); and the impacts of the removal activities on people and the environment,
+    including biodiversity and local communities, and the actions taken in response to those
+    impacts. State the removal and storage activities (such as biological sinks, land-use practices,
+    or technological removals); the permanence and reversal risk; and the base year, standards,
+    methodologies, and assumptions used. If the organization has no GHG removals, state so.
+required_elements:
+  - id: total_removals_in_value_chain
+    desc: "Total GHG removals within the value chain in metric tons of CO2 equivalent"
+  - id: quality_criteria_monitoring
+    desc: "Quality criteria and monitoring arrangements used to verify the removals"
+  - id: intended_use_of_removals
+    desc: "Intended use of the removals (e.g., toward net zero, GHG targets, or carbon credits)"
+  - id: impacts_and_actions
+    desc: "Impacts of removal activities on people and the environment (incl. biodiversity) and actions taken in response"
+retrieval_queries:
+  - "GHG removals in value chain carbon sinks afforestation soil carbon storage tCO2e quality criteria"
+  - "carbon removal sequestration permanence reversal value chain monitoring intended use"
+  - "nature-based removals technological removals impacts biodiversity communities"
+good_evidence_hints:
+  - "Look in 'Carbon removals', 'Sinks', 'Sequestration', or 'Land use' sections"
+  - "Strong evidence quantifies removals in tCO2e within the value chain, states quality criteria and monitoring, and addresses impacts on people and biodiversity"
+  - "Look for disclosure of the intended use of removals (e.g., whether counted toward net zero targets)"
+suggested_fix_template: |
+    Add a GHG removals in the value chain section quantifying total removals (tCO2e), the quality
+    criteria and monitoring used, the intended use of those removals, and the impacts on people and
+    the environment (including biodiversity) and actions taken — or state that no removals occur.
+status: upcoming
+effective_date: "2027-01-01"

@@ -1,0 +1,32 @@
+id: "207-2"
+standard: "GRI 207: Tax 2019"
+title: "Tax governance, control, and risk management"
+category: topic
+requirement_text: |
+    Describe the tax governance and control framework, including the governance body or executive-level
+    position accountable for compliance with the tax strategy; how the approach to tax is embedded
+    within the organization; the approach to tax risks, including how they are identified, managed, and
+    monitored; and how compliance with the framework is evaluated. Describe the mechanisms for reporting
+    concerns about unethical or unlawful behavior and the organization's integrity in relation to tax.
+    Describe the assurance process for disclosures on tax and, if applicable, reference the assurance
+    report, statement, or opinion.
+required_elements:
+  - id: governance_framework
+    desc: "Governance/control framework: who is accountable, how the tax approach is embedded, and how compliance is evaluated"
+  - id: tax_risk_management
+    desc: "Approach to tax risks — how they are identified, managed, and monitored"
+  - id: concern_reporting_mechanisms
+    desc: "Mechanisms for reporting concerns about unethical or unlawful tax-related behavior"
+  - id: assurance_process
+    desc: "Assurance process for tax disclosures and any reference to the assurance report/statement/opinion"
+retrieval_queries:
+  - "tax governance control risk management framework accountability"
+  - "tax risk identified managed monitored compliance evaluated"
+  - "tax assurance whistleblowing report concerns unethical tax"
+good_evidence_hints:
+  - "Look in tax governance, tax risk, or assurance sections of the tax report"
+  - "Strong evidence covers accountability, risk management, reporting mechanisms, and assurance"
+suggested_fix_template: |
+    Add a tax governance section describing the control framework and accountability, how tax risks are
+    identified/managed/monitored, mechanisms for reporting tax-related concerns, and the assurance
+    process for the tax disclosures.

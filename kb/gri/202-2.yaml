@@ -1,0 +1,28 @@
+id: "202-2"
+standard: "GRI 202: Market Presence 2016"
+title: "Proportion of senior management hired from the local community"
+category: topic
+requirement_text: |
+    Report the percentage of senior management at significant locations of operation that is hired from
+    the local community. Provide the definitions used for 'senior management', for 'local', and for
+    'significant locations of operation', so that the percentage can be interpreted in context.
+required_elements:
+  - id: local_senior_management_percentage
+    desc: "Percentage of senior management at significant locations hired from the local community"
+  - id: senior_management_definition
+    desc: "Definition used for 'senior management'"
+  - id: local_definition
+    desc: "Definition used for 'local'"
+  - id: significant_locations_definition
+    desc: "Definition used for 'significant locations of operation'"
+retrieval_queries:
+  - "senior management hired from local community percentage significant locations"
+  - "proportion local senior management local hires leadership"
+  - "local hiring senior management definition local significant locations"
+good_evidence_hints:
+  - "Look in local hiring, diversity, or market presence sections referencing senior management"
+  - "Strong evidence gives a percentage plus the definitions of 'local' and 'senior management'"
+suggested_fix_template: |
+    Add a section reporting the percentage of senior management hired from the local community at
+    significant locations of operation, with the definitions used for 'senior management', 'local',
+    and 'significant locations of operation'.

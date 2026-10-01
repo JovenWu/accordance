@@ -1,0 +1,1449 @@
+# Ground-truth labels for PT Vale Indonesia Tbk's 2024 Sustainability Report.
+#
+# Verified by reading the report cover-to-cover (222 pp.) and cross-checking
+# every disclosure cited in the report's GRI Index (pp. 201-214) against the
+# corresponding requirements in:
+#   - GRI 1: Foundation 2021
+#   - GRI 2: General Disclosures 2021
+#   - GRI 3: Material Topics 2021
+#   - GRI Topic Standards 2016 / 2018 / 2019 / 2020 (as applicable)
+#   - GRI 101: Biodiversity 2024
+#   - GRI 14: Mining Sector 2024
+#
+# Conventions used here:
+#   covered  = report meets all required sub-elements ("a", "b", ...) of the
+#              GRI disclosure, or the missing sub-element is explicitly handled
+#              with a reason for omission per GRI 1 §6.
+#   partial  = report addresses the disclosure but is missing one or more
+#              required sub-elements without a documented omission reason,
+#              OR data is provided only for a subset of operational sites,
+#              OR the report references another document (e.g. Annual Report)
+#              for required content without providing it inline.
+#   missing  = the disclosure is listed in the GRI Index but the cited page
+#              does not actually contain the required information, OR the
+#              disclosure is required by GRI 1 but not present in the report.
+#
+# `expected_evidence_page` uses the PDF page number as it appears in the
+# document footer (which matches the PDF reader page numbering in this file).
+
+report_id: ptvi-2024
+pdf_filename: Contoh_Sustainability_Report_VALE_2024.pdf
+pdf_sha256: a390230afe90f8c0142a65c88b60e0fed3809f43dc4efd0cc0671ccbb8b7054e
+pdf_path: ../uploads/Contoh_Sustainability_Report_VALE_2024.pdf
+labeler: accordance-labeler@example.com
+labeled_at: 2026-05-24
+
+disclosures:
+  # ============================================================
+  # GRI 2: General Disclosures 2021
+  # ============================================================
+
+  # --- 1. The organization and its reporting practices ---
+
+  - id: "2-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 21
+    notes: >-
+      All four required sub-elements present and clearly tagged with [GRI 2-1].
+      Legal name and trade name on p.21; operational country on p.23
+      ("Country of Operation: Republic of Indonesia. The Company does not
+      operate in any other countries."); legal form (Public Limited Liability
+      Company, IDX-listed since 1990) and ownership composition (VCL 33.88%,
+      MIND ID 34.00%, SMM 11.48%, public 20.64%) on p.24.
+    elements:
+      - id: legal_name
+        expected_status: found
+        expected_page: 21
+      - id: ownership_and_legal_form
+        expected_status: found
+        expected_page: 24
+      - id: headquarters_location
+        expected_status: found
+        expected_page: 21
+      - id: countries_of_operation
+        expected_status: found
+        expected_page: 23
+
+  - id: "2-2"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 165
+    notes: >-
+      Entities included in sustainability reporting are listed (Sorowako,
+      Bahodopi, Pomalaa). However the report does not explicitly specify the
+      *differences* between financial-reporting entities and sustainability-
+      reporting entities, nor describe the consolidation approach for
+      mergers/acquisitions/minority interests as required by 2-2-b and 2-2-c.
+    elements:
+      - id: entities_listed
+        expected_status: found
+        expected_page: 165
+      - id: differences_from_financial_reporting
+        expected_status: missing
+      - id: consolidation_approach
+        expected_status: partial
+
+  - id: "2-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 165
+    notes: >-
+      Reporting period (Jan 1 – Dec 31, 2024), annual frequency
+      ("our 14th Sustainability Report"), and contact point
+      (ptvicommunications@vale.com) all present on p.165.
+    elements:
+      - id: reporting_period
+        expected_status: found
+        expected_page: 165
+      - id: reporting_frequency
+        expected_status: found
+        expected_page: 165
+      - id: contact_point
+        expected_status: found
+        expected_page: 165
+      - id: publication_date
+        expected_status: partial
+        # The report mentions external assurance occurred 10-15 April 2025
+        # but does not give an explicit publication date for the report itself.
+
+  - id: "2-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 165
+    notes: >-
+      Four restatements are explicitly described (TKDN methodology change,
+      procurement value method aligned with RKAB, disability data reclassified
+      under Law No. 8/2016, employee data excluding BoD). Reasons given for
+      each.
+
+  - id: "2-5"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 163
+    notes: >-
+      External assurance described — independent assurer named (PT Sejahtera
+      Rambah Asia), assurance dates (10-15 April 2025), no conflict of interest
+      declared, BoD involvement stated. Full assuror statement is included on
+      p.197 (per TOC). Level of assurance and assurance standard used are
+      stated in the assurer statement itself rather than inline.
+
+  # --- 2. Activities and workers ---
+
+  - id: "2-6"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 23
+    notes: >-
+      Sector (mining), value chain (ore mining → screening → kilns → furnace
+      → port, 10 steps shown), markets (VCL and SMM with named shares),
+      supply chain (151 local + 632 national suppliers, p.64), downstream
+      entities (Vale Canada, Sumitomo), and significant changes
+      ("There were no changes in PT Vale's business scope or product
+      portfolio in 2024 compared to the previous period.") all addressed.
+    elements:
+      - id: sectors
+        expected_status: found
+        expected_page: 24
+      - id: activities_value_chain
+        expected_status: found
+        expected_page: 24
+      - id: products_services
+        expected_status: found
+        expected_page: 24
+      - id: supply_chain
+        expected_status: found
+        expected_page: 64
+      - id: downstream_entities
+        expected_status: found
+        expected_page: 23
+      - id: significant_changes
+        expected_status: found
+        expected_page: 24
+
+  - id: "2-7"
+    expected_status: partial
+    expected_score: 4
+    expected_evidence_page: 116
+    notes: >-
+      Total employees (3,038) reported with breakdown by gender, employment
+      status (permanent/contract), placement area, age, education level. Data
+      table on pp.191-192 gives 3-year comparison. Methodology is implicit
+      (head count, end of period). However the disclosure does not provide
+      breakdowns of *temporary*, *non-guaranteed hours*, *full-time*, and
+      *part-time* employees by gender AND by region as required by 2-7-b.
+      The "Region" axis is only Indonesia (single country) so the by-region
+      breakdown collapses, but the disaggregation by gender for each
+      employment type sub-category (full-time vs part-time vs non-guaranteed)
+      is not provided.
+    elements:
+      - id: total_employees_by_gender
+        expected_status: found
+        expected_page: 116
+      - id: total_employees_by_region
+        expected_status: found
+        expected_page: 116
+      - id: permanent_temporary_breakdown
+        expected_status: found
+        expected_page: 192
+      - id: full_time_part_time_breakdown
+        expected_status: missing
+      - id: non_guaranteed_hours_breakdown
+        expected_status: missing
+      - id: methodology_disclosed
+        expected_status: partial
+      - id: significant_fluctuations
+        expected_status: found
+        expected_page: 116
+
+  - id: "2-8"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 193
+    notes: >-
+      Total non-employee workers reported by location and gender in the data
+      table on p.193 (Sorowako: 7,659 M / 1,040 F in 2024). However the
+      *types of worker* (contractors vs agency vs interns etc.) and the
+      *nature of work performed* are not broken out as 2-8-a-i and 2-8-a-ii
+      require, and the methodology (headcount vs FTE, end of period vs
+      average) is not stated.
+    elements:
+      - id: total_non_employees
+        expected_status: found
+        expected_page: 193
+      - id: most_common_worker_types
+        expected_status: missing
+      - id: type_of_work_performed
+        expected_status: missing
+      - id: methodology
+        expected_status: missing
+
+  # --- 3. Governance ---
+
+  - id: "2-9"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 68
+    notes: >-
+      Governance structure (BoC, BoD, committees) with org chart on p.68;
+      committees listed (Audit, Governance/Nomination/Remuneration, Risk
+      Mitigation). Composition by executive/non-executive, independence
+      (independent directors and commissioners individually named on p.29),
+      gender diversity (BoD 14% female, BoC 30%, combined 23.5%), expertise
+      areas described. Tenure detail referenced to the Annual Report.
+    elements:
+      - id: structure_described
+        expected_status: found
+        expected_page: 68
+      - id: committees_listed
+        expected_status: found
+        expected_page: 68
+      - id: composition_independence
+        expected_status: found
+        expected_page: 29
+      - id: composition_gender
+        expected_status: found
+        expected_page: 69
+      - id: composition_tenure
+        expected_status: partial
+      - id: composition_competencies
+        expected_status: found
+        expected_page: 68
+
+  - id: "2-10"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 68
+    notes: >-
+      Report states "Further details on the selection process, structure, and
+      composition of the Board of Directors and Board of Commissioners can be
+      found in the 2024 Annual Report of PT Vale Indonesia Tbk." — i.e. the
+      requirement is offloaded to an external document rather than answered
+      inline. GRI 1 allows this only if a direct link/reference is provided;
+      it is, but the criteria (stakeholder views, diversity, independence,
+      competencies) are not individually addressed in this report.
+
+  - id: "2-11"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 68
+    notes: >-
+      Clear statement: "the position of President Director is not held
+      concurrently with the President Commissioner or any member of the Board
+      of Commissioners, ensuring a clear separation between executive and
+      oversight functions." Chair is not a senior executive, so 2-11-b is
+      not applicable.
+
+  - id: "2-12"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 70
+    notes: >-
+      Role of BoD in setting strategy, policies, sustainability goals
+      described (pp.70-71); engagement with stakeholders covered through
+      the Sustainability Committee structure (p.61) and risk management
+      (p.70). Frequency of review (monthly Sustainability Committee meetings)
+      stated on p.61.
+
+  - id: "2-13"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 70
+    notes: >-
+      Delegation described: BoD delegates to officers, Risk Management Unit,
+      Compliance & Ethics function; reporting back to BoD via structured
+      reports. Sustainability Committee chaired by Chief Sustainability and
+      Corporate Affairs Officer (p.61).
+
+  - id: "2-14"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 163
+    notes: >-
+      Report states it "has been approved by the Board of Directors and
+      Board of Commissioners, the highest governance bodies responsible for
+      implementing and overseeing sustainability aspects within the company."
+
+  - id: "2-15"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 77
+    notes: >-
+      Process to prevent/mitigate conflicts of interest described, and report
+      notes that COI reports were submitted via the Vale Whistleblower Channel
+      and addressed. However the specific minimum disclosures required by
+      2-15-b (cross-board membership, cross-shareholding, controlling
+      shareholders, related-party transactions) are referenced to the Annual
+      Report rather than disclosed here.
+
+  - id: "2-16"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 78
+    notes: >-
+      Vale Whistleblower Channel (VWC) described; 23 reports received in
+      2024, 17 validated and investigated. Types of critical concerns listed
+      (fraud, conflicts of interest, interpersonal relations, third-party
+      relationships, OHS, environmental). Reports to CEO every 3 months.
+
+  - id: "2-17"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 71
+    notes: >-
+      Capacity-building measures for BoD described: training on GRC, cyber
+      risk, leadership; participation in COP29, ICCEF, Bloomberg NEF Forum,
+      ASEAN Mining Conference 2024, CNN Indonesia, etc.
+
+  - id: "2-18"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 74
+    notes: >-
+      Process described (KPI evaluation through BoC/BoD meetings, results to
+      AGM, independent third-party sustainability evaluation), but the
+      *frequency* of evaluations is not explicitly stated, nor are the
+      *actions taken in response* (2-18-c) clearly described.
+
+  - id: "2-19"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 74
+    notes: >-
+      Remuneration policy mentioned and the link to sustainability KPIs
+      noted (KTNR committee role described). However the specific elements
+      required by 2-19-a (fixed vs variable pay, sign-on bonuses, termination
+      payments, clawbacks, retirement benefits) are not individually
+      addressed in this report.
+
+  - id: "2-20"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 74
+    notes: >-
+      KTNR (Nomination and Remuneration Committee) is described as the body
+      that prepares recommendations. However the report does not address
+      whether independent members oversee remuneration determination, how
+      stakeholder (shareholder) views are sought, involvement of remuneration
+      consultants, or vote outcomes (2-20-b).
+
+  - id: "2-21"
+    expected_status: missing
+    expected_score: 1
+    notes: >-
+      The GRI Index lists 2-21 at p.74, but the page only mentions that the
+      KTNR helps determine compensation in line with performance evaluation.
+      The actual *annual total compensation ratio* — the central required
+      metric of 2-21 (ratio of highest-paid individual's total comp to median
+      employee comp) — is NOT reported anywhere in the document, nor is the
+      ratio of percentage increases. No reason for omission given.
+    elements:
+      - id: compensation_ratio
+        expected_status: missing
+      - id: percentage_increase_ratio
+        expected_status: missing
+      - id: contextual_information
+        expected_status: missing
+
+  # --- 4. Strategy, policies and practices ---
+
+  - id: "2-22"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 12
+    notes: >-
+      Multi-page statement from President Director Febriany Eddy (pp.12-16),
+      addresses short/medium/long-term strategy, key events and challenges,
+      ESG roadmap, decarbonization targets (Net Zero 2050), and material
+      topic performance. Also a complementary statement on p.36.
+
+  - id: "2-23"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 36
+    notes: >-
+      Sustainability Policy described with seven key commitment areas
+      (environmental protection, decent work, OHS, community/customers,
+      responsible procurement, gender equality, sustainable management).
+      Approved by BoD. Public link provided
+      (https://vale.com/in/indonesia/tata-kelola-esg). References to ICMM,
+      ILO conventions, UN Guiding Principles, OECD Due Diligence, IFC.
+
+  - id: "2-24"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 76
+    notes: >-
+      Embedding addressed via Code of Conduct training (557 employees in 2024
+      via VES platform), Supplier Code of Conduct training, anti-corruption
+      training (247 employees), and integration into procurement processes
+      (e-Procurement system, anti-bribery clauses in contracts).
+
+  - id: "2-25"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 78
+    notes: >-
+      Vale Whistleblower Channel described as the remediation entry point,
+      and grievance mechanism for community/employee complaints described
+      (p.126, 149). However the specific elements of 2-25 — commitments to
+      provide for/cooperate in remediation, approach to identifying lessons
+      learned, effectiveness tracking — are only partially covered. The GRI
+      Index notably leaves 2-25 with NO page reference (blank LOCATION field
+      on p.202), which itself flags this as not fully addressed.
+
+  - id: "2-26"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 78
+    notes: >-
+      VWC described: 24/7 availability, anonymous reporting, managed by
+      independent third party, protected from retaliation. Process flow
+      diagram shown. Employee grievance mechanism with Form-8 (p.126).
+
+  - id: "2-27"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 67
+    notes: >-
+      Compliance commitment stated and Code of Conduct described.
+      Anti-corruption section states no public legal cases in 2024 (p.76).
+      However the disclosure requires the *total number* of significant
+      instances of non-compliance with laws and regulations during the
+      reporting period, broken down by type (fines vs non-monetary sanctions)
+      — these specific quantitative disclosures are not consolidated.
+
+  - id: "2-28"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 30
+    notes: >-
+      Certifications and association memberships listed on p.30
+      (referenced URL for full details).
+
+  - id: "2-29"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 38
+    notes: >-
+      Stakeholder engagement approach described on pp.38-43: stakeholder
+      mapping methodology, engagement channels, frequencies, and material
+      topics raised by each stakeholder category. References AA1000
+      Stakeholder Engagement Standard.
+
+  - id: "2-30"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 117
+    notes: >-
+      Collective Labor Agreement (CLA) described, covering all permanent
+      employees, with three labor unions named (SPKEP, SPBVI, FPE-KSBSI),
+      and biennial renewal stated. However the *percentage of total
+      employees* covered by collective bargaining agreements is not
+      explicitly stated — readers must infer it from the permanent-vs-contract
+      split (2,929 / 3,038 ≈ 96.4%), which is not the same as "covered by
+      CBA". The disclosure also requires reporting on employees NOT covered
+      and whether their working conditions/terms of employment are
+      determined based on the CBAs of other employees or organizations.
+
+  # ============================================================
+  # GRI 3: Material Topics 2021
+  # ============================================================
+
+  - id: "3-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 46
+    notes: >-
+      Double materiality process described (impact + financial materiality),
+      using GRI/SASB/ICMM/MSCI/Sustainalytics as starting frame, internal
+      and external stakeholder surveys, integration into a materiality
+      matrix. 18 sustainability topics identified and grouped into 9
+      material topics.
+
+  - id: "3-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 47
+    notes: >-
+      List of 9 material topics presented on p.47 (GCG, Water & Effluent,
+      Waste, Emissions & Energy, Biodiversity & Land Use, OHS, Industrial
+      Relations & Labor Rights, Community Engagement, Community Human
+      Rights). Full mapping to GRI/SASB references appears in the Material
+      Topic Disclosure section on pp.166-169.
+
+  - id: "3-3"
+    expected_status: partial
+    expected_score: 4
+    expected_evidence_page: 48
+    notes: >-
+      Management approach is addressed topic-by-topic in each chapter (see
+      e.g. environmental management on p.84, governance on p.67, human
+      capital on p.115, community on p.136). However for some material topics
+      the disclosure does not fully cover all six required sub-elements
+      (impacts, involvement, policies, actions, effectiveness tracking,
+      stakeholder engagement on the topic).
+
+  # ============================================================
+  # GRI 101: Biodiversity 2024  (early adoption — new standard)
+  # ============================================================
+
+  - id: "101-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 106
+    notes: >-
+      Mitigation hierarchy (Avoid → Minimize → Restore → Offset) described
+      with the IUCN/UNGC framework figure. "No net loss" and "net positive
+      impact" principles committed to. Buffer zones and karst protection
+      stated.
+
+  - id: "101-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 106
+    notes: >-
+      Management approach for biodiversity impacts: progressive reclamation,
+      Reclamation and Post-Mining Plan, ex-situ conservation programs
+      (Sawerigading Wallacea Biodiversity Park, Timor deer breeding,
+      Cocogrow Dengen propagation), restoration commitments.
+
+  - id: "101-3"
+    expected_status: missing
+    expected_score: 0
+    notes: >-
+      Explicitly marked as a reason-for-omission case in the GRI Index
+      (p.203): "PT Vale does not access genetic resources or traditional
+      knowledge in its operations. Therefore, this indicator is not
+      considered relevant in the context of the Company's operational
+      activities." This is a documented omission per GRI 1 §6.
+
+  - id: "101-4"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 84
+    notes: >-
+      Drivers/impacts described in environmental section but page 84 is the
+      chapter intro for environmental management broadly, not a specific
+      biodiversity impact identification analysis. Locations of biodiversity
+      impact more clearly identified on pp.109-110.
+
+  - id: "101-5"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 109
+    notes: >-
+      Locations with biodiversity impacts identified by block (Sorowako,
+      Bahodopi, Pomalaa) with IPPKH numbers, protected-area hectares, and
+      reserves data on p.185.
+
+  - id: "101-6"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 107
+    notes: Direct drivers of biodiversity loss addressed on p.107.
+
+  - id: "101-7"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 109
+    notes: >-
+      Some quantitative change data (disturbed/rehabilitated hectares table
+      on p.185) and qualitative achievements (67,903 trees, 22 deer bred,
+      204 ha mangrove restored). However changes to *state* of biodiversity
+      (species populations, ecosystem health metrics over time) are not
+      systematically tracked.
+
+  - id: "101-8"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 107
+    notes: >-
+      Ecosystem services discussed: clean water supply, carbon absorption,
+      habitats; Lake Matano water quality monitoring and Matano Iniaku
+      program; mangrove restoration for coastal ecosystem.
+
+  # ============================================================
+  # GRI 200 Series — Economic
+  # ============================================================
+
+  - id: "201-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 26
+    notes: >-
+      Direct economic value generated/distributed reported: revenue
+      (US$954.1M), net profit (US$57.8M), tax/PNBP payments
+      (US$202.24M), supplier payments to local (15%) and national (62%)
+      suppliers.
+
+  - id: "201-2"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 26
+    notes: >-
+      Climate-related risks and opportunities discussed in narrative form
+      (impact of nickel price decline, decarbonization strategy, Net Zero
+      2050 target, etc.) on pp.13-14, and economic implications referenced
+      on p.26. However the *quantified financial implications* of climate
+      change risks/opportunities required by 201-2 are not disclosed.
+
+  - id: "201-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 124
+    notes: >-
+      Defined Contribution Pension Program (PPIP) described: 10% company +
+      2% employee contributions, fund balance US$53.07M in 2024. Additional
+      Saving Plan with 10% company contribution (9.3% saving + 0.7% life
+      insurance).
+
+  - id: "201-4"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 26
+    notes: >-
+      The GRI Index lists 201-4 at p.26 but the page focuses on PT Vale's
+      payments TO the government rather than financial assistance RECEIVED
+      from the government. No specific government grants, subsidies,
+      investment grants, R&D grants, or tax relief amounts received are
+      disclosed.
+
+  - id: "202-1"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 124
+    notes: >-
+      "the lowest remuneration at PT Vale in 2024 is 15.2% higher than the
+      applicable minimum wage in Luwu Timur Regency." Equal pay (1:1) for
+      male/female at same position stated. Although the wording compares
+      "lowest remuneration" rather than "standard entry-level wage"
+      strictly.
+
+  - id: "202-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 116
+    notes: >-
+      "83%, or 2,516 employees, are local hires"; "335 local employees held
+      managerial positions, which is equivalent to 13.1% of the total local
+      workforce, or 45.33% of all managerial roles." Definition of "local"
+      provided.
+
+  - id: "203-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 152
+    notes: >-
+      Infrastructure investments described (schools, health facilities,
+      clean water in Mahalona Village, roads, bridges, electric bus service
+      for YPS schools), with quantified PPM Fund Assistance breakdown on
+      p.196.
+
+  - id: "203-2"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 152
+    notes: >-
+      Indirect economic impacts described through community empowerment
+      programs (PSRLB organic farming, MoU partnerships, cocopeat supply
+      generating IDR 78M annually, etc.).
+
+  - id: "204-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 64
+    notes: >-
+      Proportion of spending on local suppliers reported: 151 local (15% of
+      total) and 632 national (62%) suppliers in 2024. Definition of "local"
+      given (East Luwu Regency, min 10 years operation). Data table on
+      p.178 shows multi-year procurement breakdown.
+
+  - id: "205-1"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 76
+    notes: >-
+      Risk assessments described, referencing Corruption Perceptions Index
+      (CPI) and Vale Global Anti-Corruption Program. Hadiputranto,
+      Hadinoto & Partners engaged for procurement corruption risk
+      assessment.
+
+  - id: "205-2"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 76
+    notes: >-
+      247 employees received Anti-Bribery and Anti-Corruption training in
+      2024 (priority on units interacting with government/partners).
+      Supplier Code of Conduct training also conducted (p.63).
+
+  - id: "205-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 76
+    notes: >-
+      Zero incidents: "During the reporting period, there were no complaints
+      or legal cases related to violations of anti-corruption policies,
+      either by employees or business partners."
+
+  - id: "206-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 27
+    notes: >-
+      Anti-competitive behavior: the company's nickel matte sales are
+      contracted to VCL and SMM with no direct market competition; no legal
+      actions reported. Statement of compliance.
+
+  - id: "207-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 28
+    notes: >-
+      Approach to tax described: Indonesian regulations, Finance Department
+      and Finance Director oversight, monthly/quarterly reporting to Vale
+      Canada/Brazil, EITI participation, Tax SOP.
+
+  - id: "207-2"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 28
+    notes: Tax governance, control, and risk management described.
+
+  - id: "207-3"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 28
+    notes: >-
+      Tax governance described; however the specific stakeholder engagement
+      approach to tax matters (e.g. how stakeholder concerns about tax
+      policy/conduct are addressed) is only thinly described.
+
+  - id: "207-4"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 28
+    notes: >-
+      Country-by-country reporting collapses to a single country (Indonesia)
+      since PT Vale only operates there. Total tax/PNBP US$202.24M reported,
+      with breakdown by central vs regional government and components. The
+      full set of required CbC elements (related-party transactions,
+      tangible assets, headcount, profit before tax, accrued vs paid tax,
+      etc.) is not provided.
+
+  # ============================================================
+  # GRI 300 Series — Environmental
+  # ============================================================
+
+  - id: "301-1"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 113
+    notes: >-
+      Mineral efficiency and conservation discussed (saprolite vs limonite
+      ore processing, slag utilization), but a comprehensive materials-by-
+      weight-or-volume table covering all non-renewable and renewable inputs
+      is not provided.
+
+  - id: "301-2"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 113
+    notes: >-
+      Recycled input materials touched on (377,964 tons nickel slag reused
+      as construction material, used oil reused as fuel) but not presented
+      as a systematic recycled-input percentage.
+
+  - id: "301-3"
+    expected_status: missing
+    expected_score: 1
+    notes: >-
+      Reclaimed products and packaging materials — PT Vale's product (nickel
+      matte) is sold in bulk to industrial customers, so reclaimed-packaging
+      reporting is not directly applicable but no formal omission reason is
+      given. The cited page (113) covers materials efficiency in nickel
+      processing, not reclaimed products.
+
+  - id: "302-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 93
+    notes: >-
+      Energy consumption within the organization: 31,785,655 GJ in 2024,
+      broken down by source (HSFO, HSD, coal, gasoline, biodiesel B35,
+      hydroelectric) in the data table on p.180.
+
+  - id: "302-2"
+    expected_status: missing
+    expected_score: 1
+    notes: >-
+      Explicit statement on p.93: "PTVI did not calculate consumption
+      outside the organization." A documented absence rather than a reason
+      for omission per GRI 1 §6 — closer to "missing".
+
+  - id: "302-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 93
+    notes: >-
+      Energy intensity 445.73 GJ/Ton Ni in 2024 (data table p.180).
+      Three-year comparison provided.
+
+  - id: "302-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 94
+    notes: >-
+      Reductions described (REALITAS innovation saved 142,529 GJ; Logic
+      Cascade saved 346,413 GJ; data table p.180 shows HSFO down 8.80%).
+
+  - id: "302-5"
+    expected_status: missing
+    expected_score: 0
+    notes: >-
+      Explicit statement on p.94: "This report has not calculated the amount
+      of energy reduction/efficiency from products/services sold in 2024.
+      This is because the delivery of nickel in matte uses vessels provided
+      by the buyer..." This is a stated reason for omission.
+
+  - id: "303-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 98
+    notes: >-
+      Interactions with water as a shared resource described in detail
+      (Lake Matano/Mahalona/Towuti; hydroelectric power; community use;
+      water-stress assessment; Water Resources Committee).
+
+  - id: "303-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 98
+    notes: >-
+      Management of water discharge-related impacts: SNI 6989.59:2008 and
+      APHA testing standards, 11 monitoring points, TSS/Cr/Cr6+/Fe/Ni
+      monitoring against regulatory limits.
+
+  - id: "303-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 98
+    notes: >-
+      Water withdrawal from Lake Matano/Mahalona/Towuti described, with
+      data on p.182.
+
+  - id: "303-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Water discharge: 100,709,801 m³ total in 2024, broken down by
+      receiving water body (Petea River 50.7M, Lake Matano 25.6M, Lake
+      Mahalona 20.6M, Salo Lamunto 3.7M).
+
+  - id: "303-5"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 99
+    notes: >-
+      Water consumption stated to equal water withdrawal ("All the water
+      extracted is fully used in the operational process") — this implies
+      effectively zero consumption return, but is conceptually inconsistent
+      with the 303-5 definition (consumption = withdrawal − discharge).
+      The numerical reconciliation between 303-3 (withdrawal) and 303-4
+      (discharge of 100.7M m³) and 303-5 is unclear.
+
+  - id: "304-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 185
+    notes: >-
+      Operational sites in/adjacent to protected areas reported with IPPKH
+      numbers and hectares for each block (Sorowako, Bahodopi, Pomalaa) on
+      p.185. Three-year disturbed/rehabilitated land data also provided.
+
+  - id: "304-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 186
+    notes: >-
+      Significant impacts on biodiversity (habitat changes, fragmentation,
+      species decline, pollution, invasive species risk) described on p.106
+      and further detail on p.186.
+
+  - id: "304-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 185
+    notes: >-
+      Habitats protected/restored: 67,903 trees planted on 62 ha;
+      Sawerigading Wallacea Biodiversity Park (71.8 ha); 204 ha mangrove
+      restoration; data table p.185.
+
+  - id: "304-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 186
+    notes: >-
+      IUCN Red List and national conservation list species detailed in
+      two-page table on pp.186-187, with conservation category for each
+      species (Vulnerable/Endangered/Near Threatened/Least Concern) for
+      both fauna and flora.
+
+  - id: "305-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 94
+    notes: >-
+      Scope 1: 2,132,973 tons CO2e in 2024, with three-year comparison
+      (data table p.181). Gases included (CH4, N2O, HFCs converted to
+      CO2e). Base year 2017. Methodology: IPCC AR-5, GWP=1.
+      Biogenic CO2 explicitly stated as not calculated.
+    elements:
+      - id: scope_1_emissions_tonnes
+        expected_status: found
+        expected_page: 94
+      - id: gases_included
+        expected_status: found
+        expected_page: 94
+      - id: biogenic_co2_emissions
+        expected_status: missing
+      - id: base_year
+        expected_status: found
+        expected_page: 94
+      - id: methodology_and_consolidation
+        expected_status: found
+        expected_page: 94
+
+  - id: "305-2"
+    expected_status: partial
+    expected_score: 4
+    expected_evidence_page: 94
+    notes: >-
+      Scope 2: 2,769 tons CO2e in 2024 (data table p.181), with three-year
+      comparison. However the report does not clearly distinguish
+      location-based vs market-based Scope 2 figures as required by
+      305-2-a/b.
+
+  - id: "305-3"
+    expected_status: missing
+    expected_score: 0
+    notes: >-
+      Explicit statement on p.94: "Currently, PT Vale has not calculated
+      Scope 3 emissions. However, in this reporting year, we have started to
+      develop tools and map relevant emission sources... We target to be
+      able to calculate Scope 3 emissions in the next 1-2 years." Reason
+      for omission is given, but no Scope 3 data is reported.
+
+  - id: "305-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 94
+    notes: >-
+      GHG emission intensity: 29.95 Ton CO2e/Ton Ni in 2024, three-year
+      comparison (data table p.181). Includes Scope 1+2. Increase of 4.25%
+      vs 2023 explained.
+
+  - id: "305-5"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 94
+    notes: >-
+      Reductions described: REALITAS (energy efficiency in nickel smelting,
+      142,529 GJ saved), Logic Cascade (33,285 TonCO2e reduction).
+      Although the report notes total emissions ROSE 6% vs 2017 baseline,
+      these specific reduction initiatives are quantified.
+
+  - id: "305-6"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 95
+    notes: >-
+      Statement that HCF-22 has been phased out in favor of R32 (ODP=0).
+      No quantitative ODS emissions (in CFC-11 equivalents) reported, as
+      required by 305-6-a. Substances included and methodology not detailed.
+
+  - id: "305-7"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 96
+    notes: >-
+      SOx emissions (52,172 tons SO2eq in 2024, intensity 0.73 tSO2/tNi)
+      and particulate emissions (879 tons, intensity 0.012 tParticulate/tNi)
+      reported with three-year comparison. Methodology references PERMEN
+      KLHK No.4/2014. NOx is not separately reported.
+
+  # GRI 306: Effluent and Waste 2016 — flagged as listed alongside GRI 306:
+  # Waste 2020 in the index. The 2016 standard was superseded by the 2020
+  # standard for most disclosures, but the report lists both.
+
+  - id: "306-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Waste generation and significant waste-related impacts (GRI 306 Waste
+      2020 version). Hazardous waste 2,696.6 tons, breakdown by type
+      (used oil 1,135.5 t, heavy metals 934.96 t, oil-contaminated 525.27 t,
+      medical 10.21 t, batteries 30.38 t).
+      Note: the GRI Index also lists GRI 306-1 (Effluent and Waste 2016) at
+      pages 16-18, which appears to be an indexing error since those pages
+      are part of the report's front matter, not water-discharge content.
+
+  - id: "306-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Management of significant waste-related impacts: 4R approach
+      (prevention, reduction, reuse, recycling, recovery); zero-waste-to-
+      landfill target by 2025; Simpel and SiRaja systems for ministry
+      reporting; B3 waste handled by licensed third parties.
+
+  - id: "306-3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Waste generated breakdown by activity, by hazardousness, by treatment
+      method on pp.101-104 and data table p.183.
+
+  - id: "306-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Waste diverted from disposal: 1,107 tons of used oil reused as fuel
+      substitute (100% of used oil produced); 377,964.29 tons nickel slag
+      utilized as construction material. Reuse and recycling categorized.
+
+  - id: "306-5"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 101
+    notes: >-
+      Waste directed to disposal: 1,589.6 tons disposed in landfills.
+      Medical waste managed via incineration at INCO hospital; ash to
+      licensed third party.
+
+  # ============================================================
+  # GRI 400 Series — Social
+  # ============================================================
+
+  - id: "401-1"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 125
+    notes: >-
+      New employee hires: 166 (116 male, 50 female) with placement-area
+      breakdown (Sorowako 171, etc.). Turnover rate: 0.92% (28 employees).
+      However the disclosure requires breakdowns by age group and by region
+      for BOTH new hires and turnover; age-group breakdown is missing.
+
+  - id: "401-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 121
+    notes: >-
+      Benefits to full-time employees described (housing, allowances,
+      maternity leave 120 days, pension, life insurance, health). Difference
+      vs temporary/part-time workers acknowledged.
+
+  - id: "401-3"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 193
+    notes: >-
+      Maternity leave data table on p.193: 209 entitled, 7 took leave, all
+      7 returned to work, 100% retention rate after 12 months. Three-year
+      comparison provided. Paternity leave not addressed.
+
+  - id: "402-1"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 117
+    notes: >-
+      Statement that CLA includes notice provisions for operational changes
+      affecting employment. However the *minimum number of weeks of notice*
+      typically provided is not specified, nor is it stated whether notice
+      periods are specified in collective agreements.
+
+  - id: "403-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 127
+    notes: >-
+      OHS management system based on ISO 45001 (certification in progress
+      late 2024) and Mining Safety Management System (SMKP). CSMS for
+      contractors. Coverage 100% of employees and contractors.
+
+  - id: "403-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 128
+    notes: >-
+      Hazard identification and risk assessment process described: HIRA
+      training every 2 years, JSA before each job, monthly CSMS audits,
+      daily heavy-equipment inspections, CRM hazard reporting app, IRIS
+      incident app. 20 HIPO cases investigated in 2024.
+
+  - id: "403-3"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 129
+    notes: >-
+      Occupational health services: Wellness Program (5 pillars), health
+      screenings, Wellness Talkshow Pomalaa. INCO hospital and clinic
+      services. Mental health initiatives mentioned on p.134.
+
+  - id: "403-4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 128
+    notes: >-
+      Worker participation: Mining Safety Committee sets Safety Goals and
+      Programs (TSP); monthly meetings; Safety Share sessions; CRM hazard
+      reporting open to all workers.
+
+  - id: "403-5"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 128
+    notes: >-
+      OHS training by BNSP-certified trainers: First Operational Supervisor
+      (POP) 88 attendees; Intermediate Operational Supervisor (POM) 28.
+      Total HSE training hours 6,166 in 2024 (per chart).
+
+  - id: "403-6"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 131
+    notes: Wellness Program covered, INCO hospital services described.
+
+  - id: "403-7"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 129
+    notes: >-
+      Prevention/mitigation of OHS impacts linked by business relationships:
+      Contractor Safety Management System (CSMS), monthly contractor
+      audits, operational risk management for high-risk activities.
+
+  - id: "403-8"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 127
+    notes: >-
+      "The implementation of Occupational Health and Safety (OHS) principles
+      covers 100% of employees, including contractor/vendor workers, without
+      exception."
+
+  - id: "403-9"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 195
+    notes: >-
+      Work-related injuries data on pp.132 and 195 with three-year
+      comparison by site (Sorowako, Bahodopi, Pomalaa): LTIs, first aid,
+      near misses, severity rate, frequency rate. 2024: 1 LTI Sorowako,
+      0 fatal across all sites, 2 moderate/severe Sorowako.
+
+  - id: "403-10"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 130
+    notes: >-
+      Work-related ill health touched on but specific occupational disease
+      statistics (number, type, fatalities from ill health) are not
+      systematically broken out.
+
+  - id: "404-1"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 122
+    notes: >-
+      Average training hours: 65,687 total hours, 22 hours per employee in
+      2024 (p.115). However the breakdown by gender and by employee category
+      required by 404-1-a is not provided in this disclosure.
+
+  - id: "404-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 122
+    notes: >-
+      Programs for upgrading skills: POP/POM certifications, leadership
+      development, technical training, Vale Education System (VES).
+
+  - id: "404-3"
+    expected_status: partial
+    expected_score: 4
+    expected_evidence_page: 122
+    notes: >-
+      Performance review data on p.194 shows employees reviewed by category
+      and gender. However the *percentage* of employees receiving reviews
+      (the actual 404-3 metric) is not explicitly calculated.
+
+  - id: "405-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 116
+    notes: >-
+      Diversity of governance bodies: BoD 14% female (1/7), BoC 30%
+      (3/10), combined 23.5% (p.68). Employees: 11.6% female overall,
+      breakdown by age, education, position, placement area on pp.116, 120;
+      detailed tables on pp.191-192. 70 employees with disabilities (2% of
+      workforce).
+
+  - id: "405-2"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 124
+    notes: >-
+      Statement that male-female remuneration ratio is 1:1 for the same
+      position. However the disclosure requires ratio of basic salary AND
+      remuneration of women to men *by employee category* and *by
+      significant location*, neither of which is broken out.
+
+  - id: "406-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 120
+    notes: >-
+      "During the year 2024, we did not receive any complaints regarding
+      workplace discrimination."
+
+  - id: "407-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 117
+    notes: >-
+      Freedom of association: CLA covers all permanent employees; 3 labor
+      unions recognized; supplier due diligence (414-1) found no operations
+      at significant risk for FoA/CBA violations.
+
+  - id: "408-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 119
+    notes: >-
+      Child labor: strict minimum age 18 enforced via ID verification;
+      monitoring shows no findings in 2024. Suppliers contractually
+      committed; no significant risk identified.
+
+  - id: "409-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 119
+    notes: >-
+      Forced labor: zero tolerance, contractual clauses for all business
+      partners; ILO-aligned policies; monitoring shows no findings in 2024.
+
+  - id: "410-1"
+    expected_status: partial
+    expected_score: 2
+    expected_evidence_page: 141
+    notes: >-
+      Security personnel and human rights training mentioned at p.141 but
+      the specific percentage of security personnel trained, and whether
+      requirements extend to third-party security organizations, are not
+      quantified.
+
+  - id: "413-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 143
+    notes: >-
+      Operations with local community engagement and development programs:
+      detailed multi-page table by region (Sorowako: 5 villages in Nuha,
+      6 in Wasuponda, 18 in Towuti, 9 in Malili; Pomalaa: 12 villages in
+      Pomalaa, 10 in Baula; Bahodopi: 10 in East Bungku, etc.) with
+      impact-management actions for each.
+
+  - id: "413-2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 143
+    notes: >-
+      Negative impacts: each operational block has impact analysis
+      describing air/water/soil pollution potential, population growth,
+      cultural changes, land acquisition concerns.
+
+  - id: "414-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 63
+    notes: >-
+      "In 2024, evaluations were conducted for 100% of new suppliers and
+      business partners." Pre-qualification ESG due diligence described.
+
+  - id: "414-2"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 63
+    notes: >-
+      "Based on the evaluation results, no operations or suppliers were
+      identified to pose significant risks related to restrictions on
+      freedom of association and collective bargaining, use of child labor,
+      or practices of forced or compulsory labor." However the disclosure
+      asks for the number of suppliers assessed for social impacts and
+      actions taken, which is only partially quantified.
+
+  - id: "415-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 77
+    notes: >-
+      "the Company has a policy to prohibit any form of contribution to
+      political activities, either directly or indirectly. We also do not
+      allow the use of PT Vale's facilities or assets for political
+      activities." Zero political contributions.
+
+  - id: "418-1"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 81
+    notes: >-
+      "Zero incidents of damage, modification, or leakage of digital data
+      and information from customers, employees, or other stakeholders"
+      (highlight on p.67/81). No substantiated complaints reported.
+
+  # ============================================================
+  # GRI 14: Mining Sector 2024
+  #
+  # The report includes a "Topics in Applicable GRI Sector Standards That
+  # Are Determined to Be Non-Material" note (p.214) for 14.11, 14.13, 14.25.
+  # The applicable disclosures below are spot-checked against the page
+  # references in the GRI Index (pp.210-213).
+  # ============================================================
+
+  - id: "14.6.2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 98
+    notes: Tailings disposal — PT Vale uses RKEF which does not produce tailings; statement on p.101.
+
+  - id: "14.6.3"
+    expected_status: partial
+    expected_score: 4
+    expected_evidence_page: 101
+    notes: >-
+      Statement that RKEF does not produce tailings, so no tailings
+      facilities to list. The omission is reasoned but not formatted as a
+      formal reason-for-omission per GRI 1 §6.
+
+  - id: "14.8.4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 109
+    notes: Closure and rehabilitation plan in place for all mine sites; described pp.109-112.
+
+  - id: "14.8.6"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 185
+    notes: >-
+      Disturbed/rehabilitated land table on p.185 reporting 2024:
+      disturbed (current year) 177.7 ha, rehabilitated 178.9 ha, total
+      not yet rehabilitated 2,104.3 ha.
+
+  - id: "14.9.6"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 116
+    notes: Local workforce data with breakdown by gender for each mine site.
+
+  - id: "14.10.4"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 150
+    notes: Community grievances received, addressed, and resolution rates reported.
+
+  - id: "14.12.2"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 141
+    notes: Dongi community resettlement program (57 family heads), livelihood restoration described.
+
+  - id: "14.15.3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 127
+    notes: >-
+      "Throughout the year 2024, there were no critical incidents across
+      all operational areas of PT Vale."
+
+  - id: "14.20.3"
+    expected_status: covered
+    expected_score: 5
+    expected_evidence_page: 126
+    notes: >-
+      "There were no incidents of strikes or work stoppages by employees
+      throughout the year 2024."
+
+  - id: "14.22.5"
+    expected_status: partial
+    expected_score: 3
+    expected_evidence_page: 109
+    notes: >-
+      The IUPK (Special Mining Business License) details and dates are
+      disclosed on p.21 and p.109, but whether the contracts/licenses
+      themselves are publicly available, and where, is not stated.
+
+  - id: "14.22.6"
+    expected_status: covered
+    expected_score: 4
+    expected_evidence_page: 24
+    notes: >-
+      Beneficial ownership disclosed: VCL 33.88%, MIND ID 34% (state-
+      owned, making the Government of Indonesia the ultimate beneficial
+      owner), SMM 11.48%, public 20.64%. PEP status and country of
+      residence per individual not explicitly addressed.
+
+  - id: "14.23.8"
+    expected_status: missing
+    expected_score: 0
+    notes: >-
+      Explicit reason for omission given in the GRI Index (p.213):
+      "PT Vale does not purchase minerals from the state so this indicator
+      is not relevant to PT Vale's operations." Documented per GRI 1 §6.

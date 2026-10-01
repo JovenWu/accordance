@@ -1,0 +1,22 @@
+id: "14.0.1"
+standard: "GRI 14: Mining Sector 2024"
+title: "Mine-site disclosure"
+category: sector
+requirement_text: |
+    Under Topic 14.0 Sector context, the organization must report a list of its mine sites, the definition of 'mine site' used, the geographic location (country and coordinates) for each site, and the size in hectares of each site.
+required_elements:
+  - id: mine_site_list_and_definition
+    desc: "List of mine sites and the definition of 'mine site' used by the organization"
+  - id: geographic_location
+    desc: "Country and coordinates (latitude/longitude) per mine site"
+  - id: site_size_hectares
+    desc: "Size in hectares per mine site"
+retrieval_queries:
+  - "mine site list definition geographic location coordinates hectares"
+  - "list of mine sites country coordinates size hectares reporting period"
+  - "mine site definition latitude longitude area hectares operations"
+good_evidence_hints:
+  - "Look for a table or appendix listing all mine sites with their country, coordinates, and area in hectares, alongside a stated definition of what constitutes a mine site"
+  - "Good evidence provides both the GPS coordinates (or equivalent location reference) and the site area in hectares for every named mine site, and explains the boundary definition applied"
+suggested_fix_template: |
+    Add a mine-site disclosure table listing all mine sites, the definition of 'mine site' applied, the country and geographic coordinates (latitude/longitude) for each site, and the area of each site in hectares. Clarify whether 'mine site' includes adjacent processing facilities and infrastructure.

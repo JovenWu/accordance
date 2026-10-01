@@ -1,0 +1,27 @@
+id: "11.16.2"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Involuntary resettlement livelihoods and rights"
+category: sector
+requirement_text: |
+  Under Topic 11.16 Land and resource rights, the organization must list the locations of
+  operations that caused or contributed to involuntary resettlement or where such resettlement
+  is ongoing, and for each location describe how peoples' livelihoods and human rights were
+  affected and restored.
+required_elements:
+  - id: locations_involuntary_resettlement
+    desc: "locations of operations that caused or contributed to involuntary resettlement or where such resettlement is ongoing"
+  - id: livelihoods_and_rights_affected_and_restored
+    desc: "for each location, how peoples' livelihoods and human rights were affected and restored"
+retrieval_queries:
+  - "involuntary resettlement oil gas operations locations livelihoods human rights"
+  - "forced displacement community resettlement oil gas operations impact restoration"
+  - "land acquisition resettlement livelihoods restoration human rights oil gas"
+good_evidence_hints:
+  - "Look in the community relations or human rights section for named locations where resettlement occurred, with a description of economic and social impacts on affected people and restoration measures taken"
+  - "Strong evidence describes specific livelihoods restoration programmes (e.g., income substitution, land replacement, skills training) and assesses whether affected peoples' rights were restored at each location"
+suggested_fix_template: |
+  List every location where the organization's operations caused, contributed to, or are currently
+  associated with involuntary resettlement. For each location, describe how the livelihoods and
+  human rights of affected people were impacted and the specific measures taken to restore them,
+  including any resettlement action plans, compensation frameworks, or livelihoods restoration
+  programmes implemented.

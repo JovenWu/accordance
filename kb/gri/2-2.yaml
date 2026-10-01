@@ -1,0 +1,28 @@
+id: "2-2"
+standard: "GRI 2: General Disclosures 2021"
+title: "Entities included in the organization's sustainability reporting"
+category: universal
+requirement_text: |
+    List the entities included in sustainability reporting, explain differences from
+    financial reporting scope, and describe the consolidation approach used.
+required_elements:
+  - id: included_entities
+    desc: "Entities included in sustainability reporting"
+  - id: financial_reporting_differences
+    desc: "Differences from audited financial reporting scope, if any"
+  - id: consolidation_approach
+    desc: "Approach for consolidating sustainability information"
+  - id: minority_interests
+    desc: "How minority interests are handled, if applicable"
+  - id: mergers_acquisitions_disposals
+    desc: "How mergers, acquisitions, or disposals are handled"
+  - id: approach_differences
+    desc: "Whether consolidation differs across disclosures or material topics"
+retrieval_queries:
+  - "entities included sustainability reporting scope"
+  - "reporting boundary consolidated entities subsidiaries"
+good_evidence_hints:
+  - "Look for 'Reporting scope', 'Reporting boundary', or 'Basis of reporting'"
+suggested_fix_template: |
+    Add a reporting scope section listing all included entities and explaining whether
+    the sustainability reporting scope differs from financial reporting scope.

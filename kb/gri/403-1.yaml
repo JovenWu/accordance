@@ -1,0 +1,26 @@
+id: "403-1"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Occupational health and safety management system"
+category: topic
+requirement_text: |
+    Report whether an occupational health and safety management system has been implemented, including
+    whether it has been implemented because of legal requirements (and if so, a list of those
+    requirements) and/or based on recognized risk management and/or management system standards or
+    guidelines (and if so, a list of them). Describe the scope of workers, activities, and workplaces
+    covered by the occupational health and safety management system, and any exclusions and why.
+required_elements:
+  - id: system_basis
+    desc: "Whether an OHS management system is implemented, and whether due to legal requirements and/or recognized standards (listed)"
+  - id: system_scope
+    desc: "Scope of workers, activities, and workplaces covered, and any exclusions with rationale"
+retrieval_queries:
+  - "occupational health safety management system implemented ISO 45001 scope"
+  - "OHS management system legal requirements standards workers covered"
+  - "health and safety management system scope workers workplaces"
+good_evidence_hints:
+  - "Look in OHS, health & safety, or HSE sections describing the management system (e.g., ISO 45001)"
+  - "Strong evidence states the basis (legal/standard) and the scope of coverage"
+suggested_fix_template: |
+    Add an OHS section stating whether a health and safety management system is in place, its basis
+    (legal requirements and/or recognized standards such as ISO 45001), and the scope of workers,
+    activities, and workplaces it covers.

@@ -1,0 +1,22 @@
+id: "12.9.4"
+standard: "GRI 12: Coal Sector 2022"
+title: "Local community grievances: number, type, and resolution rates"
+category: sector
+requirement_text: |
+    Under Topic 12.9 Local communities, the organization must report the number and type of grievances from local communities identified, including the percentage of grievances that were addressed and resolved and the percentage resolved through remediation.
+required_elements:
+  - id: number_and_type_of_grievances
+    desc: "number and type of grievances from local communities identified"
+  - id: percentage_addressed_resolved
+    desc: "percentage of the grievances that were addressed and resolved"
+  - id: percentage_resolved_remediation
+    desc: "percentage of the grievances that were resolved through remediation"
+retrieval_queries:
+  - "local community grievances number type coal sector addressed resolved"
+  - "community grievance mechanism coal mine complaints resolved remediation"
+  - "percentage community grievances resolved through remediation coal sector"
+good_evidence_hints:
+  - "Look in the local communities or social performance section for a count and categorisation of community grievances together with resolution rates"
+  - "Good evidence separately reports the percentage of grievances addressed and resolved and the percentage resolved specifically through remediation"
+suggested_fix_template: |
+    Report the total number and types of grievances received from local communities during the reporting period, the percentage of those grievances that were addressed and resolved, and the percentage that were resolved through remediation. Present data for the reporting period and, where available, the prior period for comparison.

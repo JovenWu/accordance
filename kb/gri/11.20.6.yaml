@@ -1,0 +1,27 @@
+id: "11.20.6"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Beneficial ownership identification and disclosure"
+category: sector
+requirement_text: |
+  Under Topic 11.20 Anti-corruption, the organization must list its beneficial owners and explain
+  how it identifies the beneficial owners of business partners, including joint ventures and
+  suppliers.
+required_elements:
+  - id: list_beneficial_owners
+    desc: "the organization's beneficial owners"
+  - id: how_partners_beneficial_owners_identified
+    desc: "explanation of how the organization identifies the beneficial owners of business partners, including joint ventures and suppliers"
+retrieval_queries:
+  - "beneficial ownership oil gas company list business partners joint ventures"
+  - "beneficial owners identification process suppliers joint ventures oil gas"
+  - "ownership transparency beneficial owners anti-corruption oil gas"
+good_evidence_hints:
+  - "Look in the governance or anti-corruption section for a named list or description of the organization's ultimate beneficial owners, plus a description of the due diligence process used to identify beneficial owners of partners and suppliers"
+  - "Strong evidence describes the specific methodology for beneficial ownership verification (e.g., threshold percentage, third-party verification, registry checks) and applies it to joint ventures and the supply chain"
+suggested_fix_template: |
+  List the organization's beneficial owners (natural persons who ultimately own or control the
+  organization, typically above a stated ownership threshold such as 25%). Separately, explain
+  the process used to identify the beneficial owners of business partners, including joint
+  venture partners and significant suppliers — describing the ownership threshold applied, the
+  sources consulted (e.g., company registries, third-party databases), and how this information
+  is verified and kept up to date.

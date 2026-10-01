@@ -1,0 +1,31 @@
+id: "201-1"
+standard: "GRI 201: Economic Performance 2016"
+title: "Direct economic value generated and distributed"
+category: topic
+requirement_text: |
+    Report the direct economic value generated and distributed (EVG&D) on an accruals basis, covering
+    the basic components of the organization's global operations: direct economic value generated
+    (revenues); economic value distributed (operating costs, employee wages and benefits, payments to
+    providers of capital, payments to government by country, and community investments); and economic
+    value retained (value generated less value distributed). Where significant, also report EVG&D
+    separately at country, regional, or market levels, and the criteria used for defining significance.
+required_elements:
+  - id: value_generated
+    desc: "Direct economic value generated (revenues)"
+  - id: value_distributed
+    desc: "Economic value distributed: operating costs, wages/benefits, payments to capital providers, payments to government, community investment"
+  - id: value_retained
+    desc: "Economic value retained (generated minus distributed)"
+  - id: breakdown_by_geography
+    desc: "Where significant, EVG&D broken down by country, region, or market, with the criteria used"
+retrieval_queries:
+  - "direct economic value generated distributed revenues operating costs EVG&D"
+  - "economic value distributed wages payments to government community investment"
+  - "economic value retained revenue distributed providers of capital"
+good_evidence_hints:
+  - "Look for an EVG&D table with revenues, operating costs, employee wages, payments to capital and government"
+  - "Strong evidence reconciles value generated minus distributed to value retained"
+suggested_fix_template: |
+    Add an economic value generated and distributed (EVG&D) table reporting revenues, operating costs,
+    employee wages and benefits, payments to providers of capital and to government, community
+    investment, and the resulting economic value retained, broken down by geography where significant.

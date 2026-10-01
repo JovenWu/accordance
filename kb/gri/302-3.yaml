@@ -1,0 +1,27 @@
+id: "302-3"
+standard: "GRI 302: Energy 2016"
+title: "Energy intensity"
+category: topic
+requirement_text: |
+    Report the organization's energy intensity ratio (absolute energy consumption divided by an organization-specific metric), identifying the denominator chosen, the types of energy included, and whether the ratio covers energy used within the organization, outside it, or both.
+required_elements:
+  - id: energy_intensity_ratio
+    desc: "Energy intensity ratio for the organization"
+  - id: denominator_metric
+    desc: "Organization-specific metric (denominator) chosen to calculate the ratio"
+  - id: energy_types_included
+    desc: "Types of energy included (fuel, electricity, heating, cooling, steam, or all)"
+  - id: ratio_scope
+    desc: "Whether the ratio uses energy within the organization, outside it, or both"
+retrieval_queries:
+  - "energy intensity ratio per revenue per employee per unit produced GJ"
+  - "energy intensity denominator floor space production volume"
+  - "normalized energy consumption intensity metric"
+good_evidence_hints:
+  - "Look for an intensity figure such as GJ or MWh per unit revenue, per employee, per m2, or per unit of product"
+  - "Good evidence names the denominator, the energy types covered, and whether it is internal, external, or both"
+suggested_fix_template: |
+    Add an energy intensity ratio with its organization-specific denominator (e.g. revenue, employees, floor area, units produced), specify which energy types are included, and state whether it covers energy within, outside, or both.
+status: current
+effective_until: "2026-12-31"
+superseded_by: "GRI 103: Energy 2025"

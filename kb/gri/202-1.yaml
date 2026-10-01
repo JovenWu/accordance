@@ -1,0 +1,32 @@
+id: "202-1"
+standard: "GRI 202: Market Presence 2016"
+title: "Ratios of standard entry level wage by gender compared to local minimum wage"
+category: topic
+requirement_text: |
+    Where a significant proportion of employees are compensated based on wages subject to minimum wage
+    rules, report the ratio of the standard entry level wage by gender at significant locations of
+    operation to the local minimum wage. Where a significant proportion of other workers (excluding
+    employees) are compensated based on the minimum wage, describe the actions taken to determine
+    whether these workers are paid above it. State whether a local minimum wage is absent or variable
+    at significant locations of operation, by gender, and which minimum wage is used as reference where
+    several could apply. Provide the definition used for 'significant locations of operation'.
+required_elements:
+  - id: entry_wage_ratio_by_gender
+    desc: "Ratio of standard entry level wage by gender to the local minimum wage at significant locations"
+  - id: other_workers_minimum_wage
+    desc: "Actions taken to determine whether non-employee workers are paid above the local minimum wage"
+  - id: minimum_wage_reference
+    desc: "Whether a local minimum wage is absent or variable by gender, and which reference minimum wage is used"
+  - id: significant_locations_definition
+    desc: "Definition used for 'significant locations of operation'"
+retrieval_queries:
+  - "entry level wage gender ratio local minimum wage significant locations"
+  - "standard entry wage compared minimum wage male female ratio"
+  - "living wage minimum wage ratio by gender operations"
+good_evidence_hints:
+  - "Look in compensation, fair pay, or market presence sections with wage ratios by gender"
+  - "Strong evidence gives the entry-wage-to-minimum-wage ratio split by gender and location"
+suggested_fix_template: |
+    Add a market presence section reporting the ratio of standard entry level wage by gender to the
+    local minimum wage at significant locations, how non-employee workers' pay is checked against the
+    minimum, and the definitions of 'significant locations of operation' used.

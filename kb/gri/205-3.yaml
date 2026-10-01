@@ -1,0 +1,30 @@
+id: "205-3"
+standard: "GRI 205: Anti-corruption 2016"
+title: "Confirmed incidents of corruption and actions taken"
+category: topic
+requirement_text: |
+    Report the total number and nature of confirmed incidents of corruption; the total number of
+    confirmed incidents in which employees were dismissed or disciplined for corruption; the total
+    number of confirmed incidents in which contracts with business partners were terminated or not
+    renewed due to violations related to corruption; and any public legal cases regarding corruption
+    brought against the organization or its employees during the reporting period and their outcomes.
+required_elements:
+  - id: confirmed_incidents
+    desc: "Total number and nature of confirmed incidents of corruption"
+  - id: employee_actions
+    desc: "Number of incidents in which employees were dismissed or disciplined for corruption"
+  - id: business_partner_actions
+    desc: "Number of incidents in which contracts with business partners were terminated or not renewed due to corruption"
+  - id: public_legal_cases
+    desc: "Public legal cases regarding corruption brought against the organization or employees, and their outcomes"
+retrieval_queries:
+  - "confirmed incidents of corruption actions taken dismissed disciplined"
+  - "corruption incidents employees dismissed contracts terminated legal cases"
+  - "anti-corruption confirmed cases outcomes legal action"
+good_evidence_hints:
+  - "Look in ethics/compliance sections reporting incidents, dismissals, and legal cases"
+  - "Strong evidence states the number/nature of incidents and the actions taken (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting confirmed incidents of corruption and their nature, employees dismissed or
+    disciplined, business-partner contracts terminated or not renewed, and any public legal cases and
+    outcomes (stating zero explicitly where applicable).

@@ -1,0 +1,28 @@
+id: "2-5"
+standard: "GRI 2: General Disclosures 2021"
+title: "External assurance"
+category: universal
+requirement_text: |
+    Describe the policy and practice for external assurance and, if assured,
+    provide assurance scope, basis, standards, level, limitations, and assurance provider relationship.
+required_elements:
+  - id: assurance_policy
+    desc: "Policy and practice for seeking external assurance"
+  - id: governance_involvement
+    desc: "Role of governance body or executives in assurance"
+  - id: assurance_report_reference
+    desc: "Link or reference to assurance statement, if applicable"
+  - id: assurance_scope_basis
+    desc: "What was assured and on what basis"
+  - id: assurance_standard_level_limitations
+    desc: "Standards used, level of assurance, and limitations"
+  - id: assurance_provider_relationship
+    desc: "Relationship with assurance provider"
+retrieval_queries:
+  - "external assurance assurance statement limited assurance"
+  - "independent assurance sustainability report"
+good_evidence_hints:
+  - "Usually near the end of the sustainability report"
+suggested_fix_template: |
+    Add an external assurance section stating whether the report is assured and
+    describing the scope, standard, assurance level, limitations, and provider relationship.

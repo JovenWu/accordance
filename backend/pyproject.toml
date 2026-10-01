@@ -1,0 +1,72 @@
+[project]
+name = "accordance"
+version = "0.1.0"
+requires-python = ">=3.11,<3.14"
+# Upper bounds cap the next breaking MAJOR so a `pip install` months apart can't
+# silently jump (e.g. langchain 0.3 -> 1.x already happened under the old
+# unbounded `>=`, which is exactly the unattributable behavior drift we want to
+# avoid for an LLM-judge pipeline). Floors track the current known-good majors.
+# This is not a full lockfile — for byte-reproducible builds, generate one with
+# `uv lock` / pip-compile against the Linux target and install with `-c`.
+dependencies = [
+  "flashrank>=0.2.9,<0.3",
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.32,<1.0",
+  "pydantic>=2.9,<3.0",
+  "pydantic-settings>=2.6,<3.0",
+  "python-multipart>=0.0.20,<0.1",
+  "langchain>=1.0,<2.0",
+  "langchain-core>=1.0,<2.0",
+  "langgraph>=1.0,<2.0",
+  "langchain-anthropic>=1.0,<2.0",
+  "langchain-openai>=1.0,<2.0",
+  "langchain-community>=0.4,<1.0",
+  "docling>=2.10,<3.0",
+  "psycopg[binary]>=3.2,<4.0",
+  "psycopg-pool>=3.2,<4.0",
+  "pgvector>=0.3,<1.0",
+  "pyyaml>=6.0,<7.0",
+  "httpx>=0.27,<1.0",
+  "tiktoken>=0.8,<1.0",
+  "pymupdf>=1.24,<2.0",
+  "pymupdf4llm>=0.0.17,<2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.8",
+  "mypy>=1.13",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/accordance"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# snap.py's _DROP/_DASH sets deliberately contain the exact smart-quote/dash
+# unicode they normalize away — they ARE the feature, not typos (RUF001).
+"src/accordance/judge/snap.py" = ["RUF001"]
+# prompts.py holds the judge prompt text verbatim; reflowing long lines would
+# churn the prompt and shift the prompt_hash (eval reproducibility). Allow E501.
+"src/accordance/judge/prompts.py" = ["E501"]
+# Tests stay readable over strict: long assertion lines (E501), fixture/helper
+# imports placed after setup (E402), and FastAPI Depends() defaults mirrored
+# from endpoints (B008) are idiomatic in tests. Product code (src) stays strict.
+"tests/**" = ["E501", "E402", "B008"]

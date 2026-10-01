@@ -1,0 +1,22 @@
+id: "14.11.4"
+standard: "GRI 14: Mining Sector 2024"
+title: "Free, prior, and informed consent (FPIC)"
+category: sector
+requirement_text: |
+    Under Topic 14.11 Indigenous Peoples, the organization must report, for operations involving Indigenous Peoples, whether the organization was involved in a free, prior, and informed consent (FPIC) process, whether the process was mutually accepted by all parties, and whether an agreement was reached and whether that agreement is publicly available.
+required_elements:
+  - id: fpic_involvement
+    desc: "Whether the organization was involved in an FPIC process for operations affecting Indigenous Peoples"
+  - id: mutual_acceptance
+    desc: "Whether the FPIC process was mutually accepted by the organization and the affected Indigenous Peoples"
+  - id: agreement_status
+    desc: "Whether an agreement was reached through the FPIC process, and whether it is publicly available"
+retrieval_queries:
+  - "free prior informed consent FPIC Indigenous Peoples mining operations agreement"
+  - "FPIC process mutually accepted agreement reached publicly available indigenous"
+  - "free prior informed consent process outcome agreement indigenous communities mine"
+good_evidence_hints:
+  - "Look for a description of FPIC processes undertaken at specific operations, confirming mutual acceptance and stating whether a formal agreement was reached"
+  - "Good evidence specifies which operations conducted an FPIC process, whether an agreement was achieved, and provides a link or reference to a publicly available agreement where applicable"
+suggested_fix_template: |
+    For each operation where Indigenous Peoples are present and affected, disclose whether an FPIC process was conducted, whether it was mutually accepted by all parties, and whether a formal agreement was reached. If an agreement was reached, state whether it is publicly available and provide a reference or link.

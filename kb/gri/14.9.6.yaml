@@ -1,0 +1,22 @@
+id: "14.9.6"
+standard: "GRI 14: Mining Sector 2024"
+title: "Workers hired from the local community"
+category: sector
+requirement_text: |
+    Under Topic 14.9 Economic impacts, the organization must report the percentage of workers hired from the local community at the mine-site level, broken down by gender, and state the definition of 'local community' it uses.
+required_elements:
+  - id: percent_local_hires_by_site
+    desc: "Percentage of workers hired from the local community at the mine-site level"
+  - id: breakdown_by_gender
+    desc: "Breakdown of local hires by gender"
+  - id: local_community_definition
+    desc: "The organization's definition used for 'local community' (geographic scope)"
+retrieval_queries:
+  - "percentage workers hired from local community by mine site gender"
+  - "local employment local hires mining definition of local"
+  - "local workforce recruitment local community gender breakdown mine site"
+good_evidence_hints:
+  - "Look in the economic impacts, local employment or workforce/social section for a percentage of local hires reported per mine site and split by gender"
+  - "Good evidence includes the explicit geographic definition of 'local' (e.g. surrounding community, region, or country) alongside the percentages"
+suggested_fix_template: |
+    Add the percentage of workers hired from the local community at each mine site, broken down by gender, and state the organization's definition of 'local community' (the geographic boundary used).

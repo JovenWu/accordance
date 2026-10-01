@@ -1,0 +1,25 @@
+id: "2-1"
+standard: "GRI 2: General Disclosures 2021"
+title: "Organizational details"
+category: universal
+requirement_text: |
+    Report the organization's legal identity, ownership and legal form,
+    headquarters location, and countries of operation.
+required_elements:
+  - id: legal_name
+    desc: "Legal name of the reporting organization"
+  - id: ownership_and_legal_form
+    desc: "Nature of ownership and legal form"
+  - id: headquarters_location
+    desc: "Location of headquarters"
+  - id: countries_of_operation
+    desc: "Countries where the organization operates"
+retrieval_queries:
+  - "legal name ownership legal form headquarters"
+  - "countries of operation geographic presence"
+good_evidence_hints:
+  - "Usually appears in 'About us', 'Corporate profile', or 'Organizational profile'"
+  - "May also appear in annual report corporate information pages"
+suggested_fix_template: |
+    Add an organizational profile section stating the legal name, ownership/legal form,
+    headquarters location, and countries of operation.

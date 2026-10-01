@@ -1,0 +1,22 @@
+id: "12.11.4"
+standard: "GRI 12: Coal Sector 2022"
+title: "Free, prior, and informed consent (FPIC) processes with indigenous peoples"
+category: sector
+requirement_text: |
+    Under Topic 12.11 Rights of indigenous peoples, the organization must report if it has been involved in a process of seeking free, prior, and informed consent (FPIC) from indigenous peoples for any of its activities, including whether the process has been mutually accepted and whether an agreement has been reached.
+required_elements:
+  - id: fpic_process_involvement
+    desc: "whether the organization has been involved in a process of seeking free, prior, and informed consent (FPIC) from indigenous peoples for any of its activities"
+  - id: mutually_accepted
+    desc: "whether the process has been mutually accepted by the organization and the affected indigenous peoples"
+  - id: agreement_reached_public
+    desc: "whether an agreement has been reached, and if so, whether the agreement is publicly available"
+retrieval_queries:
+  - "free prior informed consent FPIC indigenous peoples coal sector activities"
+  - "FPIC process mutually accepted agreement indigenous communities coal mining"
+  - "consent process indigenous peoples coal operations FPIC agreement reached"
+good_evidence_hints:
+  - "Look for an indigenous rights or FPIC section that states whether consent processes were initiated and whether affected indigenous communities agreed to the proposed activities"
+  - "Good evidence specifies whether each FPIC process was mutually accepted and whether a formal agreement was reached and made publicly available"
+suggested_fix_template: |
+    Disclose whether the organisation has sought free, prior, and informed consent (FPIC) from indigenous peoples for any of its coal sector activities. For each FPIC process, state whether the process was mutually accepted by both the organisation and the affected indigenous peoples, whether an agreement was reached, and whether that agreement is publicly available.

@@ -1,0 +1,21 @@
+id: "2-21"
+standard: "GRI 2: General Disclosures 2021"
+title: "Annual total compensation ratio"
+category: universal
+requirement_text: |
+    Report the ratio of highest-paid individual annual compensation to median employee
+    annual compensation, the ratio of compensation increase percentages, and context.
+required_elements:
+  - id: compensation_ratio
+    desc: "Highest-paid individual annual compensation divided by median employee compensation"
+  - id: compensation_increase_ratio
+    desc: "Highest-paid individual percentage increase divided by median employee percentage increase"
+  - id: contextual_information
+    desc: "Methodology, scope, exclusions, compensation types, and context"
+retrieval_queries:
+  - "annual total compensation ratio highest paid median employee"
+  - "CEO pay ratio compensation increase ratio"
+good_evidence_hints:
+  - "Often in remuneration, workforce, or GRI content index tables"
+suggested_fix_template: |
+    Add annual total compensation ratio, annual compensation increase ratio, and methodology/context.

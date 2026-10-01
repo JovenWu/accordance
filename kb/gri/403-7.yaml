@@ -1,0 +1,24 @@
+id: "403-7"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Prevention and mitigation of occupational health and safety impacts directly linked by business relationships"
+category: topic
+requirement_text: |
+    Describe the organization's approach to preventing or mitigating significant negative occupational
+    health and safety impacts that are directly linked to its operations, products, or services by its
+    business relationships, and the related hazards and risks.
+required_elements:
+  - id: prevention_approach
+    desc: "Approach to preventing or mitigating OHS impacts linked to operations, products, or services via business relationships"
+  - id: related_hazards
+    desc: "The related hazards and risks identified in those business relationships"
+retrieval_queries:
+  - "prevention mitigation OHS impacts business relationships suppliers contractors"
+  - "occupational health safety value chain contractors business relationships"
+  - "supplier contractor safety impacts prevention mitigation hazards"
+good_evidence_hints:
+  - "Look in contractor safety, supply chain OHS, or HSE sections"
+  - "Strong evidence describes managing OHS risks linked through suppliers/contractors"
+suggested_fix_template: |
+    Add a section describing how the organization prevents or mitigates OHS impacts linked to its
+    operations, products, or services through business relationships (e.g., contractors, suppliers),
+    and the related hazards and risks.

@@ -1,0 +1,18 @@
+id: "14.13.2"
+standard: "GRI 14: Mining Sector 2024"
+title: "Mine sites with artisanal and small-scale mining"
+category: sector
+requirement_text: |
+    Under Topic 14.13 Artisanal and small-scale mining (ASM), the organization must report the mine sites where artisanal and small-scale mining occurs on or near the site during the reporting period.
+required_elements:
+  - id: sites_with_asm
+    desc: "Mine sites where artisanal and small-scale mining (ASM) occurs on or near the site"
+retrieval_queries:
+  - "artisanal small-scale mining ASM mine sites on near operations"
+  - "ASM activities occurring on or near mine sites locations"
+  - "artisanal mining presence mine site proximity operations reporting period"
+good_evidence_hints:
+  - "Look for a list or table of mine sites noting which have identified ASM activity on or adjacent to the site boundary during the reporting period"
+  - "Good evidence names the specific mine sites where ASM is present and may describe the nature of the ASM activity (e.g. alluvial gold mining, illegal artisanal mining) and proximity to site boundaries"
+suggested_fix_template: |
+    Identify and disclose the mine sites where artisanal and small-scale mining (ASM) occurs on or in the vicinity of the site during the reporting period. Where possible, describe the nature of the ASM activity and the organization's response or engagement with ASM operators.

@@ -1,0 +1,20 @@
+id: "2-30"
+standard: "GRI 2: General Disclosures 2021"
+title: "Collective bargaining agreements"
+category: universal
+requirement_text: |
+    Report the percentage of employees covered by collective bargaining agreements and whether
+    working conditions for employees not covered are based on other collective bargaining agreements.
+required_elements:
+  - id: percentage_covered
+    desc: "Percentage of employees covered by collective bargaining agreements"
+  - id: uncovered_employee_terms
+    desc: "Whether uncovered employees' terms are based on other collective bargaining agreements"
+retrieval_queries:
+  - "collective bargaining agreements percentage employees covered"
+  - "employees covered by collective agreement working conditions"
+good_evidence_hints:
+  - "Look for labor relations, union, or workforce data section"
+suggested_fix_template: |
+    Add the percentage of employees covered by collective bargaining agreements and explain
+    whether other employees' terms are influenced by collective agreements.

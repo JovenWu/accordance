@@ -1,0 +1,27 @@
+id: "305-5"
+standard: "GRI 305: Emissions 2016"
+title: "Reduction of GHG emissions"
+category: topic
+requirement_text: |
+    Report GHG emissions reduced as a direct result of reduction initiatives in metric tons of CO2 equivalent, the gases included, the base year or baseline with rationale, the scopes in which reductions took place, and the methodology used.
+required_elements:
+  - id: emissions_reduced_tonnes
+    desc: "GHG emissions reduced as a direct result of reduction initiatives, in metric tons of CO2 equivalent"
+  - id: gases_included
+    desc: "Gases included in the calculation (CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all)"
+  - id: base_year_or_baseline
+    desc: "Base year or baseline, including the rationale for choosing it"
+  - id: scopes_of_reduction
+    desc: "Scopes in which reductions took place (direct Scope 1, energy indirect Scope 2, and/or other indirect Scope 3)"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions, and/or calculation tools used"
+retrieval_queries:
+  - "GHG emissions reduced reduction initiatives tCO2e avoided"
+  - "emissions reduction projects energy efficiency renewable savings tCO2e"
+  - "reduction baseline base year scope methodology calculation"
+good_evidence_hints:
+  - "Look for emissions reduced as a direct result of named initiatives, in tCO2e, against a stated baseline"
+  - "Good evidence ties the reduction to specific scopes and a base year/baseline and excludes reductions from capacity decreases or outsourcing"
+suggested_fix_template: |
+    Add the GHG emissions reduced from reduction initiatives in tCO2e, list gases included, state the base year/baseline with rationale, identify the scopes affected, and disclose the methodology used.
+superseded_by: "GRI 102: Climate Change 2025"

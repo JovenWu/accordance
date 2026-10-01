@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Data (runtime)
+data/
+*.db
+*.db-journal
+*.db-wal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Local, machine-specific Docker Compose overrides (e.g. host port remaps).
+# Compose auto-loads this file; it must stay per-machine, never committed.
+docker-compose.override.yml
+
+# Local one-off eval/experiment scratch scripts (hardcoded run-ids/paths,
+# stale prompt hashes) — kept on-machine, not part of the product.
+/calib_exp.py
+/calibration_validation.py
+/swap_ab_eval.py
+
+# Claude Code local config / memory
+.claude/
+
+# Logs
+*.log
+
+# Generated eval reports (keep the dir via .gitkeep)
+eval/reports/*
+!eval/reports/.gitkeep
+
+# Brainstorming companion artifacts
+.superpowers/
+docs/superpowers/
+
+# Generated motion audits
+motion-audits/
+
+# OS
+.DS_Store
+Thumbs.db

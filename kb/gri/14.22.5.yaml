@@ -1,0 +1,20 @@
+id: "14.22.5"
+standard: "GRI 14: Mining Sector 2024"
+title: "Contract transparency"
+category: sector
+requirement_text: |
+    Describe the organization's approach to contract transparency, including whether contracts and licenses are made publicly available and where they are published, and if they are not public, the reason and the actions taken to make them public in the future.
+required_elements:
+  - id: contracts_licenses_public_availability
+    desc: "Whether contracts and licenses are made publicly available and, if so, where they are published"
+  - id: non_disclosure_reason_and_actions
+    desc: "If contracts or licenses are not public, the reason and actions taken to make them public in the future"
+retrieval_queries:
+  - "contract transparency mining licenses publicly available published"
+  - "publication of contracts and licenses EITI extractive transparency"
+  - "concession agreements disclosure reasons not public future actions"
+good_evidence_hints:
+  - "Look in anti-corruption, transparency, or governance sections for statements on whether mining contracts and licenses are published and where (e.g., government registry or EITI portal)"
+  - "Good evidence either points to where contracts/licenses are published or explains why they are confidential and what will be done to publish them"
+suggested_fix_template: |
+    Add a description of the approach to contract transparency, stating whether contracts and licenses are publicly available and where they are published, or if not, the reason and the actions planned to make them public.

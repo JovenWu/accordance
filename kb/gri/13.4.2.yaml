@@ -1,0 +1,20 @@
+id: "13.4.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Deforestation-free production on own land"
+requirement_text: |
+  Under Topic 13.4 Natural ecosystem conversion, the organization must report the percentage of production volume from land owned, leased or managed by the organization determined to be deforestation- or conversion-free, by product, and describe the assessment methods used.
+required_elements:
+  - id: pct_dcf_production_by_product
+    desc: "Percentage of production volume from owned/leased/managed land determined deforestation- or conversion-free, by product"
+  - id: assessment_methods
+    desc: "Description of the assessment methods used"
+retrieval_queries:
+  - "deforestation-free conversion-free production volume owned leased managed land percentage by product"
+  - "DCF assessment methods own land deforestation conversion percentage production"
+  - "no deforestation no conversion policy percentage production area certified"
+good_evidence_hints:
+  - "Look for a product-by-product breakdown of the percentage of production volume verified as deforestation- or conversion-free on owned or managed land"
+  - "Good evidence describes the assessment methodology (e.g., satellite monitoring, third-party audits, supply chain mapping)"
+suggested_fix_template: |
+  Report, by product, the percentage of production volume from land owned, leased, or managed by the organization that has been determined to be deforestation- or conversion-free, and describe the assessment methods used to make that determination.

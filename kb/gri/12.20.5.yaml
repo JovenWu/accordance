@@ -1,0 +1,22 @@
+id: "12.20.5"
+standard: "GRI 12: Coal Sector 2022"
+title: "Contract transparency and corruption risks in procurement"
+category: sector
+requirement_text: |
+    Under Topic 12.20 Anti-corruption, the organization must describe its approach to contract transparency, including whether contracts and licenses are made publicly available and where published (or, if not public, the reason and future actions), and how potential corruption risks are managed in procurement practices and throughout the supply chain.
+required_elements:
+  - id: corruption_in_procurement
+    desc: "how potential impacts of corruption or risks of corruption are managed in the organization's procurement practices and throughout the supply chain"
+  - id: contracts_licenses_public
+    desc: "whether contracts and licenses are made publicly available and, if so, where they are published"
+  - id: reason_if_not_public
+    desc: "if contracts or licenses are not publicly available, the reason for this and actions taken to make them public in the future"
+retrieval_queries:
+  - "contract transparency licenses publicly available coal sector EITI anti-corruption"
+  - "procurement corruption risks supply chain coal contracts licenses published"
+  - "contract disclosure policy coal mining anti-corruption procurement practices"
+good_evidence_hints:
+  - "Look in the anti-corruption or governance section for a statement on whether extraction contracts and licenses are public, where they are accessible, and any EITI compliance"
+  - "Good evidence also describes controls applied in the supply chain and procurement process to identify and mitigate corruption risks"
+suggested_fix_template: |
+    Describe the organisation's approach to contract transparency, stating whether coal extraction contracts and licenses are made publicly available and where they can be accessed. If they are not public, explain the reason and any steps planned to increase transparency in future. Additionally, describe how corruption risks in procurement practices and across the supply chain are identified and managed.

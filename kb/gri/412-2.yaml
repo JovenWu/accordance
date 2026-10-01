@@ -1,0 +1,23 @@
+id: "412-2"
+standard: "GRI 412: Human Rights Assessment 2016"
+title: "Employee training on human rights policies or procedures"
+category: topic
+requirement_text: |
+    Report the total number of hours in the reporting period devoted to training on human rights
+    policies or procedures concerning aspects of human rights that are relevant to operations, and the
+    percentage of employees trained during the reporting period in such policies or procedures.
+required_elements:
+  - id: training_hours
+    desc: "Total hours devoted to training on human rights policies or procedures"
+  - id: employees_trained_percentage
+    desc: "Percentage of employees trained on human rights policies or procedures during the period"
+retrieval_queries:
+  - "employee training human rights policies procedures hours percentage"
+  - "human rights training employees hours percentage trained"
+  - "human rights policy training coverage employees"
+good_evidence_hints:
+  - "Look in human rights or training sections referencing human rights training"
+  - "Strong evidence gives training hours and the percentage of employees trained"
+suggested_fix_template: |
+    Add a metric reporting the total hours of human rights training and the percentage of employees
+    trained on human rights policies or procedures during the reporting period.

@@ -1,0 +1,22 @@
+id: "404-1"
+standard: "GRI 404: Training and Education 2016"
+title: "Average hours of training per year per employee"
+category: topic
+requirement_text: |
+    Report the average hours of training that the organization's employees have undertaken during the
+    reporting period, broken down by gender and by employee category.
+required_elements:
+  - id: average_training_hours
+    desc: "Average hours of training per employee during the reporting period"
+  - id: breakdown_by_gender_and_category
+    desc: "Breakdown of average training hours by gender and by employee category"
+retrieval_queries:
+  - "average hours training per employee per year gender employee category"
+  - "training hours per employee by gender category"
+  - "employee training hours average annual development"
+good_evidence_hints:
+  - "Look in training, learning & development, or human capital sections for training-hour metrics"
+  - "Strong evidence gives average hours split by gender and employee category"
+suggested_fix_template: |
+    Add a training metric reporting the average hours of training per employee, broken down by gender
+    and by employee category.

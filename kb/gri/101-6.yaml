@@ -1,0 +1,40 @@
+id: "101-6"
+standard: "GRI 101: Biodiversity 2024"
+title: "Direct drivers of biodiversity loss"
+category: topic
+requirement_text: |
+    For each significant-impact site, report the relevant direct drivers of biodiversity loss:
+    land and sea use change (natural ecosystem conversion and conversion between intensively
+    used/modified ecosystems), exploitation of natural resources (wild species harvested and
+    water withdrawal/consumption), pollution (quantity and type of pollutants), and introduction
+    of invasive alien species. Report the same information for significant-impact supply-chain
+    products and services broken down by country or jurisdiction, and report contextual
+    information on standards, methodologies, and assumptions used.
+required_elements:
+  - id: land_sea_use_change
+    desc: "Natural ecosystem conversion since a cut-off/reference date (size in hectares, the cut-off/reference date, ecosystem type before and after) and conversion from one intensively used or modified ecosystem to another during the reporting period (size and ecosystem type before/after) (101-6-a)"
+  - id: exploitation_of_natural_resources
+    desc: "For each wild species harvested: quantity, type, and extinction risk; and water withdrawal and water consumption in megaliters (101-6-b)"
+  - id: pollution
+    desc: "Quantity and type of each pollutant generated (101-6-c)"
+  - id: invasive_alien_species
+    desc: "How invasive alien species are or may be introduced (101-6-d)"
+  - id: supply_chain_drivers
+    desc: "The information required under 101-6-a to 101-6-d for each significant-impact supply-chain product/service, with a breakdown by country or jurisdiction (101-6-e)"
+  - id: contextual_information
+    desc: "Contextual information on how the data was compiled, including standards, methodologies, and assumptions used (101-6-f)"
+retrieval_queries:
+  - "land use change natural ecosystem conversion hectares cut-off date"
+  - "wild species harvested extinction risk water withdrawal consumption"
+  - "pollutants quantity type biodiversity"
+  - "invasive alien species introduction"
+good_evidence_hints:
+  - "Only drivers relevant to a site's activities need to be reported (see Box 1 and Table 3)"
+  - "May cross-reference GRI 303 (water), GRI 305 (emissions/air), and GRI 306-3 (spills)"
+  - "Ecosystem types may use the IUCN Global Ecosystem Typology"
+suggested_fix_template: |
+    Add a direct-drivers section reporting, per significant-impact site, the relevant drivers
+    (land/sea use change, resource exploitation, pollution, invasive alien species), the same for
+    supply-chain products/services by country or jurisdiction, and the standards, methodologies,
+    and assumptions used to compile the data.
+effective_date: "2026-01-01"

@@ -1,0 +1,26 @@
+id: "401-2"
+standard: "GRI 401: Employment 2016"
+title: "Benefits provided to full-time employees that are not provided to temporary or part-time employees"
+category: topic
+requirement_text: |
+    Report the benefits that are standard for full-time employees of the organization but are not
+    provided to temporary or part-time employees, by significant locations of operation. These benefits
+    may include life insurance, health care, disability and invalidity coverage, parental leave,
+    retirement provision, stock ownership, and others. Provide the definition used for 'significant
+    locations of operation'.
+required_elements:
+  - id: standard_benefits
+    desc: "Benefits standard for full-time employees but not provided to temporary or part-time employees (e.g., insurance, health care, parental leave, retirement)"
+  - id: by_significant_location
+    desc: "Reported by significant locations of operation, with the definition used for that term"
+retrieval_queries:
+  - "benefits full-time employees not part-time temporary insurance health care"
+  - "employee benefits life insurance retirement parental leave significant locations"
+  - "standard benefits full-time vs part-time temporary workers"
+good_evidence_hints:
+  - "Look in employee benefits or total rewards sections of the report"
+  - "Strong evidence lists the benefit types and notes coverage differences by employment type and location"
+suggested_fix_template: |
+    Add a benefits section listing the benefits provided to full-time employees but not to temporary or
+    part-time employees, by significant locations of operation, with the definition of 'significant
+    locations of operation' used.

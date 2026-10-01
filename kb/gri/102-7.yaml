@@ -1,0 +1,37 @@
+id: "102-7"
+standard: "GRI 102: Climate Change 2025"
+title: "Scope 3 GHG emissions"
+category: topic
+requirement_text: |
+    Report gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent,
+    calculated in accordance with the GHG Protocol Corporate Value Chain (Scope 3) Standard (2011),
+    including emissions reported under Disclosure 103-3-a in GRI 103: Energy 2025. Break down
+    emissions by the relevant Scope 3 categories (such as purchased goods and services, capital
+    goods, fuel- and energy-related activities, transportation, waste, business travel, use of sold
+    products, and others). State which categories are included and excluded, with the rationale for
+    exclusions; the base year and any recalculations; and the standards, methodologies, assumptions,
+    and data quality used.
+required_elements:
+  - id: gross_scope3_tco2e
+    desc: "Total gross Scope 3 GHG emissions in metric tons of CO2 equivalent"
+  - id: emissions_by_category
+    desc: "Breakdown of Scope 3 emissions by the relevant value-chain categories"
+  - id: categories_included_and_excluded
+    desc: "Which Scope 3 categories are included and excluded, with rationale for exclusions"
+  - id: base_year_methodology_data_quality
+    desc: "Base year, recalculations, methodologies, assumptions, and data quality"
+retrieval_queries:
+  - "scope 3 value chain emissions categories purchased goods use of sold products tCO2e GRI 103"
+  - "scope 3 business travel transportation waste capital goods emissions GHG Protocol Corporate Value Chain"
+  - "scope 3 categories included excluded base year methodology data quality"
+good_evidence_hints:
+  - "Look for a Scope 3 table breaking emissions out by the 15 GHG Protocol categories"
+  - "Strong evidence lists included/excluded categories and explains exclusions"
+  - "Cross-check against energy-related emissions reported under GRI 103 Disclosure 103-3-a"
+suggested_fix_template: |
+    Add a Scope 3 emissions section reporting total tCO2e (calculated per the GHG Protocol Corporate
+    Value Chain Standard), including emissions reported under Disclosure 103-3-a in GRI 103: Energy
+    2025, with a breakdown by value-chain category, stating which categories are included/excluded
+    (with rationale), the base year, and the methodology and data quality used.
+status: upcoming
+effective_date: "2027-01-01"

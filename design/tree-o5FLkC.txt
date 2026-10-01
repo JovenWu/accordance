@@ -1,0 +1,46 @@
+T: data-pencil-id="o5FLkC"
+        data-pencil-name="Screen — 404"
+        class="box-border w-[1440px] h-[900px] absolute left-[12900px] top-[6888px] flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden"
+      >
+sidebar | w-[264px] shrink-0 h-[900px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+  Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+    LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+      T: ICON(scan-search)
+    BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+      Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+        T: Lens
+      Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: GRI disclosure analysis
+  Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+    Nav Analyses | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+      T: ICON(layout-list)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Analyses
+    Nav Users | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+      T: ICON(users)
+      Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+        T: Users
+  Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+  User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+    Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+      Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: MC
+    User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+      User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: maya.chen
+      User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+        T: 23 analyses · $58.41
+    T: ICON(log-out)
+c | [flex:1_1_0] h-full flex flex-col gap-[8px] p-[40px] justify-center items-center
+  big | text-[72px]/[normal] text-[#0485F7] font-bold text-left
+    T: 404
+  t | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+    T: Page not found
+  s | text-[13px]/[normal] text-[#71717A] font-normal text-left
+    T: The report, run or view you were looking for doesn’t exist or was removed.
+  sp | w-[8px] h-[16px] shrink-0 flex flex-row gap-0 justify-start items-start
+  btn | w-fit h-[36px] shrink-0 flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#0485F7] rounded-[24px]
+    T: ICON(arrow-left)
+    Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+      T: Back to Analyses
+T: div

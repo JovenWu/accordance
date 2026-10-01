@@ -1,0 +1,25 @@
+id: "2-24"
+standard: "GRI 2: General Disclosures 2021"
+title: "Embedding policy commitments"
+category: universal
+requirement_text: |
+    Describe how policy commitments are embedded across activities and business relationships,
+    including responsibilities, integration into procedures, implementation through relationships,
+    and training.
+required_elements:
+  - id: responsibility_allocation
+    desc: "How implementation responsibility is allocated"
+  - id: strategy_policy_procedure_integration
+    desc: "Integration into strategies, operational policies, and procedures"
+  - id: business_relationship_implementation
+    desc: "Implementation through business relationships"
+  - id: training
+    desc: "Training provided on implementing commitments"
+retrieval_queries:
+  - "embedding policy commitments training code of conduct"
+  - "implementation of human rights policy supplier code training"
+good_evidence_hints:
+  - "Look for ethics training, supplier onboarding, procurement policies"
+suggested_fix_template: |
+    Add how commitments are implemented internally and with business partners, including
+    responsible functions, procedures, controls, and training.

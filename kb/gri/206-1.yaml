@@ -1,0 +1,25 @@
+id: "206-1"
+standard: "GRI 206: Anti-competitive Behavior 2016"
+title: "Legal actions for anti-competitive behavior, anti-trust, and monopoly practices"
+category: topic
+requirement_text: |
+    Report the number of legal actions pending or completed during the reporting period regarding
+    anti-competitive behavior and violations of anti-trust and monopoly legislation in which the
+    organization has been identified as a participant, and the main outcomes of completed legal actions,
+    including any decisions or judgments.
+required_elements:
+  - id: legal_actions_count
+    desc: "Number of pending or completed legal actions for anti-competitive behavior, anti-trust, and monopoly practices"
+  - id: outcomes
+    desc: "Main outcomes of completed legal actions, including decisions or judgments"
+retrieval_queries:
+  - "legal actions anti-competitive behavior anti-trust monopoly practices"
+  - "anti-competitive behaviour antitrust legal cases outcomes"
+  - "competition law violations legal action pending completed"
+good_evidence_hints:
+  - "Look in compliance, fair competition, or legal-proceedings sections of the report"
+  - "Strong evidence states the number of actions and their outcomes (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting the number of pending or completed legal actions for anti-competitive
+    behavior, anti-trust, and monopoly practices in which the organization is a participant, and the
+    outcomes of completed actions (stating zero explicitly where applicable).

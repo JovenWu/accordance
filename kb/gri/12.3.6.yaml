@@ -1,0 +1,20 @@
+id: "12.3.6"
+standard: "GRI 12: Coal Sector 2022"
+title: "Non-financial provisions for post-mining community transition"
+category: sector
+requirement_text: |
+    Under Topic 12.3 Closure and rehabilitation, the organization must describe non-financial provisions made to manage the local community's socioeconomic transition to a sustainable post-mining economy, including collaborative efforts, projects, and programs.
+required_elements:
+  - id: non_financial_provisions
+    desc: "non-financial provisions to manage the local community's socioeconomic transition to a sustainable post-mining economy"
+  - id: collaborative_efforts_projects_programs
+    desc: "collaborative efforts, projects, and programs included in those provisions"
+retrieval_queries:
+  - "community transition post-mining economy non-financial provisions coal"
+  - "socioeconomic transition sustainable economy programs collaborative coal mine closure"
+  - "community support programs mine closure transition non-financial coal sector"
+good_evidence_hints:
+  - "Look for community development or just transition sections describing programs that support local economic diversification after coal mine closure"
+  - "Good evidence lists specific collaborative projects or programs with partners (e.g., government, NGOs) aimed at community socioeconomic resilience in post-mining areas"
+suggested_fix_template: |
+    Describe the non-financial provisions made to support the local community's socioeconomic transition to a sustainable post-mining economy, including any collaborative efforts, joint projects, or programs undertaken with partners such as government agencies, educational institutions, or civil society organisations to diversify local livelihoods after mine closure.

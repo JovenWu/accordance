@@ -1,0 +1,24 @@
+id: "2-14"
+standard: "GRI 2: General Disclosures 2021"
+title: "Role of the highest governance body in sustainability reporting"
+category: universal
+requirement_text: |
+    Report whether the highest governance body reviews and approves sustainability
+    information and material topics. If not, explain why.
+required_elements:
+  - id: governance_review_approval
+    desc: "Whether governance body reviews and approves reported information"
+  - id: material_topics_review
+    desc: "Whether material topics are reviewed and approved"
+  - id: review_approval_process
+    desc: "Process for review and approval"
+  - id: reason_if_not_responsible
+    desc: "Reason if governance body is not responsible"
+retrieval_queries:
+  - "board approval sustainability report material topics"
+  - "sustainability report reviewed approved by board"
+good_evidence_hints:
+  - "Look for reporting governance or statement of board approval"
+suggested_fix_template: |
+    State whether the board reviews and approves sustainability reporting and material topics,
+    and describe the review process or explain why not.

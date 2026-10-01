@@ -1,0 +1,20 @@
+id: "14.25.4"
+standard: "GRI 14: Mining Sector 2024"
+title: "Potential negative impacts in conflict-affected and high-risk areas"
+category: sector
+requirement_text: |
+    Under Topic 14.25 Conflict-affected and high-risk areas, the organization must report the potential negative impacts on workers and communities from its operations in conflict-affected and high-risk areas (CAHRA), and describe the mitigation actions taken to address those impacts.
+required_elements:
+  - id: potential_impacts_workers_communities
+    desc: "Potential negative impacts on workers and communities from operations in conflict-affected and high-risk areas"
+  - id: mitigation_actions
+    desc: "Mitigation actions taken to address potential negative impacts on workers and communities in CAHRA"
+retrieval_queries:
+  - "negative impacts workers communities conflict-affected high-risk areas mitigation"
+  - "CAHRA potential impacts mitigation actions workers communities mining operations"
+  - "conflict zone mining impacts workers local communities mitigation measures"
+good_evidence_hints:
+  - "Look for a risk or impact assessment section identifying the specific negative impacts (e.g. security-related harms, supply chain risks, human rights violations) that could arise for workers and communities in CAHRA"
+  - "Good evidence pairs each identified potential impact with concrete mitigation actions taken (e.g. security protocols, community liaison, third-party monitoring, grievance mechanisms) rather than generic policy statements"
+suggested_fix_template: |
+    Identify the potential negative impacts on workers and communities resulting from operations in conflict-affected and high-risk areas, and describe the specific mitigation actions implemented to address each impact. Include reference to relevant policies, standards (e.g. Voluntary Principles on Security and Human Rights), and monitoring mechanisms applied.

@@ -1,0 +1,26 @@
+id: "101-8"
+standard: "GRI 101: Biodiversity 2024"
+title: "Ecosystem services"
+category: topic
+requirement_text: |
+    For each significant-impact site, list the ecosystem services and beneficiaries affected or
+    potentially affected by the organization's activities, and explain how those ecosystem
+    services and beneficiaries are or could be affected.
+required_elements:
+  - id: ecosystem_services_and_beneficiaries
+    desc: "List of ecosystem services and beneficiaries affected or potentially affected by the organization's activities for each significant-impact site (101-8-a)"
+  - id: nature_of_effects
+    desc: "Explanation of how the ecosystem services and beneficiaries are or could be affected by the organization's activities (101-8-b)"
+retrieval_queries:
+  - "ecosystem services beneficiaries provisioning regulating cultural"
+  - "ecosystem service impact local community Indigenous Peoples"
+  - "pollination water provisioning soil erosion control"
+good_evidence_hints:
+  - "Ecosystem services fall into provisioning, regulating/maintenance, and cultural categories"
+  - "Beneficiaries may include Indigenous Peoples, local communities, and other organizations (see Table 3)"
+  - "May reference ENCORE, Natural Capital Protocol, TNFD LEAP, or WRI Corporate Ecosystem Services Review"
+suggested_fix_template: |
+    Add an ecosystem services section listing, per significant-impact site, the affected or
+    potentially affected ecosystem services and their beneficiaries, and explaining how each is
+    or could be affected by the organization's activities.
+effective_date: "2026-01-01"

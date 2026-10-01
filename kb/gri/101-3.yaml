@@ -1,0 +1,27 @@
+id: "101-3"
+standard: "GRI 101: Biodiversity 2024"
+title: "Access and benefit-sharing"
+category: topic
+requirement_text: |
+    Describe the process to ensure compliance with access and benefit-sharing (ABS)
+    regulations and measures; and describe voluntary actions taken to advance access and
+    benefit-sharing that are additional to legal obligations or that are taken where there
+    are no regulations and measures.
+required_elements:
+  - id: abs_compliance_process
+    desc: "Process to ensure compliance with access and benefit-sharing regulations and measures, e.g., responsibility allocation, identifying provider countries, integration into strategies/policies/procedures, and training (101-3-a)"
+  - id: voluntary_abs_actions
+    desc: "Voluntary actions taken to advance access and benefit-sharing, additional to legal obligations or where no regulations and measures exist (101-3-b)"
+retrieval_queries:
+  - "access and benefit-sharing genetic resources"
+  - "Nagoya Protocol traditional knowledge compliance"
+  - "voluntary benefit-sharing actions"
+good_evidence_hints:
+  - "Most relevant for cosmetics, pharmaceuticals, agriculture, and biotechnology sectors"
+  - "Look for references to the Nagoya Protocol, ABS Clearing-House, or genetic resources"
+  - "Significant non-compliance instances may be cross-referenced to Disclosure 2-27"
+suggested_fix_template: |
+    Add an access and benefit-sharing section describing the process for complying with ABS
+    regulations and measures (responsibility allocation, identifying provider countries,
+    integration into policies/procedures, and training) and any voluntary benefit-sharing actions.
+effective_date: "2026-01-01"

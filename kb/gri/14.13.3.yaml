@@ -1,0 +1,22 @@
+id: "14.13.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Artisanal and small-scale mining incidents"
+category: sector
+requirement_text: |
+    Under Topic 14.13 Artisanal and small-scale mining (ASM), the organization must report the number of ASM-related incidents during the reporting period, the nature of those incidents, and the actions taken in response.
+required_elements:
+  - id: number_of_incidents
+    desc: "Number of ASM-related incidents during the reporting period"
+  - id: nature_of_incidents
+    desc: "Nature of ASM-related incidents (e.g. safety events, illegal encroachment, conflicts, accidents)"
+  - id: actions_taken
+    desc: "Actions taken by the organization in response to ASM-related incidents"
+retrieval_queries:
+  - "artisanal small-scale mining incidents number nature actions taken response"
+  - "ASM incidents safety conflicts encroachment mining operations response"
+  - "artisanal mining incidents reported actions remediation response reporting period"
+good_evidence_hints:
+  - "Look for incident data in the safety, community, or ASM sections reporting the total number of ASM incidents with descriptions of their nature (e.g. fatalities, illegal entry, criminal activity) and organizational responses"
+  - "Good evidence provides a quantified incident count, categorises incidents by type, and describes the corrective or preventive actions taken, such as dialogue with ASM operators, formalization support, or security measures"
+suggested_fix_template: |
+    Disclose the number of ASM-related incidents recorded during the reporting period, describe the nature of those incidents (e.g. safety events, illegal encroachment, conflicts), and explain the actions taken by the organization in response. Where feasible, break down incidents by type and mine site.

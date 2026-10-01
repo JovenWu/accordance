@@ -1,0 +1,27 @@
+id: "2-12"
+standard: "GRI 2: General Disclosures 2021"
+title: "Role of the highest governance body in overseeing the management of impacts"
+category: universal
+requirement_text: |
+    Describe the role of the highest governance body and senior executives in sustainable
+    development strategy, due diligence, stakeholder engagement, impact management,
+    and effectiveness review.
+required_elements:
+  - id: role_in_strategy_policy_goals
+    desc: "Role in developing and approving purpose, values, strategy, policies, and goals"
+  - id: role_in_due_diligence
+    desc: "Role in overseeing due diligence and impact management processes"
+  - id: stakeholder_engagement_role
+    desc: "Whether and how stakeholder engagement supports oversight"
+  - id: consideration_of_outcomes
+    desc: "How outcomes of impact management processes are considered"
+  - id: effectiveness_review
+    desc: "Role and frequency of reviewing effectiveness"
+retrieval_queries:
+  - "board oversight sustainability impacts due diligence"
+  - "governance body role stakeholder engagement impact management"
+good_evidence_hints:
+  - "Look for sustainability governance, risk oversight, or ESG governance"
+suggested_fix_template: |
+    Add a section explaining how the board and executives oversee sustainability impacts,
+    stakeholder engagement, due diligence, and effectiveness reviews.

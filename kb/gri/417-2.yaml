@@ -1,0 +1,26 @@
+id: "417-2"
+standard: "GRI 417: Marketing and Labeling 2016"
+title: "Incidents of non-compliance concerning product and service information and labeling"
+category: topic
+requirement_text: |
+    Report the total number of incidents of non-compliance with regulations and/or voluntary codes
+    concerning product and service information and labeling within the reporting period, by: incidents
+    of non-compliance with regulations resulting in a fine or penalty; incidents of non-compliance with
+    regulations resulting in a warning; and incidents of non-compliance with voluntary codes. If the
+    organization has not identified any non-compliance, a brief statement of this fact is sufficient.
+required_elements:
+  - id: incidents_with_regulations
+    desc: "Incidents of non-compliance with regulations resulting in a fine/penalty and those resulting in a warning"
+  - id: incidents_with_voluntary_codes
+    desc: "Incidents of non-compliance with voluntary codes (or a statement that none were identified)"
+retrieval_queries:
+  - "incidents non-compliance product information labeling fines warnings"
+  - "labeling non-compliance regulations voluntary codes incidents"
+  - "product labeling violations fines warnings voluntary codes"
+good_evidence_hints:
+  - "Look in product labeling or compliance sections for non-compliance incident counts"
+  - "Strong evidence breaks incidents into fines, warnings, and voluntary-code breaches (or states none)"
+suggested_fix_template: |
+    Add a section reporting incidents of non-compliance concerning product/service information and
+    labeling, split by regulatory fines/penalties, regulatory warnings, and voluntary-code breaches
+    (stating none explicitly where applicable).

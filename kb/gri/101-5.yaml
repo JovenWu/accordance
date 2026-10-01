@@ -1,0 +1,33 @@
+id: "101-5"
+standard: "GRI 101: Biodiversity 2024"
+title: "Locations with biodiversity impacts"
+category: topic
+requirement_text: |
+    Report the location and size in hectares of sites with the most significant impacts on
+    biodiversity; for each such site, report whether it is in or near an ecologically
+    sensitive area, the distance, and the type of area; report the activities taking place at
+    each site; and report the supply-chain products and services with the most significant
+    impacts on biodiversity and the countries or jurisdictions where the associated activities
+    take place.
+required_elements:
+  - id: site_location_and_size
+    desc: "Location and size in hectares of sites with the most significant impacts on biodiversity (101-5-a)"
+  - id: ecologically_sensitive_areas
+    desc: "For each site, whether it is in or near an ecologically sensitive area, the distance, and whether it is an area of biodiversity importance, high ecosystem integrity, rapid decline in ecosystem integrity, high physical water risks, or importance for ecosystem service delivery to Indigenous Peoples, local communities, and other stakeholders (101-5-b)"
+  - id: site_activities
+    desc: "Activities that take place at each site reported under 101-5-a (101-5-c)"
+  - id: supply_chain_products_and_locations
+    desc: "Supply-chain products and services with the most significant impacts on biodiversity and the countries or jurisdictions where associated activities take place (101-5-d)"
+retrieval_queries:
+  - "site locations biodiversity impact hectares coordinates"
+  - "ecologically sensitive areas protected Key Biodiversity Areas"
+  - "supply chain products countries biodiversity impact"
+good_evidence_hints:
+  - "Look for site tables, maps, or polygon/coordinate references (see Table 3)"
+  - "Ecologically sensitive area types align with the TNFD definition (see Table 1)"
+  - "Supply-chain product/country breakdown may appear in a separate table (see Table 4)"
+suggested_fix_template: |
+    Add a locations section reporting each significant-impact site's location and size, its
+    proximity to and type of any ecologically sensitive areas, the activities conducted there,
+    and the supply-chain products/services and the countries or jurisdictions involved.
+effective_date: "2026-01-01"

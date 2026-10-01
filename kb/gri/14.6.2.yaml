@@ -1,0 +1,18 @@
+id: "14.6.2"
+standard: "GRI 14: Mining Sector 2024"
+title: "Tailings disposal methods"
+category: sector
+requirement_text: |
+    Under Topic 14.6 Tailings, the organization must report the tailings disposal methods it uses across its operations.
+required_elements:
+  - id: tailings_disposal_methods
+    desc: "Tailings disposal methods used by the organization"
+retrieval_queries:
+  - "tailings disposal method dry stacking thickened paste backfill"
+  - "tailings storage facility disposal slurry filtered tailings"
+  - "tailings management disposal method conventional impoundment"
+good_evidence_hints:
+  - "Look in the tailings or waste management section for a description of how tailings are deposited (e.g. conventional wet slurry, thickened, paste, filtered/dry stack, in-pit or backfill)"
+  - "Good evidence names the specific disposal method(s) per facility or operation rather than just mentioning tailings exist"
+suggested_fix_template: |
+    Add a statement of the tailings disposal method(s) the organization uses (for example, conventional slurry impoundment, thickened/paste, filtered dry stack, or in-pit backfill), ideally specified per operation or facility.

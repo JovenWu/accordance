@@ -1,0 +1,35 @@
+id: "207-4"
+standard: "GRI 207: Tax 2019"
+title: "Country-by-country reporting"
+category: topic
+requirement_text: |
+    Report all tax jurisdictions where the entities included in the organization's audited consolidated
+    financial statements are resident for tax purposes. For each tax jurisdiction report: the names of
+    the resident entities; their primary activities; the number of employees (and the basis of
+    calculation); revenues from third-party sales; revenues from intra-group transactions with other tax
+    jurisdictions; profit or loss before tax; tangible assets other than cash and cash equivalents;
+    corporate income tax paid on a cash basis; corporate income tax accrued on profit or loss; and the
+    reasons for the difference between accrued tax and the tax due if the statutory rate is applied.
+    State the time period covered.
+required_elements:
+  - id: tax_jurisdictions
+    desc: "All tax jurisdictions where consolidated entities are resident for tax purposes"
+  - id: entities_and_activities
+    desc: "Names of resident entities, their primary activities, and number of employees per jurisdiction"
+  - id: financial_data_by_jurisdiction
+    desc: "Revenues (third-party and intra-group), profit/loss before tax, and tangible assets per jurisdiction"
+  - id: tax_paid_and_accrued
+    desc: "Corporate income tax paid (cash basis) and accrued, with reasons for any difference from the statutory rate"
+  - id: time_period
+    desc: "The time period covered by the country-by-country data"
+retrieval_queries:
+  - "country-by-country reporting tax jurisdictions revenues profit tax paid"
+  - "CbCR corporate income tax paid accrued employees by jurisdiction"
+  - "tax jurisdiction revenue profit before tax tangible assets country by country"
+good_evidence_hints:
+  - "Look for a country-by-country tax table listing jurisdictions with revenue, profit, and tax paid"
+  - "Strong evidence breaks out tax paid vs accrued and number of employees per jurisdiction"
+suggested_fix_template: |
+    Add a country-by-country reporting table listing each tax jurisdiction with the resident entities,
+    primary activities, employees, third-party and intra-group revenues, profit/loss before tax,
+    tangible assets, and corporate income tax paid and accrued, with the time period covered.

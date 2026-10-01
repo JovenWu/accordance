@@ -1,0 +1,20 @@
+id: "13.21.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Workers paid above living wage by gender"
+requirement_text: |
+  Under Topic 13.21 Living income and living wage, the organization must report the percentage of employees and workers who are not employees and whose work is controlled, paid above living wage, with a breakdown by gender.
+required_elements:
+  - id: pct_paid_above_living_wage
+    desc: "Percentage of employees and (controlled) non-employee workers paid above living wage"
+  - id: breakdown_by_gender
+    desc: "Breakdown of the above-living-wage percentage by gender"
+retrieval_queries:
+  - "percentage employees workers paid above living wage gender breakdown agriculture"
+  - "living wage above threshold workers percentage gender male female"
+  - "living wage benchmark workers earning above percentage by gender agriculture"
+good_evidence_hints:
+  - "Look for the percentage of the total workforce (employees and controlled workers) earning above the applicable living wage benchmark, with a gender split"
+  - "Good evidence names the living wage benchmark used and provides the male/female/other breakdown separately"
+suggested_fix_template: |
+  Report the percentage of employees and controlled non-employee workers paid above the living wage, with a breakdown of that percentage by gender.

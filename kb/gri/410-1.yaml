@@ -1,0 +1,23 @@
+id: "410-1"
+standard: "GRI 410: Security Practices 2016"
+title: "Security personnel trained in human rights policies or procedures"
+category: topic
+requirement_text: |
+    Report the percentage of security personnel who have received formal training in the organization's
+    human rights policies or specific procedures and their application to security, and whether these
+    training requirements also apply to third-party organizations providing security personnel.
+required_elements:
+  - id: trained_percentage
+    desc: "Percentage of security personnel formally trained in the organization's human rights policies/procedures"
+  - id: third_party_application
+    desc: "Whether the training requirements also apply to third-party security providers"
+retrieval_queries:
+  - "security personnel trained human rights policies procedures percentage"
+  - "security guards human rights training third party providers"
+  - "security staff human rights training percentage"
+good_evidence_hints:
+  - "Look in human rights or security sections referencing training of security staff"
+  - "Strong evidence gives a percentage trained and notes coverage of third-party security"
+suggested_fix_template: |
+    Add a metric reporting the percentage of security personnel trained in the organization's human
+    rights policies, and whether the same requirement applies to third-party security providers.

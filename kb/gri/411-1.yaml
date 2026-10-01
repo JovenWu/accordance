@@ -1,0 +1,25 @@
+id: "411-1"
+standard: "GRI 411: Rights of Indigenous Peoples 2016"
+title: "Incidents of violations involving rights of indigenous peoples"
+category: topic
+requirement_text: |
+    Report the total number of identified incidents of violations involving the rights of indigenous
+    peoples during the reporting period, and the status of the incidents and the actions taken, with
+    reference to whether the incident has been reviewed by the organization; whether remediation plans
+    are being or have been implemented with results reviewed through routine internal management review
+    processes; and whether the incident is no longer subject to action.
+required_elements:
+  - id: incident_count
+    desc: "Total number of identified incidents of violations involving the rights of indigenous peoples"
+  - id: status_and_actions
+    desc: "Status of each incident and the corrective/remediation actions taken"
+retrieval_queries:
+  - "incidents violations rights indigenous peoples actions taken"
+  - "indigenous peoples rights violations incidents remediation"
+  - "indigenous rights incidents status corrective action"
+good_evidence_hints:
+  - "Look in human rights or community sections referencing indigenous peoples"
+  - "Strong evidence gives the number of incidents and their status (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting the number of identified incidents involving violations of indigenous
+    peoples' rights and the status and actions taken for each (stating zero explicitly where applicable).

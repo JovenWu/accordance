@@ -1,0 +1,20 @@
+id: "12.3.5"
+standard: "GRI 12: Coal Sector 2022"
+title: "Financial provisions for closure and rehabilitation by project"
+category: sector
+requirement_text: |
+    Under Topic 12.3 Closure and rehabilitation, the organization must report the total monetary value of financial provisions made for closure and rehabilitation, including environmental and socioeconomic post-closure monitoring and aftercare for operational sites, and provide a breakdown of this total by project.
+required_elements:
+  - id: total_financial_provisions
+    desc: "total monetary value of financial provisions for closure and rehabilitation, including environmental and socioeconomic post-closure monitoring and aftercare for operational sites"
+  - id: breakdown_by_project
+    desc: "breakdown of this total by project"
+retrieval_queries:
+  - "financial provisions closure rehabilitation coal mine total monetary value"
+  - "rehabilitation fund closure liability provisions breakdown by project coal"
+  - "post-closure monitoring aftercare financial provisions coal sector project"
+good_evidence_hints:
+  - "Look for a liability or provision table in the financial statements or sustainability report that shows the total amount set aside for mine closure and rehabilitation"
+  - "Good evidence breaks the total financial provision down by individual project or mine site and specifies whether it covers post-closure monitoring and socioeconomic aftercare"
+suggested_fix_template: |
+    Report the total monetary value of financial provisions made for closure and rehabilitation of operational coal sites, including provisions for environmental and socioeconomic post-closure monitoring and aftercare. Provide a breakdown of this total by individual project or mine site, with the currency specified.

@@ -1,0 +1,29 @@
+id: "403-8"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Workers covered by an occupational health and safety management system"
+category: topic
+requirement_text: |
+    For all employees and for all workers who are not employees but whose work or workplace is
+    controlled by the organization, report the number and percentage who are covered by an occupational
+    health and safety management system; who are covered by such a system that has been internally
+    audited; and who are covered by such a system that has been audited or certified by an external
+    party. State whether and why any workers have been excluded from this disclosure, and the standards,
+    methodologies, and assumptions used.
+required_elements:
+  - id: coverage_numbers
+    desc: "Number and percentage of employees and non-employee workers covered by an OHS management system"
+  - id: audited_certified_coverage
+    desc: "Number/percentage covered by a system internally audited and by one externally audited or certified"
+  - id: exclusions_and_methodology
+    desc: "Any excluded workers and why, plus the standards, methodologies, and assumptions used"
+retrieval_queries:
+  - "workers covered occupational health safety management system percentage audited"
+  - "employees contractors covered OHS management system certified percentage"
+  - "OHS management system coverage internally externally audited workers"
+good_evidence_hints:
+  - "Look in OHS/HSE data tables for coverage percentages of the management system"
+  - "Strong evidence splits coverage by employees vs non-employee workers and by audit/certification status"
+suggested_fix_template: |
+    Add a metric reporting the number and percentage of employees and non-employee workers covered by an
+    OHS management system, including coverage by internally audited and externally audited/certified
+    systems, with any exclusions explained.

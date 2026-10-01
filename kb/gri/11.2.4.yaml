@@ -1,0 +1,28 @@
+id: "11.2.4"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Climate lobbying and policy positions"
+category: sector
+requirement_text: |
+  Under Topic 11.2 Climate adaptation, resilience, and transition, the organization must report
+  its approach to public policy development and lobbying on climate change, including its stance
+  on significant climate-change issues, any differences from its stated policies, and its
+  membership of or contributions to representative associations or committees that lobby on
+  climate change.
+required_elements:
+  - id: stance_on_climate_issues
+    desc: "the organization's stance on significant climate change issues that are the focus of its participation in public policy development and lobbying, and any differences between these positions and its stated policies, goals, or other public positions"
+  - id: membership_in_associations
+    desc: "whether it is a member of, or contributes to, any representative associations or committees that participate in public policy development and lobbying on climate change, including the nature of the contribution and any differences between the organization's positions and those of the associations/committees"
+retrieval_queries:
+  - "oil gas company climate lobbying public policy positions associations"
+  - "climate change lobbying stance representative associations oil gas sector"
+  - "climate policy development membership industry group differences stated position"
+good_evidence_hints:
+  - "Look in the climate strategy or stakeholder engagement sections for named industry associations with disclosed lobbying positions and any gaps from the company's own stance"
+  - "Strong evidence names specific associations, describes the nature of the contribution, and explicitly addresses where the company's positions diverge from those of the associations"
+suggested_fix_template: |
+  Disclose the organization's stance on significant climate change issues, covering any differences
+  between its lobbying positions and its publicly stated policies. Identify each representative
+  association or committee the organization is a member of or contributes to that lobbies on
+  climate change, describe the nature of that contribution, and note any differences between the
+  organization's own climate positions and those of the association or committee.

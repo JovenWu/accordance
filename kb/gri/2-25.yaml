@@ -1,0 +1,28 @@
+id: "2-25"
+standard: "GRI 2: General Disclosures 2021"
+title: "Processes to remediate negative impacts"
+category: universal
+requirement_text: |
+    Describe commitments and processes to provide or cooperate in remediation of negative impacts,
+    including grievance mechanisms, stakeholder involvement, and effectiveness tracking.
+required_elements:
+  - id: remediation_commitment
+    desc: "Commitment to provide or cooperate in remediation"
+  - id: grievance_approach
+    desc: "Approach to identify and address grievances"
+  - id: grievance_mechanisms
+    desc: "Grievance mechanisms established or participated in"
+  - id: other_remediation_processes
+    desc: "Other remediation processes"
+  - id: stakeholder_involvement
+    desc: "Stakeholder involvement in design, review, operation, and improvement"
+  - id: effectiveness_tracking
+    desc: "Effectiveness tracking and examples, including stakeholder feedback"
+retrieval_queries:
+  - "grievance mechanism remediation negative impacts stakeholder feedback"
+  - "complaints remedy remediation process sustainability"
+good_evidence_hints:
+  - "Look for grievance, complaints, remedy, human rights due diligence sections"
+suggested_fix_template: |
+    Add remediation and grievance process details, including stakeholder involvement and how
+    effectiveness is tracked.

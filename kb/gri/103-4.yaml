@@ -1,0 +1,32 @@
+id: "103-4"
+standard: "GRI 103: Energy 2025"
+title: "Energy intensity"
+category: topic
+requirement_text: |
+    Report the organization's energy intensity ratio, using total energy consumption as the numerator
+    and an organization-specific metric (the denominator, e.g., per unit of production, revenue, or
+    floor area). State the metric chosen, the types of energy included in the ratio (fuel, electricity,
+    heating, cooling, steam, or all), and whether the ratio uses energy consumed within the
+    organization only or also outside it.
+required_elements:
+  - id: energy_intensity_ratio
+    desc: "The energy intensity ratio value"
+  - id: denominator_metric
+    desc: "The organization-specific denominator used (e.g., per unit of product, revenue, or area)"
+  - id: energy_types_included
+    desc: "The types of energy included in the ratio (fuel, electricity, heating, cooling, steam, all)"
+  - id: boundary_within_or_outside
+    desc: "Whether the ratio covers energy within the organization only or also outside it"
+retrieval_queries:
+  - "energy intensity ratio per unit production per revenue GJ"
+  - "energy intensity MWh per tonne per million revenue per m2"
+  - "energy consumption intensity denominator metric"
+good_evidence_hints:
+  - "Look for metrics such as GJ per unit produced, MWh per revenue, or kWh per m2"
+  - "Strong evidence states the denominator and which energy types the ratio covers"
+suggested_fix_template: |
+    Add an energy intensity metric expressed as total energy consumption over an organization-specific
+    denominator, stating the metric, the energy types included, and whether the boundary is within the
+    organization only or also outside it.
+status: upcoming
+effective_date: "2027-01-01"

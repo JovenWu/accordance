@@ -1,0 +1,27 @@
+id: "305-2"
+standard: "GRI 305: Emissions 2016"
+title: "Energy indirect (Scope 2) GHG emissions"
+category: topic
+requirement_text: |
+    Report gross location-based and, if applicable, market-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent, the gases included if available, the base year, and the methodology, emission factors, GWP source, and consolidation approach used.
+required_elements:
+  - id: location_based_emissions
+    desc: "Gross location-based Scope 2 GHG emissions in metric tons of CO2 equivalent"
+  - id: market_based_emissions
+    desc: "Gross market-based Scope 2 GHG emissions in metric tons of CO2 equivalent, if applicable"
+  - id: gases_included
+    desc: "Gases included in the calculation, if available"
+  - id: base_year
+    desc: "Base year, rationale for choosing it, baseline emissions, and context for recalculations"
+  - id: methodology_and_consolidation
+    desc: "Source of emission factors and GWP rates, consolidation approach, and standards/methodologies/tools used"
+retrieval_queries:
+  - "Scope 2 energy indirect GHG emissions location-based market-based tCO2e"
+  - "purchased electricity heating cooling steam emissions CO2 equivalent"
+  - "market-based residual mix renewable energy certificates emission factors base year"
+good_evidence_hints:
+  - "Look for Scope 2 emissions split into location-based and market-based figures in tCO2e"
+  - "Good evidence covers purchased electricity/heat/steam/cooling and names the grid or supplier emission factors used"
+suggested_fix_template: |
+    Add gross location-based Scope 2 emissions in tCO2e (and market-based if contractual instruments apply), list gases included, state the base year, and disclose emission factors, GWP source, consolidation approach, and methodology.
+superseded_by: "GRI 102: Climate Change 2025"

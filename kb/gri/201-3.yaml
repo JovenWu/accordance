@@ -1,0 +1,32 @@
+id: "201-3"
+standard: "GRI 201: Economic Performance 2016"
+title: "Defined benefit plan obligations and other retirement plans"
+category: topic
+requirement_text: |
+    Report on the organization's defined benefit plan obligations and other retirement plans. Where the
+    plan's liabilities are met by the organization's general resources, state the estimated value of
+    those liabilities. Where a separate fund exists, state the extent to which the scheme's liabilities
+    are estimated to be covered by the assets set aside, the basis on which that estimate was arrived
+    at, and when it was made; and where a fund is not fully covered, the strategy and timescale to move
+    towards full coverage. Also report the percentage of salary contributed by employee and employer
+    and the level of participation in retirement plans.
+required_elements:
+  - id: liability_coverage
+    desc: "Estimated value of plan liabilities and the extent to which they are covered by set-aside assets, with the basis and date of the estimate"
+  - id: funding_strategy
+    desc: "Where a fund is not fully covered, the strategy and timescale to reach full coverage"
+  - id: contribution_rates
+    desc: "Percentage of salary contributed by employee and employer"
+  - id: participation_level
+    desc: "Level of employee participation in retirement plans"
+retrieval_queries:
+  - "defined benefit plan obligations retirement pension funding coverage"
+  - "pension scheme liabilities assets funded contribution percentage salary"
+  - "retirement plan participation employer employee contribution"
+good_evidence_hints:
+  - "Look in pension, retirement benefit, or employee benefit note sections of the report"
+  - "Strong evidence states funding level, contribution rates, and participation"
+suggested_fix_template: |
+    Add a retirement benefits section reporting defined benefit plan liabilities and their funding
+    coverage, the strategy to reach full coverage where applicable, employer/employee contribution
+    rates, and the level of participation in retirement plans.

@@ -1,0 +1,28 @@
+id: "2-6"
+standard: "GRI 2: General Disclosures 2021"
+title: "Activities, value chain and other business relationships"
+category: universal
+requirement_text: |
+    Report active sectors, describe activities, products, services, markets, supply chain,
+    downstream entities, other business relationships, and significant changes.
+required_elements:
+  - id: sectors
+    desc: "Sector or sectors in which the organization is active"
+  - id: activities_products_services_markets
+    desc: "Activities, products, services, and markets served"
+  - id: supply_chain
+    desc: "Overview of supply chain"
+  - id: downstream_entities
+    desc: "Entities downstream and their activities"
+  - id: other_business_relationships
+    desc: "Other relevant business relationships"
+  - id: significant_changes
+    desc: "Significant changes compared with previous reporting period"
+retrieval_queries:
+  - "activities products services markets served value chain"
+  - "supply chain downstream entities business relationships"
+good_evidence_hints:
+  - "Usually in business overview, value chain, or operations section"
+suggested_fix_template: |
+    Add a value chain overview covering sectors, products and services, markets,
+    supply chain, downstream entities, and significant changes during the period.

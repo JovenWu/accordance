@@ -1,0 +1,38 @@
+id: "103-2"
+standard: "GRI 103: Energy 2025"
+title: "Energy consumption and self-generation within the organization"
+category: topic
+requirement_text: |
+    Report total energy consumption within the organization in joules or watt-hours, broken down by
+    fuel consumption from non-renewable sources and from renewable sources; electricity, heating,
+    cooling, and steam purchased for consumption; energy self-generated (and the renewable/
+    non-renewable split); and any electricity, heating, cooling, or steam sold. Include the standards,
+    methodologies, conversion factors, and assumptions used.
+required_elements:
+  - id: total_energy_consumption
+    desc: "Total energy consumption within the organization in joules or watt-hours"
+  - id: non_renewable_fuel_consumption
+    desc: "Fuel consumption from non-renewable sources"
+  - id: renewable_fuel_consumption
+    desc: "Fuel consumption from renewable sources"
+  - id: purchased_electricity_heating_cooling_steam
+    desc: "Electricity, heating, cooling, and steam purchased for consumption"
+  - id: self_generation_and_energy_sold
+    desc: "Self-generated energy (renewable/non-renewable) and any energy sold"
+  - id: standards_and_conversion_factors
+    desc: "Standards, methodologies, conversion factors, and assumptions used"
+  - id: contractual_instruments
+    desc: "Whether contractual instruments (e.g. RECs/GOs) are used to substantiate renewable claims and how they meet quality criteria"
+retrieval_queries:
+  - "total energy consumption fuel renewable non-renewable electricity GJ MWh"
+  - "energy consumption within organization purchased electricity self-generated"
+  - "energy consumption gigajoules megawatt hours renewable share"
+good_evidence_hints:
+  - "Look for an energy table with units in GJ, MWh, or kWh split by source"
+  - "Strong evidence separates renewable vs non-renewable and purchased vs self-generated"
+suggested_fix_template: |
+    Add an energy consumption table reporting total energy use (in GJ or Wh) split by non-renewable
+    and renewable fuels, purchased electricity/heating/cooling/steam, self-generation, and any energy
+    sold, with the conversion factors and methodology used.
+status: upcoming
+effective_date: "2027-01-01"

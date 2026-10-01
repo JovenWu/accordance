@@ -1,0 +1,27 @@
+id: "203-1"
+standard: "GRI 203: Indirect Economic Impacts 2016"
+title: "Infrastructure investments and services supported"
+category: topic
+requirement_text: |
+    Report the extent of development of significant infrastructure investments and services supported;
+    the current or expected impacts on communities and local economies, including positive and negative
+    impacts where relevant; and whether these investments and services are commercial, in-kind, or
+    pro bono engagements.
+required_elements:
+  - id: infrastructure_investments
+    desc: "Extent of development of significant infrastructure investments and services supported"
+  - id: community_impacts
+    desc: "Current or expected positive and negative impacts on communities and local economies"
+  - id: engagement_type
+    desc: "Whether the investments/services are commercial, in-kind, or pro bono"
+retrieval_queries:
+  - "infrastructure investments services supported community local economy"
+  - "community investment infrastructure development in-kind pro bono"
+  - "significant infrastructure investment impacts local economy"
+good_evidence_hints:
+  - "Look in community investment, social impact, or shared-value sections describing infrastructure"
+  - "Strong evidence describes the investment, its community impact, and the engagement type"
+suggested_fix_template: |
+    Add a section describing significant infrastructure investments and services supported, their
+    positive and negative impacts on communities and local economies, and whether each engagement is
+    commercial, in-kind, or pro bono.

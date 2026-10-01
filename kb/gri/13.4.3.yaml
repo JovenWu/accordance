@@ -1,0 +1,20 @@
+id: "13.4.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Deforestation-free sourced volume and traceability"
+requirement_text: |
+  Under Topic 13.4 Natural ecosystem conversion, the organization must report, for products sourced by the organization: by product, the percentage of sourced volume determined to be deforestation- or conversion-free (and the assessment methods used); and the percentage of sourced volume for which origins are not known to the point where it can be determined whether it is deforestation- or conversion-free, with actions taken to improve traceability described.
+required_elements:
+  - id: pct_dcf_sourced_by_product
+    desc: "Percentage of sourced volume determined deforestation- or conversion-free, by product, with assessment methods described"
+  - id: pct_unknown_origin
+    desc: "Percentage of sourced volume with unknown origin (cannot determine DCF status), with actions taken to improve traceability described"
+retrieval_queries:
+  - "sourced volume deforestation-free conversion-free percentage by product supply chain"
+  - "unknown origin sourced volume traceability improvement actions deforestation"
+  - "supplier traceability DCF status percentage sourced agricultural products"
+good_evidence_hints:
+  - "Look for sourced-volume tables broken down by product with a DCF-verified percentage and the verification methodology described"
+  - "Good evidence also quantifies the share of sourced volume with unknown origins and outlines steps taken to close traceability gaps"
+suggested_fix_template: |
+  For each product sourced, report the percentage of sourced volume verified as deforestation- or conversion-free (with assessment methods described) and the percentage for which origin cannot be traced to determine DCF status; for the latter, describe actions being taken to improve traceability.

@@ -1,0 +1,23 @@
+id: "403-3"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Occupational health services"
+category: topic
+requirement_text: |
+    Describe the occupational health services' functions that contribute to the identification and
+    elimination of hazards and the minimization of risks, and explain how the organization ensures the
+    quality of these services and facilitates workers' access to them.
+required_elements:
+  - id: health_services_functions
+    desc: "Functions of occupational health services contributing to hazard elimination and risk minimization"
+  - id: quality_and_access
+    desc: "How the organization ensures the quality of these services and facilitates workers' access"
+retrieval_queries:
+  - "occupational health services functions hazards risk workers access"
+  - "occupational health clinics services quality access workers"
+  - "occupational health services elimination hazards minimization risks"
+good_evidence_hints:
+  - "Look in OHS/HSE or worker wellbeing sections describing occupational health services"
+  - "Strong evidence describes the services' functions and how worker access and quality are ensured"
+suggested_fix_template: |
+    Add a section describing the occupational health services provided, how they help identify and
+    eliminate hazards, and how the organization ensures their quality and workers' access to them.

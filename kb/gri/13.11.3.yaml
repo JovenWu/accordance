@@ -1,0 +1,20 @@
+id: "13.11.3"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Aquaculture farmed animal survival and mortality"
+requirement_text: |
+  Under Topic 13.11 Animal health and welfare, the organization must report, for organizations in the aquaculture sector, the survival percentage of farmed aquatic animals and the main causes of mortality.
+required_elements:
+  - id: survival_percentage
+    desc: "Survival percentage of farmed aquatic animals"
+  - id: main_causes_of_mortality
+    desc: "Main causes of mortality"
+retrieval_queries:
+  - "aquaculture survival rate percentage farmed fish mortality causes"
+  - "farmed aquatic animals survival percentage main causes of mortality aquaculture"
+  - "fish mortality rate causes disease sea lice environmental conditions aquaculture"
+good_evidence_hints:
+  - "Look for a survival rate figure (as a percentage from stocking to harvest) for each farmed species or production cycle"
+  - "Good evidence lists the principal causes of mortality (e.g., disease, sea lice, handling stress, environmental conditions) with relative significance"
+suggested_fix_template: |
+  For aquaculture operations, report the survival percentage of farmed aquatic animals for the reporting period and identify the main causes of mortality observed.

@@ -1,0 +1,18 @@
+id: "13.23.2"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Supply chain traceability level by product"
+requirement_text: |
+  Under Topic 13.23 Supply chain traceability, the organization must describe the level of traceability in place for each product sourced — for example, whether the product can be traced to the national, regional, or local level, or a specific point of origin such as farms, hatcheries, or feed mills.
+required_elements:
+  - id: traceability_level_per_product
+    desc: "Description of the level of traceability for each product sourced (e.g., national/regional/local, or specific point of origin such as farms, hatcheries, feed mills)"
+retrieval_queries:
+  - "supply chain traceability level product sourced national regional local farm hatchery feed mill"
+  - "traceability depth product sourcing agriculture aquaculture specific origin"
+  - "supply chain transparency traceability level commodity product origin"
+good_evidence_hints:
+  - "Look for a product-by-product description of how far back in the supply chain the organization can trace origin (country, region, farm, hatchery level)"
+  - "Good evidence distinguishes between commodities with different traceability depths and identifies specific origin types (farm, co-op, processing plant, hatchery)"
+suggested_fix_template: |
+  Describe, for each product sourced, the level of traceability currently in place — specifying whether the product can be traced to the national, regional, or local level, or to a specific point of origin such as farms, hatcheries, or feed mills.

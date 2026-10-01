@@ -1,0 +1,27 @@
+id: "302-4"
+standard: "GRI 302: Energy 2016"
+title: "Reduction of energy consumption"
+category: topic
+requirement_text: |
+    Report energy reductions achieved as a direct result of conservation and efficiency initiatives in joules or multiples (excluding reductions from lower production or outsourcing), the energy types included, the base year or baseline and rationale, and the standards and methodologies used.
+required_elements:
+  - id: reduction_amount
+    desc: "Amount of energy reductions from conservation and efficiency initiatives (joules or multiples)"
+  - id: energy_types_included
+    desc: "Types of energy included in the reductions (fuel, electricity, heating, cooling, steam, or all)"
+  - id: calculation_basis
+    desc: "Basis for calculating reductions (base year or baseline) and rationale for choosing it"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions and/or calculation tools used"
+retrieval_queries:
+  - "reduction of energy consumption conservation efficiency initiatives GJ saved"
+  - "energy savings base year baseline efficiency projects"
+  - "energy reduction achieved methodology types of energy"
+good_evidence_hints:
+  - "Look for quantified energy savings tied to specific efficiency or conservation initiatives, in GJ/MWh"
+  - "Good evidence states the base year/baseline, energy types, and that production-cut/outsourcing reductions are excluded"
+suggested_fix_template: |
+    Add the quantified energy reductions achieved from conservation and efficiency initiatives in joules or multiples (excluding production-cut/outsourcing effects), specify energy types, state the base year/baseline and rationale, and the methodologies used.
+status: current
+effective_until: "2026-12-31"
+superseded_by: "GRI 103: Energy 2025"

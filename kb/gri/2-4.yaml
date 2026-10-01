@@ -1,0 +1,22 @@
+id: "2-4"
+standard: "GRI 2: General Disclosures 2021"
+title: "Restatements of information"
+category: universal
+requirement_text: |
+    Report any restatements of previously reported information and explain the reason
+    and effect of each restatement.
+required_elements:
+  - id: restatements
+    desc: "Restatements made from previous reporting periods"
+  - id: restatement_reasons
+    desc: "Reasons for restatements"
+  - id: restatement_effects
+    desc: "Effects or quantitative impact of restatements"
+retrieval_queries:
+  - "restatement restated previous reporting period"
+  - "change in methodology correction prior year"
+good_evidence_hints:
+  - "Look for notes below data tables or 'Basis of preparation'"
+suggested_fix_template: |
+    State whether restatements occurred. If yes, explain the reason and effect;
+    if no, add a clear no-restatement statement.

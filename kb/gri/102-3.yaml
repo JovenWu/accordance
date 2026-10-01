@@ -1,0 +1,39 @@
+id: "102-3"
+standard: "GRI 102: Climate Change 2025"
+title: "Just transition"
+category: topic
+requirement_text: |
+    Report quantitative data on the organization's just transition outcomes resulting from its
+    climate change response (both mitigation and adaptation). Include: the numbers of workers
+    recruited, terminated, and redeployed due to transition and adaptation efforts; the number
+    of employees trained for up-skilling or reskilling programs; the number of employees whose
+    basic pay is at or above the cost-of-living estimate in the locations where the organization
+    operates; and the locations where transition and adaptation efforts impact people and the
+    environment, including the agreements reached and actions taken in those locations. Also
+    describe how affected stakeholders are identified and engaged, and any social dialogue
+    undertaken with workers, communities, and Indigenous Peoples.
+required_elements:
+  - id: workers_recruited_terminated_redeployed
+    desc: "Numbers of workers recruited, terminated, and redeployed due to transition/adaptation efforts"
+  - id: employees_reskilled
+    desc: "Employees trained for up-/reskilling programs resulting from the just transition"
+  - id: employees_pay_at_or_above_living_cost
+    desc: "Employees whose basic pay is at or above the cost-of-living estimate in locations of operation"
+  - id: locations_impacted_and_agreements
+    desc: "Locations where efforts impact people/environment including agreements reached and actions taken"
+retrieval_queries:
+  - "just transition workers recruited terminated redeployed reskilling training numbers"
+  - "climate transition employee retraining upskilling living wage locations impacted"
+  - "just transition affected communities indigenous peoples social dialogue agreements"
+good_evidence_hints:
+  - "Look in 'Just transition', 'Workforce transition', 'Employee data', or 'Social impact of climate' sections"
+  - "Strong evidence provides actual headcount figures for workers recruited/terminated/redeployed and employees reskilled"
+  - "Look for pay data confirming employees are at or above cost-of-living estimates, and lists of impacted locations"
+suggested_fix_template: |
+    Add a just transition section reporting quantitative metrics: the number of workers recruited,
+    terminated, and redeployed due to transition/adaptation activities; the number of employees
+    trained in up-skilling or reskilling programs; the number of employees whose basic pay meets or
+    exceeds the cost-of-living estimate; and the locations where transition efforts impact people
+    and the environment, including agreements reached and actions taken.
+status: upcoming
+effective_date: "2027-01-01"

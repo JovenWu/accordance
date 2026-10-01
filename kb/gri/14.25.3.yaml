@@ -1,0 +1,20 @@
+id: "14.25.3"
+standard: "GRI 14: Mining Sector 2024"
+title: "Due diligence in conflict-affected and high-risk areas"
+category: sector
+requirement_text: |
+    Under Topic 14.25 Conflict-affected and high-risk areas, the organization must describe the due diligence process it applies for operations in conflict-affected and high-risk areas (CAHRA), and report its alignment with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas.
+required_elements:
+  - id: due_diligence_process
+    desc: "Description of the due diligence process applied by the organization for operations in CAHRA"
+  - id: oecd_alignment
+    desc: "Alignment with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas"
+retrieval_queries:
+  - "due diligence process conflict-affected high-risk areas OECD guidance alignment mining"
+  - "OECD Due Diligence Guidance conflict minerals responsible supply chain alignment"
+  - "conflict-affected high-risk areas due diligence process steps alignment OECD minerals"
+good_evidence_hints:
+  - "Look for a description of the organization's CAHRA due diligence steps (e.g. risk assessment, supplier audits, chain of custody) and a statement of alignment with the OECD five-step framework"
+  - "Good evidence maps the due diligence process to the specific steps in the OECD Guidance (establish strong company management systems, identify and assess risks, design and implement a strategy to respond to identified risks, carry out independent third-party audit, report on supply chain due diligence)"
+suggested_fix_template: |
+    Describe the due diligence process the organization applies for operations in conflict-affected and high-risk areas, explaining how the process aligns with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas. Reference the five-step OECD framework and describe the organization's implementation of each relevant step.

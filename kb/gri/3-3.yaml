@@ -1,0 +1,46 @@
+id: "3-3"
+standard: "GRI 3: Material Topics 2021"
+title: "Management of material topics"
+category: universal
+
+requirement_text: |
+  For each material topic, describe the actual and potential, negative and
+  positive impacts; whether the organization is involved with the impacts
+  through its activities or as a result of its business relationships, and
+  the activities or business relationships; the organization's policies or
+  commitments regarding the material topic; the actions taken to manage the
+  topic and related impacts (preventing/mitigating negative impacts,
+  remediation, promoting positive impacts), and whether these actions are
+  intended to prevent or mitigate negative impacts; how it tracks the
+  effectiveness of these actions; engagement with stakeholders on the actions.
+  Note: For v1 of accordance we score this disclosure once globally. Future
+  versions should score it per material topic.
+
+required_elements:
+  - id: actual_potential_impacts
+    desc: "Actual and potential, positive and negative impacts of each material topic"
+  - id: involvement_through_activities_or_relationships
+    desc: "Whether involvement is through own activities or business relationships"
+  - id: policies_and_commitments
+    desc: "Policies / commitments regarding each material topic"
+  - id: actions_taken
+    desc: "Actions to prevent/mitigate/remediate negative impacts and promote positive ones"
+  - id: effectiveness_tracking
+    desc: "How effectiveness of actions is tracked"
+  - id: stakeholder_engagement
+    desc: "Engagement with stakeholders on the actions"
+
+retrieval_queries:
+  - "management of material topics actions"
+  - "policy commitments topic management"
+  - "impact management effectiveness"
+
+good_evidence_hints:
+  - "Each material topic should have its own sub-section with targets and progress"
+
+suggested_fix_template: |
+  For each material topic listed under 3-2, add a sub-section describing the
+  impacts (actual/potential, positive/negative), the organization's role
+  (own activities vs. relationships), policies and commitments, actions
+  taken, how effectiveness is tracked, and stakeholder engagement on the
+  topic. If 3-3 is reported only globally (not per topic), flag this.

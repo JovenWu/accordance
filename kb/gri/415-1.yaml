@@ -1,0 +1,26 @@
+id: "415-1"
+standard: "GRI 415: Public Policy 2016"
+title: "Political contributions"
+category: topic
+requirement_text: |
+    Report the total monetary value of financial and in-kind political contributions made directly and
+    indirectly by the organization, by country and recipient or beneficiary, and, if applicable, how the
+    monetary value of in-kind contributions was estimated.
+required_elements:
+  - id: total_contributions
+    desc: "Total monetary value of direct and indirect financial and in-kind political contributions"
+  - id: by_country_and_recipient
+    desc: "Breakdown by country and recipient/beneficiary"
+  - id: in_kind_valuation
+    desc: "How the monetary value of in-kind contributions was estimated, if applicable"
+retrieval_queries:
+  - "political contributions monetary value country recipient in-kind"
+  - "political donations lobbying contributions by country beneficiary"
+  - "political contributions financial in-kind value recipients"
+good_evidence_hints:
+  - "Look in public policy, political engagement, or governance sections"
+  - "Strong evidence gives a monetary total by country and recipient (including a clear zero)"
+suggested_fix_template: |
+    Add a section reporting the total value of direct and indirect political contributions (financial
+    and in-kind), broken down by country and recipient, with the basis for valuing in-kind
+    contributions (stating zero explicitly where applicable).

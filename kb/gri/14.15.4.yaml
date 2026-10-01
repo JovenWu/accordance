@@ -1,0 +1,20 @@
+id: "14.15.4"
+standard: "GRI 14: Mining Sector 2024"
+title: "Emergency preparedness and response plan coverage"
+category: sector
+requirement_text: |
+    Under Topic 14.15 Emergency preparedness and response, the organization must report the percentage of mine sites that have emergency preparedness and response plans in place, and identify the mine sites that do not have such plans.
+required_elements:
+  - id: percentage_with_eprp
+    desc: "Percentage of mine sites that have emergency preparedness and response plans (EPRPs) in place"
+  - id: sites_without_eprp
+    desc: "List of mine sites that do not have emergency preparedness and response plans in place"
+retrieval_queries:
+  - "emergency preparedness response plan mine sites percentage coverage"
+  - "mine sites without emergency preparedness response plan EPRP coverage"
+  - "emergency response plan coverage percentage mine sites identified gaps"
+good_evidence_hints:
+  - "Look for a quantified statement of the percentage or fraction of mine sites with EPRPs, along with a list or count of sites that lack such plans"
+  - "Good evidence names the specific mine sites without EPRPs rather than providing only an aggregate percentage, and may describe remediation plans to address the gaps"
+suggested_fix_template: |
+    Report the percentage of mine sites with emergency preparedness and response plans in place, and explicitly identify the mine sites that do not have such plans. Where sites lack plans, describe the timeline or actions planned to address this gap.

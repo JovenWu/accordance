@@ -1,0 +1,33 @@
+id: "403-9"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Work-related injuries"
+category: topic
+requirement_text: |
+    For all employees and for all workers who are not employees but whose work or workplace is
+    controlled by the organization, report: the number and rate of fatalities as a result of
+    work-related injury; the number and rate of high-consequence work-related injuries (excluding
+    fatalities); the number and rate of recordable work-related injuries; the main types of work-related
+    injury; and the number of hours worked. Report the work-related hazards that pose a risk of
+    high-consequence injury, how they have been determined, which posed actual risk, and the actions
+    taken or underway to eliminate them. Include the methodologies, rate-calculation basis, and any
+    excluded workers.
+required_elements:
+  - id: fatalities_and_high_consequence
+    desc: "Number and rate of fatalities and of high-consequence work-related injuries (employees and non-employee workers)"
+  - id: recordable_injuries_and_hours
+    desc: "Number and rate of recordable work-related injuries, main injury types, and hours worked"
+  - id: hazards_and_actions
+    desc: "Work-related hazards posing high-consequence injury risk and actions taken to eliminate them"
+  - id: methodology
+    desc: "Rate-calculation basis, methodologies, and any excluded workers"
+retrieval_queries:
+  - "work-related injuries fatalities recordable injury rate LTIFR hours worked"
+  - "TRIR lost time injury frequency rate fatalities high-consequence injuries"
+  - "occupational injuries rate hours worked safety performance"
+good_evidence_hints:
+  - "Look in safety performance tables for injury rates (e.g., LTIFR, TRIR), fatalities, and hours worked"
+  - "Strong evidence gives rates with the calculation basis (e.g., per 200,000 or 1,000,000 hours)"
+suggested_fix_template: |
+    Add a safety performance section reporting fatalities, high-consequence and recordable work-related
+    injuries (number and rate), main injury types, hours worked, the hazards posing high-consequence
+    risk and actions taken, and the rate-calculation methodology.

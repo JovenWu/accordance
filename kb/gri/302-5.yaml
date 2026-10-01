@@ -1,0 +1,25 @@
+id: "302-5"
+standard: "GRI 302: Energy 2016"
+title: "Reductions in energy requirements of products and services"
+category: topic
+requirement_text: |
+    Report reductions in the energy requirements of sold products and services achieved during the reporting period in joules or multiples, the base year or baseline used and the rationale for choosing it, and the standards and methodologies used.
+required_elements:
+  - id: product_energy_reductions
+    desc: "Reductions in energy requirements of sold products and services during the period (joules or multiples)"
+  - id: calculation_basis
+    desc: "Basis for calculating reductions (base year or baseline) and rationale for choosing it"
+  - id: methodology
+    desc: "Standards, methodologies, assumptions and/or calculation tools used"
+retrieval_queries:
+  - "reductions in energy requirements of products and services use phase"
+  - "product energy efficiency reduction sold products joules base year"
+  - "energy use of sold products consumption pattern reduction"
+good_evidence_hints:
+  - "Look for figures on lower in-use energy of products/services (e.g. % less energy per use, GJ saved over baseline)"
+  - "Good evidence quantifies use-phase reductions against a stated base year/baseline with methodology"
+suggested_fix_template: |
+    Add quantified reductions in the in-use energy requirements of sold products and services in joules or multiples, with the base year/baseline and rationale, and the standards and methodologies used.
+status: current
+effective_until: "2026-12-31"
+superseded_by: "GRI 103: Energy 2025"

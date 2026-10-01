@@ -1,0 +1,38 @@
+id: "102-5"
+standard: "GRI 102: Climate Change 2025"
+title: "Scope 1 GHG emissions"
+category: topic
+requirement_text: |
+    Report gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent, measured in
+    accordance with the GHG Protocol Corporate Standard (2004), including emissions from energy
+    consumption reported under Disclosure 103-2-a in GRI 103: Energy 2025. Include the gases
+    covered (CO2, CH4, N2O, HFCs, PFCs, SF6, NF3); the base year, the rationale for choosing
+    it, and any recalculations; the source of emission factors and the global warming potential
+    (GWP) rates used; and the consolidation approach (equity share, financial or operational
+    control), standards, methodologies, and assumptions applied.
+required_elements:
+  - id: gross_scope1_tco2e
+    desc: "Gross Scope 1 GHG emissions in metric tons of CO2 equivalent"
+  - id: gases_included
+    desc: "Which greenhouse gases are included in the calculation"
+  - id: base_year_and_recalculation
+    desc: "Base year, rationale, and any recalculations of base-year emissions"
+  - id: emission_factors_and_gwp
+    desc: "Source of emission factors and the GWP rates used"
+  - id: consolidation_and_methodology
+    desc: "Consolidation approach, standards, methodologies, and assumptions"
+retrieval_queries:
+  - "scope 1 direct GHG emissions tCO2e base year GHG Protocol Corporate Standard"
+  - "direct emissions combustion fleet CO2 CH4 N2O emission factors energy consumption"
+  - "scope 1 greenhouse gas consolidation operational control GWP"
+good_evidence_hints:
+  - "Look in GHG inventory / emissions tables with units in tCO2e and a Scope 1 line"
+  - "Strong evidence states base year, gases, GWP source, and consolidation approach"
+  - "Cross-check against energy consumption data reported under GRI 103 Disclosure 103-2-a"
+suggested_fix_template: |
+    Add a Scope 1 emissions figure in tCO2e, measured in accordance with the GHG Protocol
+    Corporate Standard (2004), including emissions from energy consumption (103-2-a in GRI 103:
+    Energy 2025), with the gases included, base year and any recalculation, the emission factors
+    and GWP source, and the consolidation approach and methodology used.
+status: upcoming
+effective_date: "2027-01-01"

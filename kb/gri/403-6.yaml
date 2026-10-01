@@ -1,0 +1,25 @@
+id: "403-6"
+standard: "GRI 403: Occupational Health and Safety 2018"
+title: "Promotion of worker health"
+category: topic
+requirement_text: |
+    Explain how the organization facilitates workers' access to non-occupational medical and healthcare
+    services, and the scope of access provided. Describe any voluntary health promotion services and
+    programs offered to workers to address major non-work-related health risks, including the specific
+    health risks addressed, and how the organization facilitates workers' access to these services and
+    programs.
+required_elements:
+  - id: healthcare_access
+    desc: "How workers' access to non-occupational medical and healthcare services is facilitated, and its scope"
+  - id: health_promotion_programs
+    desc: "Voluntary health promotion services/programs addressing major non-work-related health risks, and access to them"
+retrieval_queries:
+  - "promotion worker health non-occupational healthcare wellbeing programs"
+  - "employee wellness health promotion programs medical access"
+  - "voluntary health promotion non-work-related health risks workers"
+good_evidence_hints:
+  - "Look in employee wellbeing, wellness, or health promotion sections"
+  - "Strong evidence describes healthcare access and voluntary wellbeing programs and their reach"
+suggested_fix_template: |
+    Add a section describing how workers' access to medical and healthcare services is facilitated and
+    the voluntary health promotion programs offered to address major non-work-related health risks.

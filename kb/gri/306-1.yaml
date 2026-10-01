@@ -1,0 +1,25 @@
+id: "306-1"
+standard: "GRI 306: Waste 2020"
+title: "Waste generation and significant waste-related impacts"
+category: topic
+requirement_text: |
+    For the organization's significant actual and potential waste-related impacts, describe the inputs,
+    activities, and outputs that lead or could lead to these impacts, and whether these impacts relate
+    to waste generated in the organization's own activities or to waste generated upstream or downstream
+    in its value chain.
+required_elements:
+  - id: inputs_activities_outputs
+    desc: "Inputs, activities, and outputs that lead or could lead to significant waste-related impacts"
+  - id: value_chain_location
+    desc: "Whether the impacts relate to waste from own activities or upstream/downstream in the value chain"
+retrieval_queries:
+  - "waste generation significant waste-related impacts value chain"
+  - "waste impacts inputs activities outputs upstream downstream"
+  - "sources of waste lifecycle waste-related impacts"
+good_evidence_hints:
+  - "Look in waste, circular economy, or environmental impact sections describing where waste arises"
+  - "Strong evidence links waste impacts to specific activities and to value-chain stages"
+suggested_fix_template: |
+    Add a waste section describing the inputs, activities, and outputs that drive significant
+    waste-related impacts, and whether those impacts arise in the organization's own operations or
+    upstream/downstream in the value chain.

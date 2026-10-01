@@ -1,0 +1,24 @@
+id: "11.7.5"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Decommissioned structures left in place"
+category: sector
+requirement_text: |
+  Under Topic 11.7 Closure and rehabilitation, the organization must list the decommissioned
+  structures left in place and describe the rationale for leaving them in place.
+required_elements:
+  - id: decommissioned_structures_left_in_place
+    desc: "list of decommissioned structures left in place"
+  - id: rationale_for_leaving_in_place
+    desc: "the rationale for leaving each such structure in place"
+retrieval_queries:
+  - "decommissioned structures left in place oil gas rationale"
+  - "offshore platforms wells infrastructure abandoned in situ decommissioning"
+  - "decommissioning structures not removed justification oil gas"
+good_evidence_hints:
+  - "Look in decommissioning or well integrity sections for a list of platforms, pipelines, or wells not physically removed, along with the stated technical or regulatory rationale"
+  - "Strong evidence identifies each structure individually and provides a distinct reason for in-situ decommissioning (e.g., structural risk of removal, regulatory approval, environmental benefit)"
+suggested_fix_template: |
+  List each decommissioned structure that has been left in place rather than removed (e.g.,
+  offshore platforms, subsea infrastructure, pipelines, wells). For each structure, describe
+  the rationale for leaving it in place, such as technical infeasibility of removal, regulatory
+  approval, or evidence that in-situ decommissioning poses lower environmental risk than removal.

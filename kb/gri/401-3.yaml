@@ -1,0 +1,27 @@
+id: "401-3"
+standard: "GRI 401: Employment 2016"
+title: "Parental leave"
+category: topic
+requirement_text: |
+    Report, by gender: the total number of employees entitled to parental leave; the total number that
+    took parental leave; the total number that returned to work after parental leave ended; the total
+    number that returned to work after parental leave ended and were still employed 12 months after
+    their return; and the return-to-work and retention rates of employees that took parental leave.
+required_elements:
+  - id: entitlement_and_uptake
+    desc: "Number of employees entitled to and who took parental leave, by gender"
+  - id: return_to_work
+    desc: "Number who returned to work after parental leave, and number still employed 12 months later, by gender"
+  - id: return_and_retention_rates
+    desc: "Return-to-work and retention rates of employees that took parental leave, by gender"
+retrieval_queries:
+  - "parental leave return to work retention rate by gender"
+  - "maternity paternity leave taken returned employees gender"
+  - "parental leave entitlement return retention rate"
+good_evidence_hints:
+  - "Look in family/parental leave or diversity sections for uptake and return rates"
+  - "Strong evidence gives return-to-work and retention rates split by gender"
+suggested_fix_template: |
+    Add a parental leave section reporting, by gender, the employees entitled to and taking parental
+    leave, those returning to work and still employed 12 months later, and the return-to-work and
+    retention rates.

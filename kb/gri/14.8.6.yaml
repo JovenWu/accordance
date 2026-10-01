@@ -1,0 +1,20 @@
+id: "14.8.6"
+standard: "GRI 14: Mining Sector 2024"
+title: "Land disturbed and rehabilitated"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, for each mine site report, in hectares, the total land disturbed and not yet rehabilitated and the total land disturbed and rehabilitated (including progressively rehabilitated, where applicable).
+required_elements:
+  - id: land_disturbed_not_rehabilitated_ha
+    desc: "Total land disturbed and not yet rehabilitated, in hectares, per mine site"
+  - id: land_disturbed_and_rehabilitated_ha
+    desc: "Total land disturbed and rehabilitated (including progressively rehabilitated), in hectares, per mine site"
+retrieval_queries:
+  - "land disturbed rehabilitated hectares mine site progressive rehabilitation"
+  - "disturbed land not yet rehabilitated hectares per mine site"
+  - "total land disturbed rehabilitated progressively rehabilitated hectares"
+good_evidence_hints:
+  - "Look in the closure and rehabilitation section for a per-site quantitative table reporting land areas in hectares for both disturbed-not-rehabilitated and disturbed-and-rehabilitated categories"
+  - "Good evidence reports both figures in hectares and distinguishes progressively rehabilitated land within the rehabilitated total, at the named mine-site level"
+suggested_fix_template: |
+    Add, for each mine site, the total land disturbed and not yet rehabilitated (in hectares) and the total land disturbed and rehabilitated including progressively rehabilitated (in hectares). Present the data in a per-site table with clearly labelled hectare figures.

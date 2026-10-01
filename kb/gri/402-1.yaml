@@ -1,0 +1,25 @@
+id: "402-1"
+standard: "GRI 402: Labor/Management Relations 2016"
+title: "Minimum notice periods regarding operational changes"
+category: topic
+requirement_text: |
+    Report the minimum number of weeks' notice typically provided to employees and their representatives
+    prior to the implementation of significant operational changes that could substantially affect them.
+    For organizations with collective bargaining agreements, report whether the notice period and
+    provisions for consultation and negotiation are specified in those agreements.
+required_elements:
+  - id: minimum_notice_period
+    desc: "Minimum number of weeks' notice typically given before significant operational changes"
+  - id: collective_agreement_provisions
+    desc: "Whether notice periods and consultation/negotiation provisions are specified in collective bargaining agreements"
+retrieval_queries:
+  - "minimum notice period operational changes employees representatives weeks"
+  - "notice period significant operational change collective bargaining consultation"
+  - "advance notice operational changes employees notice weeks"
+good_evidence_hints:
+  - "Look in labor relations, employee engagement, or restructuring sections"
+  - "Strong evidence states a minimum notice period and references collective agreements where applicable"
+suggested_fix_template: |
+    Add a section stating the minimum notice period given to employees before significant operational
+    changes, and whether notice and consultation provisions are set out in collective bargaining
+    agreements.

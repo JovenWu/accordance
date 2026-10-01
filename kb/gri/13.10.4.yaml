@@ -1,0 +1,20 @@
+id: "13.10.4"
+standard: "GRI 13: Agriculture, Aquaculture and Fishing Sectors 2022"
+category: sector
+title: "Food safety certification coverage"
+requirement_text: |
+  Under Topic 13.10 Food safety, the organization must report the percentage of production volume from sites certified to internationally recognized food safety standards, and list these standards.
+required_elements:
+  - id: pct_certified_production
+    desc: "Percentage of production volume from sites certified to internationally recognized food safety standards"
+  - id: list_standards
+    desc: "List of the food safety standards used"
+retrieval_queries:
+  - "food safety certification percentage production volume internationally recognized standards"
+  - "certified production sites food safety standard FSSC BRC SQF percentage"
+  - "food safety audit certification coverage percentage total production"
+good_evidence_hints:
+  - "Look for a percentage of total production volume produced at food-safety-certified sites, alongside a named list of the standards applied"
+  - "Good evidence names specific internationally recognized schemes (e.g., FSSC 22000, BRC, SQF) and provides the coverage percentage"
+suggested_fix_template: |
+  Report the percentage of production volume from sites certified to internationally recognized food safety standards, and list all food safety standards to which production sites are certified.

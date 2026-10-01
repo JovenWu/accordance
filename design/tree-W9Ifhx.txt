@@ -1,0 +1,258 @@
+T: data-pencil-id="W9Ifhx"
+        data-pencil-name="Modal — Rename Report"
+        class="box-border w-[1440px] h-[900px] absolute left-[14460px] top-[6888px] flex flex-row gap-0 justify-start items-start bg-[#F5F5F5] overflow-hidden"
+      >
+bg | w-[1440px] h-[900px] absolute left-0 top-0 flex flex-row gap-0 justify-start items-start overflow-hidden [z-index:0]
+  sidebar | w-[264px] shrink-0 h-[900px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] [border-width:0px_1px_0px_0px] [border-style:solid] [border-color:#E4E4E7] overflow-hidden
+    Brand | w-full h-fit shrink-0 flex flex-row gap-[12px] p-[20px] justify-start items-center
+      LogoMark | w-[34px] shrink-0 h-[34px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[10px]
+        T: ICON(scan-search)
+      BrandText | w-fit shrink-0 h-fit flex flex-col gap-[1px] justify-start items-start
+        Wordmark | text-[17px]/[normal] text-[#18181B] font-semibold text-left
+          T: Lens
+        Tagline | text-[11px]/[normal] text-[#71717A] font-normal text-left
+          T: GRI disclosure analysis
+    Nav | w-full h-fit shrink-0 flex flex-col gap-[2px] p-[4px_12px] justify-start items-start
+      Nav Analyses | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+        T: ICON(layout-list)
+        Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Analyses
+      Nav Users | w-full h-[36px] shrink-0 flex flex-row gap-[12px] p-[6px_8px] justify-start items-center rounded-[16px]
+        T: ICON(users)
+        Label | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: Users
+    Nav Spacer | w-full [flex:1_1_0] flex flex-row gap-0 justify-start items-start
+    User Card | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[16px] justify-start items-center [border-width:1px_0px_0px_0px] [border-style:solid] [border-color:#E4E4E7]
+      Avatar | w-[36px] shrink-0 h-[36px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[9999px]
+        Initials | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: MC
+      User Text | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+        User Name | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: maya.chen
+        User Stats | text-[11px]/[normal] text-[#71717A] font-normal text-left
+          T: 23 analyses · $58.41
+      T: ICON(log-out)
+  main | [flex:1_1_0] h-full flex flex-col gap-0 justify-start items-start bg-[#F5F5F5]
+    content | w-full [flex:1_1_0] flex flex-col gap-[20px] p-[20px_32px_32px_32px] justify-start items-start
+      back | w-fit h-fit shrink-0 flex flex-row gap-[6px] justify-start items-center
+        T: ICON(arrow-left)
+        bt | text-[13px]/[normal] text-[#71717A] font-medium text-left
+          T: Analyses
+        bs | text-[13px]/[normal] text-[#71717A] font-normal text-left
+          T: / PT Meridian Energi Tbk
+      head | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+        hl | w-fit shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start
+          t | text-[20px]/[normal] text-[#18181B] font-semibold text-left
+            T: PT Meridian Energi Tbk
+          s | text-[13px]/[normal] text-[#71717A] font-normal text-left
+            T: Owner maya.chen · Created Aug 2 · Source PTM_SR2024.pdf
+        ha | w-fit shrink-0 h-fit flex flex-row gap-[8px] justify-start items-start
+          ren | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+            Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+              T: Rename
+          del | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#FF383C26] rounded-[24px]
+            T: ICON(trash-2)
+            Label | text-[13px]/[normal] text-[#FF383C] font-medium text-left
+              T: Delete
+          cmp | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+            T: ICON(git-compare)
+            Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+              T: Compare
+          nv | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center bg-[#0485F7] rounded-[24px]
+            T: ICON(upload)
+            Label | text-[13px]/[normal] text-[#FCFCFC] font-medium text-left
+              T: New version
+      stats | w-full h-fit shrink-0 flex flex-row gap-[16px] justify-start items-start
+        stat Latest score | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: Latest status
+          v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+            T: Completed
+          s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: v4 · update
+        stat Coverage | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: Coverage
+          v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+            T: 78%
+          s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: 361 of 463 covered or partial
+        stat Versions | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: Versions
+          v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+            T: 4
+          s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: initial · retry · fork · update
+        stat Total spend | [flex:1_1_0] h-fit flex flex-col gap-[4px] p-[16px] justify-start items-start bg-[#FFFFFF] rounded-[24px]
+          l | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: Last updated
+          v | text-[22px]/[normal] text-[#18181B] font-semibold text-left
+            T: Sep 28
+          s | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: v4 finished 14:02
+      vsec | w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center
+        shl | w-fit shrink-0 h-fit flex flex-row gap-[10px] justify-start items-center
+          t | text-[15px]/[normal] text-[#18181B] font-semibold text-left
+            T: Versions
+          h | text-[12px]/[normal] text-[#71717A] font-normal text-left
+            T: Select two versions to compare
+        cmp2 | w-fit shrink-0 h-[32px] flex flex-row gap-[5px] p-[8px_12px] justify-center items-center [border:1px_solid_#DEDEE0] rounded-[24px]
+          T: ICON(git-compare)
+          Label | text-[13px]/[normal] text-[#18181B] font-medium text-left
+            T: Compare selected
+      vtable | w-full [flex:1_1_0] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] overflow-hidden
+        thr | w-full h-[40px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center bg-[#EFEFF0]
+          hc | w-[36px] shrink-0 h-[1px] flex flex-row gap-0 justify-start items-start
+          h Ver | text-[12px]/[normal] w-[56px] shrink-0 text-[#71717A] font-medium text-left
+            T: Ver
+          h Kind | text-[12px]/[normal] w-[88px] shrink-0 text-[#71717A] font-medium text-left
+            T: Kind
+          h PDF | text-[12px]/[normal] [flex:1_1_0] text-[#71717A] font-medium text-left
+            T: PDF
+          h Status | text-[12px]/[normal] w-[112px] shrink-0 text-[#71717A] font-medium text-left
+            T: Status
+          h Findings | text-[12px]/[normal] w-[88px] shrink-0 text-[#71717A] font-medium text-left
+            T: Findings
+          h Run | text-[12px]/[normal] w-[124px] shrink-0 text-[#71717A] font-medium text-left
+            T: Run
+          hc | w-[48px] shrink-0 h-[1px] flex flex-row gap-0 justify-start items-start
+        vr v4 | w-full h-[56px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+          cb | w-[36px] shrink-0 h-fit flex flex-row gap-[8px] justify-start items-center
+            Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[6px]
+              T: ICON(check)
+          vc | w-[56px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            vt | text-[13px]/[normal] text-[#18181B] font-semibold text-left
+              T: v4
+          kc | w-[88px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            k | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+                T: update
+          pc | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+            pn | text-[13px]/[normal] text-[#18181B] font-normal text-left
+              T: PTM_SR2024.pdf
+            ps | text-[11px]/[normal] text-[#71717A] font-normal text-left
+              T: 8.4 MB · sha 9f3c…d41
+          sc | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                T: Completed
+          fc | text-[13px]/[normal] w-[88px] shrink-0 text-[#18181B] font-normal text-left
+            T: 463
+          rc | text-[13px]/[normal] w-[124px] shrink-0 text-[#71717A] font-normal text-left
+            T: Sep 28 · 14:02
+          kb | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+            kbi | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+              T: ICON(more-horizontal)
+        vr v3 | w-full h-[56px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+          cb | w-[36px] shrink-0 h-fit flex flex-row gap-[8px] justify-start items-center
+            Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#0485F7] rounded-[6px]
+              T: ICON(check)
+          vc | w-[56px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            vt | text-[13px]/[normal] text-[#18181B] font-semibold text-left
+              T: v3
+          kc | w-[88px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            k | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+                T: retry
+          pc | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+            pn | text-[13px]/[normal] text-[#18181B] font-normal text-left
+              T: PTM_SR2024.pdf
+            ps | text-[11px]/[normal] text-[#71717A] font-normal text-left
+              T: 8.4 MB · sha 9f3c…d41
+          sc | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                T: Completed
+          fc | text-[13px]/[normal] w-[88px] shrink-0 text-[#18181B] font-normal text-left
+            T: 463
+          rc | text-[13px]/[normal] w-[124px] shrink-0 text-[#71717A] font-normal text-left
+            T: Sep 15 · 10:44
+          kb | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+            kbi | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+              T: ICON(more-horizontal)
+        vr v2 | w-full h-[56px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+          cb | w-[36px] shrink-0 h-fit flex flex-row gap-[8px] justify-start items-center
+            Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] [border:1px_solid_#DEDEE0] rounded-[6px]
+          vc | w-[56px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            vt | text-[13px]/[normal] text-[#18181B] font-semibold text-left
+              T: v2
+          kc | w-[88px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            k | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+                T: fork
+          pc | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+            pn | text-[13px]/[normal] text-[#18181B] font-normal text-left
+              T: PTM_SR2023.pdf
+            ps | text-[11px]/[normal] text-[#FF383C] font-normal text-left
+              T: Error: LLM timeout during judging
+          sc | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#FF383C26] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#FF383C] font-medium text-left
+                T: Failed
+          fc | text-[13px]/[normal] w-[88px] shrink-0 text-[#18181B] font-normal text-left
+            T: —
+          rc | text-[13px]/[normal] w-[124px] shrink-0 text-[#71717A] font-normal text-left
+            T: Aug 30 · 17:21
+          kb | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+            kbi | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+              T: ICON(more-horizontal)
+        vr v1 | w-full h-[56px] shrink-0 flex flex-row gap-0 p-[0px_16px] justify-start items-center
+          cb | w-[36px] shrink-0 h-fit flex flex-row gap-[8px] justify-start items-center
+            Control | w-[16px] shrink-0 h-[16px] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] [border:1px_solid_#DEDEE0] rounded-[6px]
+          vc | w-[56px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            vt | text-[13px]/[normal] text-[#18181B] font-semibold text-left
+              T: v1
+          kc | w-[88px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            k | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#EBEBEC] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#18181B] font-medium text-left
+                T: initial
+          pc | [flex:1_1_0] h-fit flex flex-col gap-[1px] justify-start items-start
+            pn | text-[13px]/[normal] text-[#18181B] font-normal text-left
+              T: PTM_SR2023.pdf
+            ps | text-[11px]/[normal] text-[#71717A] font-normal text-left
+              T: 7.9 MB · sha 1ab7…e90
+          sc | w-[112px] shrink-0 h-fit flex flex-row gap-0 justify-start items-start
+            st | w-fit shrink-0 h-fit flex flex-row gap-[2px] p-[2px_8px] justify-start items-center bg-[#17C96426] rounded-[16px]
+              Label | text-[12px]/[normal] text-[#17C964] font-medium text-left
+                T: Completed
+          fc | text-[13px]/[normal] w-[88px] shrink-0 text-[#18181B] font-normal text-left
+            T: 412
+          rc | text-[13px]/[normal] w-[124px] shrink-0 text-[#71717A] font-normal text-left
+            T: Aug 2 · 09:13
+          kb | w-[48px] shrink-0 h-fit flex flex-row gap-0 justify-center items-start
+            kbi | w-[32px] shrink-0 h-[32px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[24px]
+              T: ICON(more-horizontal)
+      NewVersionDZ | w-full h-[96px] shrink-0 flex flex-col gap-[8px] justify-center items-center bg-[#EFEFF0] [border:1px_solid_#DEDEE0] rounded-[16px]
+        DZ Icon | w-[40px] h-[40px] shrink-0 flex flex-row gap-0 justify-center items-center bg-[#0485F726] rounded-[9999px]
+          T: ICON(file-plus)
+        DZ1 | text-[14px]/[normal] text-[#18181B] font-medium text-left
+          T: Drop a new report PDF to create version v5
+        DZ2 | text-[12px]/[normal] text-[#71717A] font-normal text-left
+          T: Same pipeline — extract, index, judge. New versions stay attached to this report.
+dim | w-[1440px] h-[900px] absolute left-0 top-0 bg-[#18181B66] [z-index:1]
+Rename Modal | w-[540px] h-fit absolute left-[450px] top-[340px] flex flex-col gap-0 justify-start items-start bg-[#FFFFFF] rounded-[24px] overflow-hidden [z-index:2]
+  mh | w-full h-fit shrink-0 flex flex-row gap-0 p-[18px_24px_0px_24px] justify-between items-center
+    mt | text-[16px]/[normal] text-[#18181B] font-semibold text-left
+      T: Rename report
+    cl | w-[24px] shrink-0 h-[24px] flex flex-row gap-0 justify-center items-center bg-[#EBEBEC] rounded-[12px]
+      T: ICON(x)
+  mb | w-full h-fit shrink-0 flex flex-col gap-[14px] p-[16px_24px_20px_24px] justify-start items-start
+    inp | w-full h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start
+      Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: Report name
+      Input | w-full h-[40px] shrink-0 [box-shadow:0px_1px_2px_#0000000F] flex flex-row gap-0 p-[8px_12px] justify-start items-center bg-[#FFFFFF] rounded-[12px]
+        Placeholder | text-[14px]/[normal] text-[#18181B] font-normal text-left
+          T: PT Meridian Energi Tbk
+    hint | text-[12px]/[normal] text-[#71717A] font-normal text-left
+      T: Renaming doesn’t affect versions, findings or exports.
+  mf | w-full h-fit shrink-0 flex flex-row gap-[10px] p-[0px_24px_20px_24px] justify-end items-start
+    can | w-fit shrink-0 h-[36px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#EBEBEC] rounded-[24px]
+      T: ICON(x)
+      Label | text-[14px]/[normal] text-[#18181B] font-medium text-left
+        T: Cancel
+    save | w-fit shrink-0 h-[36px] flex flex-row gap-[8px] p-[8px_16px] justify-center items-center bg-[#0485F7] rounded-[24px]
+      T: ICON(check)
+      Label | text-[14px]/[normal] text-[#FCFCFC] font-medium text-left
+        T: Save
+T: div

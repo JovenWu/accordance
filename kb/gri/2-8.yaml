@@ -1,0 +1,28 @@
+id: "2-8"
+standard: "GRI 2: General Disclosures 2021"
+title: "Workers who are not employees"
+category: universal
+requirement_text: |
+    Report workers who are not employees but whose work is controlled by the organization,
+    including worker types, contractual relationships, work performed, methodology, and fluctuations.
+required_elements:
+  - id: non_employee_worker_total
+    desc: "Total number of controlled workers who are not employees"
+  - id: worker_types
+    desc: "Common types of non-employee workers"
+  - id: contractual_relationship
+    desc: "Contractual relationship with the organization"
+  - id: work_performed
+    desc: "Type of work performed"
+  - id: methodology_assumptions
+    desc: "Headcount/FTE and reporting date or average methodology"
+  - id: significant_fluctuations
+    desc: "Significant fluctuations during or between reporting periods"
+retrieval_queries:
+  - "contractors agency workers non employee workers"
+  - "workers not employees headcount methodology"
+good_evidence_hints:
+  - "May be included in workforce notes, contractor data, or HR tables"
+suggested_fix_template: |
+    Add a non-employee worker disclosure covering contractor/agency worker numbers,
+    relationship type, work performed, methodology, and fluctuations.

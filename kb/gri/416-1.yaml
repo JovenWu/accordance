@@ -1,0 +1,20 @@
+id: "416-1"
+standard: "GRI 416: Customer Health and Safety 2016"
+title: "Assessment of the health and safety impacts of product and service categories"
+category: topic
+requirement_text: |
+    Report the percentage of significant product and service categories for which health and safety
+    impacts are assessed for improvement.
+required_elements:
+  - id: assessed_percentage
+    desc: "Percentage of significant product and service categories for which health and safety impacts are assessed for improvement"
+retrieval_queries:
+  - "health safety impacts product service categories assessed improvement percentage"
+  - "product safety assessment categories health and safety impacts"
+  - "product health safety impact assessment percentage categories"
+good_evidence_hints:
+  - "Look in product safety, product stewardship, or quality sections"
+  - "Strong evidence gives the percentage of product/service categories assessed for H&S impacts"
+suggested_fix_template: |
+    Add a metric reporting the percentage of significant product and service categories for which health
+    and safety impacts are assessed for improvement.

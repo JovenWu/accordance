@@ -1,0 +1,50 @@
+# Python
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/.pytest_cache/
+**/.ruff_cache/
+**/*.egg-info/
+
+# Node
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Local dev / data
+.env
+.env.*
+!.env.example
+data/
+**/*.db
+**/*.db-journal
+**/*.db-wal
+
+# Eval output
+eval/reports/*
+!eval/reports/.gitkeep
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git + CI
+.git/
+.gitignore
+.github/
+
+# Claude / superpowers state
+.claude/
+.superpowers/
+
+# Logs / scratch
+**/*.log
+backend/pip-install.log
+
+# Docker itself
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+.dockerignore

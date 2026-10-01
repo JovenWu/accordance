@@ -1,0 +1,26 @@
+id: "407-1"
+standard: "GRI 407: Freedom of Association and Collective Bargaining 2016"
+title: "Operations and suppliers in which the right to freedom of association and collective bargaining may be at risk"
+category: topic
+requirement_text: |
+    Report the operations and suppliers in which workers' rights to exercise freedom of association or
+    collective bargaining may be violated or at significant risk, identified in terms of type of
+    operation (such as manufacturing plant) and supplier, and countries or geographic areas with
+    operations and suppliers considered at risk. Report the measures taken by the organization in the
+    reporting period intended to support rights to exercise freedom of association and collective
+    bargaining.
+required_elements:
+  - id: operations_suppliers_at_risk
+    desc: "Operations and suppliers where freedom of association / collective bargaining may be at risk, by type and geography"
+  - id: measures_taken
+    desc: "Measures taken to support freedom of association and collective bargaining rights"
+retrieval_queries:
+  - "freedom of association collective bargaining at risk operations suppliers"
+  - "right to organize union collective bargaining risk suppliers"
+  - "freedom of association rights at risk measures suppliers operations"
+good_evidence_hints:
+  - "Look in human rights or labor rights sections referencing freedom of association"
+  - "Strong evidence identifies at-risk operations/suppliers and the supporting measures taken"
+suggested_fix_template: |
+    Add a section identifying operations and suppliers where freedom of association or collective
+    bargaining may be at risk (by type and geography) and the measures taken to support these rights.

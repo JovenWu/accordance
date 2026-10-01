@@ -1,0 +1,22 @@
+id: "2-16"
+standard: "GRI 2: General Disclosures 2021"
+title: "Communication of critical concerns"
+category: universal
+requirement_text: |
+    Describe whether and how critical concerns are communicated to the highest governance body,
+    and report the total number and nature of such concerns.
+required_elements:
+  - id: communication_process
+    desc: "Whether and how critical concerns are communicated to governance body"
+  - id: total_critical_concerns
+    desc: "Total number communicated during the reporting period"
+  - id: nature_of_concerns
+    desc: "Nature or categories of critical concerns"
+retrieval_queries:
+  - "critical concerns communicated to board"
+  - "grievance whistleblowing concerns board reporting"
+good_evidence_hints:
+  - "May appear under ethics, compliance, grievance, or risk reporting"
+suggested_fix_template: |
+    Add how critical concerns are escalated to the board and report the number and type
+    of concerns communicated during the reporting period.

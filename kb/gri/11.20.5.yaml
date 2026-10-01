@@ -1,0 +1,28 @@
+id: "11.20.5"
+standard: "GRI 11: Oil and Gas Sector 2021"
+title: "Contract and license transparency approach"
+category: sector
+requirement_text: |
+  Under Topic 11.20 Anti-corruption, the organization must describe its approach to contract
+  transparency, including whether contracts and licenses are made public and where they are
+  published, and if they are not public, the reason and the actions taken to make them public
+  in the future.
+required_elements:
+  - id: contracts_public_and_where
+    desc: "whether contracts and licenses are made public and, if so, where they are published"
+  - id: reason_and_actions_if_not_public
+    desc: "if contracts or licenses are not publicly available, the reason for this and actions taken to make them public in the future"
+retrieval_queries:
+  - "contract transparency license public disclosure oil gas anti-corruption"
+  - "production sharing agreements contracts published public oil gas company"
+  - "contract disclosure transparency approach licenses oil gas where published"
+good_evidence_hints:
+  - "Look in the governance, anti-corruption, or transparency sections for an explicit statement on whether operational contracts and licenses are disclosed to the public, with links or references to where they are published"
+  - "Strong evidence addresses both contracts and licenses, names the publication venue (e.g., government registry, EITI platform, company website), or provides a clear reason for non-disclosure with a forward-looking plan"
+suggested_fix_template: |
+  Describe the organization's approach to contract and license transparency. State whether
+  operational contracts and licenses are made publicly available, and if so, where they are
+  published (e.g., government registries, EITI disclosures, company website). If contracts or
+  licenses are not publicly disclosed, explain the reason (e.g., confidentiality clauses, host
+  government restrictions) and describe any actions being taken to increase transparency or
+  work toward future disclosure.

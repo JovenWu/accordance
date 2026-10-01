@@ -1,0 +1,22 @@
+id: "14.8.4"
+standard: "GRI 14: Mining Sector 2024"
+title: "Mine-site closure and rehabilitation status"
+category: sector
+requirement_text: |
+    Under Topic 14.8 Closure and rehabilitation, for each mine site report whether it has a closure and rehabilitation plan in place, is undergoing closure and rehabilitation activities, and has been closed and rehabilitated.
+required_elements:
+  - id: has_plan_in_place
+    desc: "For each mine site, whether a closure and rehabilitation plan is in place"
+  - id: undergoing_activities
+    desc: "For each mine site, whether it is currently undergoing closure and rehabilitation activities"
+  - id: closed_and_rehabilitated
+    desc: "For each mine site, whether it has been closed and rehabilitated"
+retrieval_queries:
+  - "mine site closure rehabilitation plan in place undergoing activities closed rehabilitated status"
+  - "mine closure rehabilitation status per site plan activities completed"
+  - "mine site closure and rehabilitation plan undergoing closed rehabilitated"
+good_evidence_hints:
+  - "Look in the closure and rehabilitation section for a per-site table or list reporting all three statuses: plan in place, undergoing activities, and closed and rehabilitated"
+  - "Good evidence covers all named mine sites and distinguishes between the three closure and rehabilitation statuses rather than providing a single generic statement"
+suggested_fix_template: |
+    Add, for each mine site, a clear indication of: (1) whether a closure and rehabilitation plan is in place, (2) whether the site is currently undergoing closure and rehabilitation activities, and (3) whether the site has been closed and rehabilitated. Ideally present this as a per-site table covering all operations.

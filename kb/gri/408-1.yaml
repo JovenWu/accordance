@@ -1,0 +1,25 @@
+id: "408-1"
+standard: "GRI 408: Child Labor 2016"
+title: "Operations and suppliers at significant risk for incidents of child labor"
+category: topic
+requirement_text: |
+    Report the operations and suppliers considered to have significant risk for incidents of child
+    labor, and for young workers exposed to hazardous work, identified in terms of type of operation
+    (such as manufacturing plant) and supplier, and countries or geographic areas with operations and
+    suppliers considered at risk. Report the measures taken by the organization in the reporting period
+    intended to contribute to the effective abolition of child labor.
+required_elements:
+  - id: operations_suppliers_at_risk
+    desc: "Operations and suppliers at significant risk for child labor and young workers in hazardous work, by type and geography"
+  - id: measures_taken
+    desc: "Measures taken to contribute to the effective abolition of child labor"
+retrieval_queries:
+  - "child labor significant risk operations suppliers measures abolition"
+  - "child labour young workers hazardous work risk suppliers"
+  - "child labor risk geographic areas measures abolition"
+good_evidence_hints:
+  - "Look in human rights or supply chain due-diligence sections referencing child labor"
+  - "Strong evidence identifies at-risk operations/suppliers and abolition measures taken"
+suggested_fix_template: |
+    Add a section identifying operations and suppliers at significant risk for child labor (and young
+    workers in hazardous work), by type and geography, and the measures taken to abolish child labor.

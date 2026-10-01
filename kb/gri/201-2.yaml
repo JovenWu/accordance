@@ -1,0 +1,32 @@
+id: "201-2"
+standard: "GRI 201: Economic Performance 2016"
+title: "Financial implications and other risks and opportunities due to climate change"
+category: topic
+requirement_text: |
+    Report the risks and opportunities posed by climate change that have the potential to generate
+    substantive changes in operations, revenue, or expenditure. For each, provide a description of the
+    risk or opportunity and its classification (physical, regulatory, or other); a description of the
+    impact associated with it; the financial implications before action is taken; the methods used to
+    manage the risk or opportunity; and the costs of actions taken to manage it.
+    (Note: from 2027 this disclosure is superseded by GRI 102: Climate Change 2025; reports prepared
+    under the 2016 Standards still apply 201-2.)
+required_elements:
+  - id: risks_opportunities_description
+    desc: "Description of climate-related risks and opportunities and their classification (physical, regulatory, other)"
+  - id: impact_description
+    desc: "Description of the impact associated with each risk or opportunity"
+  - id: financial_implications
+    desc: "Financial implications of the risk or opportunity before action is taken"
+  - id: management_methods_and_costs
+    desc: "Methods used to manage the risk/opportunity and the costs of actions taken"
+retrieval_queries:
+  - "climate change financial risks opportunities operations revenue expenditure"
+  - "physical regulatory climate risk financial implications cost of action"
+  - "TCFD climate-related risks opportunities financial impact management"
+good_evidence_hints:
+  - "Look in climate risk, TCFD, or risk-management sections describing financial exposure to climate change"
+  - "Strong evidence quantifies financial implications and the cost of management actions"
+suggested_fix_template: |
+    Add a climate risk section describing the climate-related risks and opportunities (physical,
+    regulatory, other), their potential impact, the financial implications before action, and the
+    methods and costs of managing them.
