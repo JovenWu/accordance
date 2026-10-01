@@ -104,7 +104,7 @@ export function FailedRunView({
           Run aborted · partial results preserved
         </span>
       </div>
-      <div className="min-h-0 flex-1 overflow-y-auto rounded-3xl bg-surface">
+      <div className="rounded-3xl bg-surface md:min-h-0 md:flex-1 md:overflow-y-auto">
         {[...run.findings].reverse().map((f) => (
           <div
             key={f.disclosure_id}

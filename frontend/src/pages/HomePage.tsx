@@ -21,7 +21,7 @@ export function HomePage() {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 pb-3 pt-4 sm:px-6 lg:px-8 lg:pt-5">
-        <div className="flex flex-col gap-0.5">
+        <div className="flex w-full min-w-0 flex-col gap-0.5 sm:w-auto">
           <h1 className="text-[22px] font-semibold text-ink">Analyses</h1>
           <p className="text-[13px] text-muted-ink">
             Sustainability reports graded against the GRI Standards

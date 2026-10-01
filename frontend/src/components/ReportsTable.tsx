@@ -93,10 +93,78 @@ export function ReportsTable({ query }: { query: string }) {
 
   const pageCount = data ? Math.max(1, Math.ceil(data.total / PAGE_SIZE)) : 0;
 
+  const kebabItems = (r: ReportSummary) => [
+    {
+      label: "Open report",
+      icon: <ArrowRight />,
+      onSelect: () => nav(`/reports/${r.id}`),
+    },
+    {
+      label: "Export coverage",
+      icon: <FileDown />,
+      onSelect: () => downloadFile(exportReportCoverageUrl(r.id)),
+    },
+    {
+      label: "Delete report",
+      icon: <Trash2 />,
+      danger: true,
+      onSelect: () => setDeleting(r),
+    },
+  ];
+
   return (
     <TableCard>
       <div className="min-h-0 flex-1 overflow-auto">
-        <Table className="min-w-[720px]">
+        {/* Mobile: stacked list — the 720px table isn't readable on phones. */}
+        <div className="md:hidden">
+          {data === null && !error
+            ? Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="px-4 py-3">
+                  <Skeleton className="h-10 w-full" />
+                </div>
+              ))
+            : data?.items.map((r) => (
+                <div
+                  key={r.id}
+                  className="flex cursor-pointer items-center gap-2 border-b border-line px-4 py-3 last:border-0 hover:bg-soft/50"
+                  onClick={() => nav(`/reports/${r.id}`)}
+                >
+                  <div className="flex min-w-0 flex-1 flex-col gap-1">
+                    <Link
+                      to={`/reports/${r.id}`}
+                      className="truncate text-[13px] font-medium text-ink hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {r.name}
+                    </Link>
+                    <span className="truncate text-[11px] text-muted-ink">
+                      {r.latest.pdf_filename} · v{r.latest.version_number} ·{" "}
+                      {kindLabel(r.latest.kind)} ·{" "}
+                      {formatDateTime(r.latest.uploaded_at, {
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </span>
+                    <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                      <RunStatusChip status={r.latest.status} />
+                      {findingsSummary(r) && (
+                        <span className="text-[11px] text-muted-ink">
+                          {findingsSummary(r)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <span onClick={(e) => e.stopPropagation()}>
+                    <KebabMenu
+                      label={`Actions for ${r.name}`}
+                      items={kebabItems(r)}
+                    />
+                  </span>
+                </div>
+              ))}
+        </div>
+
+        <Table className="hidden min-w-[720px] md:table">
           <THead>
             <tr>
               <Th>Report</Th>
@@ -160,25 +228,7 @@ export function ReportsTable({ query }: { query: string }) {
                     <Td onClick={(e) => e.stopPropagation()}>
                       <KebabMenu
                         label={`Actions for ${r.name}`}
-                        items={[
-                          {
-                            label: "Open report",
-                            icon: <ArrowRight />,
-                            onSelect: () => nav(`/reports/${r.id}`),
-                          },
-                          {
-                            label: "Export coverage",
-                            icon: <FileDown />,
-                            onSelect: () =>
-                              downloadFile(exportReportCoverageUrl(r.id)),
-                          },
-                          {
-                            label: "Delete report",
-                            icon: <Trash2 />,
-                            danger: true,
-                            onSelect: () => setDeleting(r),
-                          },
-                        ]}
+                        items={kebabItems(r)}
                       />
                     </Td>
                   </tr>

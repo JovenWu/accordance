@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { LayoutList, LogOut, Menu, ScanSearch, Users, X } from "lucide-react";
+import { LayoutList, LogOut, Menu, Users, X } from "lucide-react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 import { getMeStats } from "@/api";
 import { useAuth } from "@/auth/auth-context";
+import { BrandMark } from "@/components/BrandMark";
 import { Avatar } from "@/components/ui/avatar";
 import { useToast } from "@/components/ui/toast";
 import { useModalA11y } from "@/lib/useModalA11y";
@@ -38,9 +39,7 @@ export function AppShell() {
           aria-label="Accordance home"
           className="flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
         >
-          <span className="grid size-7 place-items-center rounded-[8px] bg-accent text-accent-ink">
-            <ScanSearch className="size-4" aria-hidden />
-          </span>
+          <BrandMark className="size-7 rounded-[8px]" />
           <span className="text-[15px] font-semibold text-ink">Accordance</span>
         </Link>
       </header>
@@ -102,9 +101,7 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
         aria-label="Accordance home"
         onClick={onNavigate}
       >
-        <span className="grid size-[34px] place-items-center rounded-[10px] bg-accent text-accent-ink">
-          <ScanSearch className="size-5" aria-hidden />
-        </span>
+        <BrandMark className="size-[34px] rounded-[10px]" />
         <span className="flex flex-col gap-px">
           <span className="text-[17px] font-semibold leading-tight text-ink">
             Accordance

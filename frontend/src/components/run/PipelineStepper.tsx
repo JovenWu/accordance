@@ -52,7 +52,7 @@ export function PipelineStepper({
       <div
         role="list"
         aria-label="Pipeline progress"
-        className="flex w-full min-w-[560px] items-center px-6 py-5"
+        className="flex w-full items-stretch px-3 py-4 sm:min-w-[560px] sm:items-center sm:px-6 sm:py-5"
       >
       {STEPS.map((name, i) => {
         const st = states[i];
@@ -68,12 +68,12 @@ export function PipelineStepper({
               <div
                 aria-hidden
                 className={cn(
-                  "h-[2px] flex-1 transition-colors duration-500",
+                  "mt-[13px] h-[2px] min-w-2 flex-1 self-start transition-colors duration-500 sm:mt-0 sm:self-center",
                   states[i - 1] === "done" ? "bg-success" : "bg-soft-2",
                 )}
               />
             )}
-            <div className="flex items-center gap-2.5">
+            <div className="flex flex-col items-center gap-1.5 sm:flex-row sm:gap-2.5">
               <span
                 className={cn(
                   "grid size-7 shrink-0 place-items-center rounded-full transition-colors duration-300 [&_svg]:size-4",
@@ -92,16 +92,18 @@ export function PipelineStepper({
                   <span className="text-xs font-semibold">{i + 1}</span>
                 )}
               </span>
-              <span className="flex flex-col gap-px">
+              <span className="flex flex-col items-center gap-px text-center sm:items-start sm:text-left">
                 <span
                   className={cn(
-                    "text-[13px] font-medium",
+                    "text-[11px] font-medium sm:text-[13px]",
                     st === "pending" ? "text-muted-ink" : "text-ink",
                   )}
                 >
                   {name}
                 </span>
-                <span className="text-[11px] text-muted-ink">{meta}</span>
+                <span className="hidden text-[11px] text-muted-ink sm:block">
+                  {meta}
+                </span>
               </span>
             </div>
           </div>

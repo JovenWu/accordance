@@ -59,9 +59,10 @@ export function FindingsTable({
   onTrace: (f: FindingView) => void;
 }) {
   return (
-    <div className="min-h-0 flex-1 overflow-auto rounded-3xl bg-surface">
-      <div className="min-w-[640px]">
-      <div className="sticky top-0 z-10 flex h-[38px] items-center bg-soft-2 px-4 text-xs font-medium text-muted-ink">
+    // Mobile: natural height — the page scrolls. md+: bounded inner scroller.
+    <div className="rounded-3xl bg-surface md:min-h-0 md:flex-1 md:overflow-auto">
+      <div className="md:min-w-[640px]">
+      <div className="sticky top-0 z-10 hidden h-[38px] items-center bg-soft-2 px-4 text-xs font-medium text-muted-ink md:flex">
         <span className="w-11 shrink-0">Score</span>
         <span className="w-[110px] shrink-0">Disclosure</span>
         <span className="min-w-0 flex-1">Title</span>
@@ -82,6 +83,14 @@ export function FindingsTable({
               className="border-b border-line last:border-0"
             >
               <Row
+                finding={f}
+                title={titles.get(f.disclosure_id)}
+                correction={correction}
+                open={open}
+                detailId={detailId}
+                onToggle={() => onToggle(f.disclosure_id)}
+              />
+              <MobileRow
                 finding={f}
                 title={titles.get(f.disclosure_id)}
                 correction={correction}
@@ -147,7 +156,7 @@ function Row({
       aria-expanded={open}
       aria-controls={detailId}
       className={cn(
-        "flex h-[50px] w-full items-center px-4 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50",
+        "hidden h-[50px] w-full items-center px-4 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50 md:flex",
         open && "bg-soft-2",
       )}
     >
@@ -164,13 +173,7 @@ function Row({
         {elements.length > 0 ? `${found}/${elements.length}` : "—"}
       </span>
       <span className="w-24 shrink-0">
-        {corrected ? (
-          <Chip tone="accent">Overridden</Chip>
-        ) : bucket === "na" ? (
-          <Chip>N/A</Chip>
-        ) : (
-          <DisclosureStatusChip status={status} />
-        )}
+        <StatusCell corrected={corrected} bucket={bucket} status={status} />
       </span>
       <span className="w-14 shrink-0 text-[13px] tabular-nums text-muted-ink">
         {f.evidence_page ?? "—"}
@@ -181,6 +184,84 @@ function Row({
         ) : (
           <ChevronDown className="size-4" aria-hidden />
         )}
+      </span>
+    </button>
+  );
+}
+
+function StatusCell({
+  corrected,
+  bucket,
+  status,
+}: {
+  corrected: boolean;
+  bucket: FilterKey;
+  status: DisclosureStatus;
+}) {
+  if (corrected) return <Chip tone="accent">Overridden</Chip>;
+  if (bucket === "na") return <Chip>N/A</Chip>;
+  return <DisclosureStatusChip status={status} />;
+}
+
+/** Compact stacked row for phones — the 640px table isn't readable there. */
+function MobileRow({
+  finding: f,
+  title,
+  correction,
+  open,
+  detailId,
+  onToggle,
+}: {
+  finding: FindingView;
+  title?: string;
+  correction?: CorrectionView;
+  open: boolean;
+  detailId: string;
+  onToggle: () => void;
+}) {
+  const { score, corrected } = effectiveGrade(f.score, correction);
+  const elements = correction?.corrected_elements ?? f.elements;
+  const found = elements.filter((e) => e.status === "found").length;
+  const bucket = bucketOf(score, corrected);
+  const status: DisclosureStatus =
+    bucket === "covered"
+      ? "covered"
+      : bucket === "partial"
+        ? "partial"
+        : bucket === "missing" || bucket === "na"
+          ? "missing"
+          : "error";
+
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-expanded={open}
+      aria-controls={detailId}
+      className={cn(
+        "flex w-full flex-col gap-1 px-4 py-3 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50 md:hidden",
+        open && "bg-soft-2",
+      )}
+    >
+      <span className="flex items-center gap-2.5">
+        <ScorePill score={f.status === "error" ? null : score} />
+        <span className="text-[13px] font-semibold text-ink">
+          {f.disclosure_id}
+        </span>
+        <span className="min-w-0 flex-1" />
+        <StatusCell corrected={corrected} bucket={bucket} status={status} />
+        {open ? (
+          <ChevronUp className="size-4 shrink-0 text-muted-ink" aria-hidden />
+        ) : (
+          <ChevronDown className="size-4 shrink-0 text-muted-ink" aria-hidden />
+        )}
+      </span>
+      <span className="truncate text-[13px] text-ink">{title ?? "—"}</span>
+      <span className="text-[11px] text-muted-ink">
+        {elements.length > 0
+          ? `${found} of ${elements.length} elements`
+          : "No element breakdown"}
+        {f.evidence_page != null && ` · evidence p.${f.evidence_page}`}
       </span>
     </button>
   );

@@ -55,15 +55,15 @@ describe("FindingsView", () => {
     );
 
     expect(screen.getAllByRole("listitem")).toHaveLength(findings.length);
+    // md+: bounded inner scroller; below md the page itself scrolls.
     expect(container.firstElementChild).toHaveClass(
-      "min-h-0",
-      "flex-1",
-      "overflow-hidden",
+      "md:min-h-0",
+      "md:flex-1",
+      "md:overflow-hidden",
     );
-    expect(screen.getByRole("list").closest(".overflow-auto")).toHaveClass(
-      "min-h-0",
-      "flex-1",
-    );
+    expect(
+      screen.getByRole("list").closest('[class~="md:overflow-auto"]'),
+    ).toHaveClass("md:min-h-0", "md:flex-1");
   });
 
   it("keeps sr-only row labels inside a positioned ancestor", () => {
@@ -79,7 +79,7 @@ describe("FindingsView", () => {
       />,
     );
 
-    const scroller = container.querySelector(".overflow-auto");
+    const scroller = container.querySelector('[class~="md:overflow-auto"]');
     const positioned = ["relative", "absolute", "fixed", "sticky"];
     for (const sr of container.querySelectorAll(".sr-only")) {
       let el = sr.parentElement;

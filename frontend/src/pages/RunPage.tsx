@@ -148,7 +148,7 @@ export function RunPage() {
       onCorrect={setCorrecting}
       onTrace={setTraceFor}
     >
-      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-hidden px-4 pb-6 pt-4 sm:px-6 lg:px-8 lg:pb-8 lg:pt-5">
+      <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-x-hidden overflow-y-auto px-4 pb-6 pt-4 sm:px-6 md:overflow-hidden lg:px-8 lg:pb-8 lg:pt-5">
         <Link
           to={`/reports/${crumbs.reportId}`}
           className="flex w-fit items-center gap-1.5 text-[13px] text-muted-ink hover:text-ink"

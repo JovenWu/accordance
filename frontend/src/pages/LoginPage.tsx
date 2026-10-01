@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { LogIn, ScanSearch } from "lucide-react";
+import { LogIn } from "lucide-react";
 
+import { BrandMark } from "@/components/BrandMark";
 import { Button } from "@/components/ui/button";
 import { Field, Input } from "@/components/ui/input";
 
@@ -38,9 +39,7 @@ export function LoginPage({
         className="flex w-full max-w-[400px] flex-col gap-5 rounded-3xl bg-surface p-6 shadow-modal sm:p-8"
       >
         <div className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-accent text-accent-ink">
-            <ScanSearch className="size-5" aria-hidden />
-          </span>
+          <BrandMark className="size-10 rounded-xl" />
           <span className="flex flex-col gap-px">
             <span className="text-lg font-semibold text-ink">Accordance</span>
             <span className="text-xs text-muted-ink">

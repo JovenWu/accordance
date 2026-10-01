@@ -65,7 +65,7 @@ export function LiveRunView({ run }: { run: RunDetail; onChanged: () => void }) 
       </div>
       <div
         aria-live="polite"
-        className="min-h-0 flex-1 overflow-y-auto rounded-3xl bg-surface"
+        className="rounded-3xl bg-surface md:min-h-0 md:flex-1 md:overflow-y-auto"
       >
         {[...run.findings].reverse().map((f) => (
           <div key={f.disclosure_id} className="border-b border-line last:border-0">

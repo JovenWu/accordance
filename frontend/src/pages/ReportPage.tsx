@@ -252,7 +252,7 @@ export function ReportPage() {
             · Source {latest?.pdf_filename ?? "—"}
           </p>
         </div>
-        <div className="flex shrink-0 flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Button variant="flat" size="sm" onClick={() => setRenaming(true)}>
             Rename
           </Button>

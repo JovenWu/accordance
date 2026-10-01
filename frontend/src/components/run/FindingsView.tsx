@@ -129,7 +129,7 @@ export function FindingsView({
   );
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden">
+    <div className="flex flex-col gap-4 md:min-h-0 md:flex-1 md:overflow-hidden">
       <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-start">
         {/* Grade distribution */}
         <div className="flex flex-1 flex-col gap-2.5 rounded-3xl bg-surface p-4">
