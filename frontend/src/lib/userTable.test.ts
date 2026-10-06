@@ -1,4 +1,3 @@
-// frontend/src/lib/userTable.test.ts
 import { describe, expect, it } from "vitest";
 
 import { filterUsers, pageCount, sortUsers, summarizeUsers } from "./userTable";
@@ -9,7 +8,6 @@ const u = (over: Partial<AdminUser>): AdminUser => ({
   created_at: "", pdf_count: 0, cost_usd: 0, ...over,
 });
 
-// Keep cost values float-safe (whole numbers) so summed assertions are exact.
 const users: AdminUser[] = [
   u({ id: 1, username: "alice", pdf_count: 12, cost_usd: 4, is_active: true }),
   u({ id: 2, username: "Bob", pdf_count: 3, cost_usd: 1, is_active: false }),

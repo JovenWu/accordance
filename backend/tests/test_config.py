@@ -65,9 +65,6 @@ def test_llm_max_retries_overridable(tmp_path, monkeypatch):
     assert s.llm_max_retries == 0
 
 
-# ── embedding gateway credentials ────────────────────────────────────
-
-
 def test_embedding_credentials_default_to_the_provider_key(tmp_path, monkeypatch):
     """Production sets neither override — behaviour must be unchanged."""
     from accordance.config import embedding_credentials
@@ -104,9 +101,6 @@ def test_embedding_base_url_defaults_blank(tmp_path, monkeypatch):
     monkeypatch.setenv("DATA_DIR", str(tmp_path))
     assert Settings().embedding_base_url == ""
     assert Settings().embedding_api_key == ""
-
-
-# ── service tier ─────────────────────────────────────────────────────
 
 
 def test_llm_service_tier_defaults_to_unset(tmp_path, monkeypatch):

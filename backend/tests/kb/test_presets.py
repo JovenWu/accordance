@@ -24,17 +24,15 @@ def test_mining_preset_ids_resolve_in_kb():
 def test_mining_preset_dedupes_and_excludes_upcoming():
     p = next(p for p in PRESETS if p.id == "gri-14-mining")
     assert len(p.disclosure_ids) == len(set(p.disclosure_ids))
-    # 3-3 appears under every topic but must be deduped to one entry
     assert p.disclosure_ids.count("3-3") == 1
-    # no not-yet-effective editions leak in
     assert all(KB[did].status != "upcoming" for did in p.disclosure_ids)
 
 
 def test_mining_preset_includes_sector_and_current_biodiversity():
     p = next(p for p in PRESETS if p.id == "gri-14-mining")
-    assert "14.6.2" in p.disclosure_ids       # sector disclosure
-    assert "101-1" in p.disclosure_ids         # current biodiversity edition
-    assert "304-1" not in p.disclosure_ids     # superseded edition not mapped
+    assert "14.6.2" in p.disclosure_ids
+    assert "101-1" in p.disclosure_ids
+    assert "304-1" not in p.disclosure_ids
 
 
 def test_presets_exclude_non_current_editions():

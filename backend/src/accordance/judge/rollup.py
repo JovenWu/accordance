@@ -11,8 +11,6 @@ from __future__ import annotations
 
 from accordance.judge.output_schema import ElementJudgment, ElementStatus
 
-# GRI 1: Foundation 2021 forbids "reasons for omission" for these disclosures,
-# so they can never legitimately be Not Applicable.
 NO_OMISSION_DISCLOSURES = frozenset(
     {"2-1", "2-2", "2-3", "2-4", "2-5", "3-1", "3-2"}
 )
@@ -50,9 +48,6 @@ def compute_score(
     if not applicable and disclosure_id not in NO_OMISSION_DISCLOSURES:
         return 0
     if not elements:
-        # No per-element verdicts to roll up. Back-map the holistic status when
-        # we have one rather than defaulting a covered/partial disclosure to
-        # Missing; with no status fall back to the conservative 1.
         if status is not None:
             backmapped = score_from_legacy_status(status)
             if backmapped is not None:

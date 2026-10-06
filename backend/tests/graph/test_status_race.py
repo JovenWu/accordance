@@ -20,10 +20,7 @@ def _seed_run(conn, run_id, status):
 def test_aggregate_does_not_overwrite_cancelled_status(monkeypatch):
     with db.connection() as conn:
         run_id = "race-1"
-        # stop_run already flipped the DB to 'cancelled' ...
         _seed_run(conn, run_id, "cancelled")
-        # ... but the in-memory cancel flag isn't set yet (the race window that lets
-        # aggregate_node fall through to its 'completed' branch).
         cancel_registry.clear(run_id)
 
         published = []
@@ -32,7 +29,7 @@ def test_aggregate_does_not_overwrite_cancelled_status(monkeypatch):
         aggregate_node({"run_id": run_id}, conn)
 
         status = conn.execute("SELECT status FROM runs WHERE id=%s", (run_id,)).fetchone()["status"]
-        assert status == "cancelled"  # NOT silently flipped to 'completed'
+        assert status == "cancelled"
         assert all(ev.get("type") != "completed" for _, ev in published)
 
 

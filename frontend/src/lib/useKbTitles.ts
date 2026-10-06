@@ -22,8 +22,6 @@ async function load(): Promise<Map<string, string>> {
   return inflight;
 }
 
-/** disclosure_id → human title, fetched once from /api/kb and cached
- * module-wide. Empty map until the KB resolves. */
 export function useKbTitles(): Map<string, string> {
   const [titles, setTitles] = useState<Map<string, string>>(cache ?? new Map());
   useEffect(() => {

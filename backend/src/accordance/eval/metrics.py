@@ -12,9 +12,6 @@ from pydantic import BaseModel, Field
 from accordance.eval.schema import GroundTruth, LabeledDisclosure, LabeledElement
 from accordance.models import FindingView
 
-# Status labels we tally in the confusion matrix. We include "not_judged"
-# as a virtual status so a disclosure that the run never produced shows up
-# distinctly from one that came back as 'error'.
 DISCLOSURE_STATUS_LABELS = ("covered", "partial", "missing", "error", "not_judged")
 ELEMENT_STATUS_LABELS = ("found", "partial", "missing", "not_judged")
 
@@ -22,7 +19,7 @@ ELEMENT_STATUS_LABELS = ("found", "partial", "missing", "not_judged")
 class ElementEvalResult(BaseModel):
     element_id: str
     expected_status: str
-    actual_status: str  # may be "not_judged"
+    actual_status: str
     correct: bool
     expected_page: int | None = None
     actual_page: int | None = None
@@ -31,7 +28,7 @@ class ElementEvalResult(BaseModel):
 class DisclosureEvalResult(BaseModel):
     disclosure_id: str
     expected_status: str
-    actual_status: str  # may be "not_judged"
+    actual_status: str
     correct: bool
     expected_score: int | None = None
     actual_score: int | None = None
@@ -39,17 +36,17 @@ class DisclosureEvalResult(BaseModel):
     abs_error: int | None = None
     expected_evidence_page: int | None = None
     actual_evidence_page: int | None = None
-    page_match: bool | None = None  # None when no expected_page given
+    page_match: bool | None = None
     elements: list[ElementEvalResult]
     note: str | None = None
     evidence_excerpt: str | None = None
     retrieved_pages: list[int] = Field(default_factory=list)
-    retrieval_hit: bool | None = None  # None = no expected page or pages not provided
+    retrieval_hit: bool | None = None
 
 
 class ClassMetrics(BaseModel):
     label: str
-    support: int  # how many ground-truth items had this label
+    support: int
     precision: float
     recall: float
     f1: float
@@ -63,17 +60,17 @@ class SystemConfig(BaseModel):
     differ, this section is the first place to look for *why*.
     """
 
-    prompt_hashes: list[str] = []  # usually 1; >1 indicates a partial-retry
-    models: list[str] = []  # distinct LLM model ids that produced findings
+    prompt_hashes: list[str] = []
+    models: list[str] = []
     total_traces: int = 0
-    rejudge_count: int = 0  # how many disclosures had the re-judge wrapper fire
-    vision_fallback_count: int = 0  # how many findings used vision_fallback
-    hallucinated_cleared_count: int = 0  # excerpts cleared by verify guard
-    no_excerpt_count: int = 0  # LLM returned no excerpt at all
-    parse_fallback_count: int = 0  # used markdown-fence fallback parser
-    parse_error_count: int = 0  # judge call failed to produce parseable JSON
-    retrieval_mode: str = "hybrid"  # dense/bm25/hybrid — from settings
-    retrieval_per_element: bool = True  # whether per-element queries were used
+    rejudge_count: int = 0
+    vision_fallback_count: int = 0
+    hallucinated_cleared_count: int = 0
+    no_excerpt_count: int = 0
+    parse_fallback_count: int = 0
+    parse_error_count: int = 0
+    retrieval_mode: str = "hybrid"
+    retrieval_per_element: bool = True
     rerank_enabled: bool = False
     rerank_model: str = ""
     rerank_top_n: int = 0
@@ -95,18 +92,18 @@ class EvalReport(BaseModel):
     na_precision: float | None = None
     na_recall: float | None = None
     false_high: int = 0
-    disclosure_confusion: dict[str, dict[str, int]]  # expected -> actual -> count
+    disclosure_confusion: dict[str, dict[str, int]]
     element_confusion: dict[str, dict[str, int]]
     disclosure_class_metrics: list[ClassMetrics]
     element_class_metrics: list[ClassMetrics]
-    page_match_rate: float | None  # over labeled disclosures with expected_page
+    page_match_rate: float | None
     page_match_count: int
     page_match_total: int
     retrieval_recall: float | None = None
     retrieval_recall_count: int = 0
     retrieval_recall_total: int = 0
-    not_judged: list[str]  # labeled disclosure ids missing from findings
-    extra_findings: list[str]  # finding disclosure ids without a label (informational)
+    not_judged: list[str]
+    extra_findings: list[str]
     disclosure_results: list[DisclosureEvalResult]
     system_config: SystemConfig | None = None
 
@@ -171,7 +168,6 @@ def _compare_one_disclosure(
     labeled: LabeledDisclosure, finding: FindingView | None
 ) -> DisclosureEvalResult:
     if finding is None:
-        # Disclosure was never judged. Element comparisons get "not_judged".
         elements = [
             ElementEvalResult(
                 element_id=le.id,
@@ -241,7 +237,6 @@ def compute_eval(
         _compare_one_disclosure(d, findings_by_id.get(d.id)) for d in gt.disclosures
     ]
 
-    # Retrieval recall: did retrieval surface the labeled evidence page (±1)?
     rr_hits = 0
     rr_total = 0
     if retrieved_pages_by_disclosure is not None:
@@ -257,7 +252,6 @@ def compute_eval(
                 if hit:
                     rr_hits += 1
 
-    # Build confusion matrices.
     disc_conf = _empty_confusion(DISCLOSURE_STATUS_LABELS)
     elem_conf = _empty_confusion(ELEMENT_STATUS_LABELS)
     correct_d = 0
@@ -266,9 +260,6 @@ def compute_eval(
     page_hits = 0
     page_total = 0
     for r in disclosure_results:
-        # Defensive: only tally values that are in our known label set;
-        # anything else (shouldn't happen with current schemas) gets
-        # bucketed under its row but ignored for class metrics.
         if r.expected_status in disc_conf and r.actual_status in disc_conf[r.expected_status]:
             disc_conf[r.expected_status][r.actual_status] += 1
         if r.correct:

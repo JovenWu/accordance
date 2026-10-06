@@ -1,31 +1,3 @@
-# Ground-truth labels for PT Vale Indonesia Tbk's 2024 Sustainability Report.
-#
-# Verified by reading the report cover-to-cover (222 pp.) and cross-checking
-# every disclosure cited in the report's GRI Index (pp. 201-214) against the
-# corresponding requirements in:
-#   - GRI 1: Foundation 2021
-#   - GRI 2: General Disclosures 2021
-#   - GRI 3: Material Topics 2021
-#   - GRI Topic Standards 2016 / 2018 / 2019 / 2020 (as applicable)
-#   - GRI 101: Biodiversity 2024
-#   - GRI 14: Mining Sector 2024
-#
-# Conventions used here:
-#   covered  = report meets all required sub-elements ("a", "b", ...) of the
-#              GRI disclosure, or the missing sub-element is explicitly handled
-#              with a reason for omission per GRI 1 §6.
-#   partial  = report addresses the disclosure but is missing one or more
-#              required sub-elements without a documented omission reason,
-#              OR data is provided only for a subset of operational sites,
-#              OR the report references another document (e.g. Annual Report)
-#              for required content without providing it inline.
-#   missing  = the disclosure is listed in the GRI Index but the cited page
-#              does not actually contain the required information, OR the
-#              disclosure is required by GRI 1 but not present in the report.
-#
-# `expected_evidence_page` uses the PDF page number as it appears in the
-# document footer (which matches the PDF reader page numbering in this file).
-
 report_id: ptvi-2024
 pdf_filename: Contoh_Sustainability_Report_VALE_2024.pdf
 pdf_sha256: a390230afe90f8c0142a65c88b60e0fed3809f43dc4efd0cc0671ccbb8b7054e
@@ -34,11 +6,6 @@ labeler: accordance-labeler@example.com
 labeled_at: 2026-05-24
 
 disclosures:
-  # ============================================================
-  # GRI 2: General Disclosures 2021
-  # ============================================================
-
-  # --- 1. The organization and its reporting practices ---
 
   - id: "2-1"
     expected_status: covered
@@ -104,8 +71,6 @@ disclosures:
         expected_page: 165
       - id: publication_date
         expected_status: partial
-        # The report mentions external assurance occurred 10-15 April 2025
-        # but does not give an explicit publication date for the report itself.
 
   - id: "2-4"
     expected_status: covered
@@ -127,8 +92,6 @@ disclosures:
       declared, BoD involvement stated. Full assuror statement is included on
       p.197 (per TOC). Level of assurance and assurance standard used are
       stated in the assurer statement itself rather than inline.
-
-  # --- 2. Activities and workers ---
 
   - id: "2-6"
     expected_status: covered
@@ -217,8 +180,6 @@ disclosures:
         expected_status: missing
       - id: methodology
         expected_status: missing
-
-  # --- 3. Governance ---
 
   - id: "2-9"
     expected_status: covered
@@ -385,8 +346,6 @@ disclosures:
       - id: contextual_information
         expected_status: missing
 
-  # --- 4. Strategy, policies and practices ---
-
   - id: "2-22"
     expected_status: covered
     expected_score: 5
@@ -486,10 +445,6 @@ disclosures:
       and whether their working conditions/terms of employment are
       determined based on the CBAs of other employees or organizations.
 
-  # ============================================================
-  # GRI 3: Material Topics 2021
-  # ============================================================
-
   - id: "3-1"
     expected_status: covered
     expected_score: 5
@@ -523,10 +478,6 @@ disclosures:
       the disclosure does not fully cover all six required sub-elements
       (impacts, involvement, policies, actions, effectiveness tracking,
       stakeholder engagement on the topic).
-
-  # ============================================================
-  # GRI 101: Biodiversity 2024  (early adoption — new standard)
-  # ============================================================
 
   - id: "101-1"
     expected_status: covered
@@ -602,10 +553,6 @@ disclosures:
       Ecosystem services discussed: clean water supply, carbon absorption,
       habitats; Lake Matano water quality monitoring and Matano Iniaku
       program; mangrove restoration for coastal ecosystem.
-
-  # ============================================================
-  # GRI 200 Series — Economic
-  # ============================================================
 
   - id: "201-1"
     expected_status: covered
@@ -771,10 +718,6 @@ disclosures:
       full set of required CbC elements (related-party transactions,
       tangible assets, headcount, profit before tax, accrued vs paid tax,
       etc.) is not provided.
-
-  # ============================================================
-  # GRI 300 Series — Environmental
-  # ============================================================
 
   - id: "301-1"
     expected_status: partial
@@ -1014,10 +957,6 @@ disclosures:
       reported with three-year comparison. Methodology references PERMEN
       KLHK No.4/2014. NOx is not separately reported.
 
-  # GRI 306: Effluent and Waste 2016 — flagged as listed alongside GRI 306:
-  # Waste 2020 in the index. The 2016 standard was superseded by the 2020
-  # standard for most disclosures, but the report lists both.
-
   - id: "306-1"
     expected_status: covered
     expected_score: 5
@@ -1066,10 +1005,6 @@ disclosures:
       Waste directed to disposal: 1,589.6 tons disposed in landfills.
       Medical waste managed via incineration at INCO hospital; ash to
       licensed third party.
-
-  # ============================================================
-  # GRI 400 Series — Social
-  # ============================================================
 
   - id: "401-1"
     expected_status: partial
@@ -1347,15 +1282,6 @@ disclosures:
       "Zero incidents of damage, modification, or leakage of digital data
       and information from customers, employees, or other stakeholders"
       (highlight on p.67/81). No substantiated complaints reported.
-
-  # ============================================================
-  # GRI 14: Mining Sector 2024
-  #
-  # The report includes a "Topics in Applicable GRI Sector Standards That
-  # Are Determined to Be Non-Material" note (p.214) for 14.11, 14.13, 14.25.
-  # The applicable disclosures below are spot-checked against the page
-  # references in the GRI Index (pp.210-213).
-  # ============================================================
 
   - id: "14.6.2"
     expected_status: covered

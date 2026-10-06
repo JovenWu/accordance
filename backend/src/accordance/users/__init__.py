@@ -1,7 +1,5 @@
 from accordance.auth.passwords import hash_password
 
-# Minimum acceptable password length for admin-created accounts and the
-# env-bootstrapped admin. Enforced by the admin API and bootstrap_admin.
 MIN_PASSWORD_LEN = 8
 
 

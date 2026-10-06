@@ -109,8 +109,6 @@ def render_ground_truth(
                     L.append(f"        expected_page: {e['page']}")
         L.append("")
     if not has_disclosure:
-        # All findings were errors — emit an explicit empty list so yaml.safe_load
-        # returns [] rather than None for the disclosures key.
         L.append("  []")
     return "\n".join(L) + "\n"
 

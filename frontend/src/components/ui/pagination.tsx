@@ -3,11 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { itemRange, paginationItems } from "@/lib/pagination";
 
-/**
- * Numbered pager matching the table footers: range readout left, pill
- * Previous/Next and circular page buttons right. Pages are 0-indexed on the
- * wire (they map to `offset`) but rendered 1-indexed.
- */
 export function Pagination({
   page,
   pageCount,
@@ -18,12 +13,9 @@ export function Pagination({
   itemNoun = "report",
   className,
 }: {
-  /** Current page, 0-indexed. */
   page: number;
   pageCount: number;
-  /** Total matching items across all pages. */
   total: number;
-  /** How many items are on the current page (for the range readout). */
   pageItemCount: number;
   pageSize: number;
   onPageChange: (page: number) => void;

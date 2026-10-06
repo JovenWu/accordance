@@ -113,13 +113,12 @@ def test_reuse_index_graph_executes_and_writes_findings(monkeypatch):
             "VALUES (%s, %s, 1, 'retry', 'x.pdf', 'sha', 'x', 'queued')",
             (run_id, "rep-reuse"),
         )
-        # Pre-seed a chunk (mirrors the chunk-copy that retry/fork performs)
         store = VectorStore(conn, FakeEmbedder(dim=8))
         store.write(run_id, [Chunk(page=1, text="water withdrawal 41 ML total")])
 
         run_graph(
             run_id=run_id,
-            pdf_path=Path("x.pdf"),  # never read — no extract node in reuse_index mode
+            pdf_path=Path("x.pdf"),
             kb=_kb(),
             conn=conn,
             embedder=FakeEmbedder(dim=8),
@@ -159,9 +158,6 @@ def test_tag_aware_surfaces_tagged_chunk(monkeypatch):
             (run_id, "rep-tag"),
         )
         store = VectorStore(conn, FakeEmbedder(dim=8))
-        # A chunk that cites the GRI tag for disclosure 2-1, with content that
-        # FakeEmbedder won't rank as semantically relevant — only the tag match
-        # should surface it.
         store.write(
             run_id,
             [
@@ -184,7 +180,6 @@ def test_tag_aware_surfaces_tagged_chunk(monkeypatch):
             (run_id,),
         ).fetchone()
         assert row is not None
-        # the tagged chunk's page was surfaced to the judge
         assert 99 in _json.loads(row["pages_json"])
 
 
@@ -208,8 +203,6 @@ def test_judge_node_runs_disclosures_concurrently(monkeypatch):
     monkeypatch.setenv("VISION_FALLBACK_ENABLED", "false")
     monkeypatch.setenv("RERANK_ENABLED", "false")
     monkeypatch.setenv("JUDGE_CONCURRENCY", "8")
-    # The judge semaphore is a lazily-cached module global; reset it so it
-    # re-reads the patched JUDGE_CONCURRENCY instead of a prior test's value.
     monkeypatch.setattr(nodes_mod, "_judge_sem", None, raising=False)
 
     DELAY = 0.3
@@ -259,7 +252,7 @@ def test_judge_node_runs_disclosures_concurrently(monkeypatch):
             r["disclosure_id"]
             for r in conn.execute("SELECT disclosure_id FROM findings WHERE run_id='r-cc'")
         }
-        assert judged == set(kb)  # all disclosures judged
+        assert judged == set(kb)
         assert wall < N * DELAY * 0.5, (
             f"judging looks serial: {wall:.2f}s for {N} disclosures x {DELAY}s "
             f"(serial floor {N * DELAY:.1f}s)"

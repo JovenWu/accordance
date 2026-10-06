@@ -85,8 +85,6 @@ class VectorStore:
         texts = [c.text for c in chunks]
         vectors = self.embedder.embed_documents(texts)
         ids: list[int] = []
-        # One transaction = one commit for the whole batch (autocommit otherwise
-        # fsyncs per row). text_tsv is generated; embedding is a pgvector column.
         with self.conn.transaction():
             for c, v in zip(chunks, vectors, strict=True):
                 row = self.conn.execute(
@@ -150,7 +148,6 @@ class VectorStore:
             "ORDER BY rank DESC LIMIT %s",
             (tsq, run_id, tsq, k),
         ).fetchall()
-        # Flip sign so smaller distance = better, matching the dense convention.
         return [
             {
                 "chunk_id": r["id"],
@@ -257,7 +254,6 @@ class VectorStore:
         ]
         fused = reciprocal_rank_fusion(rankings)
 
-        # Keep the richer record from whichever side hit it first.
         by_id: dict[int, RetrievedChunk] = {}
         for r in dense:
             by_id.setdefault(r["chunk_id"], r)

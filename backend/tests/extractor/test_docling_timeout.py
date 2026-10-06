@@ -12,7 +12,6 @@ def test_run_with_timeout_returns_value_when_fast():
 
 
 def test_run_with_timeout_disabled_is_passthrough():
-    # timeout <= 0 disables the guard entirely (default behavior).
     assert _run_with_timeout(lambda: 7, timeout=0) == 7
 
 

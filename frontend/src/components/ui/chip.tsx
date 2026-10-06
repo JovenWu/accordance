@@ -78,7 +78,6 @@ export function DisclosureStatusChip({
   className,
 }: {
   status: DisclosureStatus;
-  /** Score-0 N/A findings render as a neutral N/A chip instead of Covered. */
   na?: boolean;
   className?: string;
 }) {
@@ -93,7 +92,6 @@ export function DisclosureStatusChip({
   );
 }
 
-/** Per-score pill color ramp: green (5) → red (1), gray for 0/error. */
 const SCORE_TONE: Record<number, string> = {
   5: "bg-success-soft text-success",
   4: "bg-lime-soft text-lime",
@@ -103,7 +101,6 @@ const SCORE_TONE: Record<number, string> = {
   0: "bg-soft text-muted-ink",
 };
 
-/** Solid rounded score pill used in findings/diff rows. */
 export function ScorePill({
   score,
   className,

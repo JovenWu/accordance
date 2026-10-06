@@ -18,6 +18,5 @@ def test_embedding_dim_unknown_provider_raises():
 
 
 def test_build_embedder_large_model_reports_3072():
-    # The wrapper's declared dim must match the model, not a provider-wide 1536.
     emb = build_embedder("openai:text-embedding-3-large", api_key="x")
     assert emb.dim == 3072

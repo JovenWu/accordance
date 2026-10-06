@@ -98,7 +98,6 @@ export function ComparePage() {
     getReport(reportId)
       .then((r) => {
         setReport(r);
-        // Default: compare the two newest runs.
         if (!a || !b) {
           const sorted = [...r.runs].sort(
             (x, y) => y.version_number - x.version_number,

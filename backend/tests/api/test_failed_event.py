@@ -50,7 +50,6 @@ def test_failed_worker_publishes_failed_event(tmp_path, monkeypatch):
 
 
 def test_stream_treats_failed_as_terminal():
-    # Lock the stream's terminal set so a 'failed' event ends the generator.
     import inspect
 
     from accordance.api import stream

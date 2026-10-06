@@ -6,10 +6,8 @@ import { cn } from "@/lib/utils";
 export type ToastVariant = "success" | "error";
 export interface ToastOptions {
   variant?: ToastVariant;
-  /** Secondary line under the title. */
   message?: string;
 }
-/** Alternative call shape: toast({ title, message, variant }). */
 export interface ToastArgs {
   title: string;
   message?: string;

@@ -21,7 +21,6 @@ export type FilterKey =
   | "errors"
   | "overridden";
 
-/** Bucket an effective score into a filter/status group. null = judge error. */
 export function bucketOf(
   score: number | null,
   corrected: boolean,
@@ -59,7 +58,6 @@ export function FindingsTable({
   onTrace: (f: FindingView) => void;
 }) {
   return (
-    // Mobile: natural height — the page scrolls. md+: bounded inner scroller.
     <div className="rounded-3xl bg-surface md:min-h-0 md:flex-1 md:overflow-auto">
       <div className="md:min-w-[640px]">
       <div className="sticky top-0 z-10 hidden h-[38px] items-center bg-soft-2 px-4 text-xs font-medium text-muted-ink md:flex">
@@ -203,7 +201,6 @@ function StatusCell({
   return <DisclosureStatusChip status={status} />;
 }
 
-/** Compact stacked row for phones — the 640px table isn't readable there. */
 function MobileRow({
   finding: f,
   title,
@@ -289,7 +286,6 @@ function ExpandedDetail({
       id={id}
       className="flex flex-col items-start gap-6 bg-soft-2 px-5 pb-5 pt-4 md:flex-row"
     >
-      {/* Required elements */}
       <div className="flex w-full shrink-0 flex-col gap-1.5 md:w-80">
         <span className="text-[11px] font-semibold text-muted-ink">
           Required elements — {found} of {elements.length} found
@@ -312,7 +308,6 @@ function ExpandedDetail({
         )}
       </div>
 
-      {/* Evidence */}
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <span className="text-[11px] font-semibold text-muted-ink">
           Evidence
@@ -348,7 +343,6 @@ function ExpandedDetail({
         )}
       </div>
 
-      {/* Assessment + fix + actions */}
       <div className="flex w-full shrink-0 flex-col gap-1.5 md:w-[300px]">
         <span className="text-[11px] font-semibold text-muted-ink">
           Assessment

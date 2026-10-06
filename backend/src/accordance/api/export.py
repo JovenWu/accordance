@@ -119,8 +119,6 @@ def export_run_analysis(
         page_count = conn.execute(
             "SELECT MAX(page) AS p FROM chunks WHERE run_id=%s", (run_id,)
         ).fetchone()["p"] or 0
-        # Only disclosures this run actually judged — the score map is the same
-        # effective-score view the XLSX export uses (corrections included).
         scores = _score_by_id(conn, run_id)
 
     kb = load_kb(KB_DIR)
@@ -135,7 +133,7 @@ def export_run_analysis(
             {"assessed": 0, "scored": 0, "sum": 0},
         )
         if v is None:
-            errors += 1  # judged but errored — not a real assessment
+            errors += 1
             continue
         dist[v] += 1
         st["assessed"] += 1
@@ -182,10 +180,6 @@ def export_run_analysis(
     )
 
 
-# These static paths are registered before the "/{report_id}/..." route. They
-# differ in segment count (export/options, export/coverage vs
-# {report_id}/export/coverage) so they never collide, but declaring the static
-# paths first keeps intent clear.
 @reports_router.get("/export/options", response_model=list[ReportExportOption])
 def export_options(
     settings: Annotated[Settings, Depends(get_settings)],

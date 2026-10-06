@@ -15,8 +15,6 @@ def require_user(
     token = request.cookies.get(COOKIE_NAME)
     if not token:
         raise HTTPException(401, "Not authenticated")
-    # Lazy import: api.runs imports require_user (Task 8), so a top-level import
-    # here would be circular.
     from accordance.api.runs import _open_conn
 
     with _open_conn(settings) as conn:

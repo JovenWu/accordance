@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-/**
- * Shown for an unknown URL and for any resource the API reports as 404
- * (including reports another user owns — the API returns 404 for those).
- */
 export function NotFoundPage({
   title = "Page not found",
   message = "The report, run or view you were looking for doesn't exist or was removed.",

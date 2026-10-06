@@ -35,7 +35,6 @@ def test_expired_token_rejected():
     with db_conn() as conn:
         uid = _seed_user(conn)
         tok = create_session(conn, uid, ttl_days=1)
-        # Force-expire the row.
         conn.execute(
             "UPDATE sessions SET expires_at=%s WHERE user_id=%s",
             (int(time.time()) - 10, uid),

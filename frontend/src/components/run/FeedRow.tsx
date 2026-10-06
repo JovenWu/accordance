@@ -1,8 +1,6 @@
 import { DisclosureStatusChip, ScorePill } from "@/components/ui/chip";
 import type { FindingView } from "@/types";
 
-/** One judged finding in the live/failed stream — score pill, id + title,
- * element progress meta, status chip. */
 export function FeedRow({
   finding,
   title,

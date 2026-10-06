@@ -42,8 +42,6 @@ def test_system_prompt_contains_few_shot_examples():
     sp = prompts.SYSTEM_PROMPT
     assert "EXAMPLE 1" in sp
     assert "EXAMPLE 2" in sp
-    # Each example illustrates a different status so the LLM sees both
-    # the 'all-found → covered' and the 'some-found → partial' patterns.
     assert '"status":"covered"' in sp
     assert '"status":"partial"' in sp
 
@@ -52,6 +50,4 @@ def test_system_prompt_documents_applicable_and_na():
     sp = prompts.SYSTEM_PROMPT
     assert "applicable" in sp
     assert "na_reason" in sp
-    # The seven no-omission disclosures must be called out so the judge never
-    # marks them Not Applicable.
     assert "2-1" in sp and "3-2" in sp

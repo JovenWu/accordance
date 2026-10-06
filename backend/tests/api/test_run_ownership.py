@@ -4,8 +4,6 @@ from accordance.db import connection
 
 
 def _make_pdf_bytes() -> bytes:
-    # Minimal valid-enough PDF header; the run will fail in extraction (fake
-    # models), but create_run must still stamp created_by before kicking off.
     return b"%PDF-1.4\n%%EOF\n"
 
 
@@ -25,11 +23,6 @@ def test_create_run_stamps_created_by(auth_client):
         ).fetchone()
     assert row is not None
     assert row["un"] == "tester"
-
-
-# ---------------------------------------------------------------------------
-# Task 17: cross-user run access scoping
-# ---------------------------------------------------------------------------
 
 
 def _seed(rep_id: str, run_id: str) -> None:
@@ -72,7 +65,6 @@ def test_second_user_gets_404_on_delete_run(auth_client, second_user_client):
 
 
 def test_second_user_gets_404_on_stop_run(auth_client, second_user_client):
-    # assert_run_access fires before the in-progress status check → 404 regardless of status
     _seed("ro_rep_d", "ro_run_d")
     assert second_user_client.post("/api/runs/ro_run_d/stop").status_code == 404
 

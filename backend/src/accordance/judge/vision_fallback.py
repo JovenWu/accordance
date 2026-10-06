@@ -24,7 +24,7 @@ import functools
 import math
 from pathlib import Path
 
-import fitz  # PyMuPDF
+import fitz
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -42,7 +42,6 @@ from accordance.judge.prompts import (
 )
 from accordance.kb.schema import Disclosure
 
-# Lower rank = stronger evidence. Used to merge text + vision verdicts.
 _ELEMENT_RANK = {
     ElementStatus.found: 0,
     ElementStatus.partial: 1,
@@ -81,7 +80,6 @@ def merge_verdicts(text_out: JudgeOutput, vision_out: JudgeOutput) -> JudgeOutpu
     else:
         overall = DisclosureStatus.partial
 
-    # Did vision improve the overall verdict? If so, surface its evidence.
     text_overall_rank = _status_rank(text_out.status)
     merged_rank = _status_rank(overall)
     vision_helped = merged_rank < text_overall_rank
@@ -140,23 +138,10 @@ row). evidence_page is the page the image was rendered from.
 Return JSON matching the schema."""
 
 
-# Max pages to attach per call. More pages = more tokens + slower. 4 gives
-# vision enough coverage to match the text pass's multi-page retrieval
-# without ballooning per-call image tokens. Callers pass frequency-ranked
-# candidate pages, so this keeps the most-relevant ones.
 _MAX_PAGES = 4
 
-# Render zoom: 2.0 ≈ 144 DPI from a 72 DPI PDF. Enough resolution for
-# the LLM to read table cells without bloating image size.
 _RENDER_ZOOM = 2.0
 
-# Hard ceiling on the rendered pixmap area. A page's geometry (MediaBox) is
-# attacker-controlled — a valid PDF can declare pages up to the spec limit
-# (14400pt/side), which at zoom 2.0 rasterises to ~28800x28800 px, a single
-# multi-GB allocation that OOM-kills the worker (the file size cap doesn't help:
-# render cost is decoupled from bytes). Clamp the effective zoom so the output
-# stays under this many pixels regardless of page size. ~40 MP (≈6300px/side)
-# is far more than needed to read table cells on any legitimate page.
 _MAX_RENDER_PIXELS = 40_000_000
 
 
@@ -168,7 +153,6 @@ def _clamp_zoom(width_pt: float, height_pt: float, zoom: float) -> float:
     pixels = (width * zoom) * (height * zoom)
     if pixels <= _MAX_RENDER_PIXELS:
         return zoom
-    # Scale s such that pixels * s^2 == cap, i.e. s = sqrt(cap / pixels).
     return zoom * math.sqrt(_MAX_RENDER_PIXELS / pixels)
 
 
@@ -213,9 +197,6 @@ def _build_vision_messages(
         evidence_hints=render_hints(disclosure.good_evidence_hints),
     )
 
-    # LangChain multimodal: HumanMessage.content as a list of typed blocks.
-    # OpenAI-compatible providers (including Claude via 9Router) accept
-    # this format.
     content: list[dict] = [{"type": "text", "text": user_text}]
     for page_num, png in rendered:
         b64 = base64.b64encode(png).decode("ascii")

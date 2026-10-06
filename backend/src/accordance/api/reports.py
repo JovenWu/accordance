@@ -66,14 +66,6 @@ def _row_to_version_summary(conn, row, counts: dict[str, int] | None = None) -> 
 
 MAX_PAGE_SIZE = 100
 
-# Latest run per report + that report's run count, resolved in SQL rather than
-# with a query per report. The old loop was N+1 AND sorted in Python after
-# fetching everything, which is exactly what makes pagination impossible: you
-# cannot LIMIT before you have ordered, and you cannot order by the latest
-# run's uploaded_at while that value is only known row-by-row in Python.
-#
-# The JOIN to `latest` also drops reports with no runs at all (empty shells),
-# preserving the old loop's `if latest_row is None: continue`.
 _LIST_FROM = """
 FROM reports
 JOIN LATERAL (
@@ -148,15 +140,8 @@ def list_reports(
         total = conn.execute("SELECT COUNT(*) AS n " + where, where_params).fetchone()["n"]
 
         rows = conn.execute(
-            # NOT reports.id — latest.* carries its own `id` (the run id) and
-            # would shadow it in the row dict. latest.report_id is the same
-            # value by the join condition, so take the report id from there.
             "SELECT reports.name, reports.created_at, latest.* "
             + where
-            # reports.id breaks ties. Without a unique tiebreaker, two reports
-            # sharing an uploaded_at order nondeterministically between the
-            # page-1 and page-2 queries — the classic way a row appears twice,
-            # or never, while paging.
             + " ORDER BY latest.uploaded_at DESC, reports.id DESC"
             " LIMIT %s OFFSET %s",
             [*where_params, limit, offset],
@@ -232,10 +217,6 @@ def delete_report(
         ).fetchall()
         pdf_paths: set[str] = {r["pdf_path"] for r in rows}
 
-        # One DELETE cascades to runs → chunks/findings/judge_traces/assessor_corrections
-        # via ON DELETE CASCADE defined in the Postgres schema. No need to manually
-        # delete child tables or manage explicit FTS/vector rows (those don't exist
-        # in Postgres — FTS is a generated tsvector column, embedding is on chunks).
         with conn.transaction():
             conn.execute("DELETE FROM reports WHERE id=%s", (report_id,))
 
@@ -273,16 +254,8 @@ def rename_report(
         ).fetchone()
         if not rep:
             raise HTTPException(404, "Report not found")
-        # Pooled connections run in autocommit mode, so this UPDATE is durable
-        # immediately — no explicit commit needed. The rename test confirms
-        # persistence via a fresh-connection GET.
         conn.execute("UPDATE reports SET name=%s WHERE id=%s", (name, report_id))
         return {"id": report_id, "name": name}
-
-
-# ---------------------------------------------------------------------------
-# Compare helpers
-# ---------------------------------------------------------------------------
 
 
 def _row_to_finding_view(row) -> FindingView:

@@ -11,14 +11,11 @@ from accordance.judge.prompts import SYSTEM_PROMPT
 def test_prompt_forbids_citing_the_content_index():
     p = SYSTEM_PROMPT.lower()
     assert "content index" in p
-    # Described as a navigation table the judge must never cite.
     assert "navigation" in p
     assert "never" in p
 
 
 def test_example5_credits_the_figure_without_quoting_the_garbled_cell():
-    # EXAMPLE 5 (garbled water table) must still credit the figure (element
-    # found) but NOT store the number-soup cell as evidence_excerpt.
     assert "total_withdrawal_ml" in SYSTEM_PROMPT
     output_line = next(
         ln

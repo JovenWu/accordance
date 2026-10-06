@@ -36,8 +36,6 @@ const EL_TONE = {
   missing: "text-danger",
 } as const;
 
-/** Full evidence screen (design M2P6bQ): finding context on the left, the PDF
- * viewer on the right, scrolled to the cited page with the excerpt marked. */
 export function EvidenceScreen({
   requestKey,
   runId,
@@ -69,7 +67,6 @@ export function EvidenceScreen({
   const effectivePage = numPages ? Math.min(page, numPages) : page;
   const atStart = effectivePage <= 1;
   const atEnd = numPages !== null && effectivePage >= numPages;
-  // The excerpt only exists on its cited page — never highlight elsewhere.
   const onCitedPage = effectivePage === citedPage;
   const activeHighlight = onCitedPage ? finding.evidence_excerpt : null;
 
@@ -85,8 +82,6 @@ export function EvidenceScreen({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // The screen swaps in over the findings view, unmounting the opener — move
-  // focus into it once (the back button) so keyboard users aren't left on body.
   useEffect(() => {
     backRef.current?.focus();
   }, []);
@@ -153,7 +148,6 @@ export function EvidenceScreen({
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto lg:flex-row lg:items-stretch lg:overflow-hidden">
-        {/* Left: judge context */}
         <div className="flex w-full shrink-0 flex-col gap-3.5 lg:min-h-0 lg:w-[400px] lg:overflow-y-auto">
           <div className="flex flex-col gap-2 rounded-3xl bg-surface p-4">
             <span className="text-[11px] font-semibold text-muted-ink">
@@ -219,7 +213,6 @@ export function EvidenceScreen({
           </div>
         </div>
 
-        {/* Right: PDF viewer */}
         <div className="flex min-h-[420px] min-w-0 flex-1 flex-col gap-2.5 lg:min-h-0">
           <div className="flex flex-wrap items-center gap-2 bg-surface px-3 py-2">
             <FileText className="size-4 shrink-0 text-muted-ink" aria-hidden />

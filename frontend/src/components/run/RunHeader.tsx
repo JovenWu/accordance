@@ -44,13 +44,10 @@ export function RunHeader({
     presets: Preset[];
   } | null>(null);
   const [scopeOpen, setScopeOpen] = useState(false);
-  // Stable identity — a fresh Set each render would reset ScopeModal's draft.
   const emptySelection = useRef(new Set<string>()).current;
   const status = run.summary.status;
   const isLive = LIVE.includes(status);
 
-  // The backend skips disclosures that already have a non-error finding, so
-  // they show as locked here; errored findings stay selectable for re-judging.
   const judged = useMemo(
     () =>
       new Set(

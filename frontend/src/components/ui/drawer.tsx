@@ -4,7 +4,6 @@ import { X } from "lucide-react";
 import { useModalA11y } from "@/lib/useModalA11y";
 import { cn } from "@/lib/utils";
 
-/** Right-edge overlay drawer (corrections, traces) — 420–440px per design. */
 export function Drawer({
   open,
   title,

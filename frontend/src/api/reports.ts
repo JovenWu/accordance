@@ -5,8 +5,6 @@ import type {
 } from "../types";
 import { http, request, requestVoid } from "./http";
 
-/** One page of the history list. `q` is matched server-side against the report
- *  name and the latest version's PDF filename. */
 export const listReports = (
   opts: { q?: string; limit?: number; offset?: number } = {},
 ) => {

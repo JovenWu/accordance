@@ -15,7 +15,6 @@ export function Modal({
 }: {
   open: boolean;
   title: React.ReactNode;
-  /** Optional tinted tile shown left of the title (e.g. trash icon). */
   icon?: React.ReactNode;
   onClose: () => void;
   children: React.ReactNode;
@@ -69,7 +68,6 @@ export function Modal({
   );
 }
 
-/** Small tinted square holding a modal header icon. */
 export function ModalIconTile({
   tone = "accent",
   children,

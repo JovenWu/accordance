@@ -43,7 +43,7 @@ def test_write_and_dense_retrieve_is_run_scoped(store):
     vs.write("runB", [Chunk(page=1, text="water withdrawal other run")])
     hits = vs.retrieve_dense("runA", "water", k=5)
     assert len(hits) == 1
-    assert all(h["chunk_id"] for h in hits)  # only runA's chunk
+    assert all(h["chunk_id"] for h in hits)
 
 
 def test_bm25_or_semantics(store):
@@ -54,7 +54,7 @@ def test_bm25_or_semantics(store):
         [Chunk(page=1, text="greenhouse gas emissions"), Chunk(page=2, text="board governance")],
     )
     hits = vs.retrieve_bm25("runA", "emissions board", k=5)
-    assert len(hits) == 2  # OR: both chunks hit at least one token
+    assert len(hits) == 2
 
 
 def test_retrieve_by_tag_boundary(store):
@@ -74,8 +74,8 @@ def test_retrieve_by_tag_boundary(store):
     )
     hits = vs.retrieve_by_tag("runT", "2-1")
     pages = [h["page"] for h in hits]
-    assert 1 in pages  # GRI 2-1 matched
-    assert 10 not in pages  # GRI 2-10 must NOT match "2-1"
+    assert 1 in pages
+    assert 10 not in pages
 
 
 def test_retrieve_page_siblings_excludes_ids(store):
@@ -92,18 +92,13 @@ def test_retrieve_page_siblings_excludes_ids(store):
     )
     id_a, id_b, id_c = ids
 
-    # With one id excluded: that id is absent, others on those pages present.
     hits = vs.retrieve_page_siblings("runS", pages=[3, 4], exclude_ids=[id_a])
     hit_ids = [h["chunk_id"] for h in hits]
     assert id_a not in hit_ids
     assert id_b in hit_ids
     assert id_c in hit_ids
-    # Results are ordered by id (deterministic).
     assert hit_ids == sorted(hit_ids)
 
-    # With exclude_ids=[] (empty): all chunks on those pages are returned.
-    # This guards the "AND id NOT IN ()" SQL anti-pattern that would filter
-    # ALL rows when the IN-list is empty.
     hits_all = vs.retrieve_page_siblings("runS", pages=[3, 4], exclude_ids=[])
     hit_ids_all = [h["chunk_id"] for h in hits_all]
     assert id_a in hit_ids_all
@@ -120,9 +115,9 @@ def test_write_is_idempotent(store):
         Chunk(page=2, text="energy consumption metrics"),
     ]
     vs.write("runI", chunks)
-    vs.write("runI", chunks)  # Second write of the same run_id
+    vs.write("runI", chunks)
     row = conn.execute("SELECT COUNT(*) AS cnt FROM chunks WHERE run_id=%s", ("runI",)).fetchone()
-    assert row["cnt"] == len(chunks)  # Exactly one copy, not doubled
+    assert row["cnt"] == len(chunks)
 
 
 def test_retrieve_hybrid_merges_both(store):
@@ -141,9 +136,8 @@ def test_retrieve_hybrid_merges_both(store):
             Chunk(page=2, text="greenhouse emission reduction target"),
         ],
     )
-    # "water" drives the dense embedding; "emission" is a BM25 hit on chunk B.
     hits = vs.retrieve_hybrid("runHY", "water emission", k=2)
-    assert len(hits) == 2  # RRF fused dense (chunk A) + BM25 (chunk B)
+    assert len(hits) == 2
 
 
 def test_bm25_all_stopwords_returns_empty(store):

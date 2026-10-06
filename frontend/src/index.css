@@ -3,7 +3,6 @@
 @import "tw-animate-css";
 
 @theme {
-  /* Accordance design tokens — extracted from design/screens-tailwind.html */
   --color-page: #f5f5f5;
   --color-surface: #ffffff;
   --color-ink: #18181b;
@@ -15,7 +14,6 @@
   --color-accent: #ffc400;
   --color-accent-ink: #101114;
   --color-accent-soft: #ffc40026;
-  /* Deep gold for accent text/icons on light fills — pure #ffc400 fails contrast. */
   --color-accent-deep: #a16207;
   --color-ring: #f59e0b;
   --color-success: #17c964;
@@ -55,8 +53,6 @@
   }
 }
 
-/* Respect users who ask for less motion: neutralize transitions, looping
-   spinners/pulses, and any future animation while preserving final states. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -68,12 +64,6 @@
   }
 }
 
-/* Evidence highlight inside the react-pdf text layer. The text layer is its own
-   stacking context sitting over the page canvas, so the blend must be applied to
-   the WHOLE layer to reach the canvas — applied to the mark alone it only blends
-   within the (transparent) layer and falls back to an opaque, unreadable wash.
-   With the layer in `multiply`, a solid yellow mark behaves like a highlighter
-   pen: dark text stays dark/readable, the white background turns yellow. */
 .textLayer {
   mix-blend-mode: multiply;
 }

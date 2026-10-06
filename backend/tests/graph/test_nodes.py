@@ -78,12 +78,9 @@ def test_judge_one_node_writes_finding():
             ("r1",),
         ).fetchone()
         assert row["disclosure_id"] == "303-3"
-        # prompt_hash must be stamped — eval depends on this for diff attribution
         assert row["prompt_hash"]
         assert len(row["prompt_hash"]) == 16
 
-        # At least one trace row must exist (FakeJudgeLLM returns 'partial', so
-        # rejudge is not triggered — exactly one trace).
         traces = conn.execute(
             "SELECT attempt, rejudged, parse_path, prompt_hash, model, "
             "chunk_ids_json, distances_json FROM judge_traces WHERE run_id=%s",
@@ -96,7 +93,6 @@ def test_judge_one_node_writes_finding():
         assert t["parse_path"] in ("structured", "fallback")
         assert t["prompt_hash"] == row["prompt_hash"]
         assert t["model"]
-        # chunk_ids_json is a JSON array containing the retrieved chunk id(s)
         assert t["chunk_ids_json"].startswith("[")
 
 
@@ -125,7 +121,6 @@ def test_vision_fallback_fires_on_partial_verdict(monkeypatch):
                 needs_vision_fallback=False,
             )
 
-        # The node imports judge_with_vision from this module at call time.
         monkeypatch.setattr("accordance.judge.vision_fallback.judge_with_vision", fake_vision)
 
         out = judge_one_node(
@@ -136,13 +131,11 @@ def test_vision_fallback_fires_on_partial_verdict(monkeypatch):
             conn=conn,
         )
         assert out["findings"], "expected a finding"
-        # Vision must have been attempted despite needs_vision_fallback=false.
         assert calls == [("303-3", [1])]
         row = conn.execute(
             "SELECT status, vision_fallback_used FROM findings WHERE run_id='r1'"
         ).fetchone()
         assert row["vision_fallback_used"] is True or row["vision_fallback_used"] == 1
-        # Vision verdict ('covered') overrode the text verdict ('partial').
         assert row["status"] == "covered"
 
 
@@ -206,7 +199,6 @@ class _FakeNALLM(BaseChatModel):
 
 
 def test_judge_one_node_persists_score(monkeypatch):
-    # FakeJudgeLLM returns one element "found" -> f=1.0 -> score 5.
     monkeypatch.setenv("EMBEDDING_MODEL", "fake:fake")
     monkeypatch.setenv("VISION_FALLBACK_ENABLED", "false")
     with db.connection() as conn:
@@ -224,8 +216,8 @@ def test_judge_one_node_persists_score(monkeypatch):
         row = conn.execute(
             "SELECT status, score, na_reason FROM findings WHERE run_id='r1'"
         ).fetchone()
-        assert row["score"] == 5  # element found -> 5
-        assert row["status"] == "partial"  # legacy status UNCHANGED (LLM verdict)
+        assert row["score"] == 5
+        assert row["status"] == "partial"
         assert row["na_reason"] is None
 
 
@@ -237,7 +229,6 @@ def test_judge_one_node_persists_na_score_0(monkeypatch):
         store = VectorStore(conn, FakeEmbedder(dim=8))
         store.write("r1", [Chunk(page=1, text="irrelevant")])
 
-        # 303-3 is NOT in NO_OMISSION_DISCLOSURES, so applicable=false -> score 0.
         judge_one_node(
             state={"run_id": "r1"},
             disclosure=_DISCLOSURE,
@@ -275,7 +266,7 @@ def test_na_verdict_does_not_trigger_vision(monkeypatch):
             llm=_FakeNALLM(),
             conn=conn,
         )
-        assert calls == []  # vision never invoked
+        assert calls == []
         row = conn.execute(
             "SELECT score, na_reason, vision_fallback_used FROM findings WHERE run_id='r1'"
         ).fetchone()
@@ -310,9 +301,6 @@ def test_judge_error_path_emits_warning(monkeypatch, caplog):
         store = VectorStore(conn, FakeEmbedder(dim=8))
         store.write("r1", [Chunk(page=1, text="irrelevant")])
 
-        # caplog installs its handler on the root logger, but accordance sets
-        # propagate=False (to avoid double-emit under uvicorn). Attach caplog's
-        # handler directly to accordance so records are captured in tests.
         accordance_logger = logging.getLogger("accordance")
         accordance_logger.addHandler(caplog.handler)
         try:
@@ -327,12 +315,10 @@ def test_judge_error_path_emits_warning(monkeypatch, caplog):
         finally:
             accordance_logger.removeHandler(caplog.handler)
 
-        # Error finding must be persisted
         row = conn.execute("SELECT status, note FROM findings WHERE run_id='r1'").fetchone()
         assert row["status"] == "error"
         assert "Judge failed" in row["note"]
 
-        # Warning must be logged
         warning_records = [r for r in caplog.records if r.levelno >= logging.WARNING]
         assert warning_records, "expected at least one warning-level log from judge failure"
         combined = " ".join(r.getMessage() for r in warning_records)
@@ -383,7 +369,6 @@ def test_vision_uses_text_pass_pages_not_fresh_retrieve(monkeypatch):
 
         monkeypatch.setattr("accordance.judge.vision_fallback.judge_with_vision", fake_vision)
 
-        # Count how many retrieve calls happened during the text pass.
         retrieve_calls.clear()
         judge_one_node(
             state={"run_id": "r1"},
@@ -393,50 +378,22 @@ def test_vision_uses_text_pass_pages_not_fresh_retrieve(monkeypatch):
             conn=conn,
         )
 
-        # Vision must have fired (partial verdict → low-confidence escalation).
         assert vision_call_pages, "vision was never called"
 
-        # ALL retrieve calls must have happened during the text-pass judge, NOT
-        # after it in the vision branch. We count text-pass calls by looking at
-        # the number of queries the text judge issued; any EXTRA call would mean
-        # re-retrieval.  The text pass for _DISCLOSURE uses 1 retrieval_query
-        # ("water") + 1 element desc ("total") = 2 retrieve calls per pass
-        # (at most one rejudge adds another 1-2).  We allow up to 6 as a liberal
-        # upper bound for the text pass. A vision re-retrieval would add calls
-        # proportional to len(retrieval_queries) again — easy to detect.
-        # Simpler invariant: page 3 must appear in the pages passed to vision
-        # (proving pages came from trace.pages, not from a fresh retrieve that
-        # would return whatever the store returns).
         assert 3 in vision_call_pages[0], (
             f"Vision was not given page 3 from the text-pass traces; got {vision_call_pages[0]}. "
             "This means vision pages were NOT sourced from the text-pass traces."
         )
 
-        # No retrieve calls should happen AFTER judge_disclosure_with_rejudge returns
-        # (i.e. during the vision branch). We detect this by checking that
-        # retrieve was not called with any of the disclosure's retrieval_queries
-        # a second time after the text judge completed.
-        # Count retrieve calls that used the disclosure's query strings.
         query_call_counts: dict[str, int] = {}
         for _, q, _ in retrieve_calls:
             query_call_counts[q] = query_call_counts.get(q, 0) + 1
 
-        # With rejudge disabled (FakeJudgeLLM returns partial, not missing),
-        # "water" should appear at most once (the text pass). A second appearance
-        # would indicate re-retrieval in the vision branch.
         water_calls = query_call_counts.get("water", 0)
         assert water_calls <= 1, (
             f"retrieve('water') was called {water_calls} times — "
             "the vision branch appears to be issuing a redundant re-retrieval."
         )
-
-
-# ── failure attribution ──────────────────────────────────────────────
-# Retrieval (query embedding + vector search) and the judge LLM are two
-# different network dependencies, but both used to surface as
-# "Judge failed: ...". When the embedding account ran out of credits, every
-# disclosure reported a judge failure while the judge was never called —
-# sending debugging at the wrong subsystem entirely.
 
 
 class _ExplodingRetrieveStore:
@@ -467,9 +424,6 @@ def _finding(conn, run_id):
 
 
 def test_retrieval_failure_is_not_reported_as_a_judge_failure():
-    # Patch the module logger rather than using caplog: once create_app()
-    # configures logging, accordance loggers stop propagating to the root
-    # handler, so caplog silently sees nothing depending on test order.
     from unittest.mock import patch
 
     with db.connection() as conn:
@@ -523,7 +477,6 @@ def test_vision_fallback_failure_is_logged_not_swallowed(monkeypatch):
             judge_one_node({"run_id": "r-vis"}, _DISCLOSURE, store, FakeJudgeLLM(), conn)
         logged = " ".join(str(c) for c in log.warning.call_args_list).lower()
         assert "vision" in logged
-        # The text verdict must survive — vision is an optional upgrade.
         assert _finding(conn, "r-vis")["status"] != "error"
 
 

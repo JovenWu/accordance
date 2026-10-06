@@ -9,7 +9,6 @@ function Boom(): never {
 
 describe("ErrorBoundary", () => {
   it("renders a fallback instead of crashing when a child throws", () => {
-    // React re-throws to console.error during the caught render; silence it.
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     render(
       <ErrorBoundary>

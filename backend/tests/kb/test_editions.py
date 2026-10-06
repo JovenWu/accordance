@@ -1,4 +1,3 @@
-# backend/tests/kb/test_editions.py
 import datetime
 from pathlib import Path
 
@@ -55,7 +54,6 @@ def test_302_current_with_successor():
 
 def test_305_partial_supersession():
     assert KB["305-1"].superseded_by == "GRI 102: Climate Change 2025"
-    # 305-6 (ODS) and 305-7 (NOx/SOx) are retained in GRI 305 — no successor
     assert KB["305-6"].superseded_by is None
     assert KB["305-7"].superseded_by is None
     assert KB["305-6"].status == "current"

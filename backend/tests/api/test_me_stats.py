@@ -10,7 +10,6 @@ def _uid(conn, username="tester"):
 def test_me_stats_sums_completions_and_cost_for_current_user(auth_client):
     with connection() as conn:
         uid = _uid(conn)
-        # two completed runs for tester (run rows not required — denormalized)
         conn.execute(
             "INSERT INTO run_completions (run_id, user_id) VALUES ('a', %s) "
             "ON CONFLICT DO NOTHING",
@@ -21,9 +20,7 @@ def test_me_stats_sums_completions_and_cost_for_current_user(auth_client):
             "ON CONFLICT DO NOTHING",
             (uid,),
         )
-        # a deleted-report completion (run_id NULL) still counts
         conn.execute("INSERT INTO run_completions (run_id, user_id) VALUES (NULL, %s)", (uid,))
-        # cost rows: $1.25 + $0.05; plus a NULL-run (deleted report) row $0.10
         conn.execute(
             "INSERT INTO llm_usage (run_id, user_id, kind, model, cost_usd)"
             " VALUES ('a', %s, 'judge', 'm', 1.25)",
@@ -39,7 +36,6 @@ def test_me_stats_sums_completions_and_cost_for_current_user(auth_client):
             " VALUES (NULL, %s, 'judge', 'm', 0.10)",
             (uid,),
         )
-        # another user's data must NOT leak in
         conn.execute("INSERT INTO users (username, password_hash) VALUES ('other','h')")
         oid = _uid(conn, "other")
         conn.execute("INSERT INTO run_completions (run_id, user_id) VALUES ('z', %s)", (oid,))

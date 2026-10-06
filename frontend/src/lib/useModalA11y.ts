@@ -3,18 +3,6 @@ import { useEffect, useRef } from "react";
 const FOCUSABLE =
   'a[href], button:not(:disabled), input:not(:disabled), textarea:not(:disabled), select:not(:disabled), [tabindex]:not([tabindex="-1"])';
 
-/**
- * Wires up baseline modal accessibility for an open overlay:
- *  - Escape closes it
- *  - focus moves into the panel when it opens
- *  - Tab/Shift-Tab wraps around the panel's focusable elements (focus trap)
- *  - focus returns to the previously-focused element when it closes
- *
- * Returns a ref to attach to the focusable panel container (give it
- * `tabIndex={-1}` plus `role="dialog"`/`aria-modal`). `onClose` is read through
- * a ref so the effect captures the prior focus only once per open, not on every
- * render.
- */
 export function useModalA11y<T extends HTMLElement = HTMLElement>(
   open: boolean,
   onClose: () => void,
@@ -44,8 +32,6 @@ export function useModalA11y<T extends HTMLElement = HTMLElement>(
       const last = els[els.length - 1];
       const active = document.activeElement;
       const inside = active !== null && panel.contains(active);
-      // Wrap at the edges; `active === panel` covers Shift-Tab leaving the
-      // tabIndex=-1 container itself.
       const wrapTo = e.shiftKey
         ? !inside || active === first || active === panel
           ? last

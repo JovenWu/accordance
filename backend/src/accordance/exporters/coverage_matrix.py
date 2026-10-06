@@ -7,9 +7,6 @@ from accordance.kb.schema import Disclosure
 @dataclass(frozen=True)
 class MatrixColumn:
     label: str
-    # disclosure_id -> 0-5 grade (0 = Not Applicable), or None for a disclosure
-    # the judge errored on. A disclosure absent from this map was not judged in
-    # this column and renders as a blank cell.
     score_by_id: dict[str, int | None]
 
 
@@ -18,7 +15,6 @@ class CoverageRow:
     standard: str
     code: str
     indicator: str
-    # Per-column 0-5 grade. 0 = N/A; None = not judged / error -> blank cell.
     values: list[int | None]
 
 

@@ -26,7 +26,7 @@ router = APIRouter(prefix="/api/runs", tags=["traces"])
 class TraceAttempt(BaseModel):
     attempt: int
     rejudged: bool
-    parse_path: str  # 'structured' | 'fallback' | 'error'
+    parse_path: str
     error: str | None
     latency_ms: int | None
     prompt_hash: str

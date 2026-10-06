@@ -42,7 +42,6 @@ def test_render_markdown_contains_expected_sections():
     assert "## Headline" in md
     assert "## Disclosure Confusion Matrix" in md
     assert "Per-Class Metrics" in md
-    # one mismatch (2-1)
     assert "## Mismatches (1)" in md
     assert "`2-1`: expected `covered`, got `partial`" in md
 
@@ -60,7 +59,7 @@ def test_console_summary_is_short_and_includes_run():
     s = render_console_summary(report)
     assert "Eval: demo" in s
     assert "run r1" in s
-    assert s.count("\n") < 10  # roughly 1 screen
+    assert s.count("\n") < 10
 
 
 def test_render_includes_retrieval_recall():

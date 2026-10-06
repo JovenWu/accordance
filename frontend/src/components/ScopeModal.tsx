@@ -18,7 +18,6 @@ import {
 import type { KbStandard, Preset } from "@/types";
 
 function groupLabel(standard: string): string {
-  // "GRI 2: General Disclosures 2021" → "GRI 2 · General Disclosures 2021"
   return standard.replace(/:\s*/, " · ");
 }
 
@@ -36,7 +35,6 @@ export function ScopeModal({
   groups: KbStandard[];
   presets: Preset[];
   selected: Set<string>;
-  /** Already-judged ids (judge-more) — shown checked + disabled. */
   locked?: Set<string>;
   onApply: (next: Set<string>) => void;
 }) {
@@ -47,7 +45,6 @@ export function ScopeModal({
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const lockedSet = useMemo(() => locked ?? new Set<string>(), [locked]);
 
-  // Fresh draft each time the modal opens.
   useEffect(() => {
     if (open) {
       setDraft(new Set(selected));
@@ -77,8 +74,6 @@ export function ScopeModal({
 
   if (!open) return null;
 
-  // A pill is "active" when the draft exactly matches its id set — so manual
-  // edits deselect the pill instead of lying about what it represents.
   const sameSet = (ids: string[]) =>
     ids.length === draft.size && ids.every((id) => draft.has(id));
   const presetPills = [

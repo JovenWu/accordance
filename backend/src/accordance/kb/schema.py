@@ -18,8 +18,7 @@ class Disclosure(BaseModel):
     retrieval_queries: list[str] = Field(min_length=1)
     good_evidence_hints: list[str] = Field(default_factory=list)
     suggested_fix_template: str
-    # Edition currency metadata (optional; default = current/effective).
     status: Literal["current", "superseded", "upcoming"] = "current"
-    effective_date: str | None = None       # ISO date it becomes mandatory
-    effective_until: str | None = None       # last valid publication date
-    superseded_by: str | None = None         # successor standard label
+    effective_date: str | None = None
+    effective_until: str | None = None
+    superseded_by: str | None = None

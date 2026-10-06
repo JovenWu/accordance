@@ -38,7 +38,6 @@ describe("ExportDialog", () => {
 
     expect(await screen.findByText("Acme 2024")).toBeInTheDocument();
     expect(screen.getByText("Globex")).toBeInTheDocument();
-    // One picker per report, always showing the latest version.
     expect(screen.getAllByRole("combobox")).toHaveLength(2);
     expect(screen.getByRole("combobox", { name: /version for acme/i })).toHaveValue("r2");
     expect(screen.getByRole("combobox", { name: /version for globex/i })).toHaveValue("r3");
@@ -69,7 +68,6 @@ describe("ExportDialog", () => {
     await screen.findByText("Acme 2024");
 
     await userEvent.click(screen.getByRole("checkbox", { name: /acme/i }));
-    // default is latest (r2); switch the dropdown to v1 (r1)
     await userEvent.selectOptions(
       screen.getByRole("combobox", { name: /version for acme/i }),
       "r1",

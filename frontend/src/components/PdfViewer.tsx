@@ -13,18 +13,13 @@ import {
   type PdfTextItem,
 } from "@/lib/evidenceMatch";
 
-// Vite-friendly worker setup: instantiate the pdfjs worker as an ES module worker via Vite ?worker.
 if (!pdfjs.GlobalWorkerOptions.workerPort) {
   pdfjs.GlobalWorkerOptions.workerPort = new PdfjsWorker();
 }
 
-// Render the canvas at the device's pixel density so text stays crisp (capped
-// so 4x displays don't allocate enormous canvases). This is the fix for the
-// previously blurry page, which rendered at a fixed CSS width with no DPR.
 const DPR =
   typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 3) : 1;
 
-// Horizontal breathing room so a fit-width page never triggers a scrollbar.
 const GUTTER = 24;
 
 export default function PdfViewer({
@@ -50,12 +45,8 @@ export default function PdfViewer({
   const [fitWidth, setFitWidth] = useState(640);
   const stageRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
-  // Scroll the highlight into view only the first time a given page/highlight
-  // renders — NOT on every zoom re-render (which would yank the page around).
   const scrolledKeyRef = useRef<string | null>(null);
 
-  // Track the available width so the page fills the dock (and rescales when the
-  // dock is resized or the window changes).
   useEffect(() => {
     const el = measureRef.current;
     if (!el) return;
@@ -107,9 +98,6 @@ export default function PdfViewer({
 
   return (
     <div ref={measureRef} className="w-full">
-      {/* w-max + mx-auto: centers the page when it fits, but lets the left
-          edge stay reachable (scrollable) once zoom makes it wider than the
-          dock — `flex justify-center` would clip the overflow out of reach. */}
       <div ref={stageRef} className="mx-auto w-max px-3 py-0">
         <Document
           key={retryKey}

@@ -17,7 +17,7 @@ def assert_report_access(conn, report_id: str, user: dict) -> None:
     if row is None:
         raise HTTPException(404, "Report not found")
     if not user.get("is_admin") and row["created_by"] != user["id"]:
-        raise HTTPException(404, "Report not found")  # hide existence
+        raise HTTPException(404, "Report not found")
 
 
 def assert_run_access(conn, run_id: str, user: dict) -> str:

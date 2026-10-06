@@ -12,8 +12,6 @@ class _ScriptedLLM(BaseChatModel):
 
     def __init__(self, responses: list[str]):
         super().__init__()
-        # pydantic-v2 BaseModel doesn't expose __dict__ as expected for
-        # mutable attrs; stash via object.__setattr__.
         object.__setattr__(self, "_responses", list(responses))
         object.__setattr__(self, "_idx", 0)
 
@@ -72,7 +70,7 @@ _PARTIAL_JSON = (
 
 
 def test_no_rejudge_when_first_pass_covered():
-    llm = _ScriptedLLM([_COVERED_JSON, _MISSING_JSON])  # 2nd should never be used
+    llm = _ScriptedLLM([_COVERED_JSON, _MISSING_JSON])
     out, traces = judge_disclosure_with_rejudge(_disclosure(), _retriever, llm)
     assert out.status == "covered"
     assert len(traces) == 1
@@ -94,7 +92,6 @@ def test_rejudge_overrides_when_second_pass_finds_evidence():
     assert len(traces) == 2
     assert traces[0].rejudged is False
     assert traces[1].rejudged is True
-    # Second pass must use element descriptions as queries
     assert traces[1].queries_used == [
         "Scope 1 emissions in tCO2e",
         "List of gases included",
@@ -124,7 +121,4 @@ def test_trace_carries_prompt_hash_and_model_id():
     _, traces = judge_disclosure_with_rejudge(_disclosure(), _retriever, llm)
     assert traces[0].prompt_hash
     assert len(traces[0].prompt_hash) == 16
-    # _model_id_of looks at model_name / model / model_id attrs and falls back
-    # to the class name; our fake doesn't set any of those, so we land on the
-    # class name. Real LLMs (ChatOpenAI/ChatAnthropic) set `model_name`.
     assert traces[0].model_id == "_ScriptedLLM"

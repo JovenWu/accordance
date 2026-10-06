@@ -57,11 +57,9 @@ def test_stream_second_user_gets_404(auth_client, second_user_client):
 
 def test_export_options_only_shows_own_reports(auth_client, second_user_client):
     _seed_owned("misc_rep_opt", "misc_run_opt")
-    # second_user cannot see tester's report
     resp = second_user_client.get("/api/reports/export/options")
     assert resp.status_code == 200
     assert all(d["report_id"] != "misc_rep_opt" for d in resp.json())
-    # tester can see it
     resp = auth_client.get("/api/reports/export/options")
     assert any(d["report_id"] == "misc_rep_opt" for d in resp.json())
 
@@ -75,9 +73,7 @@ def test_export_selected_second_user_gets_404(auth_client, second_user_client):
 
 def test_export_selected_mixed_batch_gets_404(auth_client, second_user_client):
     """Batch export aborts with 404 when a user mixes their own run with another user's run."""
-    # Seed a completed run owned by 'tester'
     _seed_owned("misc_rep_mix_t", "misc_run_mix_t")
-    # Seed a completed run owned by 'other' (the second_user_client user)
     with connection() as conn:
         uid = conn.execute("SELECT id FROM users WHERE username='other'").fetchone()["id"]
         conn.execute(
@@ -90,6 +86,5 @@ def test_export_selected_mixed_batch_gets_404(auth_client, second_user_client):
             "(%s, %s, 1, 'initial', 'g.pdf', 'sha2', 'p2', 'completed', %s)",
             ("misc_run_mix_o", "misc_rep_mix_o", uid),
         )
-    # 'other' requests their own run plus tester's run → assert_run_access rejects tester's run
     resp = second_user_client.get("/api/reports/export/coverage?runs=misc_run_mix_o,misc_run_mix_t")
     assert resp.status_code == 404

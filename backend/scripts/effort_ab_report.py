@@ -67,7 +67,6 @@ def main() -> int:
     if failures:
         print(f"\nfailed calls ({len(failures)}): {failures[:8]}")
 
-    # Pairwise agreement — the label-free signal.
     print("\n=== verdict agreement ===")
     for i, a in enumerate(efforts):
         for b in efforts[i + 1 :]:
@@ -80,7 +79,6 @@ def main() -> int:
             for d in diff:
                 print(f"    {d:<7} {a}={ok[a][d]['status']:<8} {b}={ok[b][d]['status']}")
 
-            # Element-level: finer signal than the rolled-up status.
             e_tot = e_same = 0
             for d in both:
                 ea, eb = ok[a][d].get("elements", {}), ok[b][d].get("elements", {})

@@ -1,4 +1,3 @@
-# backend/tests/kb/test_gri11_complete.py
 from pathlib import Path
 
 from accordance.kb.loader import load_kb
@@ -14,7 +13,7 @@ GRI11_SECTOR_IDS = {
     "11.17.3", "11.17.4",
     "11.20.5", "11.20.6",
     "11.21.8",
-}  # 13 GRI 11 additional sector disclosure IDs
+}
 
 
 def test_all_gri11_sector_disclosures_present():

@@ -7,7 +7,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
 
-import fitz  # PyMuPDF — already a dependency (vision_fallback)
+import fitz
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import (
     AcceleratorOptions,
@@ -46,7 +46,7 @@ def _run_with_timeout(fn: Callable[[], _T], timeout: float) -> _T:
     def runner() -> None:
         try:
             box["value"] = fn()
-        except BaseException as e:  # re-raised in the caller thread
+        except BaseException as e:
             box["error"] = e
         finally:
             done.set()
@@ -145,12 +145,8 @@ def _convert_one(
         except Exception:
             logger.exception("export_to_markdown failed for %s", pdf_path)
             full_md = ""
-        # Trust the PDF's actual page count over Docling's internal model
-        # in case the doc.pages attribute is missing or stale.
         return _markdown_to_pages(full_md, page_count, page_offset)
     finally:
-        # Force-drop references so ONNX Runtime / Docling can release their
-        # native allocations before the next batch.
         try:
             del result, doc, converter  # type: ignore[possibly-unbound]
         except Exception:
@@ -184,12 +180,10 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
     if total_pages == 0:
         return ExtractedReport(source_sha256=_sha256_of_file(pdf_path), pages=[])
 
-    # Single-pass fast path: short PDF or batching disabled.
     if batch_size <= 0 or total_pages <= batch_size:
         pages = _convert_one(pdf_path, page_offset=0, page_count=total_pages, settings=settings)
         return ExtractedReport(source_sha256=_sha256_of_file(pdf_path), pages=pages)
 
-    # Batched path: split via PyMuPDF, convert each chunk, concatenate.
     logger.info(
         "extract_pdf: %d pages > batch_size %d; splitting into %d batches",
         total_pages, batch_size,
@@ -206,9 +200,6 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
                 batch_start + 1, batch_end, batch_count,
             )
 
-            # NamedTemporaryFile with delete=False so we can close the
-            # file handle (required on Windows) before fitz reopens it
-            # for writing, then unlink it ourselves at the end.
             with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
                 tmp_path = Path(tmp.name)
             try:
@@ -217,8 +208,6 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
                     sub.insert_pdf(src, from_page=batch_start, to_page=batch_end - 1)
                     sub.save(str(tmp_path))
                 finally:
-                    # Close the sub-document even if insert_pdf/save raised, so a
-                    # mid-split failure doesn't leak the native fitz handle.
                     sub.close()
 
                 batch_pages = _convert_one(

@@ -19,8 +19,6 @@ import { ProfilePage } from "@/pages/ProfilePage";
 import { ReportPage } from "@/pages/ReportPage";
 import { RunPage } from "@/pages/RunPage";
 
-/** /reports/:reportId/versions/:runId was the pre-redesign run URL — keep old
- *  links/bookmarks working by forwarding to the canonical /runs/:id. */
 function LegacyRunRedirect() {
   const { runId } = useParams<{ runId: string }>();
   return <Navigate to={`/runs/${runId}`} replace />;
@@ -33,8 +31,6 @@ export default function App() {
       <ToastProvider>
         <BrowserRouter>
           <Routes>
-            {/* AuthProvider renders the login screen when signed out, so a
-                /login URL can only be reached while authenticated. */}
             <Route path="/login" element={<Navigate to="/" replace />} />
             <Route element={<AppShell />}>
               <Route path="/" element={<HomePage />} />
@@ -64,8 +60,6 @@ export default function App() {
                 }
               />
               <Route path="/profile" element={<ProfilePage />} />
-              {/* Catch-all: an unknown URL previously rendered a blank page,
-                  which is indistinguishable from the app failing to load. */}
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>

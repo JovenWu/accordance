@@ -27,10 +27,6 @@ export function NewAnalysisCard() {
     getKb()
       .then((g) => {
         setGroups(g);
-        // Default: only current-edition disclosures. Superseded (e.g. GRI 304)
-        // and not-yet-effective (e.g. GRI 102/103, effective 2027) editions are
-        // left unchecked so a report isn't graded against withdrawn or future
-        // standards by default; users can still opt in via Choose scope.
         setSelected(
           new Set(
             g

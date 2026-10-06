@@ -82,6 +82,5 @@ def test_with_rejudge_first_pass_uses_per_element_expansion():
     _, traces = judge_disclosure_with_rejudge(
         _disclosure(), _retriever, _CannedLLM(), per_element=True
     )
-    # First pass: covered (no re-judge)
     assert len(traces) == 1
     assert "Legal name of the organization" in traces[0].queries_used

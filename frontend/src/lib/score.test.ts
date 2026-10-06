@@ -58,7 +58,6 @@ describe("completenessPct", () => {
     expect(completenessPct([f(5), f(3)])).toBe(80);
   });
   it("rounds to one decimal place", () => {
-    // 5,4,4 -> (1 + 0.8 + 0.8)/3 = 0.86666… -> 86.7%
     expect(completenessPct([f(5), f(4), f(4)])).toBe(86.7);
   });
   it("returns null when there are no applicable disclosures", () => {
@@ -101,8 +100,8 @@ describe("effectiveFindings", () => {
       "2-1": { ...corr, disclosure_id: "2-1", corrected_score: 4 },
     };
     const out = effectiveFindings(findings, corrections);
-    expect(out.find((f) => f.disclosure_id === "2-1")!.score).toBe(4); // corrected
-    expect(out.find((f) => f.disclosure_id === "2-2")!.score).toBe(5); // unchanged
+    expect(out.find((f) => f.disclosure_id === "2-1")!.score).toBe(4);
+    expect(out.find((f) => f.disclosure_id === "2-2")!.score).toBe(5);
   });
 
   it("applies a correction to 0 so the aggregate treats it as N/A", () => {
@@ -110,7 +109,7 @@ describe("effectiveFindings", () => {
     const corrections = { "2-1": { ...corr, disclosure_id: "2-1", corrected_score: 0 } };
     const out = effectiveFindings(findings, corrections);
     expect(out[0].score).toBe(0);
-    expect(completenessPct(out)).toBe(null); // only disclosure is now N/A
+    expect(completenessPct(out)).toBe(null);
   });
 
   it("returns findings unchanged with no corrections", () => {

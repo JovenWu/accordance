@@ -69,7 +69,7 @@ def test_rejects_invalid_element_status(tmp_path):
             {
                 "id": "2-1",
                 "expected_status": "covered",
-                "elements": [{"id": "x", "expected_status": "covered"}],  # element != disclosure enum
+                "elements": [{"id": "x", "expected_status": "covered"}],
             }
         ]
     )

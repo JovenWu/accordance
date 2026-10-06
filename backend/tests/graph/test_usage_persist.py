@@ -52,22 +52,16 @@ def test_persist_usage_writes_rows_with_owner_and_cost(monkeypatch):
         assert [r["kind"] for r in rows] == ["embedding", "judge"]
         assert all(r["user_id"] == uid for r in rows)
         judge = next(r for r in rows if r["kind"] == "judge")
-        assert round(judge["cost_usd"], 6) == 1.25  # 0.25 + 1.00
+        assert round(judge["cost_usd"], 6) == 1.25
 
 
 def test_persist_usage_empty_records_is_noop():
     with db.connection() as conn:
-        _persist_usage(conn, "missing-run", [])  # must not raise
+        _persist_usage(conn, "missing-run", [])
         assert conn.execute("SELECT COUNT(*) AS n FROM llm_usage").fetchone()["n"] == 0
 
 
-# ── cached input / cache writes ──────────────────────────────────────
-
-
 def test_usage_records_capture_cache_read_and_creation():
-    # LangChain nests the cache split under input_token_details, and
-    # `input_tokens` is the TOTAL (cached included). Reading only the two
-    # top-level fields billed every cache hit at the full input rate.
     md = {
         "gpt-5-mini": {
             "input_tokens": 10_000,
@@ -89,13 +83,10 @@ def test_usage_records_default_cache_fields_to_zero_when_absent():
 
 
 def test_judge_usage_fills_output_when_provider_reports_input_only():
-    # The ABMM prod run: the proxy returned input tokens but a zero output
-    # count. The old `if not judge_records` guard saw a non-empty list and
-    # skipped the estimate, silently persisting output_tokens=0.
     md = {"gpt-5-mini": {"input_tokens": 11_000, "output_tokens": 0}}
     (rec,) = _judge_usage_with_fallback(md, [_trace(est_in=10_800, est_out=430)])
-    assert rec.input_tokens == 11_000  # provider's real count wins
-    assert rec.output_tokens == 430  # estimate fills the missing side
+    assert rec.input_tokens == 11_000
+    assert rec.output_tokens == 430
 
 
 def test_judge_usage_prefers_provider_counts_over_estimates():
@@ -135,7 +126,6 @@ def test_persist_usage_prices_cached_tokens_at_the_cached_rate(monkeypatch):
             "SELECT input_tokens, cached_input_tokens, cost_usd "
             "FROM llm_usage WHERE run_id='run2'"
         ).fetchone()
-        # 200k uncached @ $0.25/M = 0.05 ; 800k cached @ $0.025/M = 0.02
         assert row["input_tokens"] == 1_000_000
         assert row["cached_input_tokens"] == 800_000
         assert round(row["cost_usd"], 6) == 0.07
@@ -195,8 +185,6 @@ def test_persist_usage_applies_the_service_tier_multiplier(monkeypatch):
             "run3",
             [
                 UsageRecord("judge", "m", 1_000_000, 0, service_tier="flex"),
-                # Embeddings are not tiered — they must stay at full price even
-                # when the judge runs on flex.
                 UsageRecord("embedding", "m", 1_000_000, 0),
             ],
         )
@@ -206,5 +194,5 @@ def test_persist_usage_applies_the_service_tier_multiplier(monkeypatch):
                 "SELECT kind, cost_usd FROM llm_usage WHERE run_id='run3'"
             ).fetchall()
         }
-        assert round(rows["judge"], 6) == 0.10  # 0.20 * 0.5
-        assert round(rows["embedding"], 6) == 0.20  # untouched
+        assert round(rows["judge"], 6) == 0.10
+        assert round(rows["embedding"], 6) == 0.20

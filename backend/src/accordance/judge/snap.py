@@ -24,32 +24,21 @@ from collections.abc import Callable
 from difflib import SequenceMatcher
 from pathlib import Path
 
-# Normalization mirrors the frontend matcher (evidenceMatch.ts) so a span we
-# store here is found the same way the text layer is matched in the browser.
 _DROP = set('"\'`´“”„‟‘’‚‛′″­​‌‍⁠﻿')
 _DASH = set("‐‑‒–—―−⁃")
 _LIG = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"}
 _WS = re.compile(r"\s")
 
-# Confidence gates for a fuzzy snap (an exact substring always snaps).
-_MIN_EXCERPT_CHARS = 12   # too-short excerpts aren't worth locating
-_MIN_BLOCK = 4            # ignore trivially small matching blocks
-_LONG_BLOCK = 50          # a verbatim run this long is trustworthy on its own
-_MIN_COVERAGE = 0.6       # …or most of the excerpt must be present
+_MIN_EXCERPT_CHARS = 12
+_MIN_BLOCK = 4
+_LONG_BLOCK = 50
+_MIN_COVERAGE = 0.6
 
-# Narrative sentence-expansion: widen a matched span to the enclosing sentence
-# so the stored quote reads as a complete supporting sentence instead of a
-# mid-sentence fragment. Only for prose (>= _MIN_SENTENCE_WORDS alphabetic
-# words); numeric/garbled table cells are left verbatim. Bounded so a missing
-# terminator can't run the highlight away.
 _MIN_SENTENCE_WORDS = 4
 _MAX_SENTENCE_CHARS = 400
 _SENT_END = ".!?"
 _WORD_RE = re.compile(r"[^\W\d_]{2,}")
 _NUM_RE = re.compile(r"\d+")
-# Expansion that swallows this many MORE number tokens than the matched span
-# is crossing table cells (a flattened multi-metric row), not extending a
-# sentence — abandon it.
 _MAX_EXTRA_NUMBERS = 2
 
 
@@ -70,11 +59,11 @@ def _normalize_with_map(raw: str) -> tuple[str, list[int]]:
     in `raw` that normalized char k came from."""
     out: list[str] = []
     idx: list[int] = []
-    prev_space = True  # trims leading whitespace
+    prev_space = True
     n = len(raw)
     for i, ch in enumerate(raw):
         if ch == "," and 0 < i < n - 1 and raw[i - 1].isdigit() and raw[i + 1].isdigit():
-            continue  # thousands separator inside a number
+            continue
         mapped = _map_char(ch)
         if mapped == "":
             continue
@@ -150,7 +139,7 @@ def _expand_to_sentence(text: str, start: int, end: int) -> tuple[int, int]:
     while s > lo and not _is_boundary(text, s - 1) and text[s - 1] != "\n":
         s -= 1
     if s != 0 and not _is_boundary(text, s - 1) and text[s - 1] != "\n":
-        s = start  # no boundary within the window — don't cut arbitrarily
+        s = start
 
     hi = min(len(text), end + _MAX_SENTENCE_CHARS)
     e = end
@@ -162,10 +151,8 @@ def _expand_to_sentence(text: str, start: int, end: int) -> tuple[int, int]:
         if _is_boundary(text, e - 1):
             found_end = True
     if not found_end:
-        e = end  # no terminator within the window — keep the original end
+        e = end
 
-    # Crossing several numeric cells means this is a flattened table row, not a
-    # sentence — keep the verbatim matched span instead of a number-soup region.
     before = len(_NUM_RE.findall(text[start:end]))
     after = len(_NUM_RE.findall(text[s:e]))
     if after - before >= _MAX_EXTRA_NUMBERS:
@@ -184,12 +171,10 @@ def best_verbatim_span(excerpt: str, page_text: str) -> str | None:
     if not norm_pg:
         return None
 
-    # Best case: the excerpt is already verbatim on the page.
     pos = norm_pg.find(norm_ex)
     if pos >= 0:
         off = _raw_offsets(idx, pos, pos + len(norm_ex))
     else:
-        # Otherwise align the excerpt against the page and take the matched region.
         sm = SequenceMatcher(None, norm_pg, norm_ex, autojunk=False)
         blocks = [b for b in sm.get_matching_blocks() if b.size >= _MIN_BLOCK]
         if not blocks:
@@ -198,12 +183,10 @@ def best_verbatim_span(excerpt: str, page_text: str) -> str | None:
         coverage = matched / len(norm_ex)
         longest = max(b.size for b in blocks)
         if coverage < _MIN_COVERAGE and longest < _LONG_BLOCK:
-            return None  # only coincidental overlap — don't snap to the wrong text
+            return None
 
         start = blocks[0].a
         end = blocks[-1].a + blocks[-1].size
-        # Scattered matches spanning far more page than the excerpt -> keep the
-        # single longest verbatim block instead of a sprawling region.
         if end - start > len(norm_ex) * 2:
             b = max(blocks, key=lambda x: x.size)
             start, end = b.a, b.a + b.size
@@ -264,12 +247,12 @@ class _PageTextProvider:
         if page in self._cache:
             return self._cache[page]
         if self._doc is None and not self._failed:
-            import fitz  # lazy: only pay the import when we actually snap
+            import fitz
 
             try:
                 self._doc = fitz.open(str(self._path))
             except Exception:
-                self._failed = True  # missing/corrupt PDF -> just no snap
+                self._failed = True
         text = ""
         if self._doc is not None and 1 <= page <= self._doc.page_count:
             try:

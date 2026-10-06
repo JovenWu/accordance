@@ -17,7 +17,6 @@ describe("NotFoundPage", () => {
   });
 
   it("always offers a way back", () => {
-    // The whole point is not stranding the user on a dead URL.
     renderPage(<NotFoundPage />);
     expect(
       screen.getByRole("link", { name: /back to analyses/i }),
@@ -28,8 +27,6 @@ describe("NotFoundPage", () => {
   });
 
   it("takes resource-specific copy", () => {
-    // "This report was deleted" and "this URL is wrong" are the same status
-    // code but different situations for the reader.
     renderPage(
       <NotFoundPage
         title="Report not found"

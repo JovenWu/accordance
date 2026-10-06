@@ -1,4 +1,3 @@
-// frontend/src/lib/userTable.ts
 import type { AdminUser } from "@/types";
 
 export type SortKey = "username" | "pdf_count" | "cost_usd" | "is_active";

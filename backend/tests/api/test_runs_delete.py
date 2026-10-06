@@ -50,7 +50,6 @@ def test_delete_run_cleans_chunks(tmp_path, monkeypatch):
             "run_id"
         ]
 
-    # Insert a chunk manually for this run
     with connection() as conn:
         cid = conn.execute(
             "INSERT INTO chunks (run_id, page, text) VALUES (%s, %s, %s) RETURNING id",
@@ -60,7 +59,6 @@ def test_delete_run_cleans_chunks(tmp_path, monkeypatch):
     r = client.delete(f"/api/runs/{rid}")
     assert r.status_code == 204
 
-    # Verify cascade cleaned up the chunk
     with connection() as conn:
         n = conn.execute("SELECT COUNT(*) AS n FROM chunks WHERE id=%s", (cid,)).fetchone()["n"]
     assert n == 0
@@ -88,13 +86,11 @@ def test_delete_version_keeps_shared_pdf_when_referenced(tmp_path, monkeypatch):
             (second_id, src["report_id"], rid, rid, src["pdf_path"]),
         )
 
-    # Delete v1 — file should stay on disk because v2 still references it.
     r = client.delete(f"/api/runs/{rid}")
     assert r.status_code == 204
     pdf_path = Path(src["pdf_path"])
     assert pdf_path.exists()
 
-    # Delete v2 — now the file should be unlinked.
     r = client.delete(f"/api/runs/{second_id}")
     assert r.status_code == 204
     assert not pdf_path.exists()

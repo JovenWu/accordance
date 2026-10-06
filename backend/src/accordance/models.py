@@ -24,11 +24,7 @@ class RunSummary(BaseModel):
     status: RunStatus
     error: str | None = None
     counts: dict[str, int] = {}
-    # How many disclosures this run judges (len of its selection). None = all.
     selected_total: int | None = None
-    # Total LLM+embedding spend booked against this run. Includes tokens from
-    # inline retries, which re-judge on the SAME run, so the figure stays
-    # honest after a repair. 0.0 (not None) when nothing was spent.
     cost_usd: float = 0.0
 
 
@@ -123,7 +119,6 @@ class ExportVersionOption(BaseModel):
 class ReportExportOption(BaseModel):
     report_id: str
     name: str
-    # Completed versions only, newest first.
     versions: list[ExportVersionOption]
 
 
@@ -175,8 +170,6 @@ class AdminUserDetail(AdminUserView):
     last_active: datetime | None = None
     cost_by_kind: list[CostByKind] = []
     recent_runs: list[AdminUserRun] = []
-    # Newest first, and only days that actually saw activity — a user who runs
-    # a report twice a month should not scroll past 28 empty rows to find them.
     daily_usage: list[DailyUsage] = []
 
 

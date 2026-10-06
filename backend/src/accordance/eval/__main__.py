@@ -12,8 +12,6 @@ from accordance.eval.runner import evaluate
 
 
 def _default_output_path(report_id: str) -> Path:
-    # Repo root is two dirs up from this file (backend/src/accordance/eval/__main__.py
-    # → repo/backend/src/accordance/eval → repo/backend → repo). We're four parents up.
     repo_root = Path(__file__).resolve().parents[4]
     reports_dir = repo_root / "eval" / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
@@ -22,9 +20,6 @@ def _default_output_path(report_id: str) -> Path:
 
 
 def main(argv: list[str] | None = None) -> int:
-    # Windows consoles default to cp1252; the console summary contains unicode
-    # (e.g. "→"). Force utf-8 so printing it doesn't crash after the report is
-    # already written.
     try:
         sys.stdout.reconfigure(encoding="utf-8")
     except (AttributeError, ValueError):

@@ -73,9 +73,9 @@ def test_render_escapes_special_chars_and_strips_control_bytes():
         )
     ]
     text = render_ground_truth(_row(), findings, blank_status=False)
-    gt = GroundTruth.model_validate(yaml.safe_load(text))  # must not raise
+    gt = GroundTruth.model_validate(yaml.safe_load(text))
     notes = gt.by_id()["2-1"].notes
     assert notes is not None
-    assert "\x00" not in notes              # control byte stripped
-    assert "\t" not in notes                # whitespace collapsed
-    assert '"hi"' in notes                  # quotes survive escape->parse roundtrip
+    assert "\x00" not in notes
+    assert "\t" not in notes
+    assert '"hi"' in notes

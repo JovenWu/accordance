@@ -47,9 +47,7 @@ export interface RunSummary {
   status: RunStatus;
   error: string | null;
   counts: Partial<Record<DisclosureStatus, number>>;
-  // How many disclosures this run judges. null = all.
   selected_total: number | null;
-  // Total LLM+embedding spend for this run, including inline retries.
   cost_usd: number;
 }
 
@@ -91,7 +89,6 @@ export interface ReportSummary {
 
 export interface ReportPage {
   items: ReportSummary[];
-  /** Reports matching the current filter — NOT just the ones in `items`. */
   total: number;
   limit: number;
   offset: number;
@@ -107,7 +104,6 @@ export interface ReportDetail {
 export interface ReportExportOption {
   report_id: string;
   name: string;
-  /** Completed versions only, newest first. */
   versions: { run_id: string; version_number: number }[];
 }
 
@@ -206,7 +202,6 @@ export interface AdminUserRun {
 }
 
 export interface DailyUsage {
-  /** Local date (WIB) as YYYY-MM-DD — a day bucket, not an instant. */
   day: string;
   pdf_count: number;
   input_tokens: number;
@@ -218,7 +213,6 @@ export interface AdminUserDetail extends AdminUser {
   last_active: string | null;
   cost_by_kind: CostByKind[];
   recent_runs: AdminUserRun[];
-  /** Newest first; only days with activity. Capped at 90 by the API. */
   daily_usage: DailyUsage[];
 }
 

@@ -28,11 +28,6 @@ class NoOpReranker:
         return list(range(len(passages)))[:top_n]
 
 
-# onnxruntime defaults its intra-op thread pool to ONE THREAD PER CPU CORE, so
-# FlashRank's session pins every core on a many-core box (and overwhelms a
-# low-core production server) during the per-disclosure reranking. FlashRank
-# exposes no thread setting, so we cap onnxruntime globally — see
-# _install_onnx_thread_cap.
 _THREAD_CAP_INSTALLED = False
 
 
@@ -67,8 +62,6 @@ def _install_onnx_thread_cap(threads: int) -> None:
     orig = ort.InferenceSession
 
     def _capped(*args, **kwargs):
-        # InferenceSession(path, sess_options=..., ...) — inject only when the
-        # caller gave neither a positional nor keyword sess_options.
         if "sess_options" not in kwargs and len(args) < 2:
             kwargs["sess_options"] = _capped_session_options(threads)
         return orig(*args, **kwargs)
@@ -81,7 +74,6 @@ class FlashRankReranker:
     """FlashRank-backed cross-encoder reranker."""
 
     def __init__(self, model_name: str, threads: int = 2) -> None:
-        # Cap onnxruntime threads BEFORE FlashRank builds its session.
         _install_onnx_thread_cap(threads)
         from flashrank import Ranker
 
@@ -96,7 +88,7 @@ class FlashRankReranker:
             query=query,
             passages=[{"id": i, "text": t} for i, t in enumerate(passages)],
         )
-        results = self._ranker.rerank(req)  # sorted by score desc; each has "id"
+        results = self._ranker.rerank(req)
         return [int(r["id"]) for r in results][:top_n]
 
 

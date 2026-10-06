@@ -32,24 +32,19 @@ def _el(id_, status, page=None):
 
 
 def test_clamp_zoom_leaves_normal_pages_unchanged():
-    # A4 (595x842 pt) at zoom 2.0 is ~2 MP — well under the cap, unchanged.
     assert _clamp_zoom(595, 842, _RENDER_ZOOM) == _RENDER_ZOOM
-    # US Letter, A3 — all comfortably below the cap.
     assert _clamp_zoom(612, 792, _RENDER_ZOOM) == _RENDER_ZOOM
     assert _clamp_zoom(842, 1191, _RENDER_ZOOM) == _RENDER_ZOOM
 
 
 def test_clamp_zoom_bounds_a_pixel_bomb_page():
-    # A spec-max 14400x14400 pt page at zoom 2.0 would be ~830 MP (a multi-GB
-    # pixmap). The clamp must reduce zoom so the output stays under the cap.
     z = _clamp_zoom(14400, 14400, _RENDER_ZOOM)
     assert z < _RENDER_ZOOM
     pixels = (14400 * z) * (14400 * z)
-    assert pixels <= _MAX_RENDER_PIXELS * 1.0001  # within float tolerance
+    assert pixels <= _MAX_RENDER_PIXELS * 1.0001
 
 
 def test_clamp_zoom_handles_degenerate_zero_size():
-    # A zero/negative MediaBox must not divide-by-zero; treated as 1pt minimum.
     assert _clamp_zoom(0, 0, _RENDER_ZOOM) == _RENDER_ZOOM
 
 
@@ -72,9 +67,9 @@ def test_merge_never_downgrades_a_text_finding():
         evidence_page=None,
     )
     merged = merge_verdicts(text, vision)
-    assert merged.status == DisclosureStatus.partial  # NOT missing
+    assert merged.status == DisclosureStatus.partial
     statuses = {e.id: e.status for e in merged.elements}
-    assert statuses["a"] == ElementStatus.found  # text's find preserved
+    assert statuses["a"] == ElementStatus.found
     assert statuses["b"] == ElementStatus.missing
     assert merged.evidence_excerpt == "text quote"
 
@@ -161,17 +156,10 @@ def _disclosure() -> Disclosure:
     )
 
 
-# ----------------------------------------------------------------------
-# _render_page_png
-# ----------------------------------------------------------------------
-
-
 def test_render_page_returns_png_bytes():
     png = _render_page_png(FIXTURE, page_number=1)
     assert isinstance(png, bytes)
-    # PNG signature
     assert png[:8] == b"\x89PNG\r\n\x1a\n"
-    # Non-trivial size — even a single-line PDF should render to >1KB at 2x
     assert len(png) > 1024
 
 
@@ -186,41 +174,30 @@ def test_render_page_zero_raises():
         _render_page_png(FIXTURE, page_number=0)
 
 
-# ----------------------------------------------------------------------
-# _build_vision_messages
-# ----------------------------------------------------------------------
-
-
 def test_message_structure_has_text_and_images():
     rendered = [(1, b"\x89PNG\r\n\x1a\n_fake_png_bytes_1"),
                 (2, b"\x89PNG\r\n\x1a\n_fake_png_bytes_2")]
     messages = _build_vision_messages(_disclosure(), rendered)
 
-    # System + Human only — no AI message
     assert len(messages) == 2
     assert isinstance(messages[0], SystemMessage)
     assert isinstance(messages[1], HumanMessage)
 
-    # System prompt is the same one the text pass uses (preserves few-shot)
     assert "EXAMPLE 1" in messages[0].content
 
-    # Human content is a list of typed blocks
     content = messages[1].content
     assert isinstance(content, list)
 
     text_blocks = [c for c in content if c["type"] == "text"]
     image_blocks = [c for c in content if c["type"] == "image_url"]
 
-    # 1 main text prompt + 1 label per image
     assert len(text_blocks) == 1 + len(rendered)
     assert len(image_blocks) == len(rendered)
 
-    # Disclosure context surfaced in the main text block
     main_text = text_blocks[0]["text"]
     assert "305-1" in main_text
     assert "Scope 1 emissions" in main_text
 
-    # Images encoded as data URLs with base64 payload
     for blk in image_blocks:
         url = blk["image_url"]["url"]
         assert url.startswith("data:image/png;base64,")
@@ -246,18 +223,12 @@ def test_image_base64_round_trip():
     assert base64.b64decode(b64) == png
 
 
-# ----------------------------------------------------------------------
-# judge_with_vision (end-to-end with fake LLM)
-# ----------------------------------------------------------------------
-
-
 def test_judge_with_vision_returns_parsed_output():
     llm = _SpyLLM()
     out = judge_with_vision(_disclosure(), FIXTURE, pages=[1], llm=llm)
     assert isinstance(out, JudgeOutput)
     assert out.status.value == "covered"
     assert out.note == "vision found it"
-    # The spy captured the multimodal message
     assert llm.last_messages is not None
     assert len(llm.last_messages) == 2
 
@@ -265,7 +236,6 @@ def test_judge_with_vision_returns_parsed_output():
 def test_judge_with_vision_caps_page_count():
     llm = _SpyLLM()
     judge_with_vision(_disclosure(), FIXTURE, pages=[1, 1, 1, 1, 1, 1], llm=llm)
-    # Capped at _MAX_PAGES (4) even if 6 pages were requested.
     image_blocks = [
         c for c in llm.last_messages[1].content if c["type"] == "image_url"
     ]
@@ -280,7 +250,6 @@ def test_judge_with_vision_skips_unrenderable_pages(tmp_path):
     image_blocks = [
         c for c in llm.last_messages[1].content if c["type"] == "image_url"
     ]
-    # Only page 1 was valid → exactly 1 image
     assert len(image_blocks) == 1
 
 
@@ -316,11 +285,6 @@ def test_judge_with_vision_falls_back_to_markdown_parse():
     assert out.note == "could not see"
 
 
-# ----------------------------------------------------------------------
-# _render_page_png cache — Change 2
-# ----------------------------------------------------------------------
-
-
 def test_render_page_png_returns_identical_bytes_on_repeat_call():
     """Two calls with the same (pdf_path, page, zoom) must return identical bytes."""
     bytes1 = _render_page_png(FIXTURE, page_number=1)
@@ -346,12 +310,11 @@ def test_render_page_png_only_rasterizes_once_per_page(monkeypatch):
 
     monkeypatch.setattr(fitz.Page, "get_pixmap", spy_get_pixmap)
 
-    # Clear the cache so we start fresh.
     if hasattr(vf._render_page_png, "cache_clear"):
         vf._render_page_png.cache_clear()
 
     vf._render_page_png(FIXTURE, page_number=1)
-    vf._render_page_png(FIXTURE, page_number=1)  # should be cache hit
+    vf._render_page_png(FIXTURE, page_number=1)
 
     assert len(rasterize_calls) == 1, (
         f"Expected 1 rasterise call, got {len(rasterize_calls)} — "

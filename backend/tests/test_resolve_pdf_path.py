@@ -17,7 +17,6 @@ def test_resolves_windows_relative_path_to_pdf_dir(tmp_path):
     real = pdf_dir / "abc.pdf"
     real.write_bytes(b"%PDF-1.4 fake")
 
-    # A row written by the app while running on Windows: backslashes, relative.
     resolved = resolve_pdf_path("data\\pdfs\\abc.pdf", settings)
 
     assert resolved == real
@@ -40,8 +39,6 @@ def test_prefers_stored_path_when_it_exists(tmp_path):
 def test_missing_file_returns_pdf_dir_candidate(tmp_path):
     settings = Settings(data_dir=tmp_path)
 
-    # No file on disk — caller decides how to handle (404 / fallback), but we
-    # must not crash and must point at the canonical location.
     resolved = resolve_pdf_path("data\\pdfs\\nope.pdf", settings)
 
     assert resolved == tmp_path / "pdfs" / "nope.pdf"

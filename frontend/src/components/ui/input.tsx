@@ -54,7 +54,6 @@ const Select = React.forwardRef<
 ));
 Select.displayName = "Select";
 
-/** Label + control + optional hint, matching the modal form rows. */
 export function Field({
   label,
   hint,
@@ -84,7 +83,6 @@ export function Field({
   );
 }
 
-/** Compact toolbar search box — icon + borderless input in a white group. */
 export function SearchInput({
   className,
   inputProps,

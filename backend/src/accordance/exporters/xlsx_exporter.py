@@ -8,9 +8,9 @@ from openpyxl.worksheet.properties import PageSetupProperties
 
 from accordance.exporters.coverage_matrix import CoverageMatrix
 
-_LABEL_COLS = 3  # Standard, Code, Indicator
+_LABEL_COLS = 3
 
-_HEADER_FILL = PatternFill("solid", fgColor="1F2937")  # slate-800
+_HEADER_FILL = PatternFill("solid", fgColor="1F2937")
 _HEADER_FONT = Font(bold=True, color="FFFFFF", size=10)
 _TITLE_FONT = Font(bold=True, color="18181B", size=16)
 _META_FONT = Font(color="71717A", size=10)
@@ -20,12 +20,10 @@ _CENTER = Alignment(horizontal="center", vertical="center")
 _LEFT = Alignment(horizontal="left", vertical="center")
 _LEFT_WRAP = Alignment(horizontal="left", vertical="center", wrap_text=True)
 _CENTER_WRAP = Alignment(horizontal="center", vertical="center", wrap_text=True)
-_SCORE_FMT = "0"  # integer 0-5 grade / counts
-_COVERAGE_FMT = "0.0%"  # coverage score shown as a percentage
-_NA = "N/A"  # how a 0 (Not Applicable) grade is rendered in a cell
+_SCORE_FMT = "0"
+_COVERAGE_FMT = "0.0%"
+_NA = "N/A"
 
-# Grade ramp mirrors the UI score pills: green 5 → red 1, gray N/A.
-# (fill, bold text color)
 _GRADE_STYLE: dict[int, tuple[str, str]] = {
     5: ("DCF5E7", "0F7A43"),
     4: ("E9F3D9", "527A1D"),
@@ -41,11 +39,8 @@ _THIN = Side(style="thin", color="D4D4D8")
 _CELL_BORDER = Border(bottom=_THIN)
 _FOOTER_TOP = Border(top=Side(style="thin", color="9CA3AF"), bottom=_THIN)
 
-# Excel/Sheets treat a cell starting with any of these as a formula (DDE /
-# HYPERLINK / WEBSERVICE exfiltration, legacy command exec).
 _FORMULA_TRIGGERS = ("=", "+", "-", "@", "\t", "\r")
 
-# Fixed layout: title → generated-by line → legend → header → data.
 _TITLE_ROW = 1
 _META_ROW = 2
 _LEGEND_ROW = 3
@@ -93,7 +88,6 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
     n_cols = n_label + len(matrix.column_labels)
     last_letter = get_column_letter(n_cols)
 
-    # --- Title block -------------------------------------------------------
     ws.merge_cells(f"A{_TITLE_ROW}:{last_letter}{_TITLE_ROW}")
     t = ws.cell(_TITLE_ROW, 1, "GRI Disclosure Coverage")
     t.font = _TITLE_FONT
@@ -123,7 +117,6 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
     lg.alignment = _LEFT
     ws.row_dimensions[_LEGEND_ROW].height = 16
 
-    # --- Header row ---------------------------------------------------------
     for col, label in enumerate(
         ["Standard", "Code", "Indicator", *matrix.column_labels], start=1
     ):
@@ -133,11 +126,8 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
         cell.alignment = _CENTER_WRAP if col > n_label else _LEFT_WRAP
     ws.row_dimensions[_HEADER_ROW].height = 32
 
-    # --- Data rows ----------------------------------------------------------
-    # 0 -> "N/A" (text), 1-5 -> int, None -> blank.
     for i, row in enumerate(matrix.rows):
         r = _FIRST_DATA + i
-        # standard / code / indicator are KB-derived strings -> neutralize.
         for col, value in enumerate(
             (row.standard, row.code, row.indicator), start=1
         ):
@@ -151,7 +141,7 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
             c = ws.cell(r, n_label + 1 + j)
             c.border = _CELL_BORDER
             if v is None:
-                continue  # blank: column didn't judge this disclosure / errored
+                continue
             if v == 0:
                 c.value = _NA
                 fill, fg = _NA_STYLE
@@ -164,10 +154,9 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
             c.fill = PatternFill("solid", fgColor=fill)
             c.alignment = _CENTER
         ws.row_dimensions[r].height = 18
-    last_data = _FIRST_DATA + len(matrix.rows) - 1  # == _HEADER_ROW when empty
+    last_data = _FIRST_DATA + len(matrix.rows) - 1
     have_data = len(matrix.rows) > 0
 
-    # --- Footer: three rows of live per-column formulas. --------------------
     total_row = last_data + 1
     checked_row = last_data + 2
     coverage_row = last_data + 3
@@ -208,28 +197,22 @@ def to_xlsx_bytes(matrix: CoverageMatrix) -> bytes:
             cell.border = (
                 _FOOTER_TOP if rr == total_row else _CELL_BORDER
             )
-    # The footer fill (and the top border on its first row) spans the label
-    # columns too — col C already got both via the label loop above.
     for col in range(1, n_label):
         for rr in (total_row, checked_row, coverage_row):
             ws.cell(rr, col).fill = _FOOTER_FILL
         ws.cell(total_row, col).border = _FOOTER_TOP
 
-    # Column widths: wide label columns, compact value columns.
     ws.column_dimensions["A"].width = 34
     ws.column_dimensions["B"].width = 12
     ws.column_dimensions["C"].width = 50
     for col in range(n_label + 1, n_cols + 1):
         ws.column_dimensions[get_column_letter(col)].width = 16
 
-    # Autofilter over header + data rows only (exclude the 3 footer rows).
     filter_last = last_data if have_data else _HEADER_ROW
     ws.auto_filter.ref = f"A{_HEADER_ROW}:{last_letter}{filter_last}"
 
-    # Keep the header row and the three label columns visible while scrolling.
     ws.freeze_panes = f"D{_FIRST_DATA}"
 
-    # Print setup: landscape, fit columns to one page wide.
     ws.page_setup.orientation = "landscape"
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 0

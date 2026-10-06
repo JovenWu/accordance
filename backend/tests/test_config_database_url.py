@@ -14,9 +14,6 @@ def test_effective_pool_max_derives_from_concurrency(monkeypatch):
     monkeypatch.setenv("JUDGE_CONCURRENCY", "3")
     get_settings.cache_clear()
     s = Settings()
-    # 4 spines + 3 globally-capped judge workers + 8 headroom = 15.
-    # Was 4 * (1 + 3) + 8 = 24 while workers took a connection BEFORE waiting
-    # on the judge semaphore; they now wait first, so the terms add.
     assert s.effective_pool_max_size == 15
 
 

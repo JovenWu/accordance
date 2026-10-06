@@ -16,7 +16,7 @@ import hashlib
 import logging
 from pathlib import Path
 
-import fitz  # PyMuPDF
+import fitz
 import pymupdf4llm
 
 from accordance.extractor.models import EncryptedPDFError, ExtractedPage, ExtractedReport
@@ -42,9 +42,6 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
     sha = _sha256_of_file(pdf_path)
 
     with fitz.open(str(pdf_path)) as doc:
-        # Encrypted/password-protected PDFs open fine but report a page count and
-        # then fail deep ("document still encrypted") on any page access. Catch it
-        # here and surface a clear, actionable error instead.
         if doc.needs_pass:
             raise EncryptedPDFError(
                 "This PDF is password-protected/encrypted and can't be read. "
@@ -58,8 +55,6 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
 
     logger.info("pymupdf extract: %s (%d pages)", pdf_path.name, total_pages)
 
-    # pymupdf4llm opens the doc internally; pass the path directly.
-    # page_chunks=True returns a list[dict] with one entry per page.
     chunks = pymupdf4llm.to_markdown(
         str(pdf_path),
         page_chunks=True,
@@ -72,8 +67,6 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
 
     pages: list[ExtractedPage] = []
     for entry in chunks:
-        # pymupdf4llm uses 0-indexed page numbers in metadata; convert to 1-indexed
-        # to match the rest of the codebase (Docling extractor + judge prompts).
         meta = entry.get("metadata") or {}
         zero_indexed = meta.get("page")
         if zero_indexed is None:
@@ -83,16 +76,11 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
         md = (entry.get("text") or "").strip()
         pages.append(ExtractedPage(page_number=page_number, markdown=md, tables=[]))
 
-    # If pymupdf4llm produced fewer entries than the doc has pages (rare),
-    # pad with empty pages so downstream code that expects N pages still works.
     while len(pages) < total_pages:
         pages.append(
             ExtractedPage(page_number=len(pages) + 1, markdown="", tables=[])
         )
 
-    # Sanity check: a fully-scanned PDF with no embedded text would yield
-    # all-empty pages. Surface that as a warning so the user can flip the
-    # backend or enable OCR.
     if total_pages > 0 and all(not p.markdown for p in pages):
         logger.warning(
             "pymupdf extract: all %d pages are empty — looks like a scanned PDF. "

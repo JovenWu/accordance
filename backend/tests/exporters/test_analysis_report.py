@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-import fitz  # PyMuPDF
+import fitz
 
 from accordance.exporters.analysis_report import (
     AnalysisReport,
@@ -47,12 +47,12 @@ def test_analysis_report_is_a_single_page_pdf_with_key_content():
         "Acme Sustainability Report 2024",
         "v2",
         "acme-2024.pdf",
-        "78%",                      # coverage score
-        "33",                       # disclosures assessed
-        "3.9 / 5",                  # average grade
-        "298",                      # pages analysed
+        "78%",
+        "33",
+        "3.9 / 5",
+        "298",
         "Grade distribution",
-        "Complete",                 # legend label
+        "Complete",
         "Coverage by standard",
         "GRI 2: General Disclosures 2021",
         "VERIFICATION",
@@ -74,7 +74,7 @@ def test_analysis_report_handles_empty_and_missing_values():
     blob = analysis_report_bytes(data)
     doc = fitz.open(stream=blob, filetype="pdf")
     text = doc[0].get_text()
-    assert "-" in text  # placeholder rendered for missing metrics
+    assert "-" in text
 
 
 def test_analysis_report_caps_long_standard_tables():

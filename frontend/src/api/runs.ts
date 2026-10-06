@@ -69,7 +69,6 @@ export interface CorrectionCreate {
 export const saveCorrection = (runId: string, body: CorrectionCreate) =>
   postJson<CorrectionView>(`/runs/${runId}/corrections`, body);
 
-/** Live (non-superseded) corrections only — the drawer shows this list. */
 export const listCorrections = (runId: string) =>
   http<CorrectionView[]>(`/runs/${runId}/corrections`);
 

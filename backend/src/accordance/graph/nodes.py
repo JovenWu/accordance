@@ -27,11 +27,6 @@ from accordance.llm.adapter import fallback_count_snapshot
 
 logger = logging.getLogger(__name__)
 
-# Leak-free token-usage capture. langchain_core.get_usage_metadata_callback()
-# re-registers a fresh configure-hook on EVERY call and never removes it, so
-# calling it per-disclosure (dozens-hundreds per run) grows a process-global
-# hook list unboundedly over the server's lifetime. We register ONE inheritable
-# hook at import and only set/reset the handler per use.
 _usage_cb_var: ContextVar[UsageMetadataCallbackHandler | None] = ContextVar(
     "gri_usage_metadata_cb", default=None
 )
@@ -54,10 +49,6 @@ def _usage_callback():
         _usage_cb_var.reset(token)
 
 
-# Global semaphore shared across all in-flight judge calls in this process,
-# initialized lazily from settings.judge_concurrency. The LangGraph fan-out
-# starts every disclosure in parallel; without this guard we'd fire 38 LLM
-# calls almost simultaneously, which trips proxy rate limits.
 _judge_sem: threading.Semaphore | None = None
 _judge_sem_lock = threading.Lock()
 
@@ -140,7 +131,6 @@ def _persist_traces(
                 ),
             )
     except Exception:
-        # Trace writes are best-effort. Don't fail the run.
         pass
 
 
@@ -162,15 +152,12 @@ class UsageRecord:
     pricing.cost_usd.
     """
 
-    kind: str  # 'judge' | 'rejudge' | 'vision' | 'embedding'
+    kind: str
     model: str
     input_tokens: int
     output_tokens: int
     cached_input_tokens: int = 0
     cache_write_tokens: int = 0
-    # Processing tier this call ran on, so it can be priced against the right
-    # rate. Blank = standard. Set for LLM calls only — embeddings aren't tiered
-    # and must not inherit the judge's discount.
     service_tier: str = ""
 
 
@@ -271,8 +258,6 @@ def _usage_records_from_callback(
     """
     from accordance.config import get_settings
 
-    # Tier applies to LLM calls only; embedding endpoints have no tiers and
-    # must not inherit the judge's discount.
     tier = "" if kind == "embedding" else (get_settings().llm_service_tier or "")
     if tier_downgraded:
         tier = ""
@@ -347,9 +332,6 @@ def index_node(state: dict, store: VectorStore, conn: psycopg.Connection) -> dic
     chunks = chunk_report(state["extraction"])
     store.write(state["run_id"], chunks)
 
-    # Record embedding cost (best-effort). Document embeddings are input-only;
-    # token count is exact via tiktoken over the chunk text. Per-query embeds
-    # during retrieval are intentionally not tracked (v1 scope).
     try:
         total_tokens = sum(_estimate_tokens(c.text) for c in chunks)
         if total_tokens:
@@ -366,9 +348,6 @@ def index_node(state: dict, store: VectorStore, conn: psycopg.Connection) -> dic
                 ],
             )
     except Exception:
-        # Best-effort, like _persist_usage: never fail indexing over cost
-        # bookkeeping. Logged rather than swallowed so a silent undercount in
-        # the $-spent dashboard is traceable.
         logger.warning("embedding usage capture failed; cost undercounted", exc_info=True)
 
     return {"indexed": True}
@@ -391,18 +370,10 @@ def judge_one_node(
     from accordance.api.events import bus
     from accordance.config import get_settings, resolve_pdf_path
 
-    # Cooperative cancellation: skip this disclosure if the run has been
-    # stopped. Skipped disclosures don't write findings — they show up as
-    # absent in the dashboard, which is the correct semantic for cancelled.
     if cancel_registry.is_cancelled(state["run_id"]):
         return {"findings": []}
 
     def retrieve(q: str, k: int):
-        # Tag retrieval failures so they can't be misreported as judge
-        # failures. Retrieval embeds the query against the EMBEDDING provider,
-        # which is a different endpoint (and often a different account) from
-        # the judge LLM — an expired embedding key used to surface as
-        # "Judge failed" on every disclosure while the judge was never called.
         try:
             return store.retrieve(state["run_id"], q, k)
         except Exception as e:
@@ -412,17 +383,10 @@ def judge_one_node(
     settings = get_settings()
     vision_used = False
     judge_error: str | None = None
-    # Which dependency broke, so the finding and the log name the right one.
     failure_stage = "judge"
     traces: list[JudgeTrace] = []
     out = None
 
-    # The judge semaphore is acquired by the CALLER (judge_all_node) so a
-    # queued disclosure isn't parked on a Postgres connection it can't use.
-    # Calling this directly therefore bypasses the global LLM rate cap.
-    # Snap evidence quotes to verbatim PDF text using the same glyphs the
-    # viewer renders. Built per disclosure; opens the PDF lazily and only
-    # when an excerpt actually needs snapping.
     pdf_provider = None
     try:
         pdf_row = conn.execute(
@@ -435,16 +399,12 @@ def judge_one_node(
     except Exception:
         pdf_provider = None
 
-    # Initialize to empty so the post-sem usage capture is safe even when
-    # the try block exits early via exception before the with-block opens.
     class _EmptyUsageCb:
         def __init__(self):
             self.usage_metadata = {}
 
     judge_usage_cb: _EmptyUsageCb | object = _EmptyUsageCb()
 
-    # Baseline for this thread, so a flex call that gets capacity-refused and
-    # re-run at the standard tier is billed to THIS disclosure at full price.
     fallbacks_before = fallback_count_snapshot()
 
     try:
@@ -484,12 +444,6 @@ def judge_one_node(
         if pdf_provider is not None:
             pdf_provider.close()
 
-    # Decide whether to re-judge with vision. The LLM's self-flag
-    # (needs_vision_fallback) almost never fires on reports whose data
-    # lives in table-images — the text pass gets garbled-but-present
-    # text and rules partial/missing without asking for vision. So we
-    # ALSO escalate any low-confidence (partial/missing) verdict, bounded
-    # by a per-run budget. See config.vision_fallback_on_low_confidence.
     want_vision = (
         out is not None
         and settings.vision_fallback_enabled
@@ -516,11 +470,6 @@ def judge_one_node(
                 "SELECT pdf_path FROM runs WHERE id=%s", (state["run_id"],)
             ).fetchone()
             if pdf_row:
-                # Give vision the same wide page coverage the text pass
-                # had: union of pages already retrieved by the text pass
-                # (recorded in JudgeTrace.pages). Ranked by frequency so
-                # the most-retrieved pages come first. This avoids a
-                # redundant embedding round per vision-eligible disclosure.
                 page_freq: Counter[int] = Counter()
                 for t in traces:
                     for p in t.pages:
@@ -532,23 +481,12 @@ def judge_one_node(
                 vision_usage_md = vision_usage_cb.usage_metadata
                 out = merge_verdicts(out, vision_out)
                 vision_used = True
-                # Vision evidence is the model's raw image transcription —
-                # it bypassed the text-path snap and may not exist in the
-                # page text layer. Snap it (or drop it) so the viewer never
-                # highlights gibberish. candidate_pages is the full retrieved
-                # page union (a superset of the <=4 pages vision rendered);
-                # the excerpt's own page is tried first inside snap_excerpt.
                 vprovider = make_page_text_provider(vpath)
                 try:
                     snap_evidence_in_place(out, candidate_pages, vprovider)
                 finally:
                     vprovider.close()
         except Exception as e:
-            # Vision is an optional upgrade: the text verdict still stands,
-            # so this must not fail the disclosure. But it must not be
-            # SILENT either — a swallowed exception here meant vision could
-            # be dead for a whole run (bad key, render failure, throttling)
-            # with nothing in the logs to say so.
             logger.warning(
                 "vision fallback failed for disclosure %s (run %s); "
                 "keeping the text verdict: %s",
@@ -569,8 +507,6 @@ def judge_one_node(
     _persist_usage(conn, state["run_id"], judge_records + vision_records)
 
     if out is None:
-        # Judge call failed (e.g., rate-limit exhaustion). Record an error
-        # finding so the rest of the run can still complete.
         status_value = "error"
         score = None
         na_reason = None
@@ -587,8 +523,6 @@ def judge_one_node(
         evidence_page = None
         elements_payload = "[]"
     else:
-        # status stays the LLM's verdict (legacy + vision-trigger heuristic);
-        # the displayed grade is the element-derived 0-5 score.
         status_value = out.status.value
         score = compute_score(
             out.elements,
@@ -705,13 +639,6 @@ def judge_all_node(
 
     def _one(d: Disclosure) -> dict:
         try:
-            # Wait for the LLM slot BEFORE borrowing a connection. The executor
-            # starts judge_concurrency threads per run but the semaphore is
-            # global, so taking the connection first parked every queued thread
-            # on a connection it couldn't use — pool demand scaled as
-            # runs x judge_concurrency (138 connections for 10 runs x 12) to do
-            # judge_concurrency calls' worth of work. Waiting first means only
-            # threads that can actually work hold a connection.
             with _get_judge_sem(), db_connection() as c:
                 st = VectorStore(c, store.embedder, mode=store.mode)
                 return judge_one_node(
@@ -753,9 +680,6 @@ def _record_completion(conn: psycopg.Connection, run_id: str) -> None:
             (run_id, user_id),
         )
     except Exception:
-        # Best-effort: a completion-log failure must never fail the run. Broad
-        # catch (not just psycopg.Error) because the created_by lookup path can
-        # raise non-psycopg errors. logger already exists at module scope.
         logger.warning("_record_completion failed; skipping count", exc_info=True)
 
 
@@ -776,28 +700,15 @@ def aggregate_node(
         cancel_registry.clear(state["run_id"])
         return {"completed": True}
 
-    # Guard against the stop_run race: if stop_run flipped the row to 'cancelled'
-    # after our is_cancelled() check above but before this UPDATE, the
-    # `status != 'cancelled'` predicate makes this a no-op (0 rows) so we don't
-    # resurrect a cancelled run as completed (nor emit a phantom 'completed' SSE).
     cur = conn.execute(
         "UPDATE runs SET status=%s, completed_at=CURRENT_TIMESTAMP "
         "WHERE id=%s AND status != 'cancelled'",
         ("completed", state["run_id"]),
     )
     if cur.rowcount == 0:
-        # Lost the race to stop_run — the run is cancelled; leave it be.
         cancel_registry.clear(state["run_id"])
         return {"completed": True}
 
-    # Backstop against silent data loss: every disclosure we attempted to judge
-    # must have a persisted finding. judge_one_node's INSERT is the only place a
-    # verdict is saved and is not itself retried, so a write failure (connection
-    # reset, a worker crash after the LLM call) can leave a disclosure with NO row
-    # — and the run would still be marked 'completed', hiding the gap. Reconcile
-    # here: record an explicit 'error' finding for any missing disclosure so it
-    # surfaces in the UI and the errored count instead of vanishing.
-    # Best-effort — a failure here must not crash completion.
     if expected_disclosures:
         try:
             existing = {
@@ -841,7 +752,6 @@ def aggregate_node(
 
     _record_completion(conn, state["run_id"])
 
-    # Emit a cheap one-liner so operators can see completion without querying DB.
     rows = conn.execute(
         "SELECT status, COUNT(*) AS n FROM findings WHERE run_id=%s GROUP BY status",
         (state["run_id"],),

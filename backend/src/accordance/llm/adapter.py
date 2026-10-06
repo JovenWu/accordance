@@ -6,11 +6,6 @@ from langchain_core.messages import AIMessage
 
 logger = logging.getLogger(__name__)
 
-# Capacity refusals are the ONLY 429 that may fall back to the standard tier.
-# OpenAI signals them with this error code; an ordinary quota/TPM 429
-# ('rate_limit_exceeded') and a dead key ('insufficient_quota') must NOT
-# trigger a retry at full price — the first wants backoff, the second wants to
-# fail loudly. Matching every RateLimitError doubled the bill on any throttle.
 _CAPACITY_REFUSAL_CODES = {"resource_unavailable", "service_tier_capacity_exceeded"}
 
 
@@ -18,7 +13,7 @@ def _is_capacity_refusal(exc: BaseException) -> bool:
     """True only for a flex capacity refusal, not for ordinary rate limiting."""
     try:
         from openai import RateLimitError
-    except ImportError:  # non-OpenAI provider — nothing to special-case
+    except ImportError:
         return False
     if not isinstance(exc, RateLimitError):
         return False
@@ -32,11 +27,6 @@ def _is_capacity_refusal(exc: BaseException) -> bool:
     return code in _CAPACITY_REFUSAL_CODES
 
 
-# Per-thread count of flex calls that fell back to the standard tier. The judge
-# fan-out runs one disclosure per thread, so a thread-local lets
-# graph.nodes attribute the missed discount to the RIGHT disclosure's usage row
-# — a process-wide counter could not, and pricing a fallen-back call at the
-# flex rate under-reports it 2x.
 _fallbacks = threading.local()
 
 
@@ -112,8 +102,6 @@ class _TieredChatModel(BaseChatModel):
 
     @property
     def model_name(self) -> str:
-        # Traces and usage rows attribute by model name; the wrapper must not
-        # mask it (see judge.core._model_id_of).
         for attr in ("model_name", "model", "model_id"):
             val = getattr(self.primary, attr, None)
             if val:
@@ -234,8 +222,6 @@ def build_llm(
         kwargs["service_tier"] = service_tier
     llm = init_chat_model(model, **kwargs)
 
-    # Only flex can be capacity-refused. 'priority' and 'auto' are always
-    # served, so wrapping them would add a pointless indirection.
     if service_tier == "flex":
         standard = dict(kwargs)
         standard.pop("service_tier", None)

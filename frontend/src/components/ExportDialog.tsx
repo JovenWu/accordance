@@ -9,11 +9,6 @@ import { useModalA11y } from "@/lib/useModalA11y";
 import { useToast } from "@/components/ui/toast";
 import type { ReportExportOption } from "@/types";
 
-/**
- * Coverage-matrix export. Rows are reports with ≥1 completed run; the version
- * picker chooses which run contributes its column, or "all" for every
- * completed version of that report.
- */
 export function ExportDialog({
   open,
   onClose,
@@ -24,8 +19,6 @@ export function ExportDialog({
   const panelRef = useModalA11y<HTMLDivElement>(open, onClose);
   const [options, setOptions] = useState<ReportExportOption[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  // report_id → run_id | "all": the version that report contributes when its
-  // checkbox is on (the picker always shows a version, included or not).
   const [picked, setPicked] = useState<Record<string, string>>({});
   const [included, setIncluded] = useState<ReadonlySet<string>>(new Set());
   const { toast } = useToast();
@@ -38,7 +31,6 @@ export function ExportDialog({
     getExportOptions()
       .then((opts) => {
         setOptions(opts);
-        // Picker default: each report's latest completed version.
         setPicked(
           Object.fromEntries(opts.map((o) => [o.report_id, o.versions[0].run_id])),
         );

@@ -20,14 +20,8 @@ def conn():
     c.close()
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-
 def _seed_run(conn, run_id: str, status: str) -> None:
     """Insert the minimal rows needed to create a run with the given status."""
-    # users/reports rows may already exist from a previous _seed_run call.
     conn.execute(
         "INSERT INTO users (username, password_hash) VALUES (%s, %s) "
         "ON CONFLICT (username) DO NOTHING",
@@ -37,7 +31,6 @@ def _seed_run(conn, run_id: str, status: str) -> None:
         "INSERT INTO reports (id, name) VALUES (%s, %s) ON CONFLICT (id) DO NOTHING",
         ("rep1", "r"),
     )
-    # Use current run-count + 1 as a unique version_number (no two runs share rep1).
     row = conn.execute("SELECT COUNT(*) AS n FROM runs WHERE report_id='rep1'").fetchone()
     version = (row["n"] or 0) + 1
     conn.execute(
@@ -46,11 +39,6 @@ def _seed_run(conn, run_id: str, status: str) -> None:
         "(%s, %s, %s, 'initial', 'f.pdf', 'sha', 'p', %s)",
         (run_id, "rep1", version, status),
     )
-
-
-# ---------------------------------------------------------------------------
-# Tests
-# ---------------------------------------------------------------------------
 
 
 def test_reconcile_marks_all_inflight_statuses_failed(conn):

@@ -80,11 +80,8 @@ def test_page_coherent_swaps_sibling_into_pool():
         run_id="run-test",
         page_coherent=True,
     )
-    # Sibling (chunk 2) must be included
     assert 2 in trace.chunk_ids, f"Expected sibling chunk_id=2 in pool; got {trace.chunk_ids}"
-    # Weakest member (chunk 3) must be displaced
     assert 3 not in trace.chunk_ids, f"Chunk 3 should have been displaced; got {trace.chunk_ids}"
-    # Count unchanged: still 2 items
     assert len(trace.chunk_ids) == 2, f"Pool size must be constant; got {len(trace.chunk_ids)}"
 
 
@@ -134,14 +131,9 @@ def test_page_coherent_no_op_when_store_is_none():
         run_id="run-test",
         page_coherent=True,
     )
-    # Original pool: chunks 1 and 3
     assert set(trace.chunk_ids) == {1, 3}
     assert len(trace.chunk_ids) == 2
 
-
-# ---------------------------------------------------------------------------
-# Multi-sibling tests (finding #1 + #2 guards)
-# ---------------------------------------------------------------------------
 
 class _MultiSiblingStore:
     """Stub returning TWO siblings for pages in a top-k pool of size 6.
@@ -212,12 +204,9 @@ def test_multi_sibling_both_land_in_distinct_slots():
         run_id="run-test",
         page_coherent=True,
     )
-    # Pool size must remain 6 (constant — swap never grows/shrinks)
     assert len(trace.chunk_ids) == 6, f"Pool size must stay 6; got {len(trace.chunk_ids)}"
-    # BOTH siblings must be present in distinct slots
     assert 30 in trace.chunk_ids, f"Sibling 30 must be in pool; got {trace.chunk_ids}"
     assert 31 in trace.chunk_ids, f"Sibling 31 must be in pool; got {trace.chunk_ids}"
-    # The two weak chunks must have been displaced
     assert 20 not in trace.chunk_ids, f"Weak chunk 20 must be displaced; got {trace.chunk_ids}"
     assert 21 not in trace.chunk_ids, f"Weak chunk 21 must be displaced; got {trace.chunk_ids}"
 
@@ -247,10 +236,8 @@ def test_multi_sibling_high_score_chunk_not_displaced_by_page_order():
         run_id="run-test",
         page_coherent=True,
     )
-    # Strong chunks must ALL survive
     for cid in (10, 11, 12, 13):
         ids = trace.chunk_ids
         assert cid in ids, f"Strong chunk {cid} must not be displaced; got {ids}"
-    # Both siblings must have displaced the two weak chunks
     assert 30 in trace.chunk_ids, f"Sibling 30 must replace a weak chunk; got {trace.chunk_ids}"
     assert 31 in trace.chunk_ids, f"Sibling 31 must replace a weak chunk; got {trace.chunk_ids}"

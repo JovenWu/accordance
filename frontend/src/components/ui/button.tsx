@@ -37,9 +37,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  /** Leading icon (sized via the parent's [&_svg] rules). */
   icon?: React.ReactNode;
-  /** Shows a spinner and disables the button while a mutation is in flight. */
   busy?: boolean;
 }
 

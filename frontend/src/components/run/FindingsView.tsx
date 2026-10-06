@@ -54,7 +54,6 @@ export function FindingsView({
     return m;
   }, [run.corrections]);
 
-  // Effective score = correction when present, else agent score.
   const effective = useMemo(
     () =>
       run.findings.map((f) => {
@@ -106,7 +105,7 @@ export function FindingsView({
   }, [effective, filter, query, titles]);
 
   const dist = useMemo(() => {
-    const d = [0, 0, 0, 0, 0, 0] as number[]; // index = score
+    const d = [0, 0, 0, 0, 0, 0] as number[];
     let errors = 0;
     for (const e of effective) {
       if (e.score === null) errors += 1;
@@ -131,7 +130,6 @@ export function FindingsView({
   return (
     <div className="flex flex-col gap-4 md:min-h-0 md:flex-1 md:overflow-hidden">
       <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-start">
-        {/* Grade distribution */}
         <div className="flex flex-1 flex-col gap-2.5 rounded-3xl bg-surface p-4">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-muted-ink">
@@ -141,8 +139,6 @@ export function FindingsView({
               {avg !== null ? `avg ${avg} / 5` : "—"}
             </span>
           </div>
-          {/* The legend below repeats every count as text — the colored bar
-              itself is decorative, so it's hidden from assistive tech. */}
           <div
             aria-hidden
             className="flex h-2.5 w-full gap-0.5 overflow-hidden rounded-[5px]"
@@ -187,7 +183,6 @@ export function FindingsView({
             )}
           </div>
         </div>
-        {/* Human review */}
         <button
           type="button"
           onClick={() => setCorrectionsOpen(true)}
@@ -208,7 +203,6 @@ export function FindingsView({
         </button>
       </div>
 
-      {/* Filters + search */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-2">
           {FILTERS.map(

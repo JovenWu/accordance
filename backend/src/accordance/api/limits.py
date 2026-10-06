@@ -94,7 +94,6 @@ class FailureLimiter:
             self._fails.clear()
 
 
-# Process-wide login throttle. Cleared between tests via an autouse fixture.
 login_limiter = FailureLimiter()
 
 

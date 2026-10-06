@@ -10,11 +10,6 @@ interface State {
   hasError: boolean;
 }
 
-/**
- * Top-level error boundary. Without one, any uncaught render error blanks the
- * whole SPA with no recovery path. This catches it and shows a recoverable
- * fallback instead. React requires this to be a class component.
- */
 export class ErrorBoundary extends Component<Props, State> {
   state: State = { hasError: false };
 
@@ -23,7 +18,6 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
-    // Surface for debugging; a hosted app could forward this to a reporter.
     console.error("Unhandled UI error:", error, info);
   }
 

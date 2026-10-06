@@ -1,22 +1,5 @@
--- Throwaway history rows so the paginated/searchable history list has enough
--- data to exercise. DEV ONLY.
---
--- Everything is tagged two ways so removal is unambiguous:
---   * report id  LIKE 'demo_rep_%'
---   * report name LIKE '[demo]%'
---
--- Deliberately does NOT touch run_completions or llm_usage: those drive the
--- per-user PDF count and $-spent dashboards, and fake rows there would corrupt
--- real spend figures. Only reports/runs/findings are seeded, which is all the
--- history list reads.
---
--- Remove with scripts/unseed_demo_history.sql (FKs cascade, so deleting the
--- reports takes the runs and findings with them).
-
 BEGIN;
 
--- 100 reports -> 11 pages at 10/page, enough for the ellipsis windowing to
--- actually appear (it only kicks in past 7 pages).
 INSERT INTO reports (id, name, created_by, created_at)
 SELECT
     'demo_rep_' || lpad(i::text, 3, '0'),
@@ -32,9 +15,6 @@ SELECT
     now() - (i || ' days')::interval
 FROM generate_series(1, 100) AS i;
 
--- One run per report. Every 7th keeps a DIFFERENT pdf_filename from the report
--- name, standing in for a report renamed after upload — that is the case where
--- searching only one of the two columns would strand the user.
 INSERT INTO runs (id, report_id, version_number, kind, pdf_filename, pdf_sha256,
                   pdf_path, status, uploaded_at, completed_at, created_by)
 SELECT
@@ -55,8 +35,6 @@ SELECT
 FROM reports r
 WHERE r.id LIKE 'demo_rep_%';
 
--- A second version on every 3rd report, so the "N versions" label varies and
--- the latest-run join has something to actually choose between.
 INSERT INTO runs (id, report_id, version_number, kind, pdf_filename, pdf_sha256,
                   pdf_path, status, uploaded_at, completed_at, created_by)
 SELECT
@@ -69,8 +47,6 @@ SELECT
 FROM reports r
 WHERE r.id LIKE 'demo_rep_%' AND (substr(r.id, 10)::int % 3) = 0;
 
--- 12 findings per run with a mixed status spread, so the covered/partial/missing
--- counters on each row show varied numbers instead of three zeros.
 INSERT INTO findings (run_id, disclosure_id, standard, status, note,
                       elements_json, suggested_fix, score)
 SELECT

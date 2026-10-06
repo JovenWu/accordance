@@ -11,15 +11,13 @@ def test_startup_bootstraps_admin(tmp_path, monkeypatch):
     monkeypatch.setenv("ADMIN_USERNAME", "root")
     monkeypatch.setenv("ADMIN_PASSWORD", "supersecret")
 
-    with TestClient(create_app()) as client:  # triggers lifespan startup
+    with TestClient(create_app()) as client:
         assert client.get("/api/health").status_code == 200
-        # The bootstrapped admin can log in.
         r = client.post(
             "/api/auth/login", json={"username": "root", "password": "supersecret"}
         )
         assert r.status_code == 200
 
-        # Check the DB while the pool is still alive (inside the lifespan context).
         with connection() as conn:
             row = conn.execute(
                 "SELECT is_admin, is_active FROM users WHERE username='root'"

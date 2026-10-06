@@ -22,7 +22,6 @@ describe("parseServerDate", () => {
 
 describe("formatDateTime", () => {
   it("renders a UTC timestamp in UTC+7 (Asia/Jakarta)", () => {
-    // 02:30 UTC -> 09:30 WIB (separator is locale-dependent, so match loosely)
     expect(
       formatDateTime("2026-06-24T02:30:00", {
         hour: "2-digit",

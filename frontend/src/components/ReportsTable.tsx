@@ -56,7 +56,6 @@ export function ReportsTable({ query }: { query: string }) {
     }
   }, []);
 
-  // Reset to page 0 when the search changes; refetch.
   useEffect(() => {
     setPage(0);
     void load(query, 0);
@@ -66,7 +65,6 @@ export function ReportsTable({ query }: { query: string }) {
     void load(query, page);
   }, [page, query, load]);
 
-  // Poll while any visible report has a non-terminal latest run.
   useEffect(() => {
     const active = data?.items.some((r) => !TERMINAL.includes(r.latest.status));
     if (!active) return;
@@ -115,7 +113,6 @@ export function ReportsTable({ query }: { query: string }) {
   return (
     <TableCard>
       <div className="min-h-0 flex-1 overflow-auto">
-        {/* Mobile: stacked list — the 720px table isn't readable on phones. */}
         <div className="md:hidden">
           {data === null && !error
             ? Array.from({ length: 5 }).map((_, i) => (

@@ -31,11 +31,11 @@ def test_assert_report_access_owner_ok_others_404():
         conn.execute("INSERT INTO users (username, password_hash) VALUES ('a', 'x')")
         owner = conn.execute("SELECT id FROM users WHERE username='a'").fetchone()["id"]
         _mk(conn, owner, "rep1")
-        assert_report_access(conn, "rep1", {"id": owner, "is_admin": False})  # no raise
+        assert_report_access(conn, "rep1", {"id": owner, "is_admin": False})
         with pytest.raises(HTTPException) as ei:
             assert_report_access(conn, "rep1", {"id": owner + 999, "is_admin": False})
         assert ei.value.status_code == 404
-        assert_report_access(conn, "rep1", {"id": owner + 999, "is_admin": True})  # admin ok
+        assert_report_access(conn, "rep1", {"id": owner + 999, "is_admin": True})
 
 
 def test_assert_run_access_maps_through_report():

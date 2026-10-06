@@ -13,15 +13,10 @@ const STATUS_TO_INDEX: Record<RunStatus, number> = {
   indexing: 1,
   judging: 2,
   completed: 4,
-  failed: -1, // resolved from judged progress: judge failed mid-flight
+  failed: -1,
   cancelled: -1,
 };
 
-/**
- * Stage is derived from the run summary status (refetched on SSE `stage`
- * events + poll). `failed`/`cancelled` resolve to the furthest plausible
- * stage from how much was judged.
- */
 export function PipelineStepper({
   status,
   judged,
@@ -34,7 +29,6 @@ export function PipelineStepper({
   let activeIdx = STATUS_TO_INDEX[status];
   let failedIdx = -1;
   if (status === "failed" || status === "cancelled") {
-    // With judged > 0 the failure was during judging; otherwise extraction.
     activeIdx = judged > 0 ? 2 : 0;
     failedIdx = activeIdx;
   }

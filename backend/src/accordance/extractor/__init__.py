@@ -24,8 +24,5 @@ def extract_pdf(pdf_path: Path) -> ExtractedReport:
     if backend == "docling":
         from accordance.extractor.docling_extractor import extract_pdf as _impl
     else:
-        # Default: pymupdf. Anything unrecognized falls through to here too,
-        # which is what we want (failing forward to the cheaper backend
-        # is safer than failing forward to the expensive one).
         from accordance.extractor.pymupdf_extractor import extract_pdf as _impl
     return _impl(pdf_path)

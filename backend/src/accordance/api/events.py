@@ -11,7 +11,6 @@ class EventBus:
 
     def __init__(self) -> None:
         self._queues: dict[str, list[asyncio.Queue]] = {}
-        # Loop captured per queue at subscribe time (subscribe runs on the loop).
         self._loops: dict[asyncio.Queue, asyncio.AbstractEventLoop | None] = {}
 
     def subscribe(self, run_id: str) -> asyncio.Queue:
@@ -20,7 +19,7 @@ class EventBus:
         try:
             self._loops[q] = asyncio.get_running_loop()
         except RuntimeError:
-            self._loops[q] = None  # no running loop (sync context) — best-effort
+            self._loops[q] = None
         return q
 
     def unsubscribe(self, run_id: str, q: asyncio.Queue) -> None:
@@ -28,13 +27,10 @@ class EventBus:
         if subs and q in subs:
             subs.remove(q)
             if not subs:
-                # Drop the empty key so _queues doesn't grow one entry per run
-                # for the lifetime of the process.
                 del self._queues[run_id]
         self._loops.pop(q, None)
 
     def publish(self, run_id: str, event: dict) -> None:
-        # .get with a default tuple: never insert a key just by publishing.
         for q in list(self._queues.get(run_id, ())):
             loop = self._loops.get(q)
             if loop is not None and not loop.is_closed():

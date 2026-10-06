@@ -12,11 +12,6 @@ def _report(*page_markdowns: str) -> ExtractedReport:
     )
 
 
-# ----------------------------------------------------------------------
-# Behaviors preserved from the pre-section-aware chunker
-# ----------------------------------------------------------------------
-
-
 def test_chunk_short_page_returns_one_chunk():
     report = _report("Hello world")
     chunks = chunk_report(report, target_tokens=500, overlap_tokens=50)
@@ -43,11 +38,6 @@ def test_chunks_do_not_cross_page_boundaries():
             assert "two" not in c.text
 
 
-# ----------------------------------------------------------------------
-# Section-aware behavior
-# ----------------------------------------------------------------------
-
-
 def test_split_by_headings_no_headings():
     sections = _split_by_headings("Just some prose, no headings here.")
     assert len(sections) == 1
@@ -69,7 +59,6 @@ def test_split_by_headings_multiple_sections():
     assert headings == ["# Title", "## Section A", "## Section B"]
     assert "Body of A." in sections[1].text
     assert "Body of B." in sections[2].text
-    # Each section text starts with its heading
     for s in sections:
         assert s.text.startswith(s.heading)
 
@@ -94,12 +83,10 @@ def test_small_sections_become_one_chunk_each():
     chunks = chunk_report(report, target_tokens=500, overlap_tokens=50)
     assert len(chunks) == 3
     assert all(c.page == 1 for c in chunks)
-    # Each chunk should contain its section's content
     texts = [c.text for c in chunks]
     assert any("Acme" in t for t in texts)
     assert any("Singapore" in t for t in texts)
     assert any("Five countries" in t for t in texts)
-    # Heading lines preserved
     assert any("## Org details" in t for t in texts)
 
 
@@ -107,13 +94,11 @@ def test_oversized_section_splits_with_heading_repeated():
     """A section bigger than target_tokens splits within itself; the heading
     is prepended to every piece so each sub-chunk carries section context."""
     heading = "## Greenhouse gas emissions"
-    body = " ".join(["emission"] * 1500)  # well above 500 tokens
+    body = " ".join(["emission"] * 1500)
     md = f"{heading}\n{body}"
     report = _report(md)
     chunks = chunk_report(report, target_tokens=200, overlap_tokens=20)
     assert len(chunks) > 1
-    # First chunk has the heading (already in section text), subsequent
-    # chunks have it prepended by the chunker.
     assert all(heading in c.text for c in chunks)
 
 
@@ -124,7 +109,6 @@ def test_no_heading_oversized_falls_back_to_window_split():
     report = _report(text)
     chunks = chunk_report(report, target_tokens=500, overlap_tokens=50)
     assert len(chunks) > 1
-    # No heading line should be inserted spuriously
     assert all(not c.text.startswith("#") for c in chunks)
 
 
@@ -142,17 +126,11 @@ def test_mixed_short_and_long_sections():
     )
     report = _report(md)
     chunks = chunk_report(report, target_tokens=200, overlap_tokens=20)
-    # Short section → 1 chunk; long section → multiple
     assert len(chunks) >= 2
     short_chunks = [c for c in chunks if "Short body" in c.text]
     long_chunks = [c for c in chunks if "## Long" in c.text]
     assert len(short_chunks) == 1
-    assert len(long_chunks) >= 2  # heading-prepended sub-chunks
-
-
-# ----------------------------------------------------------------------
-# Table-dominated section handling
-# ----------------------------------------------------------------------
+    assert len(long_chunks) >= 2
 
 
 def test_large_table_kept_atomic():
@@ -161,19 +139,18 @@ def test_large_table_kept_atomic():
     report = _report(md)
     chunks = chunk_report(report, target_tokens=100, overlap_tokens=10)
     holding = [c for c in chunks if "| 0 | 0 | 0 |" in c.text]
-    assert len(holding) == 1  # first row present in exactly one chunk
-    assert "| 199 | 398 | 597 |" in holding[0].text  # ...and the last row is in the SAME chunk
+    assert len(holding) == 1
+    assert "| 199 | 398 | 597 |" in holding[0].text
 
 
 def test_prose_section_still_window_splits():
     body = " ".join(["word"] * 1500)
     report = _report(f"## Narrative\n{body}")
     chunks = chunk_report(report, target_tokens=200, overlap_tokens=20)
-    assert len(chunks) > 1  # prose is unaffected by the table rule
+    assert len(chunks) > 1
 
 
 def test_oversized_table_falls_back_to_splitting():
-    # A table far larger than the embedding token limit must NOT be one chunk.
     rows = "\n".join(
         f"| {i} | value-{i} | data-{i} | extra-{i} | more-{i} | last-{i} |"
         for i in range(2000)
@@ -181,12 +158,7 @@ def test_oversized_table_falls_back_to_splitting():
     md = f"## Huge table\n| A | B | C | D | E | F |\n|---|---|---|---|---|---|\n{rows}"
     report = _report(md)
     chunks = chunk_report(report, target_tokens=200, overlap_tokens=20)
-    assert len(chunks) > 1  # exceeds embedding limit → window-split, not atomic
-
-
-# ----------------------------------------------------------------------
-# GRI content-index / cross-reference table exclusion
-# ----------------------------------------------------------------------
+    assert len(chunks) > 1
 
 
 def _index_rows(*ids: str) -> str:
@@ -260,7 +232,7 @@ def test_inline_answered_general_disclosures_page_is_kept():
         "2-8 Workers who are not employees: 450 contractors engaged this year.\n"
     )
     chunks = chunk_report(_report(md), target_tokens=500, overlap_tokens=50)
-    assert chunks  # NOT dropped
+    assert chunks
     assert any("Organizational details" in c.text for c in chunks)
 
 
@@ -280,7 +252,7 @@ def test_disclosure_keyed_data_summary_table_is_kept():
         "| Governance body size | 2-9 | 10 | 11 |\n"
     )
     chunks = chunk_report(_report(md), target_tokens=2000, overlap_tokens=50)
-    assert chunks  # NOT dropped
+    assert chunks
     assert any("305-1" in c.text for c in chunks)
 
 
@@ -302,5 +274,5 @@ def test_material_topics_mapping_table_is_kept():
         "| Anti-corruption | 205-1 |\n"
     )
     chunks = chunk_report(_report(md), target_tokens=2000, overlap_tokens=50)
-    assert chunks  # NOT dropped
+    assert chunks
     assert any("Climate change" in c.text for c in chunks)

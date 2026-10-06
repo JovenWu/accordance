@@ -2,13 +2,7 @@ import { useId } from "react";
 
 import { cn } from "@/lib/utils";
 
-/**
- * The Accordance mark — a gold app tile whose "disclosure lines" resolve into
- * a check. Same artwork as /favicon.svg, inlined so it can be sized inline
- * without a network fetch.
- */
 export function BrandMark({ className }: { className?: string }) {
-  // useId emits ":r0:"-style ids — colons break url(#…) refs in some engines.
   const gid = `bm-${useId().replace(/:/g, "")}`;
   return (
     <svg

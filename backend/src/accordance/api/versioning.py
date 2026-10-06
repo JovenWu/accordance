@@ -61,7 +61,7 @@ def _create_versioned_run(
     settings: Settings,
     *,
     source_run_id: str,
-    kind: str,  # 'retry' | 'fork'
+    kind: str,
     disclosure_ids_override: list[str] | None = None,
     acting_user_id=None,
 ) -> tuple[str, int]:
@@ -92,8 +92,6 @@ def _create_versioned_run(
             (src["report_id"],),
         ).fetchone()["v"]
 
-        # An explicit override (Retry-with-selection) wins; otherwise the new
-        # version inherits the source run's selection (NULL = all).
         if disclosure_ids_override is not None:
             selected = disclosure_ids_override
             selected_json = json.dumps(disclosure_ids_override)
@@ -129,9 +127,6 @@ def _create_versioned_run(
         source_id = src["id"]
         pdf_path = Path(src["pdf_path"])
 
-    # Copy the parent's chunks/vectors/FTS in the background (it can be
-    # thousands of rows) so the response — and the client's reroute to the
-    # new run — returns the moment the run row exists, not after the copy.
     cancel_registry.clear(new_run_id)
     _kick_off_graph(
         new_run_id,
@@ -180,8 +175,6 @@ async def update_report_with_new_pdf(
         raise HTTPException(400, f"Unsupported content type: {pdf.content_type}")
     body = await _read_upload_capped(pdf, settings.max_upload_mb * 1024 * 1024)
     filename = pdf.filename or "upload.pdf"
-    # Offload the blocking sha256 + connect + file-write + INSERT so the event
-    # loop (and every concurrent SSE stream) stays responsive — see create_run.
     result = await run_in_threadpool(
         _persist_new_version, body, report_id, filename, settings, user
     )

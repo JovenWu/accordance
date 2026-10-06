@@ -42,16 +42,11 @@ def conn():
         yield c
 
 
-# ----------------------------------------------------------------------
-# RRF math
-# ----------------------------------------------------------------------
-
-
 def test_rrf_combines_two_rankings():
     """Item in both rankings outscores items in only one."""
     rankings = [
-        [10, 20, 30],  # ranking A
-        [20, 10, 40],  # ranking B
+        [10, 20, 30],
+        [20, 10, 40],
     ]
     fused = reciprocal_rank_fusion(rankings, k_constant=60)
     by_id = {cid: score for cid, score in fused}
@@ -65,14 +60,8 @@ def test_rrf_handles_empty_rankings():
     assert reciprocal_rank_fusion([[], []]) == []
 
 
-# ----------------------------------------------------------------------
-# FTS query construction (PG tsquery dialect)
-# ----------------------------------------------------------------------
-
-
 def test_build_fts_query_or_joins_tokens():
     q = _to_tsquery("Scope 1 emissions")
-    # tokens lowercased, pipe-joined (PG tsquery OR operator)
     assert q == "scope | 1 | emissions"
 
 
@@ -86,11 +75,6 @@ def test_build_fts_query_strips_special_chars():
     assert "gri" in tokens
     assert "305" in tokens
     assert "1" in tokens
-
-
-# ----------------------------------------------------------------------
-# BM25 retrieve
-# ----------------------------------------------------------------------
 
 
 def test_bm25_finds_keyword_match(conn):
@@ -121,11 +105,6 @@ def test_bm25_scopes_to_run_id(conn):
     assert hits[0]["page"] == 1
 
 
-# ----------------------------------------------------------------------
-# Hybrid retrieve
-# ----------------------------------------------------------------------
-
-
 def test_hybrid_returns_chunks_for_keyword_query(conn):
     _seed_run(conn, "r1")
     store = VectorStore(conn, FakeEmbedder(dim=8), mode="hybrid")
@@ -142,11 +121,6 @@ def test_hybrid_degrades_to_dense_when_no_bm25_hits(conn):
     _seed_chunks(store)
     hits = store.retrieve("r1", "xyzzy", k=2)
     assert len(hits) <= 2
-
-
-# ----------------------------------------------------------------------
-# Mode flag
-# ----------------------------------------------------------------------
 
 
 def test_mode_dense_skips_bm25(conn, monkeypatch):

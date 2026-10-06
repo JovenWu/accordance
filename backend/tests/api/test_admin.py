@@ -25,7 +25,6 @@ def admin_client(tmp_path, monkeypatch):
 
 
 def test_list_requires_admin(auth_client):
-    # auth_client (from tests/api/conftest.py) is the non-admin 'tester'.
     assert auth_client.get("/api/admin/users").status_code == 403
 
 
@@ -234,8 +233,6 @@ def test_reset_password(admin_client):
 
 def test_reset_password_short_400(admin_client):
     with connection() as conn:
-        # NOTE: test_admin.py defines its OWN admin_client fixture seeding 'admin'
-        # (it shadows conftest's 'boss'). Use 'admin' here, not 'boss'.
         uid = conn.execute("SELECT id FROM users WHERE username='admin'").fetchone()["id"]
     r = admin_client.post(
         f"/api/admin/users/{uid}/reset-password", json={"password": "short"}
@@ -258,7 +255,7 @@ def test_reset_password_invalidates_existing_sessions(admin_client):
     assert victim.post(
         "/api/auth/login", json={"username": "sessuser", "password": "password1"}
     ).status_code == 200
-    assert victim.get("/api/auth/me").status_code == 200  # session valid before reset
+    assert victim.get("/api/auth/me").status_code == 200
 
     with connection() as conn:
         uid = conn.execute(
@@ -268,7 +265,6 @@ def test_reset_password_invalidates_existing_sessions(admin_client):
         f"/api/admin/users/{uid}/reset-password", json={"password": "newpass99"}
     )
 
-    # The victim's pre-reset session is now invalid.
     assert victim.get("/api/auth/me").status_code == 401
 
 
@@ -285,13 +281,11 @@ def test_daily_usage_buckets_by_wib_day_not_utc(admin_client):
     """
     with connection() as conn:
         uid = _uid(conn)
-        # 2026-03-10 16:30Z == 2026-03-10 23:30 WIB -> still the 10th locally.
         conn.execute(
             "INSERT INTO llm_usage (run_id, user_id, kind, model, cost_usd, created_at) "
             "VALUES ('d1', %s, 'judge', 'm', 1.00, '2026-03-10T16:30:00Z')",
             (uid,),
         )
-        # 2026-03-10 18:00Z == 2026-03-11 01:00 WIB -> rolls into the 11th.
         conn.execute(
             "INSERT INTO llm_usage (run_id, user_id, kind, model, cost_usd, created_at) "
             "VALUES ('d2', %s, 'judge', 'm', 2.00, '2026-03-10T18:00:00Z')",
@@ -324,10 +318,8 @@ def test_daily_usage_keeps_days_that_only_one_log_saw(admin_client):
         )
 
     days = {d["day"]: d for d in admin_client.get(f"/api/admin/users/{uid}").json()["daily_usage"]}
-    # Completions-only day survives with a zeroed cost...
     assert days["2026-04-01"]["pdf_count"] == 1
     assert days["2026-04-01"]["cost_usd"] == 0.0
-    # ...and the cost-only day survives with no PDFs.
     assert days["2026-04-05"]["pdf_count"] == 0
     assert days["2026-04-05"]["cost_usd"] == 0.5
 
@@ -343,7 +335,6 @@ def test_daily_usage_is_newest_first_and_omits_quiet_days(admin_client):
             )
 
     days = admin_client.get(f"/api/admin/users/{uid}").json()["daily_usage"]
-    # The 7 days in between had no activity and must not appear as zero rows.
     assert [d["day"] for d in days] == ["2026-05-09", "2026-05-01"]
 
 

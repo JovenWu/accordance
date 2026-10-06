@@ -98,8 +98,6 @@ export function ReportPage() {
     if (reportId) void load(reportId);
   }, [reportId, load]);
 
-  // Poll while any version is non-terminal; keep picked-set entries that still
-  // exist so a deleted version doesn't linger in the compare selection.
   useEffect(() => {
     if (!reportId || !report) return;
     const active = report.runs.some((v) => !TERMINAL.includes(v.status));
@@ -378,7 +376,6 @@ export function ReportPage() {
                         setPicked((cur) => {
                           const next = new Set(cur);
                           if (on) {
-                            // Two-slot compare: drop the oldest pick when full.
                             if (next.size >= 2) next.delete([...next][0]);
                             next.add(v.run_id);
                           } else next.delete(v.run_id);

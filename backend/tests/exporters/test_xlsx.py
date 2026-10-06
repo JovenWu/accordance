@@ -6,7 +6,6 @@ from accordance.exporters.coverage_matrix import MatrixColumn, build_coverage_ma
 from accordance.exporters.xlsx_exporter import to_xlsx_bytes
 from accordance.kb.schema import Disclosure
 
-# Fixed layout: title(1) → generated-on(2) → legend(3) → header(4) → data(5+).
 HEADER_ROW = 4
 FIRST_DATA = 5
 
@@ -25,7 +24,6 @@ def _matrix():
         "305-3": _disc("305-3", "GRI 305: Emissions 2016", "Other indirect"),
         "303-3": _disc("303-3", "GRI 303: Water 2018", "Water withdrawal"),
     }
-    # 2-2 graded 5; 305-3 N/A (0); 303-3 errored (None -> blank).
     col = MatrixColumn(label="Acme", score_by_id={"2-2": 5, "305-3": 0, "303-3": None})
     return build_coverage_matrix(kb, [col])
 
@@ -52,9 +50,9 @@ def test_xlsx_score_cells():
         ws.cell(r, 2).value: ws.cell(r, 4).value
         for r in range(FIRST_DATA, ws.max_row + 1)
     }
-    assert by_code["GRI 2-2"] == 5         # graded 1-5 -> integer
-    assert by_code["GRI 305-3"] == "N/A"   # 0 -> "N/A" text
-    assert by_code["GRI 303-3"] is None    # error -> blank
+    assert by_code["GRI 2-2"] == 5
+    assert by_code["GRI 305-3"] == "N/A"
+    assert by_code["GRI 303-3"] is None
 
 
 def test_xlsx_grade_cells_color_coded():
@@ -63,10 +61,10 @@ def test_xlsx_grade_cells_color_coded():
         ws.cell(r, 2).value: r for r in range(FIRST_DATA, ws.max_row + 1)
     }
     graded = ws.cell(rows["GRI 2-2"], 4)
-    assert graded.fill.fgColor.rgb == "00DCF5E7"  # 5 = green
+    assert graded.fill.fgColor.rgb == "00DCF5E7"
     assert graded.font.bold is True
     na = ws.cell(rows["GRI 305-3"], 4)
-    assert na.fill.fgColor.rgb == "00F1F1F2"      # N/A = gray
+    assert na.fill.fgColor.rgb == "00F1F1F2"
     assert na.font.italic is True
 
 
@@ -77,7 +75,6 @@ def test_xlsx_footer_has_live_formulas():
     assert "Disclosures checked" in labels
     assert "Coverage score" in labels
     tot, chk, cov = labels["Total score"], labels["Disclosures checked"], labels["Coverage score"]
-    # Data rows span FIRST_DATA..(tot-1); footer carries formulas, not values.
     assert ws.cell(tot, 4).value == f"=SUM(D{FIRST_DATA}:D{tot - 1})"
     assert ws.cell(chk, 4).value == f"=COUNT(D{FIRST_DATA}:D{tot - 1})"
     assert ws.cell(cov, 4).value == f'=IF(D{chk}=0,"",D{tot}/(D{chk}*5))'
@@ -90,9 +87,7 @@ def test_xlsx_score_cells_integer_format_and_autofilter():
     graded_row = next(
         r for r in range(FIRST_DATA, ws.max_row + 1) if ws.cell(r, 2).value == "GRI 2-2"
     )
-    assert ws.cell(graded_row, 4).number_format == "0"  # integer 0-5, not 0.0
+    assert ws.cell(graded_row, 4).number_format == "0"
     assert ws.column_dimensions["C"].width == 50
-    # Autofilter spans header + data rows only — the three footer rows are excluded.
     assert ws.auto_filter.ref == f"A{HEADER_ROW}:D{ws.max_row - 3}"
-    # Header row + label columns stay pinned while scrolling.
     assert ws.freeze_panes == "D5"

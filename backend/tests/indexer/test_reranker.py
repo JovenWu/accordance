@@ -36,7 +36,6 @@ def test_install_onnx_thread_cap_injects_capped_options(monkeypatch):
     monkeypatch.setattr(ort, "InferenceSession", fake_session)
     monkeypatch.setattr(r, "_THREAD_CAP_INSTALLED", False)
     r._install_onnx_thread_cap(2)
-    # FlashRank constructs the session positionally with no SessionOptions.
     ort.InferenceSession("dummy.onnx")
     so = captured["sess_options"]
     assert so is not None
@@ -60,7 +59,6 @@ def test_install_onnx_thread_cap_respects_caller_options(monkeypatch):
     explicit = ort.SessionOptions()
     explicit.intra_op_num_threads = 7
     ort.InferenceSession("dummy.onnx", sess_options=explicit)
-    # A caller that supplies its own options must not be overridden.
     assert captured["sess_options"].intra_op_num_threads == 7
 
 
@@ -74,4 +72,4 @@ def test_flashrank_ranks_relevant_passage_first():
         "Total water withdrawal in FY2024 was 41 megaliters across all sites.",
     ]
     order = r.rerank("total water withdrawal in megaliters", passages, top_n=2)
-    assert order[0] == 1  # the water passage outranks the cat passage
+    assert order[0] == 1

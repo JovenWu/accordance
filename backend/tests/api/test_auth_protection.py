@@ -1,4 +1,3 @@
-# backend/tests/api/test_auth_protection.py
 from fastapi.testclient import TestClient
 
 from accordance.auth.passwords import hash_password

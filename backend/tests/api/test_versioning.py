@@ -54,11 +54,6 @@ def _seed_runs() -> tuple[str, str]:
     return parent_id, child_id
 
 
-# ---------------------------------------------------------------------------
-# Update endpoint helpers (used by later tests)
-# ---------------------------------------------------------------------------
-
-
 def test_copy_chunks_to_new_run() -> None:
     parent_id, child_id = _seed_runs()
 
@@ -76,11 +71,6 @@ def test_copy_chunks_to_new_run() -> None:
     child_ids = {r["id"] for r in child_chunks}
     assert parent_ids.isdisjoint(child_ids)
     assert [r["text"] for r in parent_chunks] == [r["text"] for r in child_chunks]
-
-
-# ---------------------------------------------------------------------------
-# POST /api/reports/{report_id}/versions
-# ---------------------------------------------------------------------------
 
 
 def test_update_404_for_unknown_report(tmp_path, monkeypatch):
@@ -136,7 +126,7 @@ def test_update_creates_new_version_with_new_pdf(tmp_path, monkeypatch):
         "/api/runs", files={"pdf": ("v1.pdf", body_v1, "application/pdf")}
     ).json()
 
-    body_v2 = body_v1 + b"\n%appended"  # different hash
+    body_v2 = body_v1 + b"\n%appended"
     r = client.post(
         f"/api/reports/{j['report_id']}/versions",
         files={"pdf": ("v2.pdf", body_v2, "application/pdf")},

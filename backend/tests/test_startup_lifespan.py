@@ -23,25 +23,23 @@ def test_startup_reconciles_orphaned_runs(tmp_path, monkeypatch):
             "VALUES ('r2', 'rep', 2, 'retry', 'x.pdf', 'sha2', 'x', 'completed')"
         )
 
-    # The context-manager form triggers Starlette lifespan startup.
     with TestClient(create_app()) as client:
         assert client.get("/api/health").status_code == 200
 
-        # Check results while pool is alive (inside lifespan context).
         with connection() as conn:
             r1 = conn.execute("SELECT status, error FROM runs WHERE id='r1'").fetchone()
             r2 = conn.execute("SELECT status FROM runs WHERE id='r2'").fetchone()
 
     assert r1["status"] == "failed"
     assert "restart" in r1["error"].lower()
-    assert r2["status"] == "completed"  # terminal run untouched
+    assert r2["status"] == "completed"
 
 
 def test_startup_fails_fast_on_missing_keys(tmp_path, monkeypatch):
     monkeypatch.setenv("DATA_DIR", str(tmp_path))
     monkeypatch.setenv("EMBEDDING_MODEL", "fake:fake")
-    monkeypatch.setenv("LLM_MODEL", "openai:gpt-5-mini")  # real provider...
-    monkeypatch.setenv("LLM_API_KEY", "")  # ...with no key
+    monkeypatch.setenv("LLM_MODEL", "openai:gpt-5-mini")
+    monkeypatch.setenv("LLM_API_KEY", "")
 
     with pytest.raises(RuntimeError):
         with TestClient(create_app()) as client:

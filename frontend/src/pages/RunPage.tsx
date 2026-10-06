@@ -47,7 +47,6 @@ export function RunPage() {
     if (id) void load(id);
   }, [id, load]);
 
-  // Report name for the breadcrumb — one extra call once report_id is known.
   useEffect(() => {
     if (!run?.report_id) return;
     let stale = false;
@@ -61,16 +60,12 @@ export function RunPage() {
 
   const live = run ? LIVE_STATUSES.includes(run.summary.status) : false;
 
-  // Poll as a fallback stage source — SSE `stage` events trigger an immediate
-  // refetch, and the poll covers anything the stream misses.
   useEffect(() => {
     if (!id || !live) return;
     const t = setInterval(() => void load(id), 3000);
     return () => clearInterval(t);
   }, [id, live, load]);
 
-  // SSE: on each judged finding, schedule a debounced refetch so the feed and
-  // counts grow as the judge works; terminal events force an immediate fetch.
   const onEvent = useCallback(
     (msg: { type?: string }) => {
       if (!id) return;
@@ -81,8 +76,6 @@ export function RunPage() {
           void load(id);
         }, 400);
       } else if (msg.type === "stage") {
-        // Stage transitions are rare — refetch immediately so the stepper
-        // animates the moment extract/index/judge flips, not on the 3s poll.
         void load(id);
       } else if (
         msg.type === "completed" ||

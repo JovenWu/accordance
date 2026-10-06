@@ -1,4 +1,3 @@
-# backend/tests/kb/test_kb_content.py
 from pathlib import Path
 
 from accordance.kb.loader import load_kb
@@ -12,12 +11,10 @@ def test_102_titles_match_official():
 
 def test_102_3_is_quantitative_just_transition():
     elems = {e.id for e in KB["102-3"].required_elements}
-    # quantitative metrics, not a narrative approach
     assert "workers_recruited_terminated_redeployed" in elems
     assert "employees_reskilled" in elems
 
 def test_102_emissions_cross_reference_gri103():
-    # Scope 1/2/3 must reference GRI 103 energy disclosures
     assert "103-2-a" in KB["102-5"].requirement_text
     assert "103-2-b" in KB["102-6"].requirement_text
     assert "103-3-a" in KB["102-7"].requirement_text

@@ -2,12 +2,6 @@
 name = "accordance"
 version = "0.1.0"
 requires-python = ">=3.11,<3.14"
-# Upper bounds cap the next breaking MAJOR so a `pip install` months apart can't
-# silently jump (e.g. langchain 0.3 -> 1.x already happened under the old
-# unbounded `>=`, which is exactly the unattributable behavior drift we want to
-# avoid for an LLM-judge pipeline). Floors track the current known-good majors.
-# This is not a full lockfile — for byte-reproducible builds, generate one with
-# `uv lock` / pip-compile against the Linux target and install with `-c`.
 dependencies = [
   "flashrank>=0.2.9,<0.3",
   "fastapi>=0.115,<1.0",
@@ -60,13 +54,6 @@ target-version = "py311"
 select = ["E", "F", "I", "B", "UP", "RUF"]
 
 [tool.ruff.lint.per-file-ignores]
-# snap.py's _DROP/_DASH sets deliberately contain the exact smart-quote/dash
-# unicode they normalize away — they ARE the feature, not typos (RUF001).
 "src/accordance/judge/snap.py" = ["RUF001"]
-# prompts.py holds the judge prompt text verbatim; reflowing long lines would
-# churn the prompt and shift the prompt_hash (eval reproducibility). Allow E501.
 "src/accordance/judge/prompts.py" = ["E501"]
-# Tests stay readable over strict: long assertion lines (E501), fixture/helper
-# imports placed after setup (E402), and FastAPI Depends() defaults mirrored
-# from endpoints (B008) are idiomatic in tests. Product code (src) stays strict.
 "tests/**" = ["E501", "E402", "B008"]

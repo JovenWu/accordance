@@ -15,7 +15,6 @@ import {
 } from "./selection";
 import type { KbDisclosure, KbStandard } from "../types";
 
-// Factory for category-grouping tests (reused below).
 const mk = (
   standard: string,
   category: "universal" | "topic" | "sector",
@@ -64,13 +63,9 @@ describe("selection helpers", () => {
 
   it("counts locked (judged) ids as 'on' for the parent state; toggle still ignores them", () => {
     const locked = new Set(["2-1"]);
-    // A judged child reads as 'on', so locked 2-1 + selected 2-2 = all on.
     expect(standardState(group, new Set(["2-2"]), locked)).toBe("checked");
-    // Locked 2-1 on, 2-2 unselected -> partially on -> indeterminate (NOT unchecked).
     expect(standardState(group, new Set(), locked)).toBe("indeterminate");
-    // Both judged -> fully on -> checked.
     expect(standardState(group, new Set(), new Set(["2-1", "2-2"]))).toBe("checked");
-    // Toggling the standard never adds the locked id.
     const toggled = toggleStandard(group, new Set(), locked);
     expect(toggled.has("2-1")).toBe(false);
     expect(toggled.has("2-2")).toBe(true);
@@ -95,7 +90,6 @@ describe("groupByCategory", () => {
       "sector",
     ]);
     expect(result.map((c) => c.label)).toEqual(["Universal", "Topic", "Sector"]);
-    // standard order within a category is preserved (input order)
     expect(result[1].standards.map((s) => s.standard)).toEqual(["GRI 305"]);
   });
 
@@ -194,7 +188,6 @@ describe("disclosureVisible", () => {
   });
   it("combines search AND edition filter", () => {
     const sup = disc({ id: "x", title: "Old metric", status: "superseded" });
-    // matches query but hidden by edition filter
     expect(
       disclosureVisible(sup, std, {
         query: "old",
@@ -202,7 +195,6 @@ describe("disclosureVisible", () => {
         selected: new Set(),
       }),
     ).toBe(false);
-    // current + non-matching query => hidden
     expect(
       disclosureVisible(disc({}), std, {
         query: "water",
@@ -227,8 +219,6 @@ describe("compareSelectionChips", () => {
   });
 
   it("drops ids whose version was deleted instead of throwing", () => {
-    // 'run-gone' is no longer in the map (deleted in another tab) — must be
-    // skipped, not crash the page via a non-null assertion.
     expect(compareSelectionChips(["run-a", "run-gone"], versions)).toEqual([
       { runId: "run-a", versionNumber: 1 },
     ]);

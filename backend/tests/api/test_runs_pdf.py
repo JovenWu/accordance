@@ -59,7 +59,6 @@ def test_get_run_pdf_missing_file_404(tmp_path, monkeypatch):
     _login(client)
     run_id = _upload(client)
 
-    # Remove the stored PDF from disk, leaving the DB row intact.
     next(tmp_path.rglob(f"{run_id}.pdf")).unlink()
 
     r = client.get(f"/api/runs/{run_id}/pdf")

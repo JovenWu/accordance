@@ -6,12 +6,10 @@ import { cn } from "@/lib/utils";
 export interface CheckboxProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onChange"> {
   checked?: boolean;
-  /** true → dash; false/undefined → unchecked. */
   indeterminate?: boolean;
   onCheckedChange?: (checked: boolean) => void;
 }
 
-/** 16px rounded checkbox matching the scope/export rows. */
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   ({ className, indeterminate, onCheckedChange, checked, ...props }, ref) => (
     <button

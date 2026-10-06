@@ -7,15 +7,8 @@ from psycopg_pool import ConnectionPool
 
 from accordance.config import Settings
 
-# Bump whenever SCHEMA_SQL changes so ensure_schema re-runs the DDL on an
-# existing database. "2" adds the llm_usage cache-token columns.
 SCHEMA_VERSION = "2"
 
-# Canonical Postgres schema. Idempotent (CREATE ... IF NOT EXISTS). Search is
-# native: chunks carries `embedding vector(dim)` for pgvector kNN (added by
-# ensure_embedding_dim, since the dim isn't known until the embedder is chosen)
-# and a generated `text_tsv` tsvector for full-text BM25. Integer 0/1 flags are
-# real BOOLEAN.
 SCHEMA_SQL = """
 CREATE EXTENSION IF NOT EXISTS vector;
 
@@ -182,14 +175,9 @@ _pool: ConnectionPool | None = None
 def _configure(conn: psycopg.Connection) -> None:
     conn.autocommit = True
     conn.row_factory = dict_row
-    # The pgvector `vector` type must exist before register_vector() can look up
-    # its OID. On a brand-new DB the extension isn't installed yet, and this
-    # runs on EVERY connection checkout, so create it idempotently here (cheap;
-    # IF NOT EXISTS short-circuits once present).
     conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
     register_vector(conn)
     conn.execute("SET hnsw.ef_search = 100")
-    # pgvector ≥0.8: keep scanning until k filtered rows found; silently skip on older server
     try:
         conn.execute("SET hnsw.iterative_scan = strict_order")
     except psycopg.errors.Error:
@@ -205,8 +193,6 @@ def _add_connect_timeout(conninfo: str, timeout_s: int) -> str:
     Windows with psycopg-binary). Injecting a reasonable ceiling here means
     the pool reports a clean error instead of wedging the process.
     """
-    # handles URL-form conninfo only (the shipped config uses URL form; a libpq
-    # key=value DSN would be malformed here)
     if "connect_timeout" in conninfo:
         return conninfo
     sep = "&" if "?" in conninfo else "?"
@@ -253,10 +239,9 @@ def connect_direct(settings: Settings) -> psycopg.Connection:
     """Standalone connection for CLI / eval / tests. Caller must close()."""
     conninfo = _add_connect_timeout(settings.database_url, settings.db_connect_timeout)
     conn = psycopg.connect(conninfo, autocommit=True, row_factory=dict_row)
-    conn.execute("CREATE EXTENSION IF NOT EXISTS vector")  # see _configure note
+    conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
     register_vector(conn)
     conn.execute("SET hnsw.ef_search = 100")
-    # pgvector ≥0.8: keep scanning until k filtered rows found; silently skip on older server
     try:
         conn.execute("SET hnsw.iterative_scan = strict_order")
     except psycopg.errors.Error:
@@ -278,15 +263,12 @@ def _set_meta(conn, key: str, value: str) -> None:
 
 
 def ensure_schema(conn) -> None:
-    # Fast path: once at the current version, skip the DDL.
     try:
         row = conn.execute("SELECT value FROM app_meta WHERE key='schema_version'").fetchone()
         if row is not None and row["value"] == SCHEMA_VERSION:
             return
     except psycopg.errors.UndefinedTable:
-        pass  # app_meta not created yet
-    # safe only while no statement contains a ; inside a string literal /
-    # function body / DO $$ block
+        pass
     for stmt in SCHEMA_SQL.split(";"):
         stmt = stmt.strip()
         if stmt:

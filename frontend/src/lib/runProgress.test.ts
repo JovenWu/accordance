@@ -7,8 +7,8 @@ describe("runProgress", () => {
     expect(progressPct(0, 10)).toBe(0);
     expect(progressPct(5, 10)).toBe(50);
     expect(progressPct(10, 10)).toBe(100);
-    expect(progressPct(12, 10)).toBe(100); // clamp over 100
-    expect(progressPct(3, 0)).toBe(0); // no divide-by-zero
+    expect(progressPct(12, 10)).toBe(100);
+    expect(progressPct(3, 0)).toBe(0);
   });
 
   it("phaseLabel maps non-terminal statuses, empty otherwise", () => {

@@ -15,7 +15,7 @@ def test_record_completion_writes_one_owned_row():
         )
 
         _record_completion(conn, "run1")
-        _record_completion(conn, "run1")  # idempotent
+        _record_completion(conn, "run1")
 
         rows = conn.execute("SELECT user_id FROM run_completions WHERE run_id='run1'").fetchall()
         assert len(rows) == 1

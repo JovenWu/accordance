@@ -27,14 +27,11 @@ def _out(excerpt, page):
 
 
 def test_drops_vision_excerpt_absent_from_text_layer():
-    # The value lived only in a chart image; the transcription isn't in the
-    # page's text layer, so it can't be highlighted — drop it (keep the verdict).
     page = "Greenhouse gas emissions are shown in the chart on this page."
     out = _out("Scope 1: 12,450 tCO2e", 9)
     snap_evidence_in_place(out, [9], lambda p: {9: page}.get(p, ""))
     assert out.evidence_excerpt is None
     assert out.evidence_page is None
-    # Verdict is untouched — only the quote is dropped.
     assert out.status == DisclosureStatus.covered
 
 

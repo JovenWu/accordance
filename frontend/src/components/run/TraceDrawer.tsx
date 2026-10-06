@@ -12,7 +12,6 @@ export function TraceDrawer({
   onClose,
 }: {
   run: RunDetail;
-  /** When set, only this disclosure's trace is shown. */
   disclosureId?: string;
   onClose: () => void;
 }) {

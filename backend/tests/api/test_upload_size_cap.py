@@ -25,13 +25,13 @@ def _client(tmp_path, monkeypatch, max_mb: str):
 
 def test_create_run_rejects_oversized_upload(tmp_path, monkeypatch):
     client = _client(tmp_path, monkeypatch, max_mb="1")
-    big = b"%PDF-1.4\n" + b"0" * (2 * 1024 * 1024)  # ~2 MB, over the 1 MB cap
+    big = b"%PDF-1.4\n" + b"0" * (2 * 1024 * 1024)
     r = client.post("/api/runs", files={"pdf": ("big.pdf", big, "application/pdf")})
     assert r.status_code == 413
 
 
 def test_create_run_accepts_within_limit(tmp_path, monkeypatch):
     client = _client(tmp_path, monkeypatch, max_mb="5")
-    small = b"%PDF-1.4\n" + b"0" * 1024  # 1 KB, well under the cap
+    small = b"%PDF-1.4\n" + b"0" * 1024
     r = client.post("/api/runs", files={"pdf": ("small.pdf", small, "application/pdf")})
-    assert r.status_code != 413  # not rejected for size (kicks off normally)
+    assert r.status_code != 413

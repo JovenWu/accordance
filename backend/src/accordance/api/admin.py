@@ -28,9 +28,6 @@ from accordance.users import MIN_PASSWORD_LEN, add_user, set_password
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 
-# Base projection: each user with their lifetime pdf_count + cost_usd. The
-# aggregates are grouped subqueries so a user with zero usage still appears
-# (LEFT JOIN + COALESCE -> 0 / 0.0).
 _USER_STATS_SELECT = """
 SELECT u.id, u.username, u.is_admin, u.is_active, u.created_at,
        COALESCE(c.n, 0)      AS pdf_count,
@@ -59,20 +56,10 @@ GROUP BY r.id, r.pdf_filename, r.uploaded_at, r.completed_at, r.status
 ORDER BY r.uploaded_at DESC LIMIT 10
 """
 
-# The app renders every timestamp in WIB (see frontend/src/lib/datetime.ts,
-# TIME_ZONE). Day buckets MUST use the same zone or the drawer would disagree
-# with itself: a 23:00 WIB run is 16:00 UTC, so grouping in UTC files it under
-# the day before the one its own "Recent runs" row shows. Keep the two in step.
 _DISPLAY_TZ = "Asia/Jakarta"
 
-# Cap on returned days. Only days with activity are emitted, so this is ~3
-# months of daily use and a lifetime for an occasional user.
 _DAILY_USAGE_LIMIT = 90
 
-# Cost and completions live in separate append-only logs with independent
-# timestamps, so neither is a superset of the other: a run can complete on a day
-# whose tokens were all booked before midnight, and a retry books cost against a
-# run completed days earlier. FULL OUTER JOIN keeps both kinds of day.
 _DAILY_USAGE_SQL = """
 WITH usage_days AS (
     SELECT (created_at AT TIME ZONE %(tz)s)::date AS day,
@@ -201,8 +188,6 @@ def update_user_admin(
 ):
     if body.is_active is None and body.is_admin is None:
         raise HTTPException(400, "No fields to update")
-    # Self-protection. Because the acting admin is always an active admin,
-    # blocking self-disable / self-demote guarantees >= 1 active admin remains.
     if user_id == admin["id"]:
         if body.is_active is False:
             raise HTTPException(400, "You cannot disable your own account")

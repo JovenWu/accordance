@@ -187,7 +187,6 @@ export function AdminUserPage() {
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col gap-5 lg:flex-row lg:items-start">
-        {/* Recent runs */}
         <div className="flex min-h-0 flex-1 flex-col gap-3 lg:h-full">
           <h2 className="text-[15px] font-semibold text-ink">Recent runs</h2>
           <div className="max-h-[480px] min-h-0 flex-1 overflow-auto rounded-3xl bg-surface lg:max-h-none">
@@ -229,7 +228,6 @@ export function AdminUserPage() {
           </div>
         </div>
 
-        {/* Right column: spend by kind + daily usage */}
         <div className="flex w-full shrink-0 flex-col gap-4 lg:w-[360px]">
           <div className="flex flex-col gap-2.5 rounded-3xl bg-surface p-4">
             <span className="text-xs font-medium text-muted-ink">
@@ -292,8 +290,6 @@ export function AdminUserPage() {
   );
 }
 
-/** The last 7 calendar days ending today, zero-filled where the API has no
- * activity (daily_usage only contains days with usage). */
 function last7Days(daily: { day: string; cost_usd: number; pdf_count: number }[]) {
   const byDay = new Map(daily.map((d) => [d.day, d]));
   const out: { day: string; cost_usd: number; pdf_count: number }[] = [];

@@ -37,7 +37,7 @@ def test_judge_all_node_uses_per_thread_connections(monkeypatch):
         )
         store = VectorStore(conn, FakeEmbedder(dim=8))
         store.write("r1", [Chunk(page=1, text="content")])
-        disclosures = [_disc(f"2-{i}") for i in range(1, 9)]  # 8 disclosures, >max_workers
+        disclosures = [_disc(f"2-{i}") for i in range(1, 9)]
 
         seen_conn_ids: set[int] = set()
         lock = threading.Lock()
@@ -45,9 +45,6 @@ def test_judge_all_node_uses_per_thread_connections(monkeypatch):
         def spy_judge_one(state, disclosure, store_, llm, conn_, **kw):
             with lock:
                 seen_conn_ids.add(id(conn_))
-            # Write through whatever connection the fan-out handed us — proves the
-            # per-thread connection is usable for writes, and lets us assert no
-            # finding was dropped.
             conn_.execute(
                 "INSERT INTO findings (run_id, disclosure_id, standard, status, note, "
                 "elements_json, suggested_fix) VALUES (%s, %s, %s, %s, %s, %s, %s)",
@@ -66,12 +63,10 @@ def test_judge_all_node_uses_per_thread_connections(monkeypatch):
             max_workers=4,
         )
 
-        # No finding dropped.
         n = conn.execute("SELECT COUNT(*) AS n FROM findings WHERE run_id='r1'").fetchone()["n"]
         assert n == len(disclosures)
         assert len(out["findings"]) == len(disclosures)
 
-        # The shared main connection must NOT be used by the workers.
         assert seen_conn_ids, "no judge_one_node calls observed"
         assert id(conn) not in seen_conn_ids, (
             "judge workers used the shared main connection — unsafe under "
@@ -124,22 +119,21 @@ def test_queued_workers_do_not_hold_db_connections(monkeypatch):
         store = VectorStore(conn, FakeEmbedder(dim=8))
         store.write("r-pool", [Chunk(page=1, text="content")])
 
-        # Force a narrow LLM gate so most threads must queue.
         monkeypatch.setattr(nodes_mod, "_judge_sem", threading.Semaphore(2))
 
         def slow_judge(state, disclosure, store_, llm, conn_, **kw):
-            time.sleep(0.05)  # hold the slot so queueing actually happens
+            time.sleep(0.05)
             return {"findings": [{"disclosure_id": disclosure.id}]}
 
         monkeypatch.setattr(nodes_mod, "judge_one_node", slow_judge)
 
         judge_all_node(
             {"run_id": "r-pool"},
-            [_disc(f"2-{i}") for i in range(1, 13)],  # 12 disclosures
+            [_disc(f"2-{i}") for i in range(1, 13)],
             store,
             FakeJudgeLLM(),
             conn,
-            max_workers=12,  # 12 threads, but only 2 may work at once
+            max_workers=12,
         )
 
     assert peak <= 3, (

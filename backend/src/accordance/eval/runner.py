@@ -47,7 +47,6 @@ def _find_run_by_sha(conn: psycopg.Connection, sha: str) -> str | None:
     row = conn.execute("SELECT id, status FROM runs WHERE pdf_sha256=%s", (sha,)).fetchone()
     if row is None:
         return None
-    # Only reuse runs that have findings to compare against.
     if row["status"] in ("completed", "cancelled"):
         return row["id"]
     return None
@@ -217,9 +216,6 @@ def _run_pipeline_sync(
 
     sha = _sha256_file(pdf_path)
 
-    # Dedup: if an existing run with the same sha is already complete,
-    # surface it instead of re-running — unless the caller forced a rerun
-    # (--rerun must produce a genuinely fresh run, not reuse old findings).
     if not rerun:
         existing = _find_run_by_sha(conn, sha)
         if existing:
@@ -316,8 +312,6 @@ def evaluate(
             run_id = _run_pipeline_sync(pdf_path, settings, conn, rerun=rerun)
 
         findings = _load_findings(conn, run_id, only=only)
-        # If `only` is set, also restrict the ground truth so we don't
-        # penalize unrelated disclosures.
         if only:
             keep = set(only)
             gt = GroundTruth(

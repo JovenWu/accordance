@@ -13,10 +13,6 @@ import re
 
 from accordance.db import connection
 
-# Matches ISO-8601 date+time with a T separator, e.g.
-#   "2026-06-28T14:23:01"
-#   "2026-06-28T14:23:01.123456"
-#   "2026-06-28T14:23:01+00:00"
 _ISO_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}")
 
 

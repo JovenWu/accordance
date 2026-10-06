@@ -48,7 +48,7 @@ def test_bootstrap_promotes_existing_without_touching_password():
             "SELECT is_admin, is_active, password_hash FROM users WHERE username='root'"
         ).fetchone()
     assert row["is_admin"] is True and row["is_active"] is True
-    assert row["password_hash"] == old_hash  # empty ADMIN_PASSWORD leaves it alone
+    assert row["password_hash"] == old_hash
 
 
 def test_bootstrap_skips_missing_user_without_password():

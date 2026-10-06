@@ -14,9 +14,6 @@ from typing import Literal
 import yaml
 from pydantic import BaseModel, Field
 
-# A labeler can write "found"/"partial"/"missing" for elements and
-# "covered"/"partial"/"missing" for disclosures. We re-use the same enums
-# the judge emits so the comparison is apples-to-apples.
 
 LabeledElementStatus = Literal["found", "partial", "missing"]
 LabeledDisclosureStatus = Literal["covered", "partial", "missing"]
@@ -31,7 +28,7 @@ class LabeledElement(BaseModel):
 class LabeledDisclosure(BaseModel):
     id: str
     expected_status: LabeledDisclosureStatus
-    expected_score: int | None = None  # 0 = N/A, 1-5 = grade; None until relabeled
+    expected_score: int | None = None
     expected_evidence_page: int | None = None
     notes: str | None = None
     elements: list[LabeledElement] = Field(default_factory=list)

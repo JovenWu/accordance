@@ -53,7 +53,6 @@ def _find_frontend_dist() -> Path | None:
     candidates = [
         Path.cwd() / "frontend" / "dist",
         Path.cwd().parent / "frontend" / "dist",
-        # backend/src/accordance/main.py → ../../.. = repo root
         here.parents[3] / "frontend" / "dist",
     ]
     for p in candidates:
@@ -99,8 +98,6 @@ def _warn_if_embeddings_bypass_proxy(settings, logger) -> bool:
     base_url = (getattr(settings, "llm_base_url", "") or "").strip()
     em = (getattr(settings, "embedding_model", "") or "").strip()
     emb_base = (getattr(settings, "embedding_base_url", "") or "").strip()
-    # Nothing to warn about once embeddings have their own gateway — they are
-    # no longer silently bypassing the configured proxy.
     if not base_url or emb_base or em.startswith("fake:"):
         return False
     key_name = "VOYAGE_API_KEY" if em.startswith("voyage:") else "OPENAI_API_KEY"
@@ -140,8 +137,6 @@ def _warn_if_embedding_key_leaks_to_gateway(settings, logger) -> bool:
     return True
 
 
-# Flex's own SDK default deadline is 10 minutes; 600s is the floor below
-# which timeouts, not capacity, become the dominant failure mode.
 _FLEX_MIN_TIMEOUT_S = 600.0
 
 
@@ -181,12 +176,12 @@ def _check_health(settings) -> tuple[bool, str]:
         probe = data_dir / ".health_probe"
         probe.write_text("ok", encoding="utf-8")
         probe.unlink(missing_ok=True)
-    except Exception as e:  # health must report, not crash
+    except Exception as e:
         return False, f"data dir not writable: {e}"
     try:
         with _open_conn(settings) as conn:
             conn.execute("SELECT 1").fetchone()
-    except Exception as e:  # health must report, not crash
+    except Exception as e:
         return False, f"database unavailable: {e}"
     return True, "ok"
 
@@ -211,8 +206,6 @@ async def _lifespan(app: FastAPI):
     logger = logging.getLogger("accordance")
     settings = get_settings()
 
-    # Fail fast: a missing API key for a real provider must stop startup, not
-    # surface later as every run failing deep in the worker.
     problems = check_required_keys(settings)
     if problems:
         raise RuntimeError(
@@ -221,19 +214,16 @@ async def _lifespan(app: FastAPI):
             + "\nSet the keys in .env (see .env.example) and restart."
         )
 
-    # Non-fatal: warn (don't block startup) when the model has no price entry.
     _warn_if_unpriced_model(settings, logger)
     _warn_if_embeddings_bypass_proxy(settings, logger)
     _warn_if_embedding_key_leaks_to_gateway(settings, logger)
     _warn_if_flex_timeout_too_short(settings, logger)
 
-    # Initialize the connection pool and ensure schema + embedding dimension.
     init_pool(settings)
     with _open_conn(settings) as conn:
         ensure_schema(conn)
         ensure_embedding_dim(conn, dim=embedding_dim(settings.embedding_model))
 
-    # Recover runs orphaned in a non-terminal status by a previous process exit.
     try:
         with _open_conn(settings) as conn:
             n = reconcile_orphaned_runs(conn)
@@ -268,9 +258,6 @@ async def _lifespan(app: FastAPI):
 
     yield
 
-    # Graceful shutdown: cancel + join in-progress run workers so a SIGTERM
-    # (docker stop / deploy) doesn't kill a run mid-write. uvicorn triggers this
-    # on SIGTERM; keep shutdown_drain_seconds < the container stop_grace_period.
     try:
         from accordance.api.runs import drain_active_runs
 
@@ -297,8 +284,6 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    # Refuse oversized request bodies at the door (from Content-Length), before
-    # the multipart parser spools them to disk.
     app.add_middleware(MaxBodySizeMiddleware, max_bytes=get_settings().max_request_bytes)
 
     @app.get("/api/health")
@@ -311,7 +296,7 @@ def create_app() -> FastAPI:
         return JSONResponse(status_code=503, content={"status": "unhealthy", "detail": detail})
 
     _auth = [Depends(require_user)]
-    app.include_router(auth_router.router)  # ungated
+    app.include_router(auth_router.router)
     app.include_router(me_router.router, dependencies=_auth)
     app.include_router(runs_router.router, dependencies=_auth)
     app.include_router(reports_router.router, dependencies=_auth)
@@ -323,32 +308,23 @@ def create_app() -> FastAPI:
     app.include_router(kb_router.router, dependencies=_auth)
     app.include_router(admin_router.router, dependencies=[Depends(require_admin)])
 
-    # SPA hosting (only when the built dist exists). In dev mode the vite
-    # server on :5173 serves the SPA and proxies /api/*, so we skip this.
     dist = _find_frontend_dist()
     if dist is not None:
         app.state.frontend_dist = dist
 
         @app.get("/{full_path:path}", include_in_schema=False)
         async def spa(full_path: str):
-            # API routers are registered above, so any /api/* path that
-            # didn't match a real route is a 404 — never serve index.html
-            # for those (would confuse fetch callers).
             if full_path.startswith("api/"):
                 raise HTTPException(status_code=404)
 
-            # Serve a real static file when one matches (assets/, favicon, etc.)
             candidate = (dist / full_path).resolve()
             try:
                 candidate.relative_to(dist.resolve())
             except ValueError:
-                # Path traversal attempt — refuse
                 raise HTTPException(status_code=404) from None
             if candidate.is_file():
                 return FileResponse(candidate)
 
-            # Otherwise fall through to index.html so react-router can take
-            # over client-side. This is the SPA pattern.
             return FileResponse(dist / "index.html")
 
     return app

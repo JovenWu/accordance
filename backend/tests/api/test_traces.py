@@ -107,7 +107,6 @@ def test_traces_endpoint_returns_grouped_attempts(tmp_path, monkeypatch):
     assert "2-1" in by_id
     assert "305-1" in by_id
 
-    # 2-1 has one attempt
     assert len(by_id["2-1"]["attempts"]) == 1
     a = by_id["2-1"]["attempts"][0]
     assert a["attempt"] == 1
@@ -119,7 +118,6 @@ def test_traces_endpoint_returns_grouped_attempts(tmp_path, monkeypatch):
     assert a["model"] == "claude-sonnet-4-6"
     assert a["evidence_verified"] is True
 
-    # 305-1 has two attempts ordered by attempt #, second is rejudged
     attempts = by_id["305-1"]["attempts"]
     assert [a["attempt"] for a in attempts] == [1, 2]
     assert attempts[0]["rejudged"] is False

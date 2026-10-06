@@ -29,7 +29,7 @@ def test_judge_returns_output_with_fake_llm():
     assert isinstance(trace, JudgeTrace)
     assert trace.chunk_ids == [1]
     assert trace.pages == [1]
-    assert trace.prompt_hash  # populated, hash itself tested elsewhere
+    assert trace.prompt_hash
     assert trace.parse_path in ("structured", "fallback")
     assert trace.rejudged is False
 
@@ -63,7 +63,7 @@ def test_judge_uses_reranker_order():
         disclosure=_disclosure_one_query(), retrieve=_retriever_three,
         llm=FakeJudgeLLM(), k=5, per_element=False, reranker=_ReverseReranker(),
     )
-    assert trace.chunk_ids == [3, 2, 1]  # reranked (reversed), not page-sorted
+    assert trace.chunk_ids == [3, 2, 1]
 
 
 def test_judge_pagesorts_without_reranker():
@@ -71,7 +71,7 @@ def test_judge_pagesorts_without_reranker():
         disclosure=_disclosure_one_query(), retrieve=_retriever_three,
         llm=FakeJudgeLLM(), k=5, per_element=False, reranker=None,
     )
-    assert trace.chunk_ids == [2, 1, 3]  # sorted by (page, chunk_id): p4,p5,p6
+    assert trace.chunk_ids == [2, 1, 3]
 
 
 def test_judge_reranker_respects_top_n():
@@ -95,7 +95,6 @@ def test_judge_reranker_ignores_invalid_indices():
         disclosure=_disclosure_one_query(), retrieve=_retriever_three,
         llm=FakeJudgeLLM(), k=5, per_element=False, reranker=_OOBReranker(),
     )
-    # Only in-range, distinct indices kept, in reranker order: 2->chunk_id 3, 1->chunk_id 2
     assert trace.chunk_ids == [3, 2]
 
 
@@ -125,5 +124,5 @@ def test_judge_force_includes_tag_chunks():
         llm=FakeJudgeLLM(), k=5, per_element=False, reranker=_ReverseReranker(),
         tag_retrieve=_tag_retrieve,
     )
-    assert 99 in trace.chunk_ids       # tag chunk force-included
-    assert trace.chunk_ids[0] == 99    # prepended ahead of reranked chunks
+    assert 99 in trace.chunk_ids
+    assert trace.chunk_ids[0] == 99

@@ -67,13 +67,13 @@ def _seed(*, with_trace=False):
 
 def test_correction_records_logged_in_user_as_reviewer(auth_client, tmp_path):
     auth_client.get("/api/kb")
-    _seed(with_trace=True)  # adds report 'rep' + run 'run1' + finding '2-1'
+    _seed(with_trace=True)
     r = auth_client.post(
         "/api/runs/run1/corrections",
         json={"disclosure_id": "2-1", "corrected_score": 5, "rationale": "p.80"},
     )
     assert r.status_code == 201
-    assert r.json()["reviewer"] == "tester"  # the logged-in user, not "assessor"
+    assert r.json()["reviewer"] == "tester"
 
 
 def test_post_correction_creates_and_snapshots(monkeypatch, tmp_path):

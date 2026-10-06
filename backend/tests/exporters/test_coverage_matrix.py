@@ -33,27 +33,24 @@ def test_rows_ordered_by_natural_key():
 
 
 def test_no_columns_yields_no_rows():
-    # Nothing tested -> nothing in the sheet.
     m = build_coverage_matrix(_kb(), [])
     assert m.rows == []
 
 
 def test_scores_map_to_values_with_na_and_blanks():
-    # 5 -> kept; 0 -> kept (N/A sentinel, rendered "N/A" by the xlsx layer);
-    # None (judge error) -> blank cell.
     col = MatrixColumn(label="A", score_by_id={"2-2": 5, "2-10": 0, "303-3": None})
     m = build_coverage_matrix(_kb(), [col])
     by_code = {r.code: r.values[0] for r in m.rows}
-    assert by_code["GRI 2-2"] == 5      # graded
-    assert by_code["GRI 2-10"] == 0     # N/A
-    assert by_code["GRI 303-3"] is None  # error -> blank
+    assert by_code["GRI 2-2"] == 5
+    assert by_code["GRI 2-10"] == 0
+    assert by_code["GRI 303-3"] is None
 
 
 def test_untested_disclosure_is_omitted():
     col = MatrixColumn(label="A", score_by_id={"2-2": 1})
     m = build_coverage_matrix(_kb(), [col])
     by_code = {r.code: r.values[0] for r in m.rows}
-    assert by_code == {"GRI 2-2": 1}    # 303-3/2-10 untested -> omitted
+    assert by_code == {"GRI 2-2": 1}
 
 
 def test_row_included_if_tested_in_any_column():
@@ -63,9 +60,9 @@ def test_row_included_if_tested_in_any_column():
     ]
     m = build_coverage_matrix(_kb(), cols)
     by_code = {r.code: r.values for r in m.rows}
-    assert set(by_code) == {"GRI 2-2", "GRI 303-3"}  # 2-10 untested by both -> omitted
-    assert by_code["GRI 2-2"] == [5, None]    # tested in A, blank in B
-    assert by_code["GRI 303-3"] == [None, 3]  # blank in A, tested in B
+    assert set(by_code) == {"GRI 2-2", "GRI 303-3"}
+    assert by_code["GRI 2-2"] == [5, None]
+    assert by_code["GRI 303-3"] == [None, 3]
 
 
 def test_column_labels_preserved():

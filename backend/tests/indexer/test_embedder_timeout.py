@@ -10,7 +10,7 @@ def test_build_embedder_forwards_timeout_and_retries_to_openai():
         timeout=42.0,
         max_retries=4,
     )
-    inner = emb._inner  # LangChainEmbedder wraps the OpenAIEmbeddings object
+    inner = emb._inner
     assert inner.request_timeout == 42.0
     assert inner.max_retries == 4
 
@@ -19,14 +19,6 @@ def test_build_embedder_fake_path_unaffected():
     emb = build_embedder("fake:fake", api_key="x", timeout=5.0, max_retries=1)
     assert isinstance(emb, FakeEmbedder)
     assert emb.dim == 8
-
-
-# ── routing embeddings through a proxy ───────────────────────────────
-# LLM_BASE_URL only ever routed the judge. Embeddings had no base_url at
-# all, so they always hit the provider directly — which is why an exhausted
-# OPENAI_API_KEY failed every disclosure at retrieval while the proxied judge
-# stayed healthy. Blank must remain "direct to the provider" so production,
-# which does not set it, is untouched.
 
 
 def test_build_embedder_forwards_base_url():

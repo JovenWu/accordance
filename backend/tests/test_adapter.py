@@ -22,7 +22,6 @@ def test_build_llm_custom_max_retries():
 def test_build_llm_timeout_forwarded():
     """timeout kwarg is forwarded to the underlying model as request_timeout."""
     m = build_llm("openai:gpt-4o-mini", api_key="sk-test", max_retries=3, timeout=42)
-    # ChatOpenAI stores the timeout as request_timeout (not .timeout)
     assert m.request_timeout == 42
 
 
@@ -38,14 +37,6 @@ def test_build_llm_fake_prefix_returns_fake_llm():
 
     m = build_llm("fake:fake")
     assert isinstance(m, FakeJudgeLLM)
-
-
-# ── reasoning effort ─────────────────────────────────────────────────
-# Reasoning tokens bill as OUTPUT, so effort is a direct cost/latency lever.
-# Measured on gpt-5.6-luna: none=206 out tok, medium=417, high=729 for the
-# same judge prompt. Supported values vary BY MODEL (luna accepts
-# none/low/medium/high/xhigh/max but rejects 'minimal'), so the value is
-# passed through unvalidated and the provider rejects a bad one.
 
 
 def test_build_llm_forwards_reasoning_effort():
@@ -76,13 +67,6 @@ def test_build_llm_fake_prefix_ignores_reasoning_effort():
     assert isinstance(m, FakeJudgeLLM)
 
 
-# ── service tier (flex) ──────────────────────────────────────────────
-# Flex trades latency for ~50% off. Blank must mean "send nothing": the dev
-# Codex proxy ACCEPTS service_tier and silently ignores it (it echoes
-# service_tier=None even when priority is requested), so a default value
-# would create the illusion of a discount that was never applied.
-
-
 def test_build_llm_forwards_service_tier():
     m = build_llm("openai:gpt-4o-mini", api_key="sk-test", service_tier="flex")
     assert m.service_tier == "flex"
@@ -103,12 +87,6 @@ def test_build_llm_fake_prefix_ignores_service_tier():
 
     m = build_llm("fake:fake", service_tier="flex")
     assert isinstance(m, FakeJudgeLLM)
-
-
-# ── flex capacity fallback ───────────────────────────────────────────
-# Flex answers 429 resource_unavailable when capacity is short. Without a
-# fallback a capacity dip leaves error findings scattered through the report;
-# with one, the run always completes and the worst case is today's price.
 
 
 class _Boom(BaseChatModel):
@@ -198,7 +176,6 @@ def test_flex_wrapper_keeps_provider_enforced_structured_output():
     from accordance.judge.output_schema import JudgeOutput
 
     tiered = build_llm("openai:gpt-4o-mini", api_key="sk-test", service_tier="flex")
-    # Must not raise, and must reach the real client so method/strict survive.
     assert tiered.with_structured_output(JudgeOutput, method="json_schema", strict=True)
     assert tiered.bind_tools([JudgeOutput]) is not None
 
@@ -210,7 +187,6 @@ def test_build_llm_wraps_only_when_flex_is_requested():
     assert not isinstance(plain, _TieredChatModel)
     tiered = build_llm("openai:gpt-4o-mini", api_key="sk-test", service_tier="flex")
     assert isinstance(tiered, _TieredChatModel)
-    # model attribution must survive the wrapper (traces read model_name)
     assert tiered.model_name == plain.model_name
 
 

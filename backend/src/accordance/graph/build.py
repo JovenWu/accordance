@@ -49,7 +49,7 @@ def build_graph(
     llm: BaseChatModel,
     retrieval_mode: str = "hybrid",
     reuse_index: bool = False,
-    reranker=None,            # Reranker | None — injected by run_graph
+    reranker=None,
     rerank_top_n: int = 15,
     cache_system: bool = False,
     tag_aware: bool = False,
@@ -58,16 +58,10 @@ def build_graph(
     judge_concurrency: int = 12,
 ):
     store = VectorStore(conn, embedder, mode=retrieval_mode)
-    # None / empty → all disclosures (back-compat). Otherwise judge only the
-    # requested ids, preserving KB order and skipping ids not in the KB.
     if disclosure_ids:
         wanted = set(disclosure_ids)
         disclosures = [d for d in kb.values() if d.id in wanted]
     else:
-        # Default (no explicit selection): judge only the in-force editions, so a
-        # report is never graded against BOTH a withdrawn and its replacement
-        # edition of the same standard. An explicit disclosure_ids selection above
-        # is an opt-in and deliberately bypasses this gate.
         disclosures = list(applicable_disclosures(kb).values())
 
     def _extract(state):
@@ -78,12 +72,6 @@ def build_graph(
         _set_stage(conn, state["run_id"], "indexing")
         return index_node(state, store, conn)
 
-    # Single node that judges all disclosures CONCURRENTLY (thread pool). We do
-    # NOT use a LangGraph Send fan-out: the synchronous graph.invoke() runs
-    # fanned-out branches serially, which made a full run take ~N sequential LLM
-    # round-trips (the "queue is so long" symptom). judge_all_node parallelizes
-    # the per-disclosure calls; the global judge semaphore still caps LLM
-    # concurrency across simultaneous runs.
     def _judge(state):
         _set_stage(conn, state["run_id"], "judging")
         return judge_all_node(
@@ -93,9 +81,6 @@ def build_graph(
         )
 
     def _aggregate(state):
-        # Pass the set we attempted to judge so aggregate_node can verify every
-        # one persisted a finding before marking the run 'completed' (a write
-        # failure must never silently drop a disclosure).
         return aggregate_node(state, conn, expected_disclosures=disclosures)
 
     g = StateGraph(GraphState)

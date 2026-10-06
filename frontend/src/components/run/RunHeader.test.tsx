@@ -129,7 +129,6 @@ describe("RunHeader", () => {
     );
     const dialog = await screen.findByRole("dialog");
 
-    // Already-judged disclosures are locked — they can't be re-requested.
     const judged = within(dialog).getByRole("checkbox", { name: "2-1" });
     expect(judged).toBeDisabled();
     expect(judged).toBeChecked();

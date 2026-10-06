@@ -7,39 +7,38 @@ Styled on the app's design tokens (zinc palette, Inter-like Helvetica, the
 from dataclasses import dataclass, field
 from datetime import datetime
 
-import fitz  # PyMuPDF
+import fitz
 
-# Site palette (frontend/src/index.css), normalized to 0-1.
-INK = (0.094, 0.094, 0.106)       # #18181b
-MUTED = (0.443, 0.443, 0.478)     # #71717a
-LINE = (0.894, 0.894, 0.906)      # #e4e4e7
-SOFT = (0.949, 0.949, 0.953)      # #f5f5f5-ish card fill
-ACCENT = (1.000, 0.769, 0.000)    # #ffc400
+INK = (0.094, 0.094, 0.106)
+MUTED = (0.443, 0.443, 0.478)
+LINE = (0.894, 0.894, 0.906)
+SOFT = (0.949, 0.949, 0.953)
+ACCENT = (1.000, 0.769, 0.000)
 ACCENT_SOFT = (1.000, 0.965, 0.850)
-ACCENT_DEEP = (0.631, 0.384, 0.027)  # #a16207 — text/icons on light fills
+ACCENT_DEEP = (0.631, 0.384, 0.027)
 
 GRADES = {
-    5: (0.090, 0.788, 0.392),     # success
-    4: (0.486, 0.702, 0.259),     # lime
-    3: (0.961, 0.647, 0.141),     # warning
-    2: (0.976, 0.451, 0.086),     # orange
-    1: (1.000, 0.220, 0.235),     # danger
+    5: (0.090, 0.788, 0.392),
+    4: (0.486, 0.702, 0.259),
+    3: (0.961, 0.647, 0.141),
+    2: (0.976, 0.451, 0.086),
+    1: (1.000, 0.220, 0.235),
 }
-NA_GRAY = (0.631, 0.631, 0.667)   # #a1a1aa — N/A + not assessed
+NA_GRAY = (0.631, 0.631, 0.667)
 
 GRADE_LABELS = {5: "Complete", 4: "Substantial", 3: "Partial", 2: "Minimal", 1: "Not found"}
 
-W, H = 595, 842   # A4 portrait, points
-M = 46            # page margin
+W, H = 595, 842
+M = 46
 
 
 @dataclass
 class StandardSummary:
     name: str
-    assessed: int        # findings with a non-None score (incl. N/A)
-    scored: int          # applicable only (1-5)
-    avg: float | None    # mean of 1-5 scores
-    coverage: float | None  # sum / (scored*5), matches the XLSX footer
+    assessed: int
+    scored: int
+    avg: float | None
+    coverage: float | None
 
 
 @dataclass
@@ -51,17 +50,14 @@ class AnalysisReport:
     pdf_sha256: str
     completed_at: datetime | None
     page_count: int
-    dist: dict[int, int]          # score -> count (0 = N/A)
-    errors: int                   # judged but errored (no score)
-    coverage: float | None        # whole-run coverage 0-1
-    avg: float | None             # whole-run mean of 1-5
+    dist: dict[int, int]
+    errors: int
+    coverage: float | None
+    avg: float | None
     standards: list[StandardSummary] = field(default_factory=list)
 
 
 def _text(page, rect, s, font="helv", size=9, color=INK, align=0):
-    # insert_textbox draws NOTHING when the rect can't hold one line (line
-    # height ≈ 1.7× fontsize in MuPDF's metrics) — text anchors at the top, so
-    # expanding downward is always safe.
     r = fitz.Rect(*rect)
     if r.height < size * 1.7:
         r.y1 = r.y0 + size * 1.7
@@ -97,9 +93,8 @@ def _coverage_color(pct: float | None):
 def analysis_report_bytes(data: AnalysisReport) -> bytes:
     doc = fitz.open()
     page = doc.new_page(width=W, height=H)
-    cw = W - 2 * M   # content width
+    cw = W - 2 * M
 
-    # --- Header: wordmark + report chip -------------------------------
     _text(page, (M, 42, M + 200, 56), "ACCORDANCE", font="hebo", size=11, color=INK)
     _text(page, (M, 56, M + 260, 70), "Automated disclosure coverage assessment",
           size=8, color=MUTED)
@@ -107,10 +102,8 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
 
     page.draw_line(fitz.Point(M, 78), fitz.Point(W - M, 78), color=LINE, width=0.75)
 
-    # --- Title block ---------------------------------------------------------
     _text(page, (M, 92, W - M, 104), "GRI DISCLOSURE COVERAGE", font="hebo",
           size=8.5, color=MUTED)
-    # Report name shrinks if it needs more than 2 lines; last resort truncates.
     title_rect = fitz.Rect(M, 106, W - M, 160)
     for size in (18, 15, 13):
         if page.insert_textbox(
@@ -128,7 +121,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
           f"Completed · assessed {done}", size=8.5, color=MUTED)
     _text(page, (M, 182, W - M, 210), data.pdf_filename, size=8, color=MUTED)
 
-    # --- Stat cards ------------------------------------------------------------
     y0, card_h, gap = 206, 58, 10
     cw4 = (cw - 3 * gap) / 4
     stats = [
@@ -150,7 +142,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
         _text(page, (x + 10, y0 + 38, x + cw4 - 8, y0 + 54), label,
               size=7.5, color=MUTED)
 
-    # --- Grade distribution -----------------------------------------------------
     y = y0 + card_h + 24
     _text(page, (M, y, W - M, y + 12), "Grade distribution", font="hebo",
           size=9, color=INK)
@@ -171,7 +162,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
     else:
         page.draw_rect(fitz.Rect(M, bar_y, M + cw, bar_y + bar_h),
                        fill=SOFT, color=None)
-    # Legend: colored square + label · count.
     lx = M
     ly = bar_y + bar_h + 10
     for s, n in segs:
@@ -186,12 +176,10 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
         _text(page, (lx + 9, ly - 1, lx + 9 + tw + 4, ly + 9), label, size=7.5, color=MUTED)
         lx += 9 + tw + 14
 
-    # --- Coverage by standard ---------------------------------------------------
     y = ly + 24
     _text(page, (M, y, W - M, y + 12), "Coverage by standard", font="hebo",
           size=9, color=INK)
     y += 16
-    # Column geometry
     c_std, c_ass, c_avg, c_cov = M, M + cw - 216, M + cw - 120, M + cw - 56
     _text(page, (c_std + 8, y, c_ass, y + 10), "STANDARD", font="hebo", size=7, color=MUTED)
     _text(page, (c_ass, y, c_avg, y + 10), "ASSESSED", font="hebo", size=7, color=MUTED, align=1)
@@ -221,7 +209,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
         y += 16
     page.draw_line(fitz.Point(M, y), fitz.Point(W - M, y), color=LINE, width=0.5)
 
-    # --- Methodology -----------------------------------------------------------
     y += 18
     _text(page, (M, y, W - M, y + 12), "METHODOLOGY", font="hebo",
           size=7.5, color=MUTED)
@@ -232,7 +219,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
           "scores above. Coverage = total score / (applicable disclosures x 5).",
           size=8, color=MUTED)
 
-    # --- Verification: anchored just above the footer -------------------------
     fy = H - 52
     box_h = 86
     y = fy - 18 - box_h
@@ -256,7 +242,6 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
     _text(page, (M + 130, ry, W - M - 12, ry + 12),
           f"accordance.joven.dev/runs/{data.run_id}", size=7.5, color=ACCENT_DEEP)
 
-    # --- Footer -------------------------------------------------------------------
     page.draw_line(fitz.Point(M, fy), fitz.Point(W - M, fy), color=LINE, width=0.5)
     _text(page, (M, fy + 8, W - M, fy + 20),
           "Automated, evidence-linked screening against GRI disclosure requirements - "

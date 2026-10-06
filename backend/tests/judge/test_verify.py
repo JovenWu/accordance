@@ -9,11 +9,6 @@ def _chunk(text: str) -> dict:
     return {"chunk_id": 1, "page": 1, "text": text, "distance": 0.1}
 
 
-# ----------------------------------------------------------------------
-# _normalize
-# ----------------------------------------------------------------------
-
-
 def test_normalize_lowercases_and_collapses_whitespace():
     assert _normalize("Hello   World") == "hello world"
     assert _normalize("\n  TEXT\t\nhere\n") == "text here"
@@ -22,11 +17,6 @@ def test_normalize_lowercases_and_collapses_whitespace():
 def test_normalize_strips_edge_punctuation():
     assert _normalize('"hello world."') == "hello world"
     assert _normalize("...mid sentence...") == "mid sentence"
-
-
-# ----------------------------------------------------------------------
-# verify_excerpt — happy paths
-# ----------------------------------------------------------------------
 
 
 def test_empty_excerpt_is_verified():
@@ -62,14 +52,8 @@ def test_searches_all_chunks():
     assert verify_excerpt("1 Marina Boulevard, Singapore", chunks)
 
 
-# ----------------------------------------------------------------------
-# verify_excerpt — failure paths
-# ----------------------------------------------------------------------
-
-
 def test_made_up_quote_not_verified():
     chunks = [_chunk("Our Scope 1 emissions for FY2024 totaled 12,450 tCO2e.")]
-    # LLM fabricates a number that isn't in the chunk
     assert not verify_excerpt("Scope 1 emissions totaled 999,999 tCO2e", chunks)
 
 
@@ -86,11 +70,6 @@ def test_empty_chunks_list_returns_false_for_real_excerpt():
     assert not verify_excerpt("anything substantive here", [])
 
 
-# ----------------------------------------------------------------------
-# Token-overlap fallback (handles light LLM paraphrase)
-# ----------------------------------------------------------------------
-
-
 def test_paraphrased_excerpt_with_high_overlap_verified():
     """LLM dropped a stray adjective; >=70% of content words still match."""
     chunks = [
@@ -99,7 +78,6 @@ def test_paraphrased_excerpt_with_high_overlap_verified():
             "approximately 12,450 metric tonnes of CO2 equivalent."
         )
     ]
-    # Same content words, slightly reordered + minor drop
     assert verify_excerpt(
         "Scope 1 emissions fiscal year 2024 totaled 12,450 metric tonnes CO2",
         chunks,
@@ -111,11 +89,6 @@ def test_low_overlap_paraphrase_rejected():
     assert not verify_excerpt(
         "Our water withdrawal across all sites was 41 megaliters", chunks
     )
-
-
-# ----------------------------------------------------------------------
-# Integration with judge_disclosure: hallucinated excerpts are cleared
-# ----------------------------------------------------------------------
 
 
 @pytest.fixture
@@ -180,8 +153,6 @@ def test_hallucinated_excerpt_is_cleared_in_output(_judge_imports):
         suggested_fix_template="x",
     )
     out, trace = judge_disclosure(d, retriever, _CannedLLM(fabricated))
-    # Verdict stands (status + note preserved), but the hallucinated
-    # quote was nulled and the original is kept on the trace.
     assert out.status.value == "covered"
     assert out.note == "ok"
     assert out.evidence_excerpt is None

@@ -1,4 +1,3 @@
-# backend/src/accordance/api/auth.py
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
@@ -26,8 +25,6 @@ def login(
     response: Response,
     settings: Annotated[Settings, Depends(get_settings)],
 ):
-    # Throttle online guessing: block (and skip the expensive PBKDF2 verify) once
-    # this IP or username has exhausted its failure budget for the window.
     limit = settings.login_max_attempts
     window = settings.login_window_seconds
     ip_key = f"ip:{client_ip(request)}"
@@ -50,7 +47,6 @@ def login(
             raise HTTPException(401, "Invalid username or password")
         token = create_session(conn, row["id"], settings.session_ttl_days)
 
-    # Successful login clears the failure budget for this IP + username.
     login_limiter.reset(ip_key)
     login_limiter.reset(user_key)
     secure = settings.session_cookie_secure or request.url.scheme == "https"

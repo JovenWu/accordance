@@ -56,16 +56,11 @@ def verify_excerpt(excerpt: str | None, chunks: list[dict]) -> bool:
     if not excerpt_norm:
         return True
 
-    # Pass 1 — substring on normalized text. Catches well-formed quotes.
     for chunk in chunks:
         chunk_norm = _normalize(chunk["text"])
         if excerpt_norm in chunk_norm:
             return True
 
-    # Pass 2 — token-overlap fallback for lightly-paraphrased quotes.
-    # Numeric tokens are gated separately: a paraphrased number is almost
-    # always a hallucination, so every digit-bearing token in the excerpt
-    # MUST appear verbatim in the chunk before we consider overlap.
     excerpt_tokens_all = re.findall(r"\w+", excerpt_norm)
     excerpt_word_tokens = {t for t in excerpt_tokens_all if len(t) > 2 and not _has_digit(t)}
     excerpt_numeric_tokens = {t for t in excerpt_tokens_all if _has_digit(t)}
@@ -75,12 +70,9 @@ def verify_excerpt(excerpt: str | None, chunks: list[dict]) -> bool:
         chunk_tokens = set(re.findall(r"\w+", _normalize(chunk["text"])))
         if not chunk_tokens:
             continue
-        # Every numeric token must be present — protects against fabricated
-        # figures whose surrounding prose otherwise matches.
         if excerpt_numeric_tokens and not excerpt_numeric_tokens.issubset(chunk_tokens):
             continue
         if not excerpt_word_tokens:
-            # Excerpt was numeric-only and all numbers matched — accept.
             return True
         overlap = excerpt_word_tokens & chunk_tokens
         if len(overlap) / len(excerpt_word_tokens) >= 0.7:

@@ -12,18 +12,14 @@ export interface MenuItem {
   onSelect: () => void;
 }
 
-const MARGIN = 8; // minimum distance from any viewport edge
-const GAP = 4; // trigger → popover spacing (was `top-9` on the size-8 button)
+const MARGIN = 8;
+const GAP = 4;
 
 const itemEls = (menu: HTMLDivElement | null) =>
   Array.from(
     menu?.querySelectorAll<HTMLElement>("[role=menuitem]") ?? [],
   );
 
-/** 32px circular kebab button opening a small dropdown menu. The popover is
- * portaled to <body> and positioned with `fixed` so `overflow-hidden`/`auto`
- * ancestors (table cards, scrollers) can't clip it. Pass `trigger` to use a
- * custom element (e.g. a labelled <Button>) instead of the kebab icon. */
 export function KebabMenu({
   items,
   label = "Actions",
@@ -46,7 +42,6 @@ export function KebabMenu({
     if (restoreFocus) triggerRef.current?.focus();
   }, []);
 
-  // Writes top/left straight onto the portal node — no state, no re-render.
   const place = React.useCallback(() => {
     const trigger = triggerRef.current;
     const menu = menuRef.current;
@@ -60,13 +55,12 @@ export function KebabMenu({
     );
     let top = r.bottom + GAP;
     if (top + mh > window.innerHeight - MARGIN && r.top - GAP - mh >= MARGIN)
-      top = r.top - GAP - mh; // flip above the trigger when there's no room below
+      top = r.top - GAP - mh;
     top = Math.max(MARGIN, Math.min(top, window.innerHeight - MARGIN - mh));
     menu.style.top = `${top}px`;
     menu.style.left = `${left}px`;
   }, [align]);
 
-  // Position + focus the first (or last, for ArrowUp-open) item before paint.
   React.useLayoutEffect(() => {
     if (!open) return;
     place();
@@ -81,17 +75,17 @@ export function KebabMenu({
       const t = e.target as Node;
       if (triggerRef.current?.contains(t) || menuRef.current?.contains(t))
         return;
-      setOpen(false); // pointer dismissal lets focus land where the user clicked
+      setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
-      e.stopPropagation(); // don't let an enclosing modal/drawer also close
+      e.stopPropagation();
       close();
     };
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKey);
     window.addEventListener("resize", place);
-    window.addEventListener("scroll", place, true); // capture: nested scrollers
+    window.addEventListener("scroll", place, true);
     return () => {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKey);
@@ -110,8 +104,6 @@ export function KebabMenu({
 
   const onMenuKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Tab") {
-      // Close without trapping: park focus on the trigger so the default Tab
-      // order continues from the element after it.
       setOpen(false);
       triggerRef.current?.focus();
       return;

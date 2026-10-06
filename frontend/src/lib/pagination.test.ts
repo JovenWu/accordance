@@ -12,7 +12,6 @@ describe("paginationItems", () => {
   });
 
   it("keeps first and last reachable from the middle of a long run", () => {
-    // 100 pages — the case Prev/Next alone can't serve.
     expect(paginationItems(50, 100)).toEqual([1, "ellipsis", 49, 50, 51, "ellipsis", 100]);
   });
 
@@ -25,14 +24,10 @@ describe("paginationItems", () => {
   });
 
   it("shows a single skipped page instead of an ellipsis", () => {
-    // 8 pages, window on 4 → keeps {1,3,4,5,8}. The 1→3 gap is one page, so it
-    // renders as "2"; the 5→8 gap is two, so it collapses. An "…" hiding a
-    // single number is wider than the number it hides.
     expect(paginationItems(4, 8)).toEqual([1, 2, 3, 4, 5, "ellipsis", 8]);
   });
 
   it("lists everything at the windowing threshold rather than eliding one page", () => {
-    // siblings=1 → widest windowed form is 7 slots, so 7 pages list in full.
     expect(paginationItems(4, 7)).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 
@@ -44,9 +39,7 @@ describe("paginationItems", () => {
         expect(new Set(nums).size).toBe(nums.length);
         expect(Math.min(...nums)).toBeGreaterThanOrEqual(1);
         expect(Math.max(...nums)).toBeLessThanOrEqual(total);
-        // Always ascending, so the rendered row reads left to right.
         expect([...nums].sort((a, b) => a - b)).toEqual(nums);
-        // The current page is always rendered — otherwise nothing is highlighted.
         expect(nums).toContain(cur);
       }
     }

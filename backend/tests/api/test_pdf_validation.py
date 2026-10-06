@@ -30,7 +30,6 @@ def _app(tmp_path, monkeypatch):
 
 def test_upload_rejects_non_pdf_bytes(tmp_path, monkeypatch):
     client = _app(tmp_path, monkeypatch)
-    # octet-stream passes the content-type gate, but the bytes aren't a PDF.
     r = client.post(
         "/api/runs",
         files={"pdf": ("evil.pdf", b"this is not a pdf at all", "application/octet-stream")},
@@ -45,7 +44,6 @@ def test_upload_rejects_non_pdf_does_not_create_run(tmp_path, monkeypatch):
         "/api/runs",
         files={"pdf": ("evil.pdf", b"%PNG\x00garbage", "application/octet-stream")},
     )
-    # No report/run should have been persisted for the rejected upload.
     with db_conn() as conn:
         n = conn.execute("SELECT COUNT(*) AS n FROM runs").fetchone()["n"]
     assert n == 0
@@ -53,8 +51,6 @@ def test_upload_rejects_non_pdf_does_not_create_run(tmp_path, monkeypatch):
 
 def test_upload_accepts_real_pdf_header(tmp_path, monkeypatch):
     client = _app(tmp_path, monkeypatch)
-    # Minimal valid-enough PDF header; extraction may still fail later, but the
-    # door check must let a real %PDF- body through (not a 400).
     body = b"%PDF-1.4\n1 0 obj<<>>endobj\ntrailer<<>>\n%%EOF"
     r = client.post(
         "/api/runs",

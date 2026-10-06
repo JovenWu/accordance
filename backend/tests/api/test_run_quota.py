@@ -46,19 +46,19 @@ def test_quota_blocks_at_limit():
 def test_quota_allows_under_limit():
     with connection() as conn:
         user_id = _seed(conn, inflight=2)
-        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=3))  # no raise
+        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=3))
 
 
 def test_quota_ignores_terminal_runs():
     with connection() as conn:
         user_id = _seed(conn, inflight=1, completed=9)
-        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=3))  # no raise
+        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=3))
 
 
 def test_quota_disabled_when_zero():
     with connection() as conn:
         user_id = _seed(conn, inflight=10)
-        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=0))  # no raise
+        _enforce_run_quota(conn, user_id, Settings(max_inflight_runs_per_user=0))
 
 
 def test_create_run_returns_429_over_quota(monkeypatch, tmp_path):
@@ -75,7 +75,7 @@ def test_create_run_returns_429_over_quota(monkeypatch, tmp_path):
         ).fetchone()
         uid = row["id"]
         conn.execute("INSERT INTO reports (id, name) VALUES (%s, %s)", ("rep1", "r"))
-        for i in range(3):  # fill the quota with in-flight runs
+        for i in range(3):
             conn.execute(
                 "INSERT INTO runs (id, report_id, version_number, kind, pdf_filename, "
                 "pdf_sha256, pdf_path, status, created_by) "

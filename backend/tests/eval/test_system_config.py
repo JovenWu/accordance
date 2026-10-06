@@ -187,7 +187,7 @@ def test_render_markdown_includes_system_config_section():
     )
     md = render_markdown(report)
     assert "## System Config" in md
-    assert "`abc12345`" in md  # 8-char display
+    assert "`abc12345`" in md
     assert "claude-sonnet-4-6" in md
     assert "Total judge calls" in md
     assert "Re-judges fired" in md
@@ -213,6 +213,6 @@ def test_render_markdown_omits_system_config_section_when_none():
             vision_fallback_used=False,
         )
     ]
-    report = compute_eval(gt, findings)  # system_config defaults to None
+    report = compute_eval(gt, findings)
     md = render_markdown(report)
     assert "## System Config" not in md

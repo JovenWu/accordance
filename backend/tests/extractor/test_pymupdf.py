@@ -17,10 +17,8 @@ def test_extract_pdf_returns_report():
     report = extract_pdf(FIXTURE)
     assert report.source_sha256
     assert len(report.pages) >= 1
-    # Per-page text should have at least some content for an embedded-text PDF.
     combined = "\n".join(p.markdown for p in report.pages)
     assert len(combined) > 10
-    # Page numbers are 1-indexed and contiguous.
     for i, p in enumerate(report.pages, start=1):
         assert p.page_number == i
 
@@ -37,7 +35,7 @@ def test_extract_pdf_warns_on_empty_pages(tmp_path: Path):
 
     pdf_path = tmp_path / "empty.pdf"
     doc = fitz.open()
-    doc.new_page()  # one blank page, no text
+    doc.new_page()
     doc.save(str(pdf_path))
     doc.close()
 
@@ -46,7 +44,6 @@ def test_extract_pdf_warns_on_empty_pages(tmp_path: Path):
 
     assert len(report.pages) == 1
     assert report.pages[0].markdown == ""
-    # The warning message should mention scanned-PDF fallback.
     warned = " ".join(str(c) for c in mock_logger.warning.call_args_list)
     assert "scanned" in warned.lower() or "empty" in warned.lower()
 
@@ -56,9 +53,6 @@ def test_router_dispatches_to_pymupdf_by_default(monkeypatch, tmp_path):
     monkeypatch.setenv("EXTRACTOR_BACKEND", "pymupdf")
     from accordance.extractor import extract_pdf as routed
 
-    # If the router dispatched to Docling we'd be doing a full ML pipeline
-    # that takes much longer than the pymupdf path. We don't time-assert
-    # here; just verify the result shape is consistent.
     report = routed(FIXTURE)
     assert report.source_sha256
     assert len(report.pages) >= 1

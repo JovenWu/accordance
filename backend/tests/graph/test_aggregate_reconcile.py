@@ -39,7 +39,6 @@ def test_missing_finding_recorded_as_error(monkeypatch):
         run_id = "recon-1"
         _seed_run(conn, run_id, "judging")
         cancel_registry.clear(run_id)
-        # Disclosure 2-1 persisted a verdict; 305-1's write "failed" (no row).
         _seed_finding(conn, run_id, "2-1", "GRI 2", "covered")
         monkeypatch.setattr(events_mod.bus, "publish", lambda rid, ev: None)
 
@@ -49,7 +48,6 @@ def test_missing_finding_recorded_as_error(monkeypatch):
         status = conn.execute("SELECT status FROM runs WHERE id=%s", (run_id,)).fetchone()["status"]
         assert status == "completed"
 
-        # The dropped disclosure now surfaces as an explicit error, not a silent gap.
         row = conn.execute(
             "SELECT status FROM findings WHERE run_id=%s AND disclosure_id='305-1'",
             (run_id,),
@@ -57,7 +55,6 @@ def test_missing_finding_recorded_as_error(monkeypatch):
         assert row is not None
         assert row["status"] == "error"
 
-        # The real verdict is left untouched (ON CONFLICT DO NOTHING).
         kept = conn.execute(
             "SELECT status FROM findings WHERE run_id=%s AND disclosure_id='2-1'",
             (run_id,),
@@ -80,7 +77,7 @@ def test_no_missing_findings_inserts_nothing(monkeypatch):
         n = conn.execute(
             "SELECT COUNT(*) AS n FROM findings WHERE run_id=%s", (run_id,)
         ).fetchone()["n"]
-        assert n == 2  # no spurious error rows
+        assert n == 2
         errored = conn.execute(
             "SELECT COUNT(*) AS n FROM findings WHERE run_id=%s AND status='error'",
             (run_id,),
@@ -89,7 +86,6 @@ def test_no_missing_findings_inserts_nothing(monkeypatch):
 
 
 def test_cancelled_run_skips_reconciliation(monkeypatch):
-    # A cancelled run must not get error findings backfilled (it never completed).
     with db.connection() as conn:
         run_id = "recon-3"
         _seed_run(conn, run_id, "cancelled")

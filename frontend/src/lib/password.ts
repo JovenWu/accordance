@@ -1,4 +1,3 @@
-// Generate a random password from an unambiguous alphabet (no 0/O/1/l/I).
 const ALPHABET = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 export function generatePassword(length = 16): string {

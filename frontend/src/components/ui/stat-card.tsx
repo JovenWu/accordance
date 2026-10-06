@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-/** White 24px-radius stat card: small muted label over a 22px value. */
 export function StatCard({
   label,
   value,

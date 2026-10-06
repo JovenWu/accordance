@@ -14,7 +14,7 @@ def _make_encrypted_pdf(path):
         str(path),
         encryption=fitz.PDF_ENCRYPT_AES_256,
         owner_pw="owner",
-        user_pw="user",  # user password => needs_pass when reopened without it
+        user_pw="user",
     )
     doc.close()
 

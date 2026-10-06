@@ -3,8 +3,6 @@ import { createContext, useContext } from "react";
 import type { FindingView } from "@/types";
 
 export interface EvidenceViewerValue {
-  /** Open the evidence screen for a finding (jumps to its cited page and
-   * highlights the excerpt in the text layer). */
   openEvidence: (finding: FindingView) => void;
 }
 

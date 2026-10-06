@@ -9,14 +9,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Keyed by BARE model name (no "provider:" prefix). USD per 1,000,000 tokens.
-# gpt-5-mini is also the vision model (same llm). VERIFY current rates.
-#
-# `cached` is the rate for prompt-cache HITS (~1/10th of `in`); `cache_write`
-# is the rate for populating the cache, which costs MORE than plain input.
-# Both are optional — a missing rate falls back to `in`, so an unmaintained
-# entry over-counts rather than silently billing cached traffic as free.
-# An entry missing ENTIRELY still costs 0 (logged), so keep deployed models here.
 DEFAULT_PRICES: dict[str, dict[str, float]] = {
     "gpt-5-mini": {"in": 0.25, "cached": 0.025, "out": 2.00},
     "gpt-5.4-mini": {"in": 0.75, "cached": 0.075, "out": 4.50},
@@ -24,17 +16,8 @@ DEFAULT_PRICES: dict[str, dict[str, float]] = {
     "text-embedding-3-small": {"in": 0.02, "cached": 0.02, "out": 0.0},
 }
 
-# Optional per-entry cache rates. Present-but-wrong is worse than absent, so
-# they're type-checked like `in`/`out`; absent is fine and falls back to `in`.
 _OPTIONAL_RATES = ("cached", "cache_write")
 
-# Rates in the table are STANDARD tier. A tier multiplies every token class
-# uniformly, so one factor covers input/cached/write/output.
-#
-# 'flex' is documented as half the standard rate. 'priority' costs MORE and by
-# how much varies per model, so it is deliberately NOT modelled: inventing a
-# multiplier would understate it silently, and a known-wrong figure is worse
-# than a warned-about one. Anything unrecognised bills at full price + a warning.
 _TIER_MULTIPLIERS: dict[str, float] = {
     "": 1.0,
     "auto": 1.0,
@@ -109,9 +92,6 @@ def load_prices(settings) -> dict[str, dict[str, float]]:
 
 
 def _candidate_forms(model: str) -> list[str]:
-    # "openai:cx/gpt-5.4-mini" -> "cx/gpt-5.4-mini" (drop "provider:" prefix)
-    #                          -> "gpt-5.4-mini"    (drop leading "cx/" path seg)
-    # so a key set as the plain model name still matches a prefixed deployment id.
     bare = model.rsplit(":", 1)[-1]
     forms = [bare]
     if "/" in bare:
@@ -120,10 +100,6 @@ def _candidate_forms(model: str) -> list[str]:
 
 
 def _match_key(model: str, prices: dict) -> str | None:
-    # Match the longest price key that any candidate form of the (possibly
-    # provider-prefixed, possibly dated) model id starts with — so
-    # "gpt-5-mini-2025-08-07" matches "gpt-5-mini" but not "gpt-5", and
-    # "openai:cx/gpt-5.4-mini" matches a key of "gpt-5.4-mini".
     candidates = [
         k
         for k in prices
@@ -171,12 +147,6 @@ def cost_usd(
     rate_cached = p["cached"] if _is_rate(p.get("cached")) else rate_in
     rate_write = p["cache_write"] if _is_rate(p.get("cache_write")) else rate_in
 
-    # A provider reporting cached/written > total must not bill negative
-    # uncached tokens; floor the remainder at zero. Say so, though: clamping
-    # silently is how an implausible split (e.g. a provider double-reporting the
-    # same tokens as both read and written) turns into a wrong bill that looks
-    # like a legitimate discount. The clamp keeps the arithmetic sane; the
-    # warning is what makes the bad input findable.
     if cached_tokens + cache_write_tokens > input_tokens:
         logger.warning(
             "%s reported cached=%d + cache_write=%d exceeding input_tokens=%d; "

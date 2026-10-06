@@ -1,11 +1,6 @@
 import hashlib
 from typing import Protocol
 
-# Single source of truth for embedding dimension, keyed by the FULL `provider:model`
-# id (a provider-wide default silently mis-sizes the embedding column for non-1536
-# models like text-embedding-3-large=3072). Used by both build_embedder and the
-# pgvector schema setup (ensure_embedding_dim, via api/runs._open_conn + eval/*) so
-# the chunks.embedding column dim always matches the vectors.
 _EMBEDDING_DIMS: dict[str, int] = {
     "openai:text-embedding-3-small": 1536,
     "openai:text-embedding-3-large": 3072,
@@ -13,7 +8,6 @@ _EMBEDDING_DIMS: dict[str, int] = {
     "voyage:voyage-3-lite": 512,
     "voyage:voyage-3": 1024,
 }
-# Fallback per provider when the exact model id isn't listed above.
 _PROVIDER_DEFAULT_DIM: dict[str, int] = {"openai": 1536, "voyage": 512}
 
 
@@ -128,8 +122,6 @@ def build_embedder(
     if model.startswith("voyage:"):
         from langchain_community.embeddings.voyageai import VoyageEmbeddings
         model_name = model.split(":", 1)[1]
-        # VoyageEmbeddings manages its own retry/timeout and does not accept the
-        # OpenAI-shaped kwargs, so we don't forward them here.
         emb = VoyageEmbeddings(model=model_name, voyage_api_key=api_key)
         return LangChainEmbedder(emb, dim=embedding_dim(model))
 

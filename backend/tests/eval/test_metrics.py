@@ -65,7 +65,7 @@ def test_not_judged_when_finding_missing():
             LabeledDisclosure(id="3-1", expected_status="missing"),
         ]
     )
-    findings = [_finding("2-1", "covered")]  # 3-1 never judged
+    findings = [_finding("2-1", "covered")]
     r = compute_eval(gt, findings)
     assert r.not_judged == ["3-1"]
     assert r.disclosure_confusion["missing"]["not_judged"] == 1
@@ -98,7 +98,7 @@ def test_element_accuracy():
     ]
     r = compute_eval(gt, findings)
     assert r.total_elements_labeled == 3
-    assert r.correct_elements == 2  # legal_name + countries
+    assert r.correct_elements == 2
     assert r.element_accuracy == 2 / 3
 
 
@@ -117,9 +117,9 @@ def test_page_match_within_one():
         ]
     )
     findings = [
-        _finding("2-1", "covered", page=10),  # exact
-        _finding("3-1", "covered", page=21),  # ±1
-        _finding("3-2", "covered", page=35),  # miss
+        _finding("2-1", "covered", page=10),
+        _finding("3-1", "covered", page=21),
+        _finding("3-2", "covered", page=35),
     ]
     r = compute_eval(gt, findings)
     assert r.page_match_total == 3
@@ -137,7 +137,7 @@ def test_extra_findings_not_penalized():
     gt = _gt([LabeledDisclosure(id="2-1", expected_status="covered")])
     findings = [
         _finding("2-1", "covered"),
-        _finding("3-1", "missing"),  # not in gt
+        _finding("3-1", "missing"),
         _finding("3-2", "missing"),
     ]
     r = compute_eval(gt, findings)
@@ -146,7 +146,6 @@ def test_extra_findings_not_penalized():
 
 
 def test_class_metrics_precision_recall():
-    # 3 covered (all correctly hit), 2 missing (one hit, one false-covered)
     gt = _gt(
         [
             LabeledDisclosure(id="a", expected_status="covered"),
@@ -160,16 +159,14 @@ def test_class_metrics_precision_recall():
         _finding("a", "covered"),
         _finding("b", "covered"),
         _finding("c", "covered"),
-        _finding("d", "covered"),  # FP for covered, FN for missing
+        _finding("d", "covered"),
         _finding("e", "missing"),
     ]
     r = compute_eval(gt, findings)
     cov = next(m for m in r.disclosure_class_metrics if m.label == "covered")
     miss = next(m for m in r.disclosure_class_metrics if m.label == "missing")
-    # covered: TP=3, FP=1 (d), FN=0 -> P=0.75, R=1.0
     assert abs(cov.precision - 0.75) < 1e-9
     assert cov.recall == 1.0
-    # missing: TP=1, FP=0, FN=1 -> P=1.0, R=0.5
     assert miss.precision == 1.0
     assert miss.recall == 0.5
 
@@ -179,11 +176,11 @@ def test_retrieval_recall_from_pages():
         [
             LabeledDisclosure(id="2-1", expected_status="covered", expected_evidence_page=10),
             LabeledDisclosure(id="3-1", expected_status="covered", expected_evidence_page=50),
-            LabeledDisclosure(id="3-2", expected_status="covered"),  # no page → not counted
+            LabeledDisclosure(id="3-2", expected_status="covered"),
         ]
     )
     findings = [_finding("2-1", "covered"), _finding("3-1", "covered"), _finding("3-2", "covered")]
-    retrieved = {"2-1": {9, 30}, "3-1": {12, 13}, "3-2": {1}}  # 2-1 hits (10±1=9), 3-1 misses
+    retrieved = {"2-1": {9, 30}, "3-1": {12, 13}, "3-2": {1}}
     r = compute_eval(gt, findings, retrieved_pages_by_disclosure=retrieved)
     assert r.retrieval_recall_total == 2
     assert r.retrieval_recall_count == 1
@@ -191,7 +188,7 @@ def test_retrieval_recall_from_pages():
     res = {d.disclosure_id: d for d in r.disclosure_results}
     assert res["2-1"].retrieval_hit is True
     assert res["3-1"].retrieval_hit is False
-    assert res["3-2"].retrieval_hit is None  # no expected page
+    assert res["3-2"].retrieval_hit is None
     assert res["2-1"].retrieved_pages == [9, 30]
 
 

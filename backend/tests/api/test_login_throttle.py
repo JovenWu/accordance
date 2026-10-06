@@ -33,7 +33,6 @@ def test_lockout_after_max_failed_attempts(monkeypatch, tmp_path):
     for _ in range(3):
         r = client.post("/api/auth/login", json={"username": "tester", "password": "nope"})
         assert r.status_code == 401
-    # Budget exhausted -> 429, even with the CORRECT password (lockout window).
     r = client.post("/api/auth/login", json={"username": "tester", "password": "right-pw"})
     assert r.status_code == 429
 
@@ -44,11 +43,9 @@ def test_successful_login_resets_the_counter(monkeypatch, tmp_path):
         assert client.post(
             "/api/auth/login", json={"username": "tester", "password": "nope"}
         ).status_code == 401
-    # A success clears the failure budget...
     assert client.post(
         "/api/auth/login", json={"username": "tester", "password": "right-pw"}
     ).status_code == 200
-    # ...so the next two failures don't immediately re-trip the limit.
     for _ in range(2):
         assert client.post(
             "/api/auth/login", json={"username": "tester", "password": "nope"}
@@ -63,7 +60,6 @@ def test_throttle_disabled_when_limit_zero(monkeypatch, tmp_path):
     get_settings.cache_clear()
     _seed_user()
     client = TestClient(create_app())
-    # No lockout: every wrong attempt returns 401, never 429.
     for _ in range(8):
         assert client.post(
             "/api/auth/login", json={"username": "tester", "password": "nope"}

@@ -8,7 +8,6 @@ import {
   type PdfTextItem,
 } from "./evidenceMatch";
 
-/** Helper: the concatenated text a set of ranges would wrap, per item. */
 function markedText(items: PdfTextItem[], excerpt: string | null): string[] {
   const ranges = computeHighlightRanges(items, excerpt);
   const out: string[] = [];
@@ -54,8 +53,6 @@ describe("computeHighlightRanges", () => {
   });
 
   it("highlights only the cited phrase inside a longer line (the key fix)", () => {
-    // Old code failed here: the span is LONGER than the excerpt, so
-    // `excerpt.includes(span)` was false and nothing lit up.
     const items: PdfTextItem[] = [
       { str: "Our total Scope 1 emissions were 1,234 tCO2e in 2023" },
     ];
@@ -74,8 +71,6 @@ describe("computeHighlightRanges", () => {
   });
 
   it("falls back to the longest verbatim run when the excerpt is paraphrased", () => {
-    // The LLM dropped "for the" and inserted "metric" — no exact substring,
-    // but the contiguous run still anchors the highlight to the right place.
     const items: PdfTextItem[] = [
       { str: "Scope 1 emissions for the fiscal year 2024 totaled 12,450 tonnes" },
     ];
@@ -96,16 +91,12 @@ describe("computeHighlightRanges", () => {
 
   it("ignores a stray short common word (no spurious box)", () => {
     const items: PdfTextItem[] = [{ str: "and then the meeting adjourned" }];
-    // "the" alone should not anchor a highlight across an unrelated excerpt.
     expect(
       computeHighlightRanges(items, "the board approved a new climate policy").size,
     ).toBe(0);
   });
 
   it("does not highlight an excerpt reworded in its middle (deliberate recall trade-off)", () => {
-    // Interior paraphrase: the longest contiguous run (" scope 1 emissions by
-    // 12") is <50% of the excerpt, so it fails safe to no box rather than
-    // mis-anchoring. Pinned so the precision-over-recall choice is intentional.
     const items: PdfTextItem[] = [
       { str: "We cut scope 1 emissions by 12 percent versus the prior year" },
     ];
@@ -115,9 +106,6 @@ describe("computeHighlightRanges", () => {
   });
 
   it("rejects a longer common run that is only a small fraction of the excerpt", () => {
-    // "our sustainability metrics" (>12 chars) clears the absolute floor but is
-    // a small slice of this long, unrelated emissions claim — without a
-    // coverage gate it would mis-anchor a box on the wrong phrase.
     const items: PdfTextItem[] = [
       { str: "We publish our sustainability metrics each year." },
     ];

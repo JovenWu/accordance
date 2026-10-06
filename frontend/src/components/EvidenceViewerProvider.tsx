@@ -6,7 +6,7 @@ import type { FindingView } from "@/types";
 
 interface EvidenceRequest {
   finding: FindingView;
-  key: number; // increments per open so the panel can retarget via requestKey without remounting
+  key: number;
 }
 
 export function EvidenceViewerProvider({
@@ -39,9 +39,6 @@ export function EvidenceViewerProvider({
     <Ctx.Provider value={value}>
       {request ? (
         <EvidenceScreen
-          // No `key` here on purpose: re-keying would remount the <Document>
-          // and race the pdf.js worker (destroy + create) → blank PDF. The
-          // screen stays mounted and just retargets via requestKey instead.
           requestKey={request.key}
           runId={runId}
           pdfFilename={pdfFilename}

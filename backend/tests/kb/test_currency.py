@@ -24,18 +24,14 @@ def _d(did: str, *, status: str = "current", **extra) -> Disclosure:
 
 def test_applicable_excludes_superseded_and_upcoming_keeps_current_real_kb():
     app = applicable_disclosures(KB)
-    # Superseded old biodiversity (GRI 304 2016) must be dropped.
     assert "304-1" not in app
     assert "304-4" not in app
-    # Upcoming Climate/Energy 2025 (mandatory 2027) must be dropped.
     assert "102-1" not in app
     assert "103-1" not in app
-    # Current editions must be kept — including the new biodiversity edition
-    # (GRI 101 2024 is current/effective, NOT upcoming).
-    assert "101-1" in app          # current biodiversity 2024
-    assert "302-1" in app          # current energy (valid through 2026)
-    assert "305-6" in app          # emissions disclosure retained in GRI 305
-    assert "2-1" in app            # universal
+    assert "101-1" in app
+    assert "302-1" in app
+    assert "305-6" in app
+    assert "2-1" in app
 
 
 def test_applicable_returns_exactly_the_current_subset():
@@ -43,7 +39,7 @@ def test_applicable_returns_exactly_the_current_subset():
     assert all(d.status == "current" for d in app.values())
     n_current = sum(1 for d in KB.values() if d.status == "current")
     assert len(app) == n_current
-    assert len(app) < len(KB)  # something was actually filtered out
+    assert len(app) < len(KB)
 
 
 def test_applicable_preserves_kb_insertion_order():

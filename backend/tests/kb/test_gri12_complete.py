@@ -1,4 +1,3 @@
-# backend/tests/kb/test_gri12_complete.py
 from pathlib import Path
 
 from accordance.kb.loader import load_kb
@@ -15,7 +14,7 @@ GRI12_SECTOR_IDS = {
     "12.13.3", "12.13.4",
     "12.20.5", "12.20.6",
     "12.21.8",
-}  # 13 GRI 12 additional sector disclosure IDs
+}
 
 def test_all_gri12_sector_disclosures_present():
     missing = GRI12_SECTOR_IDS - set(KB)

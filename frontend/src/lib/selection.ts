@@ -9,9 +9,6 @@ export function toggleDisclosure(selected: Set<string>, id: string): Set<string>
   return next;
 }
 
-// Selectable (non-locked) disclosure ids across one or more standards. Locked
-// (e.g. already-judged) disclosures are excluded so select-all / toggle actions
-// only affect what the user can still change.
 function selectableIds(
   standards: KbStandard[],
   locked: Set<string>,
@@ -21,10 +18,6 @@ function selectableIds(
     .filter((id) => !locked.has(id));
 }
 
-// Parent (standard/category) checkbox DISPLAY state: a child counts as "on"
-// when it is locked (already judged) OR selected, so a fully-judged group reads
-// as done (checked) rather than empty — consistent with how the judged child
-// rows render. Toggling (toggle* below) still affects only selectable children.
 function parentState(
   standards: KbStandard[],
   selected: Set<string>,
@@ -38,8 +31,6 @@ function parentState(
   return "indeterminate";
 }
 
-// True when every disclosure in the group is locked (judged) — nothing left to
-// toggle, so the parent checkbox is shown checked + disabled.
 export function isFullyLocked(
   standards: KbStandard[],
   locked: Set<string>,
@@ -95,12 +86,6 @@ export function allIds(groups: KbStandard[]): string[] {
   return groups.flatMap((g) => g.disclosures.map((d) => d.id));
 }
 
-/**
- * Map the compare selection (run ids) to {runId, versionNumber} chips, dropping
- * any id whose version is no longer present (e.g. deleted in another tab). This
- * replaces a `map().get(id)!` non-null assertion that threw — and, with no error
- * boundary, blanked the whole app — when a selected version vanished.
- */
 export function compareSelectionChips(
   selected: string[],
   versionByRunId: Map<string, { version_number: number }>,
@@ -132,16 +117,10 @@ export interface CategoryGroup {
   standards: KbStandard[];
 }
 
-/** A standard's category = the category of its disclosures (uniform per standard). */
 export function categoryOf(group: KbStandard): Category | string {
   return group.disclosures[0]?.category ?? "topic";
 }
 
-/**
- * Bucket standards into category groups in display order (Universal → Topic →
- * Sector), preserving input order within each bucket. Empty categories are
- * omitted; any unknown category (not in CATEGORY_ORDER) is appended last.
- */
 export function groupByCategory(groups: KbStandard[]): CategoryGroup[] {
   const byCat = new Map<string, KbStandard[]>();
   for (const g of groups) {
@@ -164,7 +143,6 @@ export function groupByCategory(groups: KbStandard[]): CategoryGroup[] {
   return out;
 }
 
-/** Case-insensitive substring match on disclosure id, title, or standard name. */
 export function matchesQuery(
   d: KbDisclosure,
   standardName: string,
@@ -179,12 +157,6 @@ export function matchesQuery(
   );
 }
 
-/**
- * Whether a disclosure should be shown under the active filters. Search and
- * the edition filter compose with AND. The edition filter hides non-current
- * editions, EXCEPT a non-current disclosure that is currently selected always
- * stays visible — so a selection can never be silently hidden.
- */
 export function disclosureVisible(
   d: KbDisclosure,
   standardName: string,

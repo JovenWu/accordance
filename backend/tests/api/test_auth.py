@@ -1,4 +1,3 @@
-# backend/tests/api/test_auth.py
 from fastapi.testclient import TestClient
 
 from accordance.auth.deps import COOKIE_NAME

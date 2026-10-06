@@ -88,7 +88,6 @@ def _extract_json(text: str) -> str:
     if text.startswith("{") or text.startswith("["):
         return text
 
-    # Prose around JSON — slice from the first { to the last }
     first = text.find("{")
     last = text.rfind("}")
     if first != -1 and last > first:
@@ -109,29 +108,20 @@ class JudgeTrace:
     distances: list[float]
     pages: list[int]
     queries_used: list[str]
-    parse_path: str  # 'structured' | 'fallback' | 'error'
+    parse_path: str
     error: str | None
     latency_ms: int
     prompt_hash: str
     model_id: str
     rejudged: bool = False
     elements_seen: list[str] = field(default_factory=list)
-    # True when evidence_excerpt was found in (or paraphrased from) one of
-    # the retrieved chunks; False when it appears to be hallucinated; None
-    # when the LLM returned no excerpt at all. See judge/verify.py.
     evidence_verified: bool | None = None
-    # When evidence_verified is False, we null out the user-facing excerpt
-    # in JudgeOutput. The original is kept here for debugging.
     original_evidence_excerpt: str | None = None
-    # Token-count estimate of this call's prompt/response, used only as the
-    # cost fallback when the provider/proxy returns no usage_metadata.
     est_input_tokens: int | None = None
     est_output_tokens: int | None = None
 
 
 def _model_id_of(llm: BaseChatModel) -> str:
-    # LangChain doesn't expose a single canonical "model id" field; try a
-    # few common attributes and fall back to the class name.
     for attr in ("model_name", "model", "model_id"):
         val = getattr(llm, attr, None)
         if val:
@@ -147,13 +137,13 @@ def judge_disclosure(
     *,
     override_queries: list[str] | None = None,
     per_element: bool = True,
-    reranker=None,            # Reranker | None
+    reranker=None,
     rerank_top_n: int = 15,
     cache_system: bool = False,
-    tag_retrieve=None,        # Callable[[int], list[dict]] | None — force-include tagged chunks
+    tag_retrieve=None,
     tag_limit: int = 5,
     page_text_provider: Callable[[int], str] | None = None,
-    page_sibling_store=None,  # VectorStore | None — for page-coherent sibling swap
+    page_sibling_store=None,
     run_id: str | None = None,
     page_coherent: bool = True,
     structured_method: str = "json_schema",
@@ -199,43 +189,11 @@ def judge_disclosure(
     else:
         merged.sort(key=lambda c: (c["page"], c["chunk_id"]))
 
-    # Page-coherent sibling swap (cost-neutral for the swap itself).
-    #
-    # Problem: a table/picture chunk that shares a page with a retrieved
-    # narrative chunk often embeds poorly (garbled text, missing keywords) and
-    # ranks below the top-k cut.  The judge never sees the numbers and marks
-    # the disclosure partial/missing.
-    #
-    # Fix: after the normal merge+sort, find chunks on the SAME PAGE as the
-    # top-ranked hits that are NOT already in the pool, then SWAP each sibling
-    # in for the WEAKEST member by relevance score (distance), keeping
-    # len(merged) CONSTANT.
-    #
-    # N-cap: at most N = max(1, k // 3) siblings may be swapped in per call.
-    # This prevents the swap from evicting most of the genuinely-retrieved pool
-    # (e.g. k=6 → cap=2; k=3 → cap=1).
-    #
-    # Token-neutrality: the swap itself is token-neutral (each sibling is
-    # truncated to the displaced member's character length).  Note: the
-    # tag-aware force-include step that follows may add tokens on top.
-    #
-    # Reranker guard: when a reranker is active, its ranked ordering is the
-    # ground truth for "weakest."  However, the reranker may have deliberately
-    # evicted a sibling from the pool; re-inserting it would silently undo
-    # that decision.  To avoid this, the page-coherent swap is skipped
-    # entirely when a reranker is active.  The reranker is off by default, so
-    # this gate fires only in explicit reranker configurations.
-    #
-    # Gated by page_coherent flag (default True per Settings.retrieval_page_coherent).
     if page_coherent and page_sibling_store is not None and run_id is not None and merged:
-        # Skip when a reranker is active: the reranker may have deliberately
-        # evicted a sibling; re-inserting it would silently undo that decision.
         _swap_eligible = reranker is None
         if _swap_eligible:
             try:
                 n_cap = max(1, k // 3)
-                # Use ALL pages in the pool as sibling candidates (every page in
-                # merged may have missed table chunks).
                 hot_pages = list({c["page"] for c in merged})
                 existing_ids = [c["chunk_id"] for c in merged]
                 siblings = page_sibling_store.retrieve_page_siblings(
@@ -244,38 +202,26 @@ def judge_disclosure(
                     exclude_ids=existing_ids,
                     limit=n_cap * max(1, len(hot_pages)),
                 )
-                # Build a slot cursor that advances through the weakest members
-                # (sorted by worst distance = highest distance value).
-                # Each sibling gets its OWN slot — do NOT reuse merged[-1].
-                # Sort merged by descending distance to find the N weakest.
                 sorted_by_weakness = sorted(
                     range(len(merged)), key=lambda i: -merged[i]["distance"]
                 )
-                slot_cursor = 0  # which weakness-rank slot to displace next
+                slot_cursor = 0
                 for sibling in siblings[:n_cap]:
                     if slot_cursor >= len(sorted_by_weakness):
                         break
-                    # The weakest available slot (by actual relevance score).
                     weakest_idx = sorted_by_weakness[slot_cursor]
                     slot_cursor += 1
                     weakest = merged[weakest_idx]
-                    # Token-neutrality guard: truncate sibling text to the
-                    # displaced member's char length (1 token ≈ 4 chars).
                     max_len = len(weakest["text"])
                     if len(sibling["text"]) > max_len:
-                        sibling = dict(sibling)  # don't mutate the list element
+                        sibling = dict(sibling)
                         sibling["text"] = sibling["text"][:max_len]
-                    # Swap: replace weakest with sibling in its own slot.
                     merged[weakest_idx] = sibling
             except Exception as e:
                 logger.warning(
                     "page-coherent swap failed for %s: %s", disclosure.id, e
                 )
 
-    # Tag-aware retrieval: the report tags its own data tables with the GRI
-    # disclosure id (e.g. "[[GRI 303-4]]"). Force-include those chunks (FIRST,
-    # highest precision) so the judge always sees the report's own data table,
-    # even if the reranker would have cut it.
     if tag_retrieve is not None:
         try:
             present = {c["chunk_id"] for c in merged}
@@ -283,7 +229,7 @@ def judge_disclosure(
             if tag_chunks:
                 merged = tag_chunks + merged
         except Exception:
-            pass  # tag retrieval is best-effort; fall back to the reranked pool
+            pass
 
     user = USER_TEMPLATE.format(
         disclosure_id=disclosure.id,
@@ -299,20 +245,8 @@ def judge_disclosure(
     t0 = time.monotonic()
     out: JudgeOutput | None = None
     err: str | None = None
-    # Try LangChain's structured-output path first. With native Anthropic /
-    # OpenAI clients this uses tool/function calling and returns a parsed
-    # JudgeOutput directly. With some OpenAI-compatible proxies it fails
-    # or returns markdown-wrapped JSON; we fall back to plain text + manual
-    # extraction in that case.
     parse_path = "structured"
     try:
-        # `json_schema` + strict makes the PROVIDER constrain decoding to the
-        # schema, so an invalid enum (the observed failure: status="found",
-        # which is the ELEMENT vocabulary) cannot be generated at all. The
-        # default `function_calling` method only validates client-side, after
-        # the call is already paid for. Configurable because a proxy that
-        # rejects json_schema would otherwise burn a failed call plus a
-        # fallback call on every disclosure.
         kwargs = (
             {"method": "json_schema", "strict": True}
             if structured_method == "json_schema"
@@ -326,7 +260,6 @@ def judge_disclosure(
             resp = llm.invoke(messages)
             content = resp.content if hasattr(resp, "content") else str(resp)
             if isinstance(content, list):
-                # Some LangChain responses contain a list of content blocks
                 content = "".join(
                     (c.get("text", "") if isinstance(c, dict) else str(c))
                     for c in content
@@ -338,13 +271,6 @@ def judge_disclosure(
 
     latency_ms = int((time.monotonic() - t0) * 1000)
 
-    # Evidence handling. When a page_text_provider is supplied (the live run
-    # path), SNAP the excerpt to verbatim PDF page text — replacing the LLM's
-    # paraphrase with the exact words on the page so the viewer highlights it
-    # precisely, and correcting the cited page when the quote is really on
-    # another retrieved page. An excerpt that can't be located verbatim is
-    # dropped (better no quote than a wrong one). Without a provider (eval,
-    # tests) we fall back to the cheap substring hallucination guard.
     evidence_verified: bool | None = None
     original_excerpt: str | None = None
     if out is not None:
@@ -395,13 +321,13 @@ def judge_disclosure_with_rejudge(
     *,
     rejudge_on_missing: bool = True,
     per_element: bool = True,
-    reranker=None,            # Reranker | None
+    reranker=None,
     rerank_top_n: int = 15,
     cache_system: bool = False,
-    tag_retrieve=None,        # Callable[[int], list[dict]] | None — force-include tagged chunks
+    tag_retrieve=None,
     tag_limit: int = 5,
     page_text_provider: Callable[[int], str] | None = None,
-    page_sibling_store=None,  # VectorStore | None — for page-coherent sibling swap
+    page_sibling_store=None,
     run_id: str | None = None,
     page_coherent: bool = True,
     structured_method: str = "json_schema",

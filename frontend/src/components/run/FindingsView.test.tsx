@@ -55,7 +55,6 @@ describe("FindingsView", () => {
     );
 
     expect(screen.getAllByRole("listitem")).toHaveLength(findings.length);
-    // md+: bounded inner scroller; below md the page itself scrolls.
     expect(container.firstElementChild).toHaveClass(
       "md:min-h-0",
       "md:flex-1",
@@ -67,9 +66,6 @@ describe("FindingsView", () => {
   });
 
   it("keeps sr-only row labels inside a positioned ancestor", () => {
-    // .sr-only spans are position:absolute. Without a positioned ancestor
-    // inside the scroll container, they escape the clip and stretch the
-    // document's scrollable height (blank page overflow).
     const { container } = render(
       <FindingsView
         run={run}

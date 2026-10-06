@@ -107,7 +107,7 @@ async def _read_upload_capped(pdf: UploadFile, max_bytes: int) -> bytes:
     chunks: list[bytes] = []
     total = 0
     while True:
-        chunk = await pdf.read(1024 * 1024)  # 1 MiB
+        chunk = await pdf.read(1024 * 1024)
         if not chunk:
             break
         total += len(chunk)
@@ -120,8 +120,6 @@ async def _read_upload_capped(pdf: UploadFile, max_bytes: int) -> bytes:
 
 
 def _open_conn(settings: Settings):
-    # Borrow a pooled connection. Schema is ensured once at startup (lifespan),
-    # not per request. Returns a context manager: `with _open_conn(s) as conn:`.
     return _db_connection()
 
 
@@ -152,11 +150,6 @@ def _enforce_run_quota(conn, user_id, settings: Settings) -> None:
         )
 
 
-# --- Run admission + graceful drain -----------------------------------------
-# A bounded semaphore caps how many run workers execute concurrently (each opens
-# up to judge_concurrency Postgres connections — unbounded fan-out under a burst
-# can exhaust the connection pool). _active_runs lets shutdown cancel + join
-# in-progress workers so a SIGTERM/deploy doesn't kill a run mid-write.
 _run_admission: threading.BoundedSemaphore | None = None
 _admission_lock = threading.Lock()
 _active_runs: dict[threading.Thread, str] = {}
@@ -270,8 +263,6 @@ def _kick_off_graph(
                     disclosure_ids=disclosure_ids,
                 )
             except Exception as e:
-                # Best-effort: never let the worker thread die before marking the
-                # run failed (a raised status-write would leave it stuck 'queued').
                 try:
                     conn.execute(
                         "UPDATE runs SET status=%s, error=%s WHERE id=%s",
@@ -279,11 +270,6 @@ def _kick_off_graph(
                     )
                 except Exception:
                     pass
-                # Emit a terminal SSE event. Without it the /stream generator only
-                # returns on 'completed'/'cancelled', so a watched failed run leaks
-                # an open connection + subscriber queue looping on keepalives until
-                # the client navigates away. No error text in the payload (the
-                # client reads details via GET /runs/{id}); this just signals end.
                 try:
                     from accordance.api.events import bus
 
@@ -337,8 +323,6 @@ def _persist_new_run(
                 }
             }
 
-        # A genuinely new run will spawn a worker — enforce the per-user quota
-        # (a dedup hit above reuses an existing run, so it's exempt).
         _enforce_run_quota(conn, user_id, settings)
 
         report_id = "rep_" + uuid.uuid4().hex[:24]
@@ -386,7 +370,6 @@ async def create_run(
         raise HTTPException(400, f"Unsupported content type: {pdf.content_type}")
     body = await _read_upload_capped(pdf, settings.max_upload_mb * 1024 * 1024)
     filename = pdf.filename or "upload.pdf"
-    # Offload the CPU/disk-bound section so the event loop stays free.
     result = await run_in_threadpool(
         _persist_new_run, body, disclosure_ids, filename, settings, user["id"]
     )
@@ -432,14 +415,6 @@ def judge_more(
             )
         _enforce_run_quota(conn, user["id"], settings)
 
-        # Errored findings stay eligible: a disclosure that failed (bad JSON
-        # from the model, a dead endpoint) HAS a row, so an unconditional skip
-        # left no way to repair it except spawning a whole new run version.
-        # Re-judging writes through the findings upsert, and the retry's tokens
-        # land in llm_usage against this run, so the run's spend stays honest.
-        # Successful findings are still skipped — silently re-judging them
-        # would cost money and churn verdicts against a 13%/24% run-to-run
-        # noise floor.
         already = {
             r["disclosure_id"]
             for r in conn.execute(
@@ -451,14 +426,6 @@ def judge_more(
         if not to_judge:
             return {"run_id": run_id, "judged": []}
 
-        # CLAIM the run before touching anything else. The status check above is
-        # a read, so two requests can both see 'completed' and both kick off a
-        # graph on the same run_id — two thread pools writing the same findings.
-        # That was a wide race when judge-more was a deliberate multi-select
-        # action; the per-row Retry button makes rapid double-fire ordinary.
-        # Re-asserting the terminal status inside the UPDATE closes it: under
-        # READ COMMITTED the loser blocks on the row lock, then re-evaluates the
-        # WHERE against the winner's committed 'judging' and matches nothing.
         claimed = conn.execute(
             "UPDATE runs SET status='judging', completed_at=NULL "
             "WHERE id=%s AND status IN ('completed','failed','cancelled')",
@@ -471,8 +438,6 @@ def judge_more(
                 "wait for it to finish.",
             )
 
-        # Expand stored selection to the union. NULL meant "all" — leave NULL.
-        # After the claim, so a request that lost the race leaves no trace.
         if run["selected_disclosures"] is not None:
             prior = set(json.loads(run["selected_disclosures"]))
             new_selection = sorted(prior | set(to_judge))
@@ -533,8 +498,6 @@ def create_correction(
             else None
         )
 
-        # Wrap the supersede UPDATE and INSERT in a single transaction so the
-        # disclosure never has zero live rows if the process dies between them.
         with conn.transaction():
             conn.execute(
                 "UPDATE assessor_corrections SET superseded=TRUE "
@@ -727,8 +690,6 @@ def delete_run(
             raise HTTPException(404, "Run not found")
 
         pdf_path = row["pdf_path"]
-        # Cascade (ON DELETE CASCADE on chunks, findings, judge_traces,
-        # assessor_corrections) cleans up all child rows in one transaction.
         with conn.transaction():
             conn.execute("DELETE FROM runs WHERE id=%s", (run_id,))
 

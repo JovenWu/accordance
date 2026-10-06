@@ -21,7 +21,6 @@ def auth_client(tmp_path, monkeypatch):
     monkeypatch.setenv("LLM_MODEL", "fake:fake")
     get_settings.cache_clear()
 
-    # Insert the test user via the pooled connection (Postgres-backed).
     from accordance.db import connection
 
     with connection() as conn:
@@ -30,7 +29,6 @@ def auth_client(tmp_path, monkeypatch):
             ("tester", hash_password("pw")),
         )
 
-    # Lazy import to avoid import-time lifespan/pool side-effects.
     from accordance.main import create_app
 
     client = TestClient(create_app())

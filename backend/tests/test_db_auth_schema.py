@@ -22,7 +22,6 @@ def conn():
 
 
 def test_ensure_schema_creates_users_and_sessions(conn):
-    # users and sessions tables must exist with the expected columns
     cols = {
         r["column_name"]
         for r in conn.execute(
@@ -42,7 +41,6 @@ def test_ensure_schema_creates_users_and_sessions(conn):
     ver = conn.execute("SELECT value FROM app_meta WHERE key='schema_version'").fetchone()["value"]
     assert ver == SCHEMA_VERSION
 
-    # is_active and is_admin must be real BOOLEAN columns
     is_active_type = conn.execute(
         "SELECT data_type FROM information_schema.columns "
         "WHERE table_name='users' AND column_name='is_active'"

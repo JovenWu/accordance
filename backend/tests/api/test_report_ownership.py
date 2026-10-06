@@ -34,11 +34,6 @@ def test_uploaded_report_is_owned_by_creator(auth_client):
     assert owner == tester, f"expected created_by={tester!r}, got {owner!r}"
 
 
-# ---------------------------------------------------------------------------
-# Task 16: cross-user visibility scoping
-# ---------------------------------------------------------------------------
-
-
 def _seed_owned_report(username: str, rep_id: str) -> None:
     from accordance.db import connection
 
@@ -74,11 +69,6 @@ def test_admin_sees_all_reports(auth_client, admin_client):
     _seed_owned_report("tester", "repY")
     assert any(r["id"] == "repY" for r in admin_client.get("/api/reports").json()["items"])
     assert admin_client.get("/api/reports/repY").status_code == 200
-
-
-# ---------------------------------------------------------------------------
-# Task 19: empty-state — fresh user with zero reports
-# ---------------------------------------------------------------------------
 
 
 def test_new_user_with_no_reports_gets_empty_list(second_user_client):

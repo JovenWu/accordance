@@ -18,7 +18,6 @@ def test_admission_semaphore_bounds_to_config():
     sem = runs_mod._admission_semaphore(Settings(max_concurrent_runs=2))
     assert sem.acquire(blocking=False) is True
     assert sem.acquire(blocking=False) is True
-    # Third acquire is refused — the cap is enforced.
     assert sem.acquire(blocking=False) is False
     sem.release()
     sem.release()
@@ -32,7 +31,7 @@ def test_spawn_admitted_runs_work_and_unregisters():
     t.join(timeout=2)
     assert done.is_set()
     with runs_mod._active_runs_lock:
-        assert t not in runs_mod._active_runs  # cleaned up after work finished
+        assert t not in runs_mod._active_runs
 
 
 def test_drain_cancels_active_runs_and_joins():
@@ -42,7 +41,6 @@ def test_drain_cancels_active_runs_and_joins():
     cancel_registry.clear(rid)
 
     def work():
-        # Cooperative: exit as soon as drain signals cancellation.
         while not cancel_registry.is_cancelled(rid):
             time.sleep(0.01)
 

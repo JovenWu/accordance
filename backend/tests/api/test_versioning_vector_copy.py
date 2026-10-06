@@ -32,7 +32,6 @@ def test_copied_vectors_are_retrievable_under_target_run():
 
         _copy_chunks_to_new_run(conn, source_run_id="src", target_run_id="tgt")
 
-        # Copied chunks must be retrievable scoped to the TARGET run's partition.
         hits = store.retrieve_dense("tgt", "water withdrawal", k=5)
         assert hits, "copied vectors are invisible to the target run's dense retrieval"
         assert all(

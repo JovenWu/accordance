@@ -88,7 +88,6 @@ def test_delete_report_cleans_up_chunks(tmp_path, monkeypatch):
     _login(client)
     j = _upload(client, name="cleanup.pdf")
 
-    # Seed a synthetic chunk for the run.
     with connection() as conn:
         conn.execute(
             "INSERT INTO chunks (run_id, page, text) VALUES (%s, %s, %s)",
@@ -139,7 +138,6 @@ def test_delete_report_with_many_chunks_and_double_delete(tmp_path, monkeypatch)
             "SELECT COUNT(*) AS n FROM reports WHERE id=%s", (j["report_id"],)
         ).fetchone()["n"] == 0
 
-    # Deleting the already-gone report is a clean 404, never a lock/crash.
     assert client.delete(f"/api/reports/{j['report_id']}").status_code == 404
 
 
@@ -165,7 +163,6 @@ def _base_row(**over):
 
 
 def test_finding_view_backmaps_legacy_status_to_score():
-    # Old finding: score column is NULL -> derive from status.
     assert _row_to_finding_view(_base_row(status="covered", score=None)).score == 5
     assert _row_to_finding_view(_base_row(status="partial", score=None)).score == 3
     assert _row_to_finding_view(_base_row(status="missing", score=None)).score == 1
@@ -179,11 +176,6 @@ def test_finding_view_prefers_explicit_score():
 
 def test_finding_view_error_status_has_no_score():
     assert _row_to_finding_view(_base_row(status="error", score=None)).score is None
-
-
-# ---------------------------------------------------------------------------
-# Server-side search + pagination on the history list
-# ---------------------------------------------------------------------------
 
 
 def _seed_reports(names, owner="tester"):
@@ -220,7 +212,6 @@ def test_list_reports_paginates(auth_client):
 
     second = auth_client.get("/api/reports", params={"limit": 2, "offset": 2}).json()
     assert second["total"] == 5
-    # Pages must not overlap — the ordering has a unique tiebreaker.
     assert {r["id"] for r in first["items"]}.isdisjoint({r["id"] for r in second["items"]})
 
     last = auth_client.get("/api/reports", params={"limit": 2, "offset": 4}).json()
@@ -260,7 +251,6 @@ def test_search_total_reflects_the_filter_not_the_whole_table(auth_client):
 def test_search_matches_the_pdf_filename_after_a_rename(auth_client):
     _seed_reports(["original-name.pdf"])
     auth_client.patch("/api/reports/rep-0", json={"name": "Q3 draft"})
-    # The label changed; the uploaded filename did not.
     body = auth_client.get("/api/reports", params={"q": "original-name"}).json()
     assert [r["name"] for r in body["items"]] == ["Q3 draft"]
 
@@ -274,14 +264,12 @@ def test_search_treats_wildcards_as_literal_text(auth_client):
     _seed_reports([f"report-{i}.pdf" for i in range(3)])
     assert auth_client.get("/api/reports", params={"q": "%"}).json()["total"] == 0
     assert auth_client.get("/api/reports", params={"q": "_"}).json()["total"] == 0
-    # And the escape character itself is literal too.
     assert auth_client.get("/api/reports", params={"q": "\\"}).json()["total"] == 0
 
 
 def test_search_respects_ownership(auth_client, second_user_client):
     _seed_reports(["secret-report.pdf"], owner="tester")
     assert auth_client.get("/api/reports", params={"q": "secret"}).json()["total"] == 1
-    # Another user must not be able to probe for it by name.
     assert second_user_client.get("/api/reports", params={"q": "secret"}).json()["total"] == 0
 
 

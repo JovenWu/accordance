@@ -38,9 +38,6 @@ afterEach(() => vi.clearAllMocks());
 
 describe("ReportPage 404 handling", () => {
   it("shows the not-found page instead of loading forever", async () => {
-    // Regression: the `!report` guard returned the skeleton before the error
-    // was ever rendered, so a deleted report span an idle spinner indefinitely
-    // and looked identical to a slow network.
     vi.mocked(getReport).mockRejectedValue(
       new ApiError(404, "404: Report not found"),
     );
@@ -56,7 +53,6 @@ describe("ReportPage 404 handling", () => {
   });
 
   it("keeps showing the loading state for a non-404 failure", async () => {
-    // A 500 is transient — claiming the report doesn't exist would be a lie.
     vi.mocked(getReport).mockRejectedValue(new ApiError(500, "500: boom"));
     renderAt();
 

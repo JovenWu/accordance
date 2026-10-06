@@ -86,7 +86,6 @@ def build_prompts(conn, run_id: str, kb: dict) -> dict[str, str]:
                 "SELECT id, page, text FROM chunks WHERE id = ANY(%s)", (ids,)
             ).fetchall()
         }
-        # Preserve the recorded order — it is the order the model saw.
         merged = [
             {"page": got[i]["page"], "text": got[i]["text"]} for i in ids if i in got
         ]
@@ -166,8 +165,7 @@ def main() -> int:
                     "cached_tok": cached,
                     "latency_s": round(time.time() - t0, 1),
                 }
-            except Exception as e:  # record and continue — one bad call must not
-                # abort the whole arm and corrupt the pairwise comparison
+            except Exception as e:
                 rec = {"status": "EXC", "error": f"{type(e).__name__}: {str(e)[:160]}"}
             results.setdefault(did, {})[effort] = rec
             print(

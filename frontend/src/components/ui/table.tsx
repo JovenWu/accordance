@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-/** White rounded card wrapping a dense data table. */
 export function TableCard({
   className,
   children,

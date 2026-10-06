@@ -2,7 +2,6 @@ from accordance.config import Settings, check_required_keys
 
 
 def _settings(**kw) -> Settings:
-    # Pass keys explicitly so a stray .env can't influence the result.
     base = dict(
         llm_model="fake:fake",
         embedding_model="fake:fake",
@@ -41,9 +40,6 @@ def test_voyage_embeddings_without_key_is_flagged():
         _settings(embedding_model="voyage:voyage-3-lite", voyage_api_key="")
     )
     assert any("VOYAGE_API_KEY" in p for p in probs)
-
-
-# ── embedding key may come from the gateway override ─────────────────
 
 
 def test_embedding_api_key_satisfies_the_startup_check():

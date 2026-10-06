@@ -1,7 +1,5 @@
 import type { FindingView, CorrectionView } from "@/types";
 
-/** The grade to display for a disclosure: the assessor's correction when one
- * exists (authoritative), else the agent's score. */
 export function effectiveGrade(
   agentScore: number | null,
   correction?: CorrectionView | null,
@@ -10,9 +8,6 @@ export function effectiveGrade(
   return { score: agentScore, corrected: false };
 }
 
-/** Findings with each score overridden by the live assessor correction (when
- * one exists), so aggregate views (completeness %, distribution) reflect saved
- * feedback the same way the per-row pills do via effectiveGrade. */
 export function effectiveFindings(
   findings: FindingView[],
   correctionsByDisclosure?: Record<string, CorrectionView>,
@@ -26,9 +21,7 @@ export function effectiveFindings(
 
 export interface ScoreMeta {
   label: string;
-  /** Tailwind text color class (existing semantic token). */
   textClass: string;
-  /** Tailwind bg color class for dots/pills. */
   dotClass: string;
 }
 
@@ -47,7 +40,6 @@ const ERROR_META: ScoreMeta = {
   dotClass: "bg-danger",
 };
 
-/** Display metadata for a 0-5 score. null (ungraded/error) -> Judge error. */
 export function scoreMeta(score: number | null): ScoreMeta {
   if (score === null || META_BY_SCORE[score] === undefined) return ERROR_META;
   return META_BY_SCORE[score];
@@ -57,8 +49,6 @@ function isApplicable(f: FindingView): boolean {
   return f.score !== null && f.score > 0;
 }
 
-/** Mean of score/5 over applicable disclosures, as a 0-100 number rounded to
- * one decimal place; null when none are applicable. */
 export function completenessPct(findings: FindingView[]): number | null {
   const applicable = findings.filter(isApplicable);
   if (applicable.length === 0) return null;
@@ -78,7 +68,6 @@ export interface ScoreDistribution {
   error: number;
 }
 
-/** Count findings per score 0..5; null/unknown scores grouped under `error`. */
 export function scoreDistribution(findings: FindingView[]): ScoreDistribution {
   const d: ScoreDistribution = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, error: 0 };
   for (const f of findings) {

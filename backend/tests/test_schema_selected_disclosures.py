@@ -16,5 +16,5 @@ def test_fresh_db_has_selected_disclosures_column():
 
 def test_existing_db_gets_column_added_idempotently():
     with connection() as conn:
-        ensure_schema(conn)  # must not raise (idempotent)
+        ensure_schema(conn)
         assert _has_column(conn, "runs", "selected_disclosures")

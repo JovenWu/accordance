@@ -51,7 +51,7 @@ def _class_metrics_table(metrics) -> str:
     rows = []
     for m in metrics:
         if m.support == 0:
-            continue  # skip classes the labeler never used
+            continue
         rows.append(
             f"| `{m.label}` | {m.precision:.2f} | {m.recall:.2f} | "
             f"{m.f1:.2f} | {m.support} |"

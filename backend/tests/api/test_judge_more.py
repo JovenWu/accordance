@@ -55,7 +55,7 @@ def test_judge_more_on_running_run_is_409(monkeypatch, tmp_path):
     _env(monkeypatch, tmp_path)
     client = TestClient(create_app())
     _login(client)
-    client.get("/api/kb")  # ensures schema exists
+    client.get("/api/kb")
     _seed_run(status="judging", judged_ids=["2-1"])
     r = client.post("/api/runs/run1/judge-more", json={"disclosure_ids": ["2-2"]})
     assert r.status_code == 409
@@ -90,13 +90,6 @@ def test_judge_more_all_already_judged_is_noop(monkeypatch, tmp_path):
     r = client.post("/api/runs/run1/judge-more", json={"disclosure_ids": ["2-1"]})
     assert r.status_code == 200
     assert r.json()["judged"] == []
-
-
-# ── retrying a failed disclosure ─────────────────────────────────────
-# An errored disclosure HAS a finding, so the additive filter skipped it and
-# there was no way to repair one without spawning a whole new run version.
-# Re-judging must happen on the SAME run so the finding is fixed in place and
-# the retry's spend lands against that run.
 
 
 def test_judge_more_rejudges_a_failed_disclosure(monkeypatch, tmp_path):
@@ -144,6 +137,5 @@ def test_judge_more_claims_the_run_atomically(monkeypatch, tmp_path):
         assert conn.execute(claim, ("run1",)).rowcount == 1, "first claim must win"
         assert conn.execute(claim, ("run1",)).rowcount == 0, "second claim must lose"
 
-    # And the endpoint surfaces that loss as a 409 rather than double-running.
     r = client.post("/api/runs/run1/judge-more", json={"disclosure_ids": ["2-1"]})
     assert r.status_code == 409

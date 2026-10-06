@@ -7,43 +7,19 @@ from accordance.extractor.models import ExtractedReport
 
 _ENC = tiktoken.get_encoding("cl100k_base")
 
-# Matches markdown ATX-style headings: 1-6 leading hashes, then text.
-# Setext headings (===, ---) are uncommon in Docling output and ignored here.
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(.+)$", re.MULTILINE)
 
-# A markdown table row: a line that contains pipe cell delimiters, e.g.
-# "| a | b |" or a separator "|---|---|".
 _TABLE_ROW_RE = re.compile(r"^\s*\|.*\|\s*$")
 
-# OpenAI text-embedding-3-small accepts ~8191 tokens per input. Keep atomic
-# table chunks below that so a huge data table can't truncate/err at embed time.
 _EMBEDDING_TOKEN_LIMIT = 8_000
 
-# A GRI-style disclosure id, e.g. "2-1", "305-1", "418-1". Year ranges
-# ("2024-2025") and similar 4-digit tokens don't match (\d{1,3} caps at 3).
 _DISCLOSURE_ID_RE = re.compile(r"\b\d{1,3}-\d{1,3}\b")
 
-# A GRI content index / cross-reference table is a NAVIGATION table mapping
-# disclosure ids to page numbers. It is id-dense, so it gets retrieved for
-# almost every disclosure query and the judge may cite it instead of the real
-# reported content. We detect and drop it at chunk time so it never becomes
-# evidence.
-#
-# Detection requires BOTH a navigation HEADING (e.g. "GRI Content Index",
-# "GRI Standards Index", "Table of Contents") AND id-density. The heading is
-# the high-precision gate: it is what separates a navigation table from
-# id-dense SUBSTANTIVE content — an inline-answered "General Disclosures" page,
-# a disclosure-keyed ESG data-summary table, or a material-topics → standard
-# mapping table all carry many disclosure ids but are NOT under an index
-# heading, so they are kept. The trade-off is recall: a content index with no
-# recoverable heading (rare; extraction usually keeps it) is not caught — an
-# acceptable miss, since dropping real reported content would silently corrupt
-# the grade, which is far worse than occasionally retrieving the index.
 _INDEX_HEADING_RE = re.compile(
     r"\b(gri[\w ]{0,20}index|content index|table of contents)\b", re.IGNORECASE
 )
-_INDEX_MIN_IDS = 8           # distinct disclosure ids on the page/section
-_INDEX_MIN_ID_LINE_FRAC = 0.5  # …and most non-blank lines are id rows
+_INDEX_MIN_IDS = 8
+_INDEX_MIN_ID_LINE_FRAC = 0.5
 
 
 def _is_table_line(line: str) -> bool:
@@ -89,8 +65,8 @@ class Chunk:
 
 @dataclass
 class _Section:
-    heading: str  # full heading line including hashes, or "" for prefix content
-    text: str  # heading + body until next same-or-higher-level heading
+    heading: str
+    text: str
 
 
 def _count_tokens(text: str) -> int:
@@ -124,7 +100,6 @@ def _split_by_headings(md: str) -> list[_Section]:
         return [_Section(heading="", text=md)]
 
     sections: list[_Section] = []
-    # Any prose that precedes the first heading is its own section.
     if matches[0].start() > 0:
         prefix = md[: matches[0].start()].rstrip()
         if prefix.strip():
@@ -161,13 +136,9 @@ def chunk_report(
     for page in report.pages:
         if not page.markdown.strip():
             continue
-        # Drop a whole page that is a GRI content index / cross-reference table
-        # (caught here even when per-standard sub-headings would fragment it
-        # below the per-section id threshold). Navigation, not evidence.
         if _is_content_index(page.markdown):
             continue
         for section in _split_by_headings(page.markdown):
-            # …and drop an index/cross-reference table embedded in a mixed page.
             if _is_content_index(section.text):
                 continue
             n_tokens = _count_tokens(section.text)
@@ -175,9 +146,6 @@ def chunk_report(
                 chunks.append(Chunk(page=page.page_number, text=section.text))
                 continue
 
-            # Keep a table-dominated section whole — token-window splitting a
-            # table destroys row/column alignment the judge needs — UNLESS it's
-            # too large to embed as one chunk, in which case fall through to split.
             if _is_mostly_table(section.text) and n_tokens <= _EMBEDDING_TOKEN_LIMIT:
                 chunks.append(Chunk(page=page.page_number, text=section.text))
                 continue
@@ -188,8 +156,6 @@ def chunk_report(
                     chunks.append(Chunk(page=page.page_number, text=p))
                 continue
 
-            # Heading is already embedded in pieces[0]; prepend it to the
-            # rest so every sub-chunk has the section context.
             chunks.append(Chunk(page=page.page_number, text=pieces[0]))
             for p in pieces[1:]:
                 chunks.append(
