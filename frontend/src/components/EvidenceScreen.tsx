@@ -133,7 +133,7 @@ export function EvidenceScreen({
         ref={backRef}
         type="button"
         onClick={onClose}
-        className="flex w-fit items-center gap-1.5 rounded-md text-[13px] text-muted-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        className="flex w-fit items-center gap-1.5 rounded-md text-[13px] text-muted-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
       >
         <ChevronLeft className="size-4 -rotate-0" aria-hidden />
         <span className="font-medium">Run v{versionNumber} — findings</span>
@@ -252,14 +252,14 @@ export function EvidenceScreen({
             </Button>
             <span className="flex-1" />
             {activeHighlight ? (
-              <span className="rounded-2xl bg-accent-soft px-1.5 py-0.5 text-[11px] font-medium text-accent">
+              <span className="rounded-2xl bg-accent-soft px-1.5 py-0.5 text-[11px] font-medium text-accent-deep">
                 Evidence match · p.{citedPage}
               </span>
             ) : finding.evidence_page != null && !onCitedPage ? (
               <button
                 type="button"
                 onClick={() => goTo(citedPage)}
-                className="rounded-2xl bg-accent-soft px-1.5 py-0.5 text-[11px] font-medium text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                className="rounded-2xl bg-accent-soft px-1.5 py-0.5 text-[11px] font-medium text-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
               >
                 Evidence on p.{citedPage} — jump back
               </button>
@@ -276,7 +276,7 @@ export function EvidenceScreen({
             <button
               type="button"
               onClick={() => zoomTo(1)}
-              className="w-11 rounded-md text-center text-xs tabular-nums text-muted-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+              className="w-11 rounded-md text-center text-xs tabular-nums text-muted-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
               aria-label="Reset zoom"
             >
               {Math.round(zoom * 100)}%

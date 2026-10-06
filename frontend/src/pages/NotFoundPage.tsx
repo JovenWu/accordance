@@ -14,7 +14,7 @@ export function NotFoundPage({
 }) {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-2 p-4 sm:p-6 lg:p-10">
-      <span className="text-[72px] font-bold leading-none text-accent">
+      <span className="text-[72px] font-bold leading-none text-accent-deep">
         404
       </span>
       <h1 className="text-[20px] font-semibold text-ink">{title}</h1>

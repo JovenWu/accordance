@@ -37,7 +37,7 @@ export function AppShell() {
         <Link
           to="/"
           aria-label="Accordance home"
-          className="flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+          className="flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
         >
           <BrandMark className="size-7 rounded-[8px]" />
           <span className="text-[15px] font-semibold text-ink">Accordance</span>
@@ -97,7 +97,7 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
     <>
       <Link
         to="/"
-        className="flex items-center gap-3 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        className="flex items-center gap-3 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
         aria-label="Accordance home"
         onClick={onNavigate}
       >
@@ -134,7 +134,7 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
       <div className="flex items-center gap-2.5 border-t border-line p-4">
         <Link
           to="/profile"
-          className="flex min-w-0 flex-1 items-center gap-2.5 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+          className="flex min-w-0 flex-1 items-center gap-2.5 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           aria-label="Open profile"
           onClick={onNavigate}
         >

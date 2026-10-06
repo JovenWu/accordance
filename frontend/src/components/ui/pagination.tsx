@@ -80,7 +80,7 @@ export function Pagination({
                 aria-current={item === current ? "page" : undefined}
                 onClick={() => onPageChange(item - 1)}
                 className={cn(
-                  "grid size-9 place-items-center rounded-full text-sm font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
+                  "grid size-9 place-items-center rounded-full text-sm font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                   item === current
                     ? "bg-soft text-ink"
                     : "text-ink hover:bg-soft",
@@ -114,7 +114,7 @@ function PagerButton({
     <button
       type="button"
       className={cn(
-        "flex h-9 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-ink transition-colors hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:pointer-events-none disabled:opacity-40",
+        "flex h-9 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-ink transition-colors hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40",
         className,
       )}
       {...props}

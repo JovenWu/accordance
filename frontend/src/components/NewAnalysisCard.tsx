@@ -96,7 +96,7 @@ export function NewAnalysisCard() {
       {file ? (
         <div className="flex h-[132px] items-center justify-between rounded-2xl border border-line-strong bg-soft-2 px-5">
           <div className="flex min-w-0 items-center gap-3">
-            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
               <FileUp className="size-5" aria-hidden />
             </span>
             <div className="flex min-w-0 flex-col gap-0.5">
@@ -126,7 +126,7 @@ export function NewAnalysisCard() {
           className={cn(
             "flex h-[132px] flex-col items-center justify-center gap-2 rounded-2xl border bg-soft-2 text-center transition-colors",
             dragging
-              ? "border-accent bg-accent-soft/40"
+              ? "border-accent-deep bg-accent-soft/40"
               : "border-line-strong hover:border-muted-ink/40",
           )}
           onDragOver={(e) => {
@@ -159,7 +159,7 @@ export function NewAnalysisCard() {
               e.target.value = "";
             }}
           />
-          <span className="grid size-10 place-items-center rounded-full bg-accent-soft text-accent">
+          <span className="grid size-10 place-items-center rounded-full bg-accent-soft text-accent-deep">
             <FileUp className="size-5" aria-hidden />
           </span>
           <p className="text-sm font-medium text-ink">

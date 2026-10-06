@@ -78,7 +78,7 @@ export function PipelineStepper({
                 className={cn(
                   "grid size-7 shrink-0 place-items-center rounded-full transition-colors duration-300 [&_svg]:size-4",
                   st === "done" && "bg-success text-white",
-                  st === "active" && "bg-accent text-white",
+                  st === "active" && "bg-accent text-accent-ink",
                   st === "failed" && "bg-danger text-white",
                   st === "pending" && "bg-soft-2 text-muted-ink",
                 )}

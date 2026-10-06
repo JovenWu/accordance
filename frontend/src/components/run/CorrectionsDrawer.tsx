@@ -87,7 +87,7 @@ export function CorrectionsDrawer({
                   aria-label={`Delete correction for ${c.disclosure_id}`}
                   disabled={deleting === c.id}
                   onClick={() => void remove(c)}
-                  className="grid size-6 place-items-center rounded-xl bg-soft text-muted-ink transition-colors hover:bg-danger-soft hover:text-danger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:opacity-50"
+                  className="grid size-6 place-items-center rounded-xl bg-soft text-muted-ink transition-colors hover:bg-danger-soft hover:text-danger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-50"
                 >
                   <Trash2 className="size-3.5" aria-hidden />
                 </button>

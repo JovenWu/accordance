@@ -12,9 +12,12 @@
   --color-line-strong: #dedee0;
   --color-soft: #ebebec;
   --color-soft-2: #efeff0;
-  --color-accent: #0485f7;
-  --color-accent-ink: #fcfcfc;
-  --color-accent-soft: #0485f726;
+  --color-accent: #ffc400;
+  --color-accent-ink: #101114;
+  --color-accent-soft: #ffc40026;
+  /* Deep gold for accent text/icons on light fills — pure #ffc400 fails contrast. */
+  --color-accent-deep: #a16207;
+  --color-ring: #f59e0b;
   --color-success: #17c964;
   --color-success-soft: #17c96426;
   --color-lime: #7cb342;

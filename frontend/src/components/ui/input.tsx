@@ -4,7 +4,7 @@ import { ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
-  "w-full rounded-xl border border-line bg-surface px-3 text-sm text-ink shadow-field transition-colors placeholder:text-muted-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:border-accent disabled:cursor-not-allowed disabled:opacity-50";
+  "w-full rounded-xl border border-line bg-surface px-3 text-sm text-ink shadow-field transition-colors placeholder:text-muted-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:border-ring disabled:cursor-not-allowed disabled:opacity-50";
 
 const Input = React.forwardRef<
   HTMLInputElement,
@@ -95,7 +95,7 @@ export function SearchInput({
   return (
     <div
       className={cn(
-        "flex h-9 items-center gap-1.5 rounded-xl border border-line bg-surface px-3 shadow-field focus-within:ring-2 focus-within:ring-accent/40",
+        "flex h-9 items-center gap-1.5 rounded-xl border border-line bg-surface px-3 shadow-field focus-within:ring-2 focus-within:ring-ring/40",
         className,
       )}
       {...props}

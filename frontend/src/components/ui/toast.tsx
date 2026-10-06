@@ -125,7 +125,7 @@ function ToastCard({
         type="button"
         aria-label="Dismiss"
         onClick={onDismiss}
-        className="grid size-6 shrink-0 place-items-center rounded-xl bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        className="grid size-6 shrink-0 place-items-center rounded-xl bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
       >
         <X className="size-3.5" aria-hidden />
       </button>

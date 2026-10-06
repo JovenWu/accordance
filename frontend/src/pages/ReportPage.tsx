@@ -475,7 +475,7 @@ export function ReportPage() {
         className={cn(
           "flex min-h-24 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border bg-soft-2 px-4 py-3 text-center transition-colors",
           dragging
-            ? "border-accent bg-accent-soft/40"
+            ? "border-accent-deep bg-accent-soft/40"
             : "border-line-strong hover:border-muted-ink/40",
           uploading && "pointer-events-none opacity-60",
         )}
@@ -509,7 +509,7 @@ export function ReportPage() {
             e.target.value = "";
           }}
         />
-        <span className="grid size-10 place-items-center rounded-full bg-accent-soft text-accent">
+        <span className="grid size-10 place-items-center rounded-full bg-accent-soft text-accent-deep">
           <FilePlus className="size-5" aria-hidden />
         </span>
         <p className="text-sm font-medium text-ink">

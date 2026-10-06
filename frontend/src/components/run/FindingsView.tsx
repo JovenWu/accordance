@@ -191,7 +191,7 @@ export function FindingsView({
         <button
           type="button"
           onClick={() => setCorrectionsOpen(true)}
-          className="flex w-full shrink-0 flex-col gap-1 rounded-3xl bg-surface p-4 text-left transition-colors hover:bg-soft/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 sm:w-[280px]"
+          className="flex w-full shrink-0 flex-col gap-1 rounded-3xl bg-surface p-4 text-left transition-colors hover:bg-soft/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:w-[280px]"
         >
           <span className="text-xs font-medium text-muted-ink">
             Human review
@@ -220,7 +220,7 @@ export function FindingsView({
                   aria-pressed={filter === key}
                   onClick={() => setFilter(key)}
                   className={cn(
-                    "rounded-2xl px-2 py-0.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
+                    "rounded-2xl px-2 py-0.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                     filter === key
                       ? "bg-accent text-accent-ink"
                       : "bg-soft-2 text-ink hover:bg-soft",
@@ -231,7 +231,7 @@ export function FindingsView({
               ),
           )}
         </div>
-        <label className="flex h-9 w-full shrink-0 items-center gap-1.5 rounded-xl bg-surface px-3 shadow-[0_1px_2px_#0000000F] focus-within:ring-2 focus-within:ring-accent/40 sm:w-[220px]">
+        <label className="flex h-9 w-full shrink-0 items-center gap-1.5 rounded-xl bg-surface px-3 shadow-[0_1px_2px_#0000000F] focus-within:ring-2 focus-within:ring-ring/40 sm:w-[220px]">
           <Search className="size-4 text-muted-ink" aria-hidden />
           <input
             value={query}

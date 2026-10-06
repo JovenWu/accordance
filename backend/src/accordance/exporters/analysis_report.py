@@ -14,8 +14,9 @@ INK = (0.094, 0.094, 0.106)       # #18181b
 MUTED = (0.443, 0.443, 0.478)     # #71717a
 LINE = (0.894, 0.894, 0.906)      # #e4e4e7
 SOFT = (0.949, 0.949, 0.953)      # #f5f5f5-ish card fill
-ACCENT = (0.016, 0.522, 0.969)    # #0485f7
-ACCENT_SOFT = (0.878, 0.937, 0.996)
+ACCENT = (1.000, 0.769, 0.000)    # #ffc400
+ACCENT_SOFT = (1.000, 0.965, 0.850)
+ACCENT_DEEP = (0.631, 0.384, 0.027)  # #a16207 — text/icons on light fills
 
 GRADES = {
     5: (0.090, 0.788, 0.392),     # success
@@ -75,7 +76,7 @@ def _chip(page, x, y, label, size=7.5):
     page.draw_rect(fitz.Rect(x, y, x + w, y + 14), fill=ACCENT_SOFT,
                    color=None, radius=0.5)
     _text(page, (x, y + 1.5, x + w, y + 15), label, font="hebo", size=size,
-          color=ACCENT, align=1)
+          color=ACCENT_DEEP, align=1)
     return w
 
 
@@ -253,7 +254,7 @@ def analysis_report_bytes(data: AnalysisReport) -> bytes:
         ry += 13
     _text(page, (M + 12, ry, M + 130, ry + 12), "Live record", size=8, color=MUTED)
     _text(page, (M + 130, ry, W - M - 12, ry + 12),
-          f"accordance.joven.dev/runs/{data.run_id}", size=7.5, color=ACCENT)
+          f"accordance.joven.dev/runs/{data.run_id}", size=7.5, color=ACCENT_DEEP)
 
     # --- Footer -------------------------------------------------------------------
     page.draw_line(fitz.Point(M, fy), fitz.Point(W - M, fy), color=LINE, width=0.5)

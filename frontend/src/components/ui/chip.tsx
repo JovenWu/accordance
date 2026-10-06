@@ -9,7 +9,7 @@ const chipVariants = cva(
   {
     variants: {
       tone: {
-        accent: "bg-accent-soft text-accent",
+        accent: "bg-accent-soft text-accent-deep",
         success: "bg-success-soft text-success",
         warning: "bg-warning-soft text-warning",
         danger: "bg-danger-soft text-danger",

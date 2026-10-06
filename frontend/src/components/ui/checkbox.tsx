@@ -21,7 +21,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
       aria-checked={indeterminate ? "mixed" : !!checked}
       onClick={() => onCheckedChange?.(!checked)}
       className={cn(
-        "grid size-4 shrink-0 place-items-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:pointer-events-none disabled:opacity-50",
+        "grid size-4 shrink-0 place-items-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
         checked || indeterminate
           ? "bg-accent text-accent-ink"
           : "border border-line-strong bg-surface",

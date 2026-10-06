@@ -279,7 +279,7 @@ export function ScopeModal({
             </span>
             <button
               type="button"
-              className="text-[13px] font-medium text-accent hover:underline"
+              className="text-[13px] font-medium text-accent-deep hover:underline"
               onClick={() =>
                 setDraft(
                   new Set(allIds(groups).filter((id) => !lockedSet.has(id))),

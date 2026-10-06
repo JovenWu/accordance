@@ -53,7 +53,7 @@ export function Modal({
             type="button"
             aria-label="Close"
             onClick={onClose}
-            className="grid size-6 place-items-center rounded-xl bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            className="grid size-6 place-items-center rounded-xl bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           >
             <X className="size-3.5" aria-hidden />
           </button>
@@ -78,7 +78,7 @@ export function ModalIconTile({
   children: React.ReactNode;
 }) {
   const tones = {
-    accent: "bg-accent-soft text-accent",
+    accent: "bg-accent-soft text-accent-deep",
     danger: "bg-danger-soft text-danger",
     warning: "bg-warning-soft text-warning",
     neutral: "bg-soft text-ink",

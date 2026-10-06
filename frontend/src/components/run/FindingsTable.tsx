@@ -156,7 +156,7 @@ function Row({
       aria-expanded={open}
       aria-controls={detailId}
       className={cn(
-        "hidden h-[50px] w-full items-center px-4 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50 md:flex",
+        "hidden h-[50px] w-full items-center px-4 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring/50 md:flex",
         open && "bg-soft-2",
       )}
     >
@@ -239,7 +239,7 @@ function MobileRow({
       aria-expanded={open}
       aria-controls={detailId}
       className={cn(
-        "flex w-full flex-col gap-1 px-4 py-3 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50 md:hidden",
+        "flex w-full flex-col gap-1 px-4 py-3 text-left transition-colors hover:bg-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring/50 md:hidden",
         open && "bg-soft-2",
       )}
     >

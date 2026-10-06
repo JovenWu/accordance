@@ -151,7 +151,7 @@ export function KebabMenu({
       ) : (
         <button
           {...triggerProps}
-          className="grid size-8 place-items-center rounded-full bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+          className="grid size-8 place-items-center rounded-full bg-soft text-ink transition-colors hover:bg-soft-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
         >
           <MoreHorizontal className="size-4" aria-hidden />
         </button>
